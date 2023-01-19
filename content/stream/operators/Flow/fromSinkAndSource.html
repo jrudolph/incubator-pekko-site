@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26532-3d93c297*
+0.0.0+26533-ec68a528*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26532-3d93c297*
+0.0.0+26533-ec68a528*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Creates a <code>Flow</code> from a <code>Sink</code> and a <code>Source</code> where the Flow&rsquo;s input will be sent to the <code>Sink</code> and the <code>Flow</code> &rsquo;s output will come from the Source.</p>
 <p><a href="../index.html#flow-operators-composed-of-sinks-and-sources">Flow operators composed of Sinks and Sources</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow$.html#fromSinkAndSource(org.apache.pekko.stream.Graph,org.apache.pekko.stream.Graph)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.fromSinkAndSource</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow$.html#fromSinkAndSource[I,O](sink:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SinkShape[I],_],source:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[O],_]):org.apache.pekko.stream.scaladsl.Flow[I,O,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.fromSinkAndSource</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow$.html#fromSinkAndSource(org.apache.pekko.stream.Graph,org.apache.pekko.stream.Graph)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.fromSinkAndSource</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow$.html#fromSinkAndSource[I,O](sink:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SinkShape[I],_],source:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[O],_]):org.apache.pekko.stream.scaladsl.Flow[I,O,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.fromSinkAndSource</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <img src="../../../images/fromSinkAndSource.png" alt="Diagram" width="350"/>
 <p><code>fromSinkAndSource</code> combines a separate <code>Sink</code> and <code>Source</code> into a <code>Flow</code>.</p>
@@ -471,7 +471,7 @@ connectionStream.runForeach(
     incomingConnection -&gt; incomingConnection.handleWith(serverFlow, system), system);</code></pre></dd>
 </dl>
 <p>With this server running you could use <code>telnet 127.0.0.1 9999</code> to see a stream of timestamps being printed, one every second. </p>
-<p>The following sample is a little bit more advanced and uses the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/javadsl/MergeHub$.html" title="org.apache.pekko.stream.javadsl.MergeHub"><code>MergeHub</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/scaladsl/MergeHub$.html" title="org.apache.pekko.stream.scaladsl.MergeHub"><code>MergeHub</code></a></span> to dynamically merge incoming messages to a single stream which is then fed into a <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/javadsl/BroadcastHub$.html" title="org.apache.pekko.stream.javadsl.BroadcastHub"><code>BroadcastHub</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/scaladsl/BroadcastHub$.html" title="org.apache.pekko.stream.scaladsl.BroadcastHub"><code>BroadcastHub</code></a></span> which emits elements over a dynamic set of downstreams allowing us to create a simplistic little TCP chat server in which a text entered from one client is emitted to all connected clients.</p>
+<p>The following sample is a little bit more advanced and uses the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/MergeHub$.html" title="org.apache.pekko.stream.javadsl.MergeHub"><code>MergeHub</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/MergeHub$.html" title="org.apache.pekko.stream.scaladsl.MergeHub"><code>MergeHub</code></a></span> to dynamically merge incoming messages to a single stream which is then fed into a <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/BroadcastHub$.html" title="org.apache.pekko.stream.javadsl.BroadcastHub"><code>BroadcastHub</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/BroadcastHub$.html" title="org.apache.pekko.stream.scaladsl.BroadcastHub"><code>BroadcastHub</code></a></span> which emits elements over a dynamic set of downstreams allowing us to create a simplistic little TCP chat server in which a text entered from one client is emitted to all connected clients.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -629,7 +629,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26532-3d93c297-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

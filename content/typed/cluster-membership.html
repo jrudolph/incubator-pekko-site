@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26532-3d93c297*
+0.0.0+26533-ec68a528*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26532-3d93c297*
+0.0.0+26533-ec68a528*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -477,7 +477,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 </ul>
 <p>Won&rsquo;t happen. That way the shutdown will be as quick as possible and a new version can be started up without delay.</p>
 <p>If a cluster isn&rsquo;t to be restarted right away then there is no need to prepare it for shutdown.</p>
-<p>To use this feature use <code>Cluster(system).prepareForFullClusterShutdown()</code> in classic or <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/cluster/typed/PrepareForFullClusterShutdown.html" title="org.apache.pekko.cluster.typed.PrepareForFullClusterShutdown"><code>PrepareForFullClusterShutdown</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/cluster/typed/PrepareForFullClusterShutdown.html" title="org.apache.pekko.cluster.typed.PrepareForFullClusterShutdown"><code>PrepareForFullClusterShutdown</code></a></span> in typed.</p>
+<p>To use this feature use <code>Cluster(system).prepareForFullClusterShutdown()</code> in classic or <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/cluster/typed/PrepareForFullClusterShutdown.html" title="org.apache.pekko.cluster.typed.PrepareForFullClusterShutdown"><code>PrepareForFullClusterShutdown</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/cluster/typed/PrepareForFullClusterShutdown.html" title="org.apache.pekko.cluster.typed.PrepareForFullClusterShutdown"><code>PrepareForFullClusterShutdown</code></a></span> in typed.</p>
 <p>Wait for all <code>Up</code> members to become <code>ReadyForShutdown</code> and then all nodes can be shutdown and restarted. Members that aren&rsquo;t <code>Up</code> yet will remain in the <code>Joining</code> or <code>WeaklyUp</code> states. Any node that is already leaving the cluster i.e. in the <code>Leaving</code> or <code>Exiting</code> states will continue to leave the cluster via the normal path.</p>
 <h2><a href="#state-diagrams" name="state-diagrams" class="anchor"><span class="anchor-link"></span></a>State Diagrams</h2>
 <h3><a href="#state-diagram-for-the-member-states" name="state-diagram-for-the-member-states" class="anchor"><span class="anchor-link"></span></a>State Diagram for the Member States</h3>
@@ -594,7 +594,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26532-3d93c297-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

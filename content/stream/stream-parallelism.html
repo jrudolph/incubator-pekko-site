@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26532-3d93c297*
+0.0.0+26533-ec68a528*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26532-3d93c297*
+0.0.0+26533-ec68a528*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#pipelining-and-parallelism" name="pipelining-and-parallelism" class="anchor"><span class="anchor-link"></span></a>Pipelining and Parallelism</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26532-3d93c297-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26532-3d93c297-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26532-3d93c297-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -547,7 +547,7 @@ Flow&lt;ScoopOfBatter, Pancake, NotUsed&gt; pancakeChef =
             }));</code></pre></dd>
 </dl>
 <p>The benefit of parallelizing is that it is easy to scale. In the pancake example it is easy to add a third frying pan with Patrik&rsquo;s method, but Roland cannot add a third frying pan, since that would require a third processing step, which is not practically possible in the case of frying pancakes.</p>
-<p>One drawback of the example code above is it does not preserve the ordering of pancakes. This might be a problem if children like to track their &ldquo;own&rdquo; pancakes. In those cases the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/javadsl/Balance$.html" title="org.apache.pekko.stream.javadsl.Balance"><code>Balance</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/scaladsl/Balance$.html" title="org.apache.pekko.stream.scaladsl.Balance"><code>Balance</code></a></span> and <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/javadsl/Merge$.html" title="org.apache.pekko.stream.javadsl.Merge"><code>Merge</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26532-3d93c297-SNAPSHOT/org/apache/pekko/stream/scaladsl/Merge$.html" title="org.apache.pekko.stream.scaladsl.Merge"><code>Merge</code></a></span> operators should be replaced by round-robin balancing and merging operators which put in and take out pancakes in a strict order.</p>
+<p>One drawback of the example code above is it does not preserve the ordering of pancakes. This might be a problem if children like to track their &ldquo;own&rdquo; pancakes. In those cases the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Balance$.html" title="org.apache.pekko.stream.javadsl.Balance"><code>Balance</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Balance$.html" title="org.apache.pekko.stream.scaladsl.Balance"><code>Balance</code></a></span> and <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Merge$.html" title="org.apache.pekko.stream.javadsl.Merge"><code>Merge</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Merge$.html" title="org.apache.pekko.stream.scaladsl.Merge"><code>Merge</code></a></span> operators should be replaced by round-robin balancing and merging operators which put in and take out pancakes in a strict order.</p>
 <p>A more detailed example of creating a worker pool can be found in the cookbook: <a href="stream-cookbook.html#cookbook-balance">Balancing jobs to a fixed pool of workers</a></p>
 <h2><a href="#combining-pipelining-and-parallel-processing" name="combining-pipelining-and-parallel-processing" class="anchor"><span class="anchor-link"></span></a>Combining pipelining and parallel processing</h2>
 <p>The two concurrency patterns that we demonstrated as means to increase throughput are not exclusive. In fact, it is rather simple to combine the two approaches and streams provide a nice unifying language to express and compose them.</p>
@@ -768,7 +768,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26532-3d93c297-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>
