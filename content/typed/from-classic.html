@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -423,7 +423,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Note that Pekko Classic is still fully supported and existing applications can continue to use the classic APIs. It is also possible to use Pekko Typed together with classic actors within the same ActorSystem, see <a href="coexisting.html">coexistence</a>. For new projects we recommend using the new Actor APIs.</p>
 <h2><a href="#dependencies" name="dependencies" class="anchor"><span class="anchor-link"></span></a>Dependencies</h2>
 <p>The dependencies of the Typed modules are named by adding <code>-typed</code> suffix of the corresponding classic module, with a few exceptions.</p>
-<p>For example <code>pekko-cluster-typed</code>:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>For example <code>pekko-cluster-typed</code>:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-cluster-typed" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -432,7 +432,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster-typed" % PekkoVersio
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -447,7 +447,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster-typed" % PekkoVersio
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-cluster-typed_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -538,7 +538,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/fromclassic/ClassicSample.scala#L17-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/fromclassic/ClassicSample.scala#L17-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.Actor
 import pekko.actor.ActorLogging
 import pekko.actor.Props
@@ -562,7 +562,7 @@ class HelloWorld extends Actor with ActorLogging {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/fromclassic/ClassicSample.java#L17-L60" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.AbstractActor;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/fromclassic/ClassicSample.java#L17-L60" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.AbstractActor;
 import org.apache.pekko.actor.Props;
 import org.apache.pekko.event.Logging;
 import org.apache.pekko.event.LoggingAdapter;
@@ -606,7 +606,7 @@ public class HelloWorld extends AbstractActor {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/fromclassic/TypedSample.scala#L17-L45" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/fromclassic/TypedSample.scala#L17-L45" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.typed.ActorRef
 import pekko.actor.typed.Behavior
 import pekko.actor.typed.scaladsl.AbstractBehavior
@@ -632,7 +632,7 @@ class HelloWorld(context: ActorContext[HelloWorld.Greet]) extends AbstractBehavi
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/fromclassic/TypedSample.java#L17-L72" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.typed.ActorRef;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/fromclassic/TypedSample.java#L17-L72" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.typed.ActorRef;
 import org.apache.pekko.actor.typed.Behavior;
 import org.apache.pekko.actor.typed.javadsl.AbstractBehavior;
 import org.apache.pekko.actor.typed.javadsl.ActorContext;
@@ -794,7 +794,7 @@ public class HelloWorld extends AbstractBehavior&lt;HelloWorld.Greet&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/fromclassic/TypedSample.scala#L49-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object Parent {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/fromclassic/TypedSample.scala#L49-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object Parent {
   sealed trait Command
   case class DelegateToChild(name: String, message: Child.Command) extends Command
   private case class ChildTerminated(name: String) extends Command
@@ -826,7 +826,7 @@ public class HelloWorld extends AbstractBehavior&lt;HelloWorld.Greet&gt; {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/fromclassic/TypedSample.java#L76-L131" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class Parent extends AbstractBehavior&lt;Parent.Command&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/fromclassic/TypedSample.java#L76-L131" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class Parent extends AbstractBehavior&lt;Parent.Command&gt; {
 
   public interface Command {}
 
@@ -948,7 +948,7 @@ public class HelloWorld extends AbstractBehavior&lt;HelloWorld.Greet&gt; {
   <li><a href="testing-sync.html#synchronous-behavior-testing">Typed</a></li>
 </ul>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/from-classic.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/from-classic.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1055,7 +1055,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

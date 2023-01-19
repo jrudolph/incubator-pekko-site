@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,14 +421,14 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Collect the last <code>n</code> values emitted from the stream into a collection.</p>
 <p><a href="../index.html#sink-operators">Sink operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Sink$.html#takeLast(int)" title="org.apache.pekko.stream.javadsl.Sink"><code>Sink.takeLast</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Sink$.html#takeLast[T](n:Int):org.apache.pekko.stream.scaladsl.Sink[T,scala.concurrent.Future[scala.collection.immutable.Seq[T]]]" title="org.apache.pekko.stream.scaladsl.Sink"><code>Sink.takeLast</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Sink$.html#takeLast(int)" title="org.apache.pekko.stream.javadsl.Sink"><code>Sink.takeLast</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Sink$.html#takeLast[T](n:Int):org.apache.pekko.stream.scaladsl.Sink[T,scala.concurrent.Future[scala.collection.immutable.Seq[T]]]" title="org.apache.pekko.stream.scaladsl.Sink"><code>Sink.takeLast</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Materializes into a <span class="group-scala"><code>Future</code></span> <span class="group-java"><code>CompletionStage</code></span> of <span class="group-scala"><code>immutable.Seq[T]</code></span> <span class="group-java"><code>List&lt;In&gt;</code></span> containing the last <code>n</code> collected elements when the stream completes. If the stream completes before signaling at least n elements, the <span class="group-scala"><code>Future</code></span> <span class="group-java"><code>CompletionStage</code></span> will complete with the number of elements taken at that point. If the stream never completes, the <span class="group-scala"><code>Future</code></span> <span class="group-java"><code>CompletionStage</code></span> will never complete. If there is a failure signaled in the stream the <span class="group-scala"><code>Future</code></span> <span class="group-java"><code>CompletionStage</code></span> will be completed with failure.</p>
 <h2><a href="#example" name="example" class="anchor"><span class="anchor-link"></span></a>Example</h2>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/TakeLastSinkSpec.scala#L42-L68" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class Student(name: String, gpa: Double)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/TakeLastSinkSpec.scala#L42-L68" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class Student(name: String, gpa: Double)
 
 val students = List(
   Student(&quot;Alison&quot;, 4.7),
@@ -457,7 +457,7 @@ result.foreach { topThree =&gt;
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SinkDocExamples.java#L23-L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.japi.Pair;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SinkDocExamples.java#L23-L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.japi.Pair;
 import org.reactivestreams.Publisher;
 // pair of (Name, GPA)
 List&lt;Pair&lt;String, Double&gt;&gt; sortedStudents =
@@ -493,7 +493,7 @@ topThree.thenAccept(
 <p><strong>cancels</strong> never</p>
 <p><strong>backpressures</strong> never</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Sink/takeLast.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Sink/takeLast.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -579,7 +579,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

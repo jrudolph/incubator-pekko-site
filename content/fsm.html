@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Pekko Classic pertains to the original Actor APIs, which have been improved by more type safe and guided Actor APIs. Pekko Classic is still fully supported and existing applications can continue to use the classic APIs. It is also possible to use the new Actor APIs together with classic actors in the same ActorSystem, see <a href="typed/coexisting.html">coexistence</a>. For new projects we recommend using <a href="typed/actors.html">the new Actor API</a>.</p></div>
 <p>For the documentation of the new API of this feature and for new projects see <a href="typed/fsm.html">fsm</a>.</p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Finite State Machine actors, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Finite State Machine actors, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -430,7 +430,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code>
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -445,7 +445,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code>
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-actor_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -465,11 +465,11 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L57-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import pekko.actor.{ ActorRef, FSM }
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L57-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import pekko.actor.{ ActorRef, FSM }
 import scala.concurrent.duration._</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L17-L23" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.AbstractFSM;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L17-L23" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.AbstractFSM;
 import org.apache.pekko.actor.ActorRef;
 import org.apache.pekko.japi.pf.UnitMatch;
 import java.util.Arrays;
@@ -481,7 +481,7 @@ import java.time.Duration;</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L31-L37" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// received events
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L31-L37" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// received events
 final case class SetTarget(ref: ActorRef)
 final case class Queue(obj: Any)
 case object Flush
@@ -490,7 +490,7 @@ case object Flush
 final case class Batch(obj: immutable.Seq[Any])</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/Events.java#L23-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java">static final class SetTarget {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/Events.java#L23-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java">static final class SetTarget {
   private final ActorRef ref;
 
   public SetTarget(ActorRef ref) {
@@ -574,7 +574,7 @@ static enum Flush {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L40-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// states
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L40-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// states
 sealed trait State
 case object Idle extends State
 case object Active extends State
@@ -584,7 +584,7 @@ case object Uninitialized extends Data
 final case class Todo(target: ActorRef, queue: immutable.Seq[Any]) extends Data</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L104-L163" target="_blank" title="Go to snippet source">source</a><code class="language-java">// states
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L104-L163" target="_blank" title="Go to snippet source">source</a><code class="language-java">// states
 enum State {
   Idle,
   Active
@@ -639,7 +639,7 @@ final class Todo implements Data {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L61-L104" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Buncher extends FSM[State, Data] {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L61-L104" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Buncher extends FSM[State, Data] {
 
   startWith(Idle, Uninitialized)
 
@@ -675,7 +675,7 @@ final class Todo implements Data {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L33-L166" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class Buncher extends AbstractFSM&lt;State, Data&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L33-L166" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class Buncher extends AbstractFSM&lt;State, Data&gt; {
   {
     startWith(Idle, Uninitialized);
 
@@ -746,7 +746,7 @@ final class Todo implements Data {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L91-L99" target="_blank" title="Go to snippet source">source</a><code class="language-scala">whenUnhandled {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L91-L99" target="_blank" title="Go to snippet source">source</a><code class="language-scala">whenUnhandled {
   // common code for both states
   case Event(Queue(obj), t @ Todo(_, v)) =&gt;
     goto(Active).using(t.copy(queue = v :+ obj))
@@ -757,7 +757,7 @@ final class Todo implements Data {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L80-L94" target="_blank" title="Go to snippet source">source</a><code class="language-java">whenUnhandled(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L80-L94" target="_blank" title="Go to snippet source">source</a><code class="language-java">whenUnhandled(
     matchEvent(
             Queue.class,
             Todo.class,
@@ -778,7 +778,7 @@ final class Todo implements Data {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L74-L80" target="_blank" title="Go to snippet source">source</a><code class="language-scala">onTransition {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L74-L80" target="_blank" title="Go to snippet source">source</a><code class="language-scala">onTransition {
   case Active -&gt; Idle =&gt;
     stateData match {
       case Todo(ref, queue) =&gt; ref ! Batch(queue)
@@ -787,7 +787,7 @@ final class Todo implements Data {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L49-L68" target="_blank" title="Go to snippet source">source</a><code class="language-java">onTransition(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L49-L68" target="_blank" title="Go to snippet source">source</a><code class="language-java">onTransition(
     matchState(
             Active,
             Idle,
@@ -814,7 +814,7 @@ final class Todo implements Data {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L22-L242" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L22-L242" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.Props
 import scala.collection.immutable
 
@@ -977,7 +977,7 @@ class FSMDocSpec extends MyFavoriteTestFrameWorkPlusPekkoTestKit {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/BuncherTest.java#L32-L88" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class BuncherTest extends AbstractJavaTest {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/BuncherTest.java#L32-L88" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class BuncherTest extends AbstractJavaTest {
 
   static ActorSystem system;
 
@@ -1041,7 +1041,7 @@ class FSMDocSpec extends MyFavoriteTestFrameWorkPlusPekkoTestKit {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L61-L104" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Buncher extends FSM[State, Data] {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L61-L104" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Buncher extends FSM[State, Data] {
 
   startWith(Idle, Uninitialized)
 
@@ -1077,7 +1077,7 @@ class FSMDocSpec extends MyFavoriteTestFrameWorkPlusPekkoTestKit {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L33-L166" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class Buncher extends AbstractFSM&lt;State, Data&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L33-L166" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class Buncher extends AbstractFSM&lt;State, Data&gt; {
   {
     startWith(Idle, Uninitialized);
 
@@ -1155,7 +1155,7 @@ class FSMDocSpec extends MyFavoriteTestFrameWorkPlusPekkoTestKit {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L67-L87" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(Idle) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L67-L87" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(Idle) {
   case Event(SetTarget(ref), Uninitialized) =&gt;
     stay().using(Todo(ref, Vector.empty))
 }
@@ -1166,7 +1166,7 @@ when(Active, stateTimeout = 1 second) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L39-L45" target="_blank" title="Go to snippet source">source</a><code class="language-java">when(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/Buncher.java#L39-L45" target="_blank" title="Go to snippet source">source</a><code class="language-java">when(
     Idle,
     matchEvent(
         SetTarget.class,
@@ -1180,10 +1180,10 @@ when(Active, stateTimeout = 1 second) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L218" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(SomeState)(FSM.NullFunction)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L218" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(SomeState)(FSM.NullFunction)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L86" target="_blank" title="Go to snippet source">source</a><code class="language-java">when(SomeState, AbstractFSM.NullFunction());</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L86" target="_blank" title="Go to snippet source">source</a><code class="language-java">when(SomeState, AbstractFSM.NullFunction());</code></pre></dd>
 </dl>
 <h3><a href="#defining-the-initial-state" name="defining-the-initial-state" class="anchor"><span class="anchor-link"></span></a>Defining the Initial State</h3>
 <p>Each FSM needs a starting point, which is declared using</p>
@@ -1195,7 +1195,7 @@ when(Active, stateTimeout = 1 second) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L180-L187" target="_blank" title="Go to snippet source">source</a><code class="language-scala">whenUnhandled {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L180-L187" target="_blank" title="Go to snippet source">source</a><code class="language-scala">whenUnhandled {
   case Event(x: X, data) =&gt;
     log.info(&quot;Received unhandled event: &quot; + x)
     stay()
@@ -1205,7 +1205,7 @@ when(Active, stateTimeout = 1 second) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L134-L146" target="_blank" title="Go to snippet source">source</a><code class="language-java">  whenUnhandled(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L134-L146" target="_blank" title="Go to snippet source">source</a><code class="language-java">  whenUnhandled(
       matchEvent(
               X.class,
               (x, data) -&gt; {
@@ -1232,13 +1232,13 @@ when(Active, stateTimeout = 1 second) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L121-L124" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(SomeState) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L121-L124" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(SomeState) {
   case Event(msg, _) =&gt;
     goto(Processing).using(newData).forMax(5 seconds).replying(WillDo)
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L74-L82" target="_blank" title="Go to snippet source">source</a><code class="language-java">when(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L74-L82" target="_blank" title="Go to snippet source">source</a><code class="language-java">when(
     SomeState,
     matchAnyEvent(
         (msg, data) -&gt; {
@@ -1260,14 +1260,14 @@ when(Active, stateTimeout = 1 second) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L128-L132" target="_blank" title="Go to snippet source">source</a><code class="language-scala">onTransition {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L128-L132" target="_blank" title="Go to snippet source">source</a><code class="language-scala">onTransition {
   case Idle -&gt; Active =&gt; startTimerWithFixedDelay(&quot;timeout&quot;, Tick, 1 second)
   case Active -&gt; _    =&gt; cancelTimer(&quot;timeout&quot;)
   case x -&gt; Idle      =&gt; log.info(&quot;entering Idle from &quot; + x)
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L90-L96" target="_blank" title="Go to snippet source">source</a><code class="language-java">onTransition(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L90-L96" target="_blank" title="Go to snippet source">source</a><code class="language-java">onTransition(
     matchState(
             Idle,
             Active,
@@ -1280,14 +1280,14 @@ when(Active, stateTimeout = 1 second) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L136-L140" target="_blank" title="Go to snippet source">source</a><code class="language-scala">onTransition(handler _)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L136-L140" target="_blank" title="Go to snippet source">source</a><code class="language-scala">onTransition(handler _)
 
 def handler(from: StateType, to: StateType): Unit = {
   // handle it here ...
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L67-L100" target="_blank" title="Go to snippet source">source</a><code class="language-java">public void handler(StateType from, StateType to) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L67-L100" target="_blank" title="Go to snippet source">source</a><code class="language-java">public void handler(StateType from, StateType to) {
   // handle transition here
 }
 
@@ -1302,14 +1302,14 @@ def handler(from: StateType, to: StateType): Unit = {
 <p>Stopping a listener without unregistering will not remove the listener from the subscription list; use <code>UnsubscribeTransitionCallback</code> before stopping the listener.</p><div class="group-scala">
 <h3><a href="#transforming-state" name="transforming-state" class="anchor"><span class="anchor-link"></span></a>Transforming State</h3>
 <p>The partial functions supplied as argument to the <code>when()</code> blocks can be transformed using Scala’s full supplement of functional programming tools. In order to retain type inference, there is a helper function which may be used in case some common handling logic shall be applied to different clauses:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L152-L157" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(SomeState)(transform {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L152-L157" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(SomeState)(transform {
   case Event(bytes: ByteString, read) =&gt; stay().using(read + bytes.length)
 }.using {
   case s @ FSM.State(state, read, timeout, stopReason, replies) if read &gt; 1000 =&gt;
     goto(Processing)
 })</code></pre>
 <p>It goes without saying that the arguments to this method may also be stored, to be used several times, e.g. when applying the same transformation to several <code>when()</code> blocks:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L161-L168" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val processingTrigger: PartialFunction[State, State] = {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L161-L168" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val processingTrigger: PartialFunction[State, State] = {
   case s @ FSM.State(state, read, timeout, stopReason, replies) if read &gt; 1000 =&gt;
     goto(Processing)
 }
@@ -1341,14 +1341,14 @@ startTimerWithFixedDelay(name, msg, interval)
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L144-L148" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(Error) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L144-L148" target="_blank" title="Go to snippet source">source</a><code class="language-scala">when(Error) {
   case Event(&quot;stop&quot;, _) =&gt;
     // do cleanup ...
     stop()
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L104-L111" target="_blank" title="Go to snippet source">source</a><code class="language-java">when(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L104-L111" target="_blank" title="Go to snippet source">source</a><code class="language-java">when(
     Error,
     matchEventEquals(
         &quot;stop&quot;,
@@ -1361,14 +1361,14 @@ startTimerWithFixedDelay(name, msg, interval)
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L172-L176" target="_blank" title="Go to snippet source">source</a><code class="language-scala">onTermination {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L172-L176" target="_blank" title="Go to snippet source">source</a><code class="language-scala">onTermination {
   case StopEvent(FSM.Normal, state, data)         =&gt; // ...
   case StopEvent(FSM.Shutdown, state, data)       =&gt; // ...
   case StopEvent(FSM.Failure(cause), state, data) =&gt; // ...
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L115-L130" target="_blank" title="Go to snippet source">source</a><code class="language-java">onTermination(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L115-L130" target="_blank" title="Go to snippet source">source</a><code class="language-java">onTermination(
     matchStop(
             Normal(),
             (state, data) -&gt; {
@@ -1396,7 +1396,7 @@ startTimerWithFixedDelay(name, msg, interval)
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L193-L206" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.LoggingFSM
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L193-L206" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.LoggingFSM
 class MyFSM extends LoggingFSM[StateType, Data] {
   override def logDepth = 12
   onTermination {
@@ -1410,7 +1410,7 @@ class MyFSM extends LoggingFSM[StateType, Data] {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L152-L209" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyFSM extends AbstractLoggingFSM&lt;StateType, Data&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L152-L209" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyFSM extends AbstractLoggingFSM&lt;StateType, Data&gt; {
   @Override
   public int logDepth() {
     return 12;
@@ -1448,7 +1448,7 @@ class MyFSM extends LoggingFSM[StateType, Data] {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L193-L206" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.LoggingFSM
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FSMDocSpec.scala#L193-L206" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.LoggingFSM
 class MyFSM extends LoggingFSM[StateType, Data] {
   override def logDepth = 12
   onTermination {
@@ -1462,7 +1462,7 @@ class MyFSM extends LoggingFSM[StateType, Data] {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L152-L209" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyFSM extends AbstractLoggingFSM&lt;StateType, Data&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/fsm/FSMDocTest.java#L152-L209" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyFSM extends AbstractLoggingFSM&lt;StateType, Data&gt; {
   @Override
   public int logDepth() {
     return 12;
@@ -1492,7 +1492,7 @@ class MyFSM extends LoggingFSM[StateType, Data] {
 <p>The log buffer is allocated during actor creation, which is why the configuration is done using a virtual method call. If you want to override with a <code>val</code>, make sure that its initialization happens before the initializer of <code>LoggingFSM</code> runs, and do not change the value returned by <code>logDepth</code> after the buffer has been allocated.</p></div>
 <p>The contents of the event log are available using method <code>getLog</code>, which returns an <code>IndexedSeq[LogEntry]</code> where the oldest entry is at index zero.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/fsm.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/fsm.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1579,7 +1579,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

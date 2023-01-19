@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -431,12 +431,12 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   <li><a href="https://doc.akka.io/docs/akka-management/current/discovery/consul.html">Consul</a></li>
   <li><a href="https://doc.akka.io/docs/akka-management/current/discovery/marathon.html">Marathon API</a></li>
 </ul>
-<h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-discovery" % PekkoVersion</code></pre></dd><dt>Gradle</dt><dd><pre class="prettyprint"><code class="language-gradle">def versions = [
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-discovery_${versions.ScalaBinary}"
 }</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
@@ -447,7 +447,7 @@ dependencies {
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -463,7 +463,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Discovery</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-discovery</div>
-  <div>0.0.0+26533-ec68a528-SNAPSHOT</div>
+  <div>0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -478,11 +478,11 @@ dependencies {
   <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/discovery/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
-  <div><a href="https://discuss.akka.io" target="_blank" rel="noopener noreferrer">Lightbend Discuss</a></div>
-  <div><a href="https://gitter.im/akka/akka" target="_blank" rel="noopener noreferrer">akka/akka Gitter channel</a></div>
+  <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
+  <div><a href="https://github.com/apache/incubator-pekko/discussions" target="_blank" rel="noopener noreferrer">apache/incubator-pekko discussion</a></div>
   </td></tr>
   <tr><th>Release notes</th><td><a href="https://akka.io/blog/news-archive.html">akka.io blog</a></td></tr>
-  <tr><th>Issues</th><td><a href="https://github.com/akka/akka/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
+  <tr><th>Issues</th><td><a href="https://github.com/apache/incubator-pekko/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
   <tr><th>Sources</th><td><a href="https://github.com/apache/incubator-pekko" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-pekko</a></td></tr>
 </table>
 
@@ -493,27 +493,27 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/discovery/src/test/scala/doc/org/apache/pekko/discovery/CompileOnlySpec.scala#L25-L28" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.discovery.Discovery
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/discovery/src/test/scala/doc/org/apache/pekko/discovery/CompileOnlySpec.scala#L25-L28" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.discovery.Discovery
 
 val system = ActorSystem()
 val serviceDiscovery = Discovery(system).discovery</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/discovery/src/test/java/jdoc/org/apache/pekko/discovery/CompileOnlyTest.java#L27-L28" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorSystem as = ActorSystem.create();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/discovery/src/test/java/jdoc/org/apache/pekko/discovery/CompileOnlyTest.java#L27-L28" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorSystem as = ActorSystem.create();
 ServiceDiscovery serviceDiscovery = Discovery.get(as).discovery();</code></pre></dd>
 </dl>
 <p>A <code>Lookup</code> contains a mandatory <code>serviceName</code> and an optional <code>portName</code> and <code>protocol</code>. How these are interpreted is discovery method dependent e.g.DNS does an A/AAAA record query if any of the fields are missing and an SRV query for a full look up:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/discovery/src/test/scala/doc/org/apache/pekko/discovery/CompileOnlySpec.scala#L32-L36" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.discovery.Lookup
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/discovery/src/test/scala/doc/org/apache/pekko/discovery/CompileOnlySpec.scala#L32-L36" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.discovery.Lookup
 
 serviceDiscovery.lookup(Lookup(&quot;pekko.io&quot;), 1.second)
 // Convenience for a Lookup with only a serviceName
 serviceDiscovery.lookup(&quot;pekko.io&quot;, 1.second)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/discovery/src/test/java/jdoc/org/apache/pekko/discovery/CompileOnlyTest.java#L32-L34" target="_blank" title="Go to snippet source">source</a><code class="language-java">serviceDiscovery.lookup(Lookup.create(&quot;pekko.io&quot;), Duration.ofSeconds(1));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/discovery/src/test/java/jdoc/org/apache/pekko/discovery/CompileOnlyTest.java#L32-L34" target="_blank" title="Go to snippet source">source</a><code class="language-java">serviceDiscovery.lookup(Lookup.create(&quot;pekko.io&quot;), Duration.ofSeconds(1));
 // convenience for a Lookup with only a serviceName
 serviceDiscovery.lookup(&quot;pekko.io&quot;, Duration.ofSeconds(1));</code></pre></dd>
 </dl>
@@ -521,7 +521,7 @@ serviceDiscovery.lookup(&quot;pekko.io&quot;, Duration.ofSeconds(1));</code></pr
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/discovery/src/test/scala/doc/org/apache/pekko/discovery/CompileOnlySpec.scala#L40-L45" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/discovery/src/test/scala/doc/org/apache/pekko/discovery/CompileOnlySpec.scala#L40-L45" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.discovery.Lookup
 import pekko.discovery.ServiceDiscovery.Resolved
 
@@ -529,7 +529,7 @@ val lookup: Future[Resolved] =
   serviceDiscovery.lookup(Lookup(&quot;pekko.io&quot;).withPortName(&quot;remoting&quot;).withProtocol(&quot;tcp&quot;), 1.second)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/discovery/src/test/java/jdoc/org/apache/pekko/discovery/CompileOnlyTest.java#L38-L41" target="_blank" title="Go to snippet source">source</a><code class="language-java">CompletionStage&lt;ServiceDiscovery.Resolved&gt; lookup =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/discovery/src/test/java/jdoc/org/apache/pekko/discovery/CompileOnlyTest.java#L38-L41" target="_blank" title="Go to snippet source">source</a><code class="language-java">CompletionStage&lt;ServiceDiscovery.Resolved&gt; lookup =
     serviceDiscovery.lookup(
         Lookup.create(&quot;pekko.io&quot;).withPortName(&quot;remoting&quot;).withProtocol(&quot;tcp&quot;),
         Duration.ofSeconds(1));</code></pre></dd>
@@ -549,7 +549,7 @@ val lookup: Future[Resolved] =
   <li>SRV protocol = protocol</li>
 </ul>
 <p>Configure <code>pekko-dns</code> to be used as the discovery implementation in your <code>application.conf</code>:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/discovery/DnsDiscoveryDocSpec.scala#L25-L29" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/discovery/DnsDiscoveryDocSpec.scala#L25-L29" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko {
   discovery {
     method = pekko-dns
   }
@@ -558,7 +558,7 @@ val lookup: Future[Resolved] =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/discovery/DnsDiscoveryDocSpec.scala#L39-L45" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/discovery/DnsDiscoveryDocSpec.scala#L39-L45" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.discovery.Discovery
 import pekko.discovery.ServiceDiscovery
 
@@ -567,7 +567,7 @@ val discovery: ServiceDiscovery = Discovery(system).discovery
 val result: Future[ServiceDiscovery.Resolved] = discovery.lookup(&quot;pekko.io&quot;, resolveTimeout = 3.seconds)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/discovery/DnsDiscoveryDocTest.java#L18-L56" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.discovery.Discovery;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/discovery/DnsDiscoveryDocTest.java#L18-L56" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.discovery.Discovery;
 import org.apache.pekko.discovery.ServiceDiscovery;
 
 ServiceDiscovery discovery = Discovery.get(system).discovery();
@@ -689,7 +689,7 @@ a-double.pekko.test.     86400   IN      A       192.168.1.22
   <li><code>discovery-method</code> now has to be a configuration location under <code>pekko.discovery</code> with at minimum a property <code>class</code> specifying the fully qualified name of the implementation of <code>org.apache.pekko.discovery.ServiceDiscovery</code>.  Previous versions allowed this to be a class name or a fully qualified config location e.g. <code>pekko.discovery.kubernetes-api</code> rather than just <code>kubernetes-api</code></li>
 </ul>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/discovery/index.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/discovery/index.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -777,7 +777,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

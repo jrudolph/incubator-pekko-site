@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Create a sink which materializes into an <code>InputStream</code> that can be read to trigger demand through the sink.</p>
 <p><a href="../index.html#additional-sink-and-source-converters">Additional Sink and Source converters</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/StreamConverters$.html#asInputStream()" title="org.apache.pekko.stream.javadsl.StreamConverters"><code>StreamConverters.asInputStream</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/StreamConverters$.html#asInputStream(readTimeout:scala.concurrent.duration.FiniteDuration):org.apache.pekko.stream.scaladsl.Sink[org.apache.pekko.util.ByteString,java.io.InputStream]" title="org.apache.pekko.stream.scaladsl.StreamConverters"><code>StreamConverters.asInputStream</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/StreamConverters$.html#asInputStream()" title="org.apache.pekko.stream.javadsl.StreamConverters"><code>StreamConverters.asInputStream</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/StreamConverters$.html#asInputStream(readTimeout:scala.concurrent.duration.FiniteDuration):org.apache.pekko.stream.scaladsl.Sink[org.apache.pekko.util.ByteString,java.io.InputStream]" title="org.apache.pekko.stream.scaladsl.StreamConverters"><code>StreamConverters.asInputStream</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Create a sink which materializes into an <code>InputStream</code> that can be read to trigger demand through the sink. Bytes emitted through the stream will be available for reading through the <code>InputStream</code></p>
 <p>The <code>InputStream</code> will be ended when the stream flowing into this <code>Sink</code> completes, and the closing the <code>InputStream</code> will cancel the inflow of this <code>Sink</code>.</p>
@@ -429,18 +429,18 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p><strong>cancels</strong> when the <code>InputStream</code> is closed</p>
 <p><strong>backpressures</strong> when no read is pending on the <code>InputStream</code></p></div>
 <h2><a href="#example" name="example" class="anchor"><span class="anchor-link"></span></a>Example</h2>
-<p>Here is an example of a <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Sink.html" title="org.apache.pekko.stream.javadsl.Sink"><code>Sink</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Sink.html" title="org.apache.pekko.stream.scaladsl.Sink"><code>Sink</code></a></span> that reads the contents from the source, converts it into uppercase and materializes into a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html" title="java.io.InputStream"><code>java.io.InputStream</code></a></p>
+<p>Here is an example of a <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Sink.html" title="org.apache.pekko.stream.javadsl.Sink"><code>Sink</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Sink.html" title="org.apache.pekko.stream.scaladsl.Sink"><code>Sink</code></a></span> that reads the contents from the source, converts it into uppercase and materializes into a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html" title="java.io.InputStream"><code>java.io.InputStream</code></a></p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/converters/ToFromJavaIOStreams.scala#L57-L61" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val toUpperCase: Flow[ByteString, ByteString, NotUsed] = Flow[ByteString].map(_.map(_.toChar.toUpper.toByte))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/converters/ToFromJavaIOStreams.scala#L57-L61" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val toUpperCase: Flow[ByteString, ByteString, NotUsed] = Flow[ByteString].map(_.map(_.toChar.toUpper.toByte))
 val source: Source[ByteString, NotUsed] = Source.single(ByteString(&quot;some random input&quot;))
 val sink: Sink[ByteString, InputStream] = StreamConverters.asInputStream()
 
 val inputStream: InputStream = source.via(toUpperCase).runWith(sink)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/converters/ToFromJavaIOStreams.java#L102-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java">Charset charset = Charset.defaultCharset();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/converters/ToFromJavaIOStreams.java#L102-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java">Charset charset = Charset.defaultCharset();
 Flow&lt;ByteString, ByteString, NotUsed&gt; toUpperCase =
     Flow.&lt;ByteString&gt;create()
         .map(
@@ -457,7 +457,7 @@ final InputStream stream =
 </code></pre></dd>
 </dl>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/StreamConverters/asInputStream.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/StreamConverters/asInputStream.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -543,7 +543,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

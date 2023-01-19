@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,11 +421,11 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>A periodical repetition of an arbitrary object.</p>
 <p><a href="../index.html#source-operators">Source operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#tick(java.time.Duration,java.time.Duration,java.lang.Object)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.tick</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#tick[T](initialDelay:scala.concurrent.duration.FiniteDuration,interval:scala.concurrent.duration.FiniteDuration,tick:T):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.actor.Cancellable]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.tick</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#tick(java.time.Duration,java.time.Duration,java.lang.Object)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.tick</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#tick[T](initialDelay:scala.concurrent.duration.FiniteDuration,interval:scala.concurrent.duration.FiniteDuration,tick:T):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.actor.Cancellable]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.tick</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>A periodical repetition of an arbitrary object. Delay of first tick is specified separately from interval of the following ticks. </p>
 <p>If downstream is applying backpressure when the time period has passed the tick is dropped.</p>
-<p>The source materializes a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/Cancellable.html" title="org.apache.pekko.actor.Cancellable"><code>Cancellable</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/Cancellable.html" title="org.apache.pekko.actor.Cancellable"><code>Cancellable</code></a></span> that can be used to complete the source.</p><div class="callout note "><div class="callout-title">Note</div>
+<p>The source materializes a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/Cancellable.html" title="org.apache.pekko.actor.Cancellable"><code>Cancellable</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/Cancellable.html" title="org.apache.pekko.actor.Cancellable"><code>Cancellable</code></a></span> that can be used to complete the source.</p><div class="callout note "><div class="callout-title">Note</div>
 <p>The element must be immutable as the source can be materialized several times and may pass it between threads, see the second example for achieving a periodical element that changes over time.</p></div>
 <p>See also:</p>
 <ul>
@@ -437,7 +437,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/source/Tick.scala#L41-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/source/Tick.scala#L41-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source
   .tick(
     1.second, // delay of first tick
     1.second, // delay of subsequent ticks
@@ -446,7 +446,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   .runForeach(println)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/source/Tick.java#L56-L61" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source.tick(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/source/Tick.java#L56-L61" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source.tick(
         Duration.ofSeconds(1), // delay of first tick
         Duration.ofSeconds(1), // delay of subsequent ticks
         &quot;tick&quot; // element emitted each tick
@@ -457,7 +457,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/source/Tick.scala#L53-L60" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val periodicActorResponse: Source[String, Cancellable] = Source
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/source/Tick.scala#L53-L60" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val periodicActorResponse: Source[String, Cancellable] = Source
   .tick(1.second, 1.second, &quot;tick&quot;)
   .mapAsync(1) { _ =&gt;
     implicit val timeout: Timeout = 3.seconds
@@ -467,7 +467,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   .map(_.text);</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/source/Tick.java#L67-L77" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;String, Cancellable&gt; periodicActorResponse =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/source/Tick.java#L67-L77" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;String, Cancellable&gt; periodicActorResponse =
     Source.tick(Duration.ofSeconds(1), Duration.ofSeconds(1), &quot;tick&quot;)
         .mapAsync(
             1,
@@ -483,18 +483,18 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/source/Tick.scala#L64-L65" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val zipWithLatestResponse: Flow[Int, (Int, String), NotUsed] =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/source/Tick.scala#L64-L65" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val zipWithLatestResponse: Flow[Int, (Int, String), NotUsed] =
   Flow[Int].zipLatest(periodicActorResponse);</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/source/Tick.java#L81-L82" target="_blank" title="Go to snippet source">source</a><code class="language-java">Flow&lt;Integer, Pair&lt;Integer, String&gt;, NotUsed&gt; zipWithLatestResponse =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/source/Tick.java#L81-L82" target="_blank" title="Go to snippet source">source</a><code class="language-java">Flow&lt;Integer, Pair&lt;Integer, String&gt;, NotUsed&gt; zipWithLatestResponse =
     Flow.of(Integer.class).zipLatest(periodicActorResponse);</code></pre></dd>
 </dl>
 <h2><a href="#reactive-streams-semantics" name="reactive-streams-semantics" class="anchor"><span class="anchor-link"></span></a>Reactive Streams semantics</h2><div class="callout">
 <p><strong>emits</strong> periodically, if there is downstream backpressure ticks are skipped</p>
 <p><strong>completes</strong> when the materialized <code>Cancellable</code> is cancelled</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source/tick.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source/tick.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -580,7 +580,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

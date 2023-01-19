@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#durable-state" name="durable-state" class="anchor"><span class="anchor-link"></span></a>Durable State</h1>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Pekko Persistence, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Persistence, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-persistence-typed" % PekkoVersion,
   "org.apache.pekko" %% "pekko-persistence-testkit" % PekkoVersion % Test
@@ -430,7 +430,7 @@ libraryDependencies ++= Seq(
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -450,7 +450,7 @@ libraryDependencies ++= Seq(
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-persistence-typed_${versions.ScalaBinary}"
   testImplementation "org.apache.pekko:pekko-persistence-testkit_${versions.ScalaBinary}"
@@ -460,7 +460,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Event Sourcing (typed)</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-persistence-typed</div>
-  <div>0.0.0+26533-ec68a528-SNAPSHOT</div>
+  <div>0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -475,11 +475,11 @@ dependencies {
   <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/persistence/typed/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
-  <div><a href="https://discuss.akka.io" target="_blank" rel="noopener noreferrer">Lightbend Discuss</a></div>
-  <div><a href="https://gitter.im/akka/akka" target="_blank" rel="noopener noreferrer">akka/akka Gitter channel</a></div>
+  <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
+  <div><a href="https://github.com/apache/incubator-pekko/discussions" target="_blank" rel="noopener noreferrer">apache/incubator-pekko discussion</a></div>
   </td></tr>
   <tr><th>Release notes</th><td><a href="https://akka.io/blog/news-archive.html">akka.io blog</a></td></tr>
-  <tr><th>Issues</th><td><a href="https://github.com/akka/akka/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
+  <tr><th>Issues</th><td><a href="https://github.com/apache/incubator-pekko/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
   <tr><th>Sources</th><td><a href="https://github.com/apache/incubator-pekko" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-pekko</a></td></tr>
 </table>
 
@@ -493,11 +493,11 @@ dependencies {
 <p>Pekko Persistence also supports <a href="../persistence.html">Event Sourcing</a> based implementation, where only the <em>events</em> that are persisted by the actor are stored, but not the actual state of the actor. By storing all events, using this model, a stateful actor can be recovered by replaying the stored events to the actor, which allows it to rebuild its state.</p>
 <p>Since each entity lives on one node, consistency is guaranteed and reads can be served directly from memory. For details on how this guarantee is ensured, have a look at the <a href="persistence.html#cluster-sharding-and-durablestatebehavior">Cluster Sharding and DurableStateBehavior</a> section below.</p>
 <h2><a href="#example-and-core-api" name="example-and-core-api" class="anchor"><span class="anchor-link"></span></a>Example and core API</h2>
-<p>Let&rsquo;s start with a simple example that models a counter using an Pekko persistent actor. The minimum required for a <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/state/javadsl/DurableStateBehavior.html" title="org.apache.pekko.persistence.typed.state.javadsl.DurableStateBehavior"><code>DurableStateBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/state/scaladsl/DurableStateBehavior.html" title="org.apache.pekko.persistence.typed.state.scaladsl.DurableStateBehavior"><code>DurableStateBehavior</code></a></span> is:</p>
+<p>Let&rsquo;s start with a simple example that models a counter using an Pekko persistent actor. The minimum required for a <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/state/javadsl/DurableStateBehavior.html" title="org.apache.pekko.persistence.typed.state.javadsl.DurableStateBehavior"><code>DurableStateBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/state/scaladsl/DurableStateBehavior.html" title="org.apache.pekko.persistence.typed.state.scaladsl.DurableStateBehavior"><code>DurableStateBehavior</code></a></span> is:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L25-L86" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L25-L86" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.persistence.typed.state.scaladsl.DurableStateBehavior
 import pekko.persistence.typed.PersistenceId
 
@@ -516,7 +516,7 @@ object MyPersistentCounter {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L38-L74" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class MyPersistentCounter
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L38-L74" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class MyPersistentCounter
     extends DurableStateBehavior&lt;MyPersistentCounter.Command&lt;?&gt;, MyPersistentCounter.State&gt; {
 
   interface Command&lt;ReplyMessage&gt; {}
@@ -563,7 +563,7 @@ object MyPersistentCounter {
 </ul>
 <p>Next we&rsquo;ll discuss each of these in detail.</p>
 <h3><a href="#persistenceid" name="persistenceid" class="anchor"><span class="anchor-link"></span></a>PersistenceId</h3>
-<p>The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/PersistenceId.html" title="org.apache.pekko.persistence.typed.PersistenceId"><code>PersistenceId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/PersistenceId.html" title="org.apache.pekko.persistence.typed.PersistenceId"><code>PersistenceId</code></a></span> is the stable unique identifier for the persistent actor in the backend durabe state store.</p>
+<p>The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/PersistenceId.html" title="org.apache.pekko.persistence.typed.PersistenceId"><code>PersistenceId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/PersistenceId.html" title="org.apache.pekko.persistence.typed.PersistenceId"><code>PersistenceId</code></a></span> is the stable unique identifier for the persistent actor in the backend durabe state store.</p>
 <p><a href="../cluster-sharding.html">Cluster Sharding</a> is typically used together with <code>DurableStateBehavior</code> to ensure that there is only one active entity for each <code>PersistenceId</code> (<code>entityId</code>). There are techniques to ensure this uniqueness, an example of which can be found in the <a href="../cluster-sharding.html#persistence-example">Persistence example in the Cluster Sharding documentation</a>. This illustrates how to construct the <code>PersistenceId</code> from the <code>entityTypeKey</code> and <code>entityId</code> provided by the <code>EntityContext</code>.</p>
 <p>The <code>entityId</code> in Cluster Sharding is the business domain identifier which uniquely identifies the instance of that specific <code>EntityType</code>. This means that across the cluster we have a unique combination of (<code>EntityType</code>, <code>EntityId</code>). Hence the <code>entityId</code> might not be unique enough to be used as the <code>PersistenceId</code> by itself. For example two different types of entities may have the same <code>entityId</code>. To create a unique <code>PersistenceId</code> the <code>entityId</code> should be prefixed with a stable name of the entity type, which typically is the same as the <code>EntityTypeKey.name</code> that is used in Cluster Sharding. There are <span class="group-scala"><code>PersistenceId.apply</code></span><span class="group-java"><code>PersistenceId.of</code></span> factory methods to help with constructing such <code>PersistenceId</code> from an <code>entityTypeHint</code> and <code>entityId</code>.</p>
 <p>The default separator when concatenating the <code>entityTypeHint</code> and <code>entityId</code> is <code>|</code>, but a custom separator is supported.</p>
@@ -584,14 +584,14 @@ object MyPersistentCounter {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L40-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command[ReplyMessage] extends CborSerializable
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L40-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command[ReplyMessage] extends CborSerializable
 final case object Increment extends Command[Nothing]
 final case class IncrementBy(value: Int) extends Command[Nothing]
 final case class GetValue(replyTo: ActorRef[State]) extends Command[State]
 final case object Delete extends Command[Nothing]</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L86-L107" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface Command&lt;ReplyMessage&gt; {}
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L86-L107" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface Command&lt;ReplyMessage&gt; {}
 
 public enum Increment implements Command&lt;Void&gt; {
   INSTANCE
@@ -618,10 +618,10 @@ public static class GetValue implements Command&lt;State&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L48" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class State(value: Int) extends CborSerializable</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L48" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class State(value: Int) extends CborSerializable</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L111-L121" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class State {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L111-L121" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class State {
   private final int value;
 
   public State(int value) {
@@ -642,7 +642,7 @@ public static class GetValue implements Command&lt;State&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L52-L60" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import pekko.persistence.typed.state.scaladsl.Effect
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L52-L60" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import pekko.persistence.typed.state.scaladsl.Effect
 
 val commandHandler: (State, Command[_]) =&gt; Effect[State] = (state, command) =&gt;
   command match {
@@ -653,7 +653,7 @@ val commandHandler: (State, Command[_]) =&gt; Effect[State] = (state, command) =
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L141-L153" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L141-L153" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public CommandHandler&lt;Command&lt;?&gt;, State&gt; commandHandler() {
   return newCommandHandlerBuilder()
       .forAnyState()
@@ -671,7 +671,7 @@ public CommandHandler&lt;Command&lt;?&gt;, State&gt; commandHandler() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L25-L69" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L25-L69" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.persistence.typed.state.scaladsl.DurableStateBehavior
 import pekko.persistence.typed.PersistenceId
 
@@ -683,7 +683,7 @@ def counter(id: String): DurableStateBehavior[Command[_], State] = {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L23-L155" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.persistence.typed.state.javadsl.DurableStateBehavior;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L23-L155" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.persistence.typed.state.javadsl.DurableStateBehavior;
 import org.apache.pekko.persistence.typed.PersistenceId;
 
 public class MyPersistentCounter
@@ -746,7 +746,7 @@ public class MyPersistentCounter
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L94-L113" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command[ReplyMessage] extends CborSerializable
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L94-L113" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command[ReplyMessage] extends CborSerializable
 final case class IncrementWithConfirmation(replyTo: ActorRef[Done]) extends Command[Done]
 final case class GetValue(replyTo: ActorRef[State]) extends Command[State]
 
@@ -768,7 +768,7 @@ def counter(persistenceId: PersistenceId): DurableStateBehavior[Command[_], Stat
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L29-L222" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.Done;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L29-L222" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.Done;
 interface Command&lt;ReplyMessage&gt; {}
 
 public static class IncrementWithConfirmation implements Command&lt;Void&gt; {
@@ -831,7 +831,7 @@ public CommandHandler&lt;Command&lt;?&gt;, State&gt; commandHandler() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/org/apache/pekko/persistence/typed/scaladsl/PersistentActorCompileOnlyTest.scala#L250-L255" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Example factoring out a chained effect to use in several places with `thenRun`
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/org/apache/pekko/persistence/typed/scaladsl/PersistentActorCompileOnlyTest.scala#L250-L255" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Example factoring out a chained effect to use in several places with `thenRun`
 val commonChainedEffects: Mood =&gt; Unit = _ =&gt; println(&quot;Command processed&quot;)
 // Then in a command handler:
 Effect
@@ -839,7 +839,7 @@ Effect
   .thenRun(commonChainedEffects) // add on common chained effect</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/org/apache/pekko/persistence/typed/javadsl/PersistentActorCompileOnlyTest.java#L217-L244" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Example factoring out a chained effect to use in several places with `thenRun`
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/org/apache/pekko/persistence/typed/javadsl/PersistentActorCompileOnlyTest.java#L217-L244" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Example factoring out a chained effect to use in several places with `thenRun`
 static final Procedure&lt;ExampleState&gt; commonChainedEffect =
     state -&gt; System.out.println(&quot;Command handled!&quot;);
 
@@ -866,11 +866,11 @@ static final Procedure&lt;ExampleState&gt; commonChainedEffect =
 <p><a href="../cluster-sharding.html">Cluster Sharding</a> is an excellent fit to spread persistent actors over a cluster, addressing them by id. It makes it possible to have more persistent actors exist in the cluster than what would fit in the memory of one node. Cluster sharding improves the resilience of the cluster. If a node crashes, the persistent actors are quickly started on a new node and can resume operations.</p>
 <p>The <code>DurableStateBehavior</code> can then be run as any plain actor as described in <a href="../actors.html">actors documentation</a>, but since Pekko Persistence is based on the single-writer principle, the persistent actors are typically used together with Cluster Sharding. For a particular <code>persistenceId</code> only one persistent actor instance should be active at one time. Cluster Sharding ensures that there is only one active entity (or actor instance) for each id. </p>
 <h2><a href="#accessing-the-actorcontext" name="accessing-the-actorcontext" class="anchor"><span class="anchor-link"></span></a>Accessing the ActorContext</h2>
-<p>If the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/state/javadsl/DurableStateBehavior.html" title="org.apache.pekko.persistence.typed.state.javadsl.DurableStateBehavior"><code>DurableStateBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/state/scaladsl/DurableStateBehavior.html" title="org.apache.pekko.persistence.typed.state.scaladsl.DurableStateBehavior"><code>DurableStateBehavior</code></a></span> needs to use the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/ActorContext.html" title="org.apache.pekko.actor.typed.javadsl.ActorContext"><code>ActorContext</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/ActorContext.html" title="org.apache.pekko.actor.typed.scaladsl.ActorContext"><code>ActorContext</code></a></span>, for example to spawn child actors, it can be obtained by wrapping construction with <code>Behaviors.setup</code>:</p>
+<p>If the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/state/javadsl/DurableStateBehavior.html" title="org.apache.pekko.persistence.typed.state.javadsl.DurableStateBehavior"><code>DurableStateBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/state/scaladsl/DurableStateBehavior.html" title="org.apache.pekko.persistence.typed.state.scaladsl.DurableStateBehavior"><code>DurableStateBehavior</code></a></span> needs to use the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/ActorContext.html" title="org.apache.pekko.actor.typed.javadsl.ActorContext"><code>ActorContext</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/ActorContext.html" title="org.apache.pekko.actor.typed.scaladsl.ActorContext"><code>ActorContext</code></a></span>, for example to spawn child actors, it can be obtained by wrapping construction with <code>Behaviors.setup</code>:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L119-L132" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L119-L132" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.persistence.typed.state.scaladsl.Effect
 import pekko.persistence.typed.state.scaladsl.DurableStateBehavior.CommandHandler
 
@@ -886,7 +886,7 @@ def apply(): Behavior[String] =
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L230-L266" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class MyPersistentBehavior
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L230-L266" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class MyPersistentBehavior
     extends DurableStateBehavior&lt;MyPersistentBehavior.Command, MyPersistentBehavior.State&gt; {
 
   public static Behavior&lt;Command&gt; create(PersistenceId persistenceId) {
@@ -917,7 +917,7 @@ def apply(): Behavior[String] =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L33-L46" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait State
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L33-L46" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait State
 
 case object BlankState extends State
 
@@ -933,7 +933,7 @@ final case class PublishedState(content: PostContent) extends State {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L32-L76" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface State {}
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L32-L76" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface State {}
 
 enum BlankState implements State {
   INSTANCE
@@ -983,7 +983,7 @@ static class PublishedState implements State {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L50-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L50-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
 final case class AddPost(content: PostContent, replyTo: ActorRef[StatusReply[AddPostDone]]) extends Command
 final case class AddPostDone(postId: String)
 final case class GetPost(replyTo: ActorRef[PostContent]) extends Command
@@ -992,7 +992,7 @@ final case class Publish(replyTo: ActorRef[Done]) extends Command
 final case class PostContent(postId: String, title: String, body: String)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L80-L136" target="_blank" title="Go to snippet source">source</a><code class="language-java">public interface Command {}
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L80-L136" target="_blank" title="Go to snippet source">source</a><code class="language-java">public interface Command {}
 public static class AddPost implements Command {
   final PostContent content;
   final ActorRef&lt;AddPostDone&gt; replyTo;
@@ -1052,7 +1052,7 @@ public static class PostContent implements Command {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L71-L129" target="_blank" title="Go to snippet source">source</a><code class="language-scala">private val commandHandler: (State, Command) =&gt; Effect[State] = { (state, command) =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L71-L129" target="_blank" title="Go to snippet source">source</a><code class="language-scala">private val commandHandler: (State, Command) =&gt; Effect[State] = { (state, command) =&gt;
   state match {
 
     case BlankState =&gt;
@@ -1111,7 +1111,7 @@ private def getPost(state: PublishedState, replyTo: ActorRef[PostContent]): Effe
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L160-L220" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L160-L220" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public CommandHandler&lt;Command, State&gt; commandHandler() {
   CommandHandlerBuilder&lt;Command, State&gt; builder = newCommandHandlerBuilder();
 
@@ -1175,7 +1175,7 @@ private Effect&lt;State&gt; onGetPost(PublishedState state, GetPost cmd) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L27-L134" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object BlogPostEntityDurableState {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L27-L134" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object BlogPostEntityDurableState {
   // commands, state defined here
 
   def apply(entityId: String, persistenceId: PersistenceId): Behavior[Command] = {
@@ -1189,7 +1189,7 @@ private Effect&lt;State&gt; onGetPost(PublishedState state, GetPost cmd) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L24-L225" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class BlogPostEntityDurableState
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L24-L225" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class BlogPostEntityDurableState
     extends DurableStateBehavior&lt;
         BlogPostEntityDurableState.Command, BlogPostEntityDurableState.State&gt; {
   // commands and state as in above snippets
@@ -1223,11 +1223,11 @@ private Effect&lt;State&gt; onGetPost(PublishedState state, GetPost cmd) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L52-L53" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class AddPost(content: PostContent, replyTo: ActorRef[StatusReply[AddPostDone]]) extends Command
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L52-L53" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class AddPost(content: PostContent, replyTo: ActorRef[StatusReply[AddPostDone]]) extends Command
 final case class AddPostDone(postId: String)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L82-L98" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class AddPost implements Command {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L82-L98" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class AddPost implements Command {
   final PostContent content;
   final ActorRef&lt;AddPostDone&gt; replyTo;
 
@@ -1248,13 +1248,13 @@ public static class AddPostDone implements Command {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L101-L104" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Effect.persist(DraftState(cmd.content)).thenRun { _ =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.scala#L101-L104" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Effect.persist(DraftState(cmd.content)).thenRun { _ =&gt;
   // After persist is done additional side effects can be performed
   cmd.replyTo ! StatusReply.Success(AddPostDone(cmd.content.postId))
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L184-L186" target="_blank" title="Go to snippet source">source</a><code class="language-java">return Effect()
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BlogPostEntityDurableState.java#L184-L186" target="_blank" title="Go to snippet source">source</a><code class="language-java">return Effect()
     .persist(new DraftState(cmd.content))
     .thenRun(() -&gt; cmd.replyTo.tell(new AddPostDone(cmd.content.postId)));</code></pre></dd>
 </dl>
@@ -1262,13 +1262,13 @@ public static class AddPostDone implements Command {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding-typed/src/test/scala/docs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithCommandHandlersInDurableState.scala#L137-L140" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def apply(persistenceId: PersistenceId): Behavior[Command] = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding-typed/src/test/scala/docs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithCommandHandlersInDurableState.scala#L137-L140" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def apply(persistenceId: PersistenceId): Behavior[Command] = {
   DurableStateBehavior
     .withEnforcedReplies[Command, Account](persistenceId, EmptyAccount, (state, cmd) =&gt; state.applyCommand(cmd))
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding-typed/src/test/java/jdocs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithNullDurableState.java#L40-L42" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class AccountEntity
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding-typed/src/test/java/jdocs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithNullDurableState.java#L40-L42" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class AccountEntity
     extends DurableStateBehaviorWithEnforcedReplies&lt;
         AccountEntity.Command, AccountEntity.Account&gt; {</code></pre></dd>
 </dl>
@@ -1276,18 +1276,18 @@ public static class AddPostDone implements Command {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding-typed/src/test/scala/docs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithCommandHandlersInDurableState.scala#L39-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command extends CborSerializable
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding-typed/src/test/scala/docs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithCommandHandlersInDurableState.scala#L39-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command extends CborSerializable
 final case class Withdraw(amount: BigDecimal, replyTo: ActorRef[StatusReply[Done]]) extends Command</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding-typed/src/test/java/jdocs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithNullDurableState.java#L50" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface Command extends CborSerializable {}</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding-typed/src/test/java/jdocs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithNullDurableState.java#L50" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface Command extends CborSerializable {}</code></pre></dd>
 </dl>
 <p>The <code>ReplyEffect</code> is created with <span class="group-scala"><code>Effect.reply</code></span><span class="group-java"><code>Effect().reply</code></span>, <span class="group-scala"><code>Effect.noReply</code></span><span class="group-java"><code>Effect().noReply</code></span>, <span class="group-scala"><code>Effect.thenReply</code></span><span class="group-java"><code>Effect().thenReply</code></span>, or <span class="group-scala"><code>Effect.thenNoReply</code></span><span class="group-java"><code>Effect().thenNoReply</code></span>.</p>
 <p><span class="group-java">Note that command handlers are defined with <code>newCommandHandlerWithReplyBuilder</code> when using <code>EventSourcedBehaviorWithEnforcedReplies</code>, as opposed to newCommandHandlerBuilder when using <code>EventSourcedBehavior</code>.</span></p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding-typed/src/test/scala/docs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithCommandHandlersInDurableState.scala#L99-L109" target="_blank" title="Go to snippet source">source</a><code class="language-scala">private def deposit(cmd: Deposit) = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding-typed/src/test/scala/docs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithCommandHandlersInDurableState.scala#L99-L109" target="_blank" title="Go to snippet source">source</a><code class="language-scala">private def deposit(cmd: Deposit) = {
   Effect.persist(copy(balance = balance + cmd.amount)).thenReply(cmd.replyTo)(_ =&gt; StatusReply.Ack)
 }
 
@@ -1300,7 +1300,7 @@ private def withdraw(cmd: Withdraw) = {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding-typed/src/test/java/jdocs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithNullDurableState.java#L196-L207" target="_blank" title="Go to snippet source">source</a><code class="language-java">private ReplyEffect&lt;Account&gt; withdraw(OpenedAccount account, Withdraw command) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding-typed/src/test/java/jdocs/org/apache/pekko/cluster/sharding/typed/AccountExampleWithNullDurableState.java#L196-L207" target="_blank" title="Go to snippet source">source</a><code class="language-java">private ReplyEffect&lt;Account&gt; withdraw(OpenedAccount account, Withdraw command) {
   if (!account.canWithdraw(command.amount)) {
     return Effect()
         .reply(
@@ -1323,14 +1323,14 @@ private def withdraw(cmd: Withdraw) = {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L139-L143" target="_blank" title="Go to snippet source">source</a><code class="language-scala">DurableStateBehavior[Command[_], State](
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L139-L143" target="_blank" title="Go to snippet source">source</a><code class="language-scala">DurableStateBehavior[Command[_], State](
   persistenceId = PersistenceId.ofUniqueId(&quot;abc&quot;),
   emptyState = State(0),
   commandHandler = (state, cmd) =&gt; throw new NotImplementedError(&quot;TODO: process the command &amp; return an Effect&quot;))
   .withTag(&quot;tag1&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L274-L313" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class MyPersistentBehavior
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L274-L313" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class MyPersistentBehavior
     extends DurableStateBehavior&lt;MyPersistentBehavior.Command, MyPersistentBehavior.State&gt; {
   @Override
   public String tag() {
@@ -1342,7 +1342,7 @@ private def withdraw(cmd: Withdraw) = {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L153-L161" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Behaviors.setup[Command[_]] { context =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorCompileOnly.scala#L153-L161" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Behaviors.setup[Command[_]] { context =&gt;
   DurableStateBehavior[Command[_], State](
     persistenceId = PersistenceId.ofUniqueId(&quot;abc&quot;),
     emptyState = State(0),
@@ -1353,7 +1353,7 @@ private def withdraw(cmd: Withdraw) = {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L323-L360" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class MyPersistentBehavior
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/DurableStatePersistentBehaviorTest.java#L323-L360" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class MyPersistentBehavior
     extends DurableStateBehavior&lt;MyPersistentBehavior.Command, MyPersistentBehavior.State&gt; {
 
 
@@ -1380,7 +1380,7 @@ private def withdraw(cmd: Withdraw) = {
   }</code></pre></dd>
 </dl>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/durable-state/persistence.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/durable-state/persistence.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1473,7 +1473,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

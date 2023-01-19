@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Create a source that emits once the materialized <span class="group-scala"><code>Promise</code></span> <span class="group-java"><code>CompletableFuture</code></span> is completed with a value.</p>
 <p><a href="../index.html#source-operators">Source operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#maybe()" title="org.apache.pekko.stream.javadsl.Source"><code>Source.maybe</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#maybe[T]:org.apache.pekko.stream.scaladsl.Source[T,scala.concurrent.Promise[Option[T]]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.maybe</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#maybe()" title="org.apache.pekko.stream.javadsl.Source"><code>Source.maybe</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#maybe[T]:org.apache.pekko.stream.scaladsl.Source[T,scala.concurrent.Promise[Option[T]]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.maybe</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Create a source with a materialized <span class="group-scala"><code>Promise[Option[T]]</code></span> <span class="group-java"><code>CompletableFuture&lt;Optional&lt;T&gt;&gt;</code></span> which controls what element will be emitted by the Source. This makes it possible to inject a value into a stream after creation.</p>
 <ul>
@@ -436,7 +436,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/SourceOperators.scala#L102-L112" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.stream.scaladsl._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/SourceOperators.scala#L102-L112" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.stream.scaladsl._
 import scala.concurrent.Promise
 
 val source = Source.maybe[Int].to(Sink.foreach(elem =&gt; println(elem)))
@@ -449,7 +449,7 @@ val promise2 = source.run()
 promise2.success(Some(2)) // prints 2</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SourceDocExamples.java#L35-L153" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.stream.javadsl.RunnableGraph;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SourceDocExamples.java#L35-L153" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.stream.javadsl.RunnableGraph;
 import java.util.concurrent.CompletableFuture;
 Source&lt;Integer, CompletableFuture&lt;Optional&lt;Integer&gt;&gt;&gt; source = Source.&lt;Integer&gt;maybe();
 RunnableGraph&lt;CompletableFuture&lt;Optional&lt;Integer&gt;&gt;&gt; runnable =
@@ -466,7 +466,7 @@ completable2.complete(Optional.of(2)); // prints 2</code></pre></dd>
 <p><strong>emits</strong> when the returned promise is completed with some value</p>
 <p><strong>completes</strong> after emitting some value, or directly if the promise is completed with no value</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source/maybe.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source/maybe.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -552,7 +552,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,7 +419,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#classic-cluster-metrics-extension" name="classic-cluster-metrics-extension" class="anchor"><span class="anchor-link"></span></a>Classic Cluster Metrics Extension</h1>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Cluster Metrics Extension, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Cluster Metrics Extension, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-cluster-metrics" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -428,7 +428,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster-metrics" % PekkoVers
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -443,7 +443,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster-metrics" % PekkoVers
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-cluster-metrics_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -454,7 +454,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Cluster Metrics (classic)</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-cluster-metrics</div>
-  <div>0.0.0+26533-ec68a528-SNAPSHOT</div>
+  <div>0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -469,11 +469,11 @@ dependencies {
   <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/cluster/metrics/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
-  <div><a href="https://discuss.akka.io" target="_blank" rel="noopener noreferrer">Lightbend Discuss</a></div>
-  <div><a href="https://gitter.im/akka/akka" target="_blank" rel="noopener noreferrer">akka/akka Gitter channel</a></div>
+  <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
+  <div><a href="https://github.com/apache/incubator-pekko/discussions" target="_blank" rel="noopener noreferrer">apache/incubator-pekko discussion</a></div>
   </td></tr>
   <tr><th>Release notes</th><td><a href="https://akka.io/blog/news-archive.html">akka.io blog</a></td></tr>
-  <tr><th>Issues</th><td><a href="https://github.com/akka/akka/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
+  <tr><th>Issues</th><td><a href="https://github.com/apache/incubator-pekko/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
   <tr><th>Sources</th><td><a href="https://github.com/apache/incubator-pekko" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-pekko</a></td></tr>
 </table>
 
@@ -554,7 +554,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/cluster/FactorialBackend.scala#L26-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class FactorialBackend extends Actor with ActorLogging {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/cluster/FactorialBackend.scala#L26-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class FactorialBackend extends Actor with ActorLogging {
 
   import context.dispatcher
 
@@ -578,7 +578,7 @@ dependencies {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/cluster/FactorialBackend.java#L23-L47" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class FactorialBackend extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/cluster/FactorialBackend.java#L23-L47" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class FactorialBackend extends AbstractActor {
 
   @Override
   public Receive createReceive() {
@@ -608,7 +608,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/cluster/FactorialFrontend.scala#L29-L56" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class FactorialFrontend(upToN: Int, repeat: Boolean) extends Actor with ActorLogging {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/cluster/FactorialFrontend.scala#L29-L56" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class FactorialFrontend(upToN: Int, repeat: Boolean) extends Actor with ActorLogging {
 
   val backend = context.actorOf(FromConfig.props(), name = &quot;factorialBackendRouter&quot;)
 
@@ -638,7 +638,7 @@ dependencies {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/cluster/FactorialFrontend.java#L39-L86" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class FactorialFrontend extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/cluster/FactorialFrontend.java#L39-L86" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class FactorialFrontend extends AbstractActor {
   final int upToN;
   final boolean repeat;
 
@@ -712,7 +712,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/cluster/FactorialFrontend.scala#L80-L95" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/cluster/FactorialFrontend.scala#L80-L95" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.cluster.routing.ClusterRouterGroup
 import pekko.cluster.routing.ClusterRouterGroupSettings
 import pekko.cluster.metrics.AdaptiveLoadBalancingGroup
@@ -744,7 +744,7 @@ val backend = context.actorOf(
   name = &quot;factorialBackendRouter3&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/cluster/FactorialFrontend.java#L92-L106" target="_blank" title="Go to snippet source">source</a><code class="language-java">int totalInstances = 100;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/cluster/FactorialFrontend.java#L92-L106" target="_blank" title="Go to snippet source">source</a><code class="language-java">int totalInstances = 100;
 Iterable&lt;String&gt; routeesPaths = Arrays.asList(&quot;/user/factorialBackend&quot;, &quot;&quot;);
 boolean allowLocalRoutees = true;
 Set&lt;String&gt; useRoles = new HashSet&lt;&gt;(Arrays.asList(&quot;backend&quot;));
@@ -779,7 +779,7 @@ ActorRef backend =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/cluster/MetricsListener.scala#L17-L59" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/cluster/MetricsListener.scala#L17-L59" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.ActorLogging
 import pekko.actor.Actor
 import pekko.cluster.Cluster
@@ -824,7 +824,7 @@ class MetricsListener extends Actor with ActorLogging {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/cluster/MetricsListener.java#L17-L82" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.AbstractActor;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/cluster/MetricsListener.java#L17-L82" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.AbstractActor;
 import org.apache.pekko.cluster.Cluster;
 import org.apache.pekko.cluster.ClusterEvent.CurrentClusterState;
 import org.apache.pekko.cluster.metrics.ClusterMetricsChanged;
@@ -898,7 +898,7 @@ public class MetricsListener extends AbstractActor {
 <p>Custom metrics collector implementation class must be specified in the <code>pekko.cluster.metrics.collector.provider</code> configuration property.</p>
 <h2><a href="#configuration" name="configuration" class="anchor"><span class="anchor-link"></span></a>Configuration</h2>
 <p>The Cluster metrics extension can be configured with the following properties:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-metrics/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">##############################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-metrics/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">##############################################
 # Pekko Cluster Metrics Reference Config File #
 ##############################################
 
@@ -1010,7 +1010,7 @@ pekko.actor {
   }
 }</code></pre>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/cluster-metrics.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/cluster-metrics.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1101,7 +1101,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

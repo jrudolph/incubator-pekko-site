@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,7 +419,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h1><a href="#routers" name="routers" class="anchor"><span class="anchor-link"></span></a>Routers</h1>
 <p>You are viewing the documentation for the new actor APIs, to view the Pekko Classic documentation, see <a href="../routing.html">Classic Routing</a>.</p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Actor Typed, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Actor Typed, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -428,7 +428,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion<
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -443,7 +443,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion<
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-actor-typed_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -459,7 +459,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L29-L43" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object Worker {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L29-L43" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object Worker {
   sealed trait Command
   case class DoLog(text: String) extends Command
 
@@ -476,7 +476,7 @@ dependencies {
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L47-L114" target="_blank" title="Go to snippet source">source</a><code class="language-java">class Worker {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L47-L114" target="_blank" title="Go to snippet source">source</a><code class="language-java">class Worker {
   interface Command {}
 
   static class DoLog implements Command {
@@ -549,7 +549,7 @@ static class Proxy {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L18-L115" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L18-L115" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.testkit.typed.scaladsl.{ LogCapturing, ScalaTestWithActorTestKit }
 import pekko.actor.typed.{ ActorRef, Behavior, SupervisorStrategy }
 import pekko.actor.typed.receptionist.{ Receptionist, ServiceKey }
@@ -575,7 +575,7 @@ Behaviors.setup[Unit] { ctx =&gt;
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L22-L164" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.typed.ActorRef;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L22-L164" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.typed.ActorRef;
 import org.apache.pekko.actor.typed.Behavior;
 import org.apache.pekko.actor.typed.SupervisorStrategy;
 import org.apache.pekko.actor.typed.javadsl.ActorContext;
@@ -614,13 +614,13 @@ Behaviors.setup(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L92-L95" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// make sure workers use the default blocking IO dispatcher
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L92-L95" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// make sure workers use the default blocking IO dispatcher
 val blockingPool = pool.withRouteeProps(routeeProps = DispatcherSelector.blocking())
 // spawn head router using the same executor as the parent
 val blockingRouter = ctx.spawn(blockingPool, &quot;blocking-pool&quot;, DispatcherSelector.sameAsParent())</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L145-L150" target="_blank" title="Go to snippet source">source</a><code class="language-java">// make sure workers use the default blocking IO dispatcher
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L145-L150" target="_blank" title="Go to snippet source">source</a><code class="language-java">// make sure workers use the default blocking IO dispatcher
 PoolRouter&lt;Worker.Command&gt; blockingPool =
     pool.withRouteeProps(DispatcherSelector.blocking());
 // spawn head router using the same executor as the parent
@@ -632,14 +632,14 @@ ActorRef&lt;Worker.Command&gt; blockingRouter =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L109-L113" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val poolWithBroadcast = pool.withBroadcastPredicate(_.isInstanceOf[DoBroadcastLog])
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L109-L113" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val poolWithBroadcast = pool.withBroadcastPredicate(_.isInstanceOf[DoBroadcastLog])
 val routerWithBroadcast = ctx.spawn(poolWithBroadcast, &quot;pool-with-broadcast&quot;)
 // this will be sent to all 4 routees
 routerWithBroadcast ! DoBroadcastLog(&quot;msg&quot;)
 Behaviors.empty</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L158-L159" target="_blank" title="Go to snippet source">source</a><code class="language-java">PoolRouter&lt;Worker.Command&gt; broadcastingPool =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L158-L159" target="_blank" title="Go to snippet source">source</a><code class="language-java">PoolRouter&lt;Worker.Command&gt; broadcastingPool =
     pool.withBroadcastPredicate(msg -&gt; msg instanceof DoBroadcastLog);</code></pre></dd>
 </dl>
 <h2><a href="#group-router" name="group-router" class="anchor"><span class="anchor-link"></span></a>Group Router</h2>
@@ -650,7 +650,7 @@ Behaviors.empty</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L55-L150" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val serviceKey = ServiceKey[Worker.Command](&quot;log-worker&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L55-L150" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val serviceKey = ServiceKey[Worker.Command](&quot;log-worker&quot;)
 
 Behaviors.setup[Unit] { ctx =&gt;
   // this would likely happen elsewhere - if we create it locally we
@@ -671,7 +671,7 @@ Behaviors.setup[Unit] { ctx =&gt;
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L171-L195" target="_blank" title="Go to snippet source">source</a><code class="language-java">ServiceKey&lt;Worker.Command&gt; serviceKey = ServiceKey.create(Worker.Command.class, &quot;log-worker&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L171-L195" target="_blank" title="Go to snippet source">source</a><code class="language-java">ServiceKey&lt;Worker.Command&gt; serviceKey = ServiceKey.create(Worker.Command.class, &quot;log-worker&quot;);
 
 Behaviors.setup(
     context -&gt; {
@@ -699,10 +699,10 @@ Behaviors.setup(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L101" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val alternativePool = pool.withPoolSize(2).withRoundRobinRouting()</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L101" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val alternativePool = pool.withPoolSize(2).withRoundRobinRouting()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L154" target="_blank" title="Go to snippet source">source</a><code class="language-java">PoolRouter&lt;Worker.Command&gt; alternativePool = pool.withPoolSize(2).withRoundRobinRouting();</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L154" target="_blank" title="Go to snippet source">source</a><code class="language-java">PoolRouter&lt;Worker.Command&gt; alternativePool = pool.withPoolSize(2).withRoundRobinRouting();</code></pre></dd>
 </dl>
 <h3><a href="#round-robin" name="round-robin" class="anchor"><span class="anchor-link"></span></a>Round Robin</h3>
 <p>Rotates over the set of routees making sure that if there are <code>n</code> routees, then for <code>n</code> messages sent through the router, each actor is forwarded one message.</p>
@@ -720,7 +720,7 @@ Behaviors.setup(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L189-L196" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val router = spawn(Routers.group(Proxy.RegisteringKey).withConsistentHashingRouting(10, Proxy.mapping))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/RouterSpec.scala#L189-L196" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val router = spawn(Routers.group(Proxy.RegisteringKey).withConsistentHashingRouting(10, Proxy.mapping))
 
 router ! Proxy.Message(&quot;123&quot;, &quot;Text1&quot;)
 router ! Proxy.Message(&quot;123&quot;, &quot;Text2&quot;)
@@ -730,7 +730,7 @@ router ! Proxy.Message(&quot;zh3&quot;, &quot;Text4&quot;)
 // the hash is calculated over the Proxy.Message first parameter obtained through the Proxy.mapping function</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L226-L237" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef&lt;Proxy.Message&gt; router =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/RouterTest.java#L226-L237" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef&lt;Proxy.Message&gt; router =
     testKit.spawn(
         Routers.group(proxy.registeringKey)
             .withConsistentHashingRouting(10, command -&gt; proxy.mapping(command)));
@@ -748,7 +748,7 @@ router.tell(new Proxy.Message(&quot;zh3&quot;, &quot;Text4&quot;));
 <p>Note that if the routees are sharing a resource, the resource will determine if increasing the number of actors will actually give higher throughput or faster answers. For example if the routees are CPU bound actors it will not give better performance to create more routees than there are threads to execute the actors.</p>
 <p>Since the router itself is an actor and has a mailbox this means that messages are routed sequentially to the routees where it can be processed in parallel (depending on the available threads in the dispatcher). In a high throughput use cases the sequential routing could become a bottle neck. Pekko Typed does not provide an optimized tool for this.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/routers.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/routers.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -836,7 +836,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

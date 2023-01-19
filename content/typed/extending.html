@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -425,23 +425,23 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L28-L30" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class ExpensiveDatabaseConnection {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L28-L30" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class ExpensiveDatabaseConnection {
   def executeQuery(query: String): Future[Any] = ???
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/extensions/ExtensionDocTest.java#L28-L33" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class ExpensiveDatabaseConnection {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/extensions/ExtensionDocTest.java#L28-L33" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class ExpensiveDatabaseConnection {
   public CompletionStage&lt;Object&gt; executeQuery(String query) {
     throw new RuntimeException(&quot;I should do a database query&quot;);
   }
   // ...
 }</code></pre></dd>
 </dl>
-<p>First create an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Extension.html" title="org.apache.pekko.actor.typed.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Extension.html" title="org.apache.pekko.actor.typed.Extension"><code>Extension</code></a></span>, this will be created only once per ActorSystem:</p>
+<p>First create an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Extension.html" title="org.apache.pekko.actor.typed.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Extension.html" title="org.apache.pekko.actor.typed.Extension"><code>Extension</code></a></span>, this will be created only once per ActorSystem:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L45-L51" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class DatabasePool(system: ActorSystem[_]) extends Extension {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L45-L51" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class DatabasePool(system: ActorSystem[_]) extends Extension {
   // database configuration can be loaded from config
   // from the actor system
   private val _connection = new ExpensiveDatabaseConnection()
@@ -450,7 +450,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/extensions/ExtensionDocTest.java#L37-L70" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class DatabaseConnectionPool implements Extension {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/extensions/ExtensionDocTest.java#L37-L70" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class DatabaseConnectionPool implements Extension {
 
   private final ExpensiveDatabaseConnection _connection;
 
@@ -466,11 +466,11 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 }</code></pre></dd>
 </dl>
 <p>This is the public API of your extension. Internally in this example we instantiate our expensive database connection. </p>
-<p>Then create an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ExtensionId.html" title="org.apache.pekko.actor.typed.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ExtensionId.html" title="org.apache.pekko.actor.typed.ExtensionId"><code>ExtensionId</code></a></span> to identify the extension. <span class="group-scala">A good convention is to let the companion object of the <code>Extension</code> be the <code>ExtensionId</code>.</span><span class="group-java">A good convention is to define the <code>ExtensionId</code> as a static inner class of the <code>Extension</code>.</span></p>
+<p>Then create an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ExtensionId.html" title="org.apache.pekko.actor.typed.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ExtensionId.html" title="org.apache.pekko.actor.typed.ExtensionId"><code>ExtensionId</code></a></span> to identify the extension. <span class="group-scala">A good convention is to let the companion object of the <code>Extension</code> be the <code>ExtensionId</code>.</span><span class="group-java">A good convention is to define the <code>ExtensionId</code> as a static inner class of the <code>Extension</code>.</span></p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L34-L40" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object DatabasePool extends ExtensionId[DatabasePool] {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L34-L40" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object DatabasePool extends ExtensionId[DatabasePool] {
   // will only be called once
   def createExtension(system: ActorSystem[_]): DatabasePool = new DatabasePool(system)
 
@@ -479,7 +479,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/extensions/ExtensionDocTest.java#L40-L55" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class Id extends ExtensionId&lt;DatabaseConnectionPool&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/extensions/ExtensionDocTest.java#L40-L55" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class Id extends ExtensionId&lt;DatabaseConnectionPool&gt; {
 
   private static final Id instance = new Id();
 
@@ -500,13 +500,13 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L65-L68" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Behaviors.setup[Any] { ctx =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L65-L68" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Behaviors.setup[Any] { ctx =&gt;
   DatabasePool(ctx.system).connection().executeQuery(&quot;insert into...&quot;)
   initialBehavior
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/extensions/ExtensionDocTest.java#L79-L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">Behaviors.setup(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/extensions/ExtensionDocTest.java#L79-L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">Behaviors.setup(
     (context) -&gt; {
       DatabaseConnectionPool.Id.get(context.getSystem())
           .connection()
@@ -521,7 +521,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.actor.typed.extensions = [&quot;org.apache.pekko.pekko.extensions.DatabasePool&quot;]</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/extensions/ExtensionDocSpec.scala#L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.actor.typed.extensions = [&quot;org.apache.pekko.pekko.extensions.DatabasePool&quot;]</code></pre></dd>
   <dt>Java</dt>
   <dd><code>ruby
    pekko.actor.typed {
@@ -530,7 +530,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 </code></dd>
 </dl>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/extending.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/extending.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -614,7 +614,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

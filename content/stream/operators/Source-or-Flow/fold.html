@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Start with current value <code>zero</code> and then apply the current and next value to the given function. When upstream completes, the current value is emitted downstream.</p>
 <p><a href="../index.html#simple-operators">Simple operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#fold(java.lang.Object,org.apache.pekko.japi.function.Function2)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.fold</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#fold[T](zero:T)(f:(T,Out)=&gt;T):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.fold</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#fold(java.lang.Object,org.apache.pekko.japi.function.Function2)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.fold</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#fold[T](zero:T)(f:(T,Out)=&gt;T):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.fold</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#fold(java.lang.Object,org.apache.pekko.japi.function.Function2)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.fold</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#fold[T](zero:T)(f:(T,Out)=&gt;T):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.fold</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#fold(java.lang.Object,org.apache.pekko.japi.function.Function2)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.fold</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#fold[T](zero:T)(f:(T,Out)=&gt;T):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.fold</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Start with current value <code>zero</code> and then apply the current and next value to the given function. When upstream completes, the current value is emitted downstream.</p><div class="callout warning "><div class="callout-title">Warning</div>
 <p>Note that the <code>zero</code> value must be immutable, because otherwise the same mutable instance would be shared across different threads when running the stream more than once.</p></div>
@@ -430,7 +430,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/Fold.scala#L17-L20" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/Fold.scala#L17-L20" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.ActorSystem
 import pekko.stream.scaladsl.Source
 
@@ -442,7 +442,7 @@ Source(1 to 150).fold(Histogram())((acc, n) =&gt; acc.add(n)).runForeach(println
 // Prints: Histogram(99,51)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L473-L494" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>public CompletionStage&lt;Histogram&gt; addAsync(Integer n) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L473-L494" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>public CompletionStage&lt;Histogram&gt; addAsync(Integer n) {
   if (n &lt; 100) {
     return CompletableFuture.supplyAsync(() -&gt; new Histogram(low + 1L, high));
   } else {
@@ -462,7 +462,7 @@ Source.range(1, 150)
 <p><strong>backpressures</strong> when downstream backpressures</p>
 <p><strong>completes</strong> when upstream completes</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/fold.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/fold.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -548,7 +548,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

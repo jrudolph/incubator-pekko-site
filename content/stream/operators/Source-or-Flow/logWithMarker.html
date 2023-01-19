@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Log elements flowing through the stream as well as completion and erroring.</p>
 <p><a href="../index.html#simple-operators">Simple operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#logWithMarker(java.lang.String,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.logWithMarker</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#logWithMarker(name:String,marker:Out=&gt;org.apache.pekko.event.LogMarker,extract:Out=&gt;Any)(implicitlog:org.apache.pekko.event.MarkerLoggingAdapter):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.logWithMarker</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#logWithMarker(java.lang.String,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.logWithMarker</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#logWithMarker(name:String,marker:Out=&gt;org.apache.pekko.event.LogMarker,extract:Out=&gt;Any)(implicitlog:org.apache.pekko.event.MarkerLoggingAdapter):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.logWithMarker</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#logWithMarker(java.lang.String,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.logWithMarker</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#logWithMarker(name:String,marker:Out=&gt;org.apache.pekko.event.LogMarker,extract:Out=&gt;Any)(implicitlog:org.apache.pekko.event.MarkerLoggingAdapter):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.logWithMarker</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#logWithMarker(java.lang.String,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.logWithMarker</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#logWithMarker(name:String,marker:Out=&gt;org.apache.pekko.event.LogMarker,extract:Out=&gt;Any)(implicitlog:org.apache.pekko.event.MarkerLoggingAdapter):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.logWithMarker</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Log elements flowing through the stream as well as completion and erroring. By default element and completion signals are logged on debug level, and errors are logged on Error level. This can be changed by calling <span class="group-scala"><code>Attributes.logLevels(...)</code></span> <span class="group-java"><code>Attributes.createLogLevels(...)</code></span> on the given Flow.</p>
 <p>See also <a href="log.html">log</a>.</p>
@@ -429,7 +429,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/LogWithMarker.scala#L18-L33" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/LogWithMarker.scala#L18-L33" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.event.LogMarker
 import pekko.stream.Attributes
 
@@ -441,7 +441,7 @@ import pekko.stream.Attributes
     onFailure = Attributes.LogLevels.Error))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L90-L96" target="_blank" title="Go to snippet source">source</a><code class="language-java">.logWithMarker(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L90-L96" target="_blank" title="Go to snippet source">source</a><code class="language-java">.logWithMarker(
     &quot;myStream&quot;, (e) -&gt; LogMarker.create(&quot;myMarker&quot;, Collections.singletonMap(&quot;element&quot;, e)))
 .addAttributes(
     Attributes.createLogLevels(
@@ -454,7 +454,7 @@ import pekko.stream.Attributes
 <p><strong>backpressures</strong> when downstream backpressures</p>
 <p><strong>completes</strong> when upstream completes</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/logWithMarker.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/logWithMarker.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -540,7 +540,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

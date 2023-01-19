@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -422,14 +422,14 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L27-L31" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L27-L31" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.persistence._
 import pekko.persistence.journal._
 import pekko.persistence.snapshot._
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L17-L20" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.dispatch.Futures;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L17-L20" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.dispatch.Futures;
 import org.apache.pekko.persistence.*;
 import org.apache.pekko.persistence.journal.japi.*;
 import org.apache.pekko.persistence.snapshot.japi.*;</code></pre></dd>
@@ -440,7 +440,7 @@ import org.apache.pekko.persistence.snapshot.japi.*;</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/main/scala/org/apache/pekko/persistence/journal/AsyncWriteJournal.scala#L212-L297" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/**
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/main/scala/org/apache/pekko/persistence/journal/AsyncWriteJournal.scala#L212-L297" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/**
  * Plugin API: asynchronously writes a batch (`Seq`) of persistent messages to the
  * journal.
  *
@@ -528,7 +528,7 @@ def asyncDeleteMessagesTo(persistenceId: String, toSequenceNr: Long): Future[Uni
 def receivePluginInternal: Actor.Receive = Actor.emptyBehavior</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/main/java/org/apache/pekko/persistence/journal/japi/AsyncWritePlugin.java#L24-L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">/**
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/main/java/org/apache/pekko/persistence/journal/japi/AsyncWritePlugin.java#L24-L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">/**
  * Java API, Plugin API: asynchronously writes a batch (`Iterable`) of persistent messages to the
  * journal.
  *
@@ -595,14 +595,14 @@ Future&lt;Void&gt; doAsyncDeleteMessagesTo(String persistenceId, long toSequence
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L167-L171" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def asyncWriteMessages(messages: immutable.Seq[AtomicWrite]): Future[immutable.Seq[Try[Unit]]] =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L167-L171" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def asyncWriteMessages(messages: immutable.Seq[AtomicWrite]): Future[immutable.Seq[Try[Unit]]] =
   Future.fromTry(Try {
     // blocking call here
     ???
   })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L107-L118" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L107-L118" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public Future&lt;Iterable&lt;Optional&lt;Exception&gt;&gt;&gt; doAsyncWriteMessages(
     Iterable&lt;AtomicWrite&gt; messages) {
   try {
@@ -619,7 +619,7 @@ public Future&lt;Iterable&lt;Optional&lt;Exception&gt;&gt;&gt; doAsyncWriteMessa
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/main/scala/org/apache/pekko/persistence/journal/AsyncRecovery.scala#L26-L80" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/**
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/main/scala/org/apache/pekko/persistence/journal/AsyncRecovery.scala#L26-L80" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/**
  * Plugin API: asynchronously replays persistent messages. Implementations replay
  * a message by calling `replayCallback`. The returned future must be completed
  * when all messages (matching the sequence number bounds) have been replayed.
@@ -676,7 +676,7 @@ def asyncReplayMessages(persistenceId: String, fromSequenceNr: Long, toSequenceN
 def asyncReadHighestSequenceNr(persistenceId: String, fromSequenceNr: Long): Future[Long]</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/main/java/org/apache/pekko/persistence/journal/japi/AsyncRecoveryPlugin.java#L24-L60" target="_blank" title="Go to snippet source">source</a><code class="language-java">/**
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/main/java/org/apache/pekko/persistence/journal/japi/AsyncRecoveryPlugin.java#L24-L60" target="_blank" title="Go to snippet source">source</a><code class="language-java">/**
  * Java API, Plugin API: asynchronously replays persistent messages. Implementations replay a
  * message by calling `replayCallback`. The returned future must be completed when all messages
  * (matching the sequence number bounds) have been replayed. The future must be completed with a
@@ -715,7 +715,7 @@ Future&lt;Void&gt; doAsyncReplayMessages(
 Future&lt;Long&gt; doAsyncReadHighestSequenceNr(String persistenceId, long fromSequenceNr);</code></pre></dd>
 </dl>
 <p>A journal plugin can be activated with the following minimal configuration:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L79-L88" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the journal plugin to be used
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L79-L88" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the journal plugin to be used
 pekko.persistence.journal.plugin = &quot;my-journal&quot;
 
 # My custom journal plugin
@@ -740,7 +740,7 @@ my-journal {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/main/scala/org/apache/pekko/persistence/snapshot/SnapshotStore.scala#L137-L188" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>/**
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/main/scala/org/apache/pekko/persistence/snapshot/SnapshotStore.scala#L137-L188" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>/**
  * Plugin API: asynchronously loads a snapshot.
  *
  * If the future `Option` is `None` then all events will be replayed,
@@ -793,7 +793,7 @@ def deleteAsync(persistenceId: String, criteria: SnapshotSelectionCriteria): Fut
 def receivePluginInternal: Actor.Receive = Actor.emptyBehavior</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/main/java/org/apache/pekko/persistence/snapshot/japi/SnapshotStorePlugin.java#L25-L55" target="_blank" title="Go to snippet source">source</a><code class="language-java">/**
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/main/java/org/apache/pekko/persistence/snapshot/japi/SnapshotStorePlugin.java#L25-L55" target="_blank" title="Go to snippet source">source</a><code class="language-java">/**
  * Java API, Plugin API: asynchronously loads a snapshot.
  *
  * @param persistenceId id of the persistent actor.
@@ -826,7 +826,7 @@ Future&lt;Void&gt; doDeleteAsync(SnapshotMetadata metadata);
 Future&lt;Void&gt; doDeleteAsync(String persistenceId, SnapshotSelectionCriteria criteria);</code></pre></dd>
 </dl>
 <p>A snapshot store plugin can be activated with the following minimal configuration:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L92-L101" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the snapshot store plugin to be used
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L92-L101" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the snapshot store plugin to be used
 pekko.persistence.snapshot-store.plugin = &quot;my-snapshot-store&quot;
 
 # My custom snapshot store plugin
@@ -848,7 +848,7 @@ my-snapshot-store {
 <p>Don&rsquo;t run snapshot store tasks/futures on the system default dispatcher, since that might starve other tasks.</p>
 <h2><a href="#plugin-tck" name="plugin-tck" class="anchor"><span class="anchor-link"></span></a>Plugin TCK</h2>
 <p>In order to help developers build correct and high quality storage plugins, we provide a Technology Compatibility Kit (<a href="https://en.wikipedia.org/wiki/Technology_Compatibility_Kit">TCK</a> for short).</p>
-<p>The TCK is usable from Java as well as Scala projects. To test your implementation (independently of language) you need to include the pekko-persistence-tck dependency:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>The TCK is usable from Java as well as Scala projects. To test your implementation (independently of language) you need to include the pekko-persistence-tck dependency:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-persistence-tck" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -857,7 +857,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-persistence-tck" % PekkoVers
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -872,7 +872,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-persistence-tck" % PekkoVers
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-persistence-tck_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -880,7 +880,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L198-L207" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MyJournalSpec
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L198-L207" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MyJournalSpec
     extends JournalSpec(
       config = ConfigFactory.parseString(&quot;&quot;&quot;pekko.persistence.journal.plugin = &quot;my.journal.plugin&quot;&quot;&quot;&quot;)) {
 
@@ -892,7 +892,7 @@ dependencies {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L145-L159" target="_blank" title="Go to snippet source">source</a><code class="language-java">@RunWith(JUnitRunner.class)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L145-L159" target="_blank" title="Go to snippet source">source</a><code class="language-java">@RunWith(JUnitRunner.class)
 class MyJournalSpecTest extends JavaJournalSpec {
 
   public MyJournalSpecTest() {
@@ -914,7 +914,7 @@ class MyJournalSpecTest extends JavaJournalSpec {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L214-L222" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MySnapshotStoreSpec
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L214-L222" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MySnapshotStoreSpec
     extends SnapshotStoreSpec(
       config = ConfigFactory.parseString(&quot;&quot;&quot;
     pekko.persistence.snapshot-store.plugin = &quot;my.snapshot-store.plugin&quot;
@@ -925,7 +925,7 @@ class MyJournalSpecTest extends JavaJournalSpec {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L166-L175" target="_blank" title="Go to snippet source">source</a><code class="language-java">@RunWith(JUnitRunner.class)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L166-L175" target="_blank" title="Go to snippet source">source</a><code class="language-java">@RunWith(JUnitRunner.class)
 class MySnapshotStoreTest extends JavaSnapshotStoreSpec {
 
   public MySnapshotStoreTest() {
@@ -940,7 +940,7 @@ class MySnapshotStoreTest extends JavaSnapshotStoreSpec {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L232-L254" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MyJournalSpec
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L232-L254" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MyJournalSpec
     extends JournalSpec(config = ConfigFactory.parseString(&quot;&quot;&quot;
     pekko.persistence.journal.plugin = &quot;my.journal.plugin&quot;
     &quot;&quot;&quot;)) {
@@ -965,7 +965,7 @@ class MySnapshotStoreTest extends JavaSnapshotStoreSpec {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L183-L221" target="_blank" title="Go to snippet source">source</a><code class="language-java">@RunWith(JUnitRunner.class)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L183-L221" target="_blank" title="Go to snippet source">source</a><code class="language-java">@RunWith(JUnitRunner.class)
 class MyJournalSpecTest extends JavaJournalSpec {
 
   List&lt;File&gt; storageLocations = new ArrayList&lt;File&gt;();
@@ -1010,7 +1010,7 @@ class MyJournalSpecTest extends JavaJournalSpec {
 <p>If a journal can&rsquo;t prevent users from running persistent actors with the same <code>persistenceId</code> concurrently it is likely that an event log will be corrupted by having events with the same sequence number.</p>
 <p>It is recommended that journals should still deliver these events during recovery so that a <code>replay-filter</code> can be used to decide what to do about it in a journal agnostic way.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/persistence-journals.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/persistence-journals.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1096,7 +1096,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

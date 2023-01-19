@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#futures-interop" name="futures-interop" class="anchor"><span class="anchor-link"></span></a>Futures interop</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -452,12 +452,12 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L77-L83" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def send(email: Email): Future[Unit] = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L77-L83" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def send(email: Email): Future[Unit] = {
   // ...
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L198-L204" target="_blank" title="Go to snippet source">source</a><code class="language-java">public CompletionStage&lt;Email&gt; send(Email email) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L198-L204" target="_blank" title="Go to snippet source">source</a><code class="language-java">public CompletionStage&lt;Email&gt; send(Email email) {
   // ...
 }</code></pre></dd>
 </dl>
@@ -465,11 +465,11 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L170-L171" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val authors: Source[Author, NotUsed] =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L170-L171" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val authors: Source[Author, NotUsed] =
   tweets.filter(_.hashtags.contains(pekkoTag)).map(_.author)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L446-L448" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Author, NotUsed&gt; authors =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L446-L448" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Author, NotUsed&gt; authors =
     tweets.filter(t -&gt; t.hashtags().contains(PEKKO)).map(t -&gt; t.author);
 </code></pre></dd>
 </dl>
@@ -477,22 +477,22 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def lookupEmail(handle: String): Future[Option[String]] =</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def lookupEmail(handle: String): Future[Option[String]] =</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">public CompletionStage&lt;Optional&lt;String&gt;&gt; lookupEmail(String handle)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">public CompletionStage&lt;Optional&lt;String&gt;&gt; lookupEmail(String handle)</code></pre></dd>
 </dl>
 <p>Transforming the stream of authors to a stream of email addresses by using the <code>lookupEmail</code> service can be done with <code>mapAsync</code>:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L175-L178" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val emailAddresses: Source[String, NotUsed] =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L175-L178" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val emailAddresses: Source[String, NotUsed] =
   authors.mapAsync(4)(author =&gt; addressSystem.lookupEmail(author.handle)).collect {
     case Some(emailAddress) =&gt; emailAddress
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L452-L457" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;String, NotUsed&gt; emailAddresses =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L452-L457" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;String, NotUsed&gt; emailAddresses =
     authors
         .mapAsync(4, author -&gt; addressSystem.lookupEmail(author.handle))
         .filter(o -&gt; o.isPresent())
@@ -503,7 +503,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L182-L189" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sendEmails: RunnableGraph[NotUsed] =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L182-L189" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sendEmails: RunnableGraph[NotUsed] =
   emailAddresses
     .mapAsync(4)(address =&gt; {
       emailServer.send(Email(to = address, title = &quot;pekko&quot;, body = &quot;I like your tweet&quot;))
@@ -513,7 +513,7 @@ dependencies {
 sendEmails.run()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L461-L468" target="_blank" title="Go to snippet source">source</a><code class="language-java">final RunnableGraph&lt;NotUsed&gt; sendEmails =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L461-L468" target="_blank" title="Go to snippet source">source</a><code class="language-java">final RunnableGraph&lt;NotUsed&gt; sendEmails =
     emailAddresses
         .mapAsync(
             4,
@@ -529,7 +529,7 @@ sendEmails.run(system);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L287-L302" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val authors: Source[Author, NotUsed] =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L287-L302" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val authors: Source[Author, NotUsed] =
   tweets.filter(_.hashtags.contains(pekkoTag)).map(_.author)
 
 val emailAddresses: Source[String, NotUsed] =
@@ -547,7 +547,7 @@ val sendEmails: RunnableGraph[NotUsed] =
 sendEmails.run()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L515-L531" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Author, NotUsed&gt; authors =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L515-L531" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Author, NotUsed&gt; authors =
     tweets.filter(t -&gt; t.hashtags().contains(PEKKO)).map(t -&gt; t.author);
 
 final Source&lt;String, NotUsed&gt; emailAddresses =
@@ -569,7 +569,7 @@ sendEmails.run(system);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L329-L340" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val blockingExecutionContext = system.dispatchers.lookup(&quot;blocking-dispatcher&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L329-L340" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val blockingExecutionContext = system.dispatchers.lookup(&quot;blocking-dispatcher&quot;)
 
 val sendTextMessages: RunnableGraph[NotUsed] =
   phoneNumbers
@@ -583,7 +583,7 @@ val sendTextMessages: RunnableGraph[NotUsed] =
 sendTextMessages.run()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L555-L567" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Executor blockingEc = system.dispatchers().lookup(&quot;blocking-dispatcher&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L555-L567" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Executor blockingEc = system.dispatchers().lookup(&quot;blocking-dispatcher&quot;);
 
 final RunnableGraph&lt;NotUsed&gt; sendTextMessages =
     phoneNumbers
@@ -598,7 +598,7 @@ final RunnableGraph&lt;NotUsed&gt; sendTextMessages =
 sendTextMessages.run(system);</code></pre></dd>
 </dl>
 <p>The configuration of the <code>&quot;blocking-dispatcher&quot;</code> may look something like:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L41-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">blocking-dispatcher {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L41-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">blocking-dispatcher {
   executor = &quot;thread-pool-executor&quot;
   thread-pool-executor {
     core-pool-size-min    = 10
@@ -609,7 +609,7 @@ sendTextMessages.run(system);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L367-L375" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val send = Flow[String]
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L367-L375" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val send = Flow[String]
   .map { phoneNo =&gt;
     smsServer.send(TextMessage(to = phoneNo, body = &quot;I like your tweet&quot;))
   }
@@ -620,7 +620,7 @@ val sendTextMessages: RunnableGraph[NotUsed] =
 sendTextMessages.run()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L603-L609" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;String, Boolean, NotUsed&gt; send =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L603-L609" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;String, Boolean, NotUsed&gt; send =
     Flow.of(String.class)
         .map(phoneNo -&gt; smsServer.send(new TextMessage(phoneNo, &quot;I like your tweet&quot;)))
         .withAttributes(ActorAttributes.dispatcher(&quot;blocking-dispatcher&quot;));
@@ -633,7 +633,7 @@ sendTextMessages.run(system);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L392-L398" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.pattern.ask
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L392-L398" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.pattern.ask
 
 val PekkoTweets: Source[Tweet, NotUsed] = tweets.filter(_.hashtags.contains(pekkoTag))
 
@@ -642,7 +642,7 @@ val saveTweets: RunnableGraph[NotUsed] =
   PekkoTweets.mapAsync(4)(tweet =&gt; database ? Save(tweet)).to(Sink.ignore)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L634-L639" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Tweet, NotUsed&gt; pekkoTweets = tweets.filter(t -&gt; t.hashtags().contains(PEKKO));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L634-L639" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Tweet, NotUsed&gt; pekkoTweets = tweets.filter(t -&gt; t.hashtags().contains(PEKKO));
 
 final RunnableGraph&lt;NotUsed&gt; saveTweets =
     pekkoTweets
@@ -659,7 +659,7 @@ final RunnableGraph&lt;NotUsed&gt; saveTweets =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L110-L128" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class SometimesSlowService(implicit ec: ExecutionContext) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L110-L128" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class SometimesSlowService(implicit ec: ExecutionContext) {
 
   private val runningCount = new AtomicInteger
 
@@ -677,7 +677,7 @@ final RunnableGraph&lt;NotUsed&gt; saveTweets =
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L284-L312" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class SometimesSlowService {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L284-L312" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class SometimesSlowService {
   private final Executor ec;
 
   public SometimesSlowService(Executor ec) {
@@ -712,7 +712,7 @@ final RunnableGraph&lt;NotUsed&gt; saveTweets =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L420-L428" target="_blank" title="Go to snippet source">source</a><code class="language-scala">implicit val blockingExecutionContext = system.dispatchers.lookup(&quot;blocking-dispatcher&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L420-L428" target="_blank" title="Go to snippet source">source</a><code class="language-scala">implicit val blockingExecutionContext = system.dispatchers.lookup(&quot;blocking-dispatcher&quot;)
 val service = new SometimesSlowService
 
 Source(List(&quot;a&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;e&quot;, &quot;F&quot;, &quot;g&quot;, &quot;H&quot;, &quot;i&quot;, &quot;J&quot;))
@@ -723,7 +723,7 @@ Source(List(&quot;a&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;e&
   .run()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L675-L687" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Executor blockingEc = system.dispatchers().lookup(&quot;blocking-dispatcher&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L675-L687" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Executor blockingEc = system.dispatchers().lookup(&quot;blocking-dispatcher&quot;);
 final SometimesSlowService service = new SometimesSlowService(blockingEc);
 
 Source.from(Arrays.asList(&quot;a&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;e&quot;, &quot;F&quot;, &quot;g&quot;, &quot;H&quot;, &quot;i&quot;, &quot;J&quot;))
@@ -785,7 +785,7 @@ after: J
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L451-L459" target="_blank" title="Go to snippet source">source</a><code class="language-scala">implicit val blockingExecutionContext = system.dispatchers.lookup(&quot;blocking-dispatcher&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/IntegrationDocSpec.scala#L451-L459" target="_blank" title="Go to snippet source">source</a><code class="language-scala">implicit val blockingExecutionContext = system.dispatchers.lookup(&quot;blocking-dispatcher&quot;)
 val service = new SometimesSlowService
 
 Source(List(&quot;a&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;e&quot;, &quot;F&quot;, &quot;g&quot;, &quot;H&quot;, &quot;i&quot;, &quot;J&quot;))
@@ -796,7 +796,7 @@ Source(List(&quot;a&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;e&
   .run()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L723-L735" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Executor blockingEc = system.dispatchers().lookup(&quot;blocking-dispatcher&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/IntegrationDocTest.java#L723-L735" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Executor blockingEc = system.dispatchers().lookup(&quot;blocking-dispatcher&quot;);
 final SometimesSlowService service = new SometimesSlowService(blockingEc);
 
 Source.from(Arrays.asList(&quot;a&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;e&quot;, &quot;F&quot;, &quot;g&quot;, &quot;H&quot;, &quot;i&quot;, &quot;J&quot;))
@@ -855,7 +855,7 @@ after: I
 <p>Note that <code>after</code> lines are not in the same order as the <code>before</code> lines. For example <code>H</code> overtakes the slow <code>G</code>.</p>
 <p>The numbers in parentheses illustrate how many calls that are in progress at the same time. Here the downstream demand and thereby the number of concurrent calls are limited by the buffer size (4) set with an attribute.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/futures-interop.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/futures-interop.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -939,7 +939,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

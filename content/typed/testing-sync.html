@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -420,7 +420,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h2><a href="#synchronous-behavior-testing" name="synchronous-behavior-testing" class="anchor"><span class="anchor-link"></span></a>Synchronous behavior testing</h2>
 <p>You are viewing the documentation for the new actor APIs, to view the Pekko Classic documentation, see <a href="../testing.html">Classic Testing</a>.</p>
 <p>The <code>BehaviorTestKit</code> provides a very nice way of unit testing a <code>Behavior</code> in a deterministic way, but it has some limitations to be aware of.</p>
-<p>Certain <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Behavior.html" title="org.apache.pekko.actor.typed.Behavior"><code>Behavior</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Behavior.html" title="org.apache.pekko.actor.typed.Behavior"><code>Behavior</code></a></span>s will be hard to test synchronously and the <code>BehaviorTestKit</code> doesn&rsquo;t support testing of all features. In those cases the <a href="testing-async.html#asynchronous-testing">asynchronous ActorTestKit</a> is recommended. Example of limitations:</p>
+<p>Certain <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Behavior.html" title="org.apache.pekko.actor.typed.Behavior"><code>Behavior</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Behavior.html" title="org.apache.pekko.actor.typed.Behavior"><code>Behavior</code></a></span>s will be hard to test synchronously and the <code>BehaviorTestKit</code> doesn&rsquo;t support testing of all features. In those cases the <a href="testing-async.html#asynchronous-testing">asynchronous ActorTestKit</a> is recommended. Example of limitations:</p>
 <ul>
   <li>Spawning of <span class="group-scala"><code>Future</code></span><span class="group-java"><code>CompletionStage</code></span> or other asynchronous task and you rely on a callback to  complete before observing the effect you want to test.</li>
   <li>Usage of scheduler is not supported.</li>
@@ -441,7 +441,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L17-L26" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L17-L26" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.testkit.typed.CapturedLogEvent
 import pekko.actor.testkit.typed.Effect._
 import pekko.actor.testkit.typed.scaladsl.BehaviorTestKit
@@ -453,7 +453,7 @@ import org.slf4j.event.Level
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L17-L28" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.CapturedLogEvent;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L17-L28" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.CapturedLogEvent;
 import org.apache.pekko.actor.testkit.typed.Effect;
 import org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit;
 import org.apache.pekko.actor.testkit.typed.javadsl.TestInbox;
@@ -470,7 +470,7 @@ import org.slf4j.event.Level;</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L39-L70" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object Hello {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L39-L70" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object Hello {
   sealed trait Command
   case object CreateAnonymousChild extends Command
   case class CreateChild(childName: String) extends Command
@@ -504,7 +504,7 @@ import org.slf4j.event.Level;</code></pre></dd>
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L45-L141" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class Hello extends AbstractBehavior&lt;Hello.Command&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L45-L141" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class Hello extends AbstractBehavior&lt;Hello.Command&gt; {
 
   public interface Command {}
 
@@ -606,29 +606,29 @@ import org.slf4j.event.Level;</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L33-L35" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val childActor = Behaviors.receiveMessage[String] { _ =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L33-L35" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val childActor = Behaviors.receiveMessage[String] { _ =&gt;
   Behaviors.same[String]
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L37-L41" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class Child {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L37-L41" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class Child {
   public static Behavior&lt;String&gt; create() {
     return Behaviors.receive((context, message) -&gt; Behaviors.same());
   }
 }</code></pre></dd>
 </dl>
-<p>All of the tests make use of the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span> to avoid the need for a real <code>ActorContext</code>. Some of the tests make use of the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestInbox"><code>TestInbox</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestInbox"><code>TestInbox</code></a></span> which allows the creation of an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span> that can be used for synchronous testing, similar to the <code>TestProbe</code> used for asynchronous testing.</p>
+<p>All of the tests make use of the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span> to avoid the need for a real <code>ActorContext</code>. Some of the tests make use of the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestInbox"><code>TestInbox</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestInbox"><code>TestInbox</code></a></span> which allows the creation of an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span> that can be used for synchronous testing, similar to the <code>TestProbe</code> used for asynchronous testing.</p>
 <h3><a href="#spawning-children" name="spawning-children" class="anchor"><span class="anchor-link"></span></a>Spawning children</h3>
 <p>With a name:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L103-L105" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L103-L105" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
 testKit.run(Hello.CreateChild(&quot;child&quot;))
 testKit.expectEffect(Spawned(childActor, &quot;child&quot;))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L147-L149" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; test = BehaviorTestKit.create(Hello.create());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L147-L149" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; test = BehaviorTestKit.create(Hello.create());
 test.run(new Hello.CreateAChild(&quot;child&quot;));
 assertEquals(&quot;child&quot;, test.expectEffectClass(Effect.Spawned.class).childName());</code></pre></dd>
 </dl>
@@ -636,42 +636,42 @@ assertEquals(&quot;child&quot;, test.expectEffectClass(Effect.Spawned.class).chi
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L111-L113" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L111-L113" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
 testKit.run(Hello.CreateAnonymousChild)
 testKit.expectEffect(SpawnedAnonymous(childActor))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L156-L158" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; test = BehaviorTestKit.create(Hello.create());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L156-L158" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; test = BehaviorTestKit.create(Hello.create());
 test.run(Hello.CreateAnAnonymousChild.INSTANCE);
 test.expectEffectClass(Effect.SpawnedAnonymous.class);</code></pre></dd>
 </dl>
 <h3><a href="#sending-messages" name="sending-messages" class="anchor"><span class="anchor-link"></span></a>Sending messages</h3>
-<p>For testing sending a message a <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestInbox"><code>TestInbox</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestInbox"><code>TestInbox</code></a></span> is created that provides an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span> and methods to assert against the messages that have been sent to it.</p>
+<p>For testing sending a message a <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestInbox"><code>TestInbox</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestInbox"><code>TestInbox</code></a></span> is created that provides an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span> and methods to assert against the messages that have been sent to it.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L119-L122" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L119-L122" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
 val inbox = TestInbox[String]()
 testKit.run(Hello.SayHello(inbox.ref))
 inbox.expectMessage(&quot;hello&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L165-L168" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; test = BehaviorTestKit.create(Hello.create());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L165-L168" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; test = BehaviorTestKit.create(Hello.create());
 TestInbox&lt;String&gt; inbox = TestInbox.create();
 test.run(new Hello.SayHello(inbox.getRef()));
 inbox.expectMessage(&quot;hello&quot;);</code></pre></dd>
 </dl>
-<p>Another use case is sending a message to a child actor you can do this by looking up the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestInbox"><code>TestInbox</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestInbox"><code>TestInbox</code></a></span> for a child actor from the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span>:</p>
+<p>Another use case is sending a message to a child actor you can do this by looking up the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestInbox"><code>TestInbox</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestInbox.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestInbox"><code>TestInbox</code></a></span> for a child actor from the <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span>:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L128-L131" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L128-L131" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
 testKit.run(Hello.SayHelloToChild(&quot;child&quot;))
 val childInbox = testKit.childInbox[String](&quot;child&quot;)
 childInbox.expectMessage(&quot;hello&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L175-L178" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; testKit = BehaviorTestKit.create(Hello.create());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L175-L178" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; testKit = BehaviorTestKit.create(Hello.create());
 testKit.run(new Hello.SayHelloToChild(&quot;child&quot;));
 TestInbox&lt;String&gt; childInbox = testKit.childInbox(&quot;child&quot;);
 childInbox.expectMessage(&quot;hello&quot;);</code></pre></dd>
@@ -680,7 +680,7 @@ childInbox.expectMessage(&quot;hello&quot;);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L137-L142" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L137-L142" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
 testKit.run(Hello.SayHelloToAnonymousChild)
 val child = testKit.expectEffectType[SpawnedAnonymous[String]]
 
@@ -688,14 +688,14 @@ val childInbox = testKit.childInbox(child.ref)
 childInbox.expectMessage(&quot;hello stranger&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L185-L189" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; testKit = BehaviorTestKit.create(Hello.create());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L185-L189" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; testKit = BehaviorTestKit.create(Hello.create());
 testKit.run(Hello.SayHelloToAnonymousChild.INSTANCE);
 // Anonymous actors are created as: $a $b etc
 TestInbox&lt;String&gt; childInbox = testKit.childInbox(&quot;$a&quot;);
 childInbox.expectMessage(&quot;hello stranger&quot;);</code></pre></dd>
 </dl>
 <h3><a href="#testing-other-effects" name="testing-other-effects" class="anchor"><span class="anchor-link"></span></a>Testing other effects</h3>
-<p>The <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span> keeps track other effects you can verify, look at the sub-classes of <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/Effect.html" title="org.apache.pekko.actor.testkit.typed.Effect"><code>Effect</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/Effect.html" title="org.apache.pekko.actor.testkit.typed.Effect"><code>Effect</code></a></span></p>
+<p>The <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span> keeps track other effects you can verify, look at the sub-classes of <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/Effect.html" title="org.apache.pekko.actor.testkit.typed.Effect"><code>Effect</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/Effect.html" title="org.apache.pekko.actor.testkit.typed.Effect"><code>Effect</code></a></span></p>
 <ul>
   <li>SpawnedAdapter</li>
   <li>Stopped</li>
@@ -707,17 +707,17 @@ childInbox.expectMessage(&quot;hello stranger&quot;);</code></pre></dd>
   <li>TimerCancelled</li>
 </ul>
 <h3><a href="#checking-for-log-messages" name="checking-for-log-messages" class="anchor"><span class="anchor-link"></span></a>Checking for Log Messages</h3>
-<p>The <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span> also keeps track of everything that is being logged. Here, you can see an example on how to check if the behavior logged certain messages:</p>
+<p>The <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span> also keeps track of everything that is being logged. Here, you can see an example on how to check if the behavior logged certain messages:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L148-L151" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/SyncTestingExampleSpec.scala#L148-L151" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val testKit = BehaviorTestKit(Hello())
 val inbox = TestInbox[String](&quot;Inboxer&quot;)
 testKit.run(Hello.LogAndSayHello(inbox.ref))
 testKit.logEntries() shouldBe Seq(CapturedLogEvent(Level.INFO, &quot;Saying hello to Inboxer&quot;))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L196-L209" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; test = BehaviorTestKit.create(Hello.create());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/SyncTestingExampleTest.java#L196-L209" target="_blank" title="Go to snippet source">source</a><code class="language-java">BehaviorTestKit&lt;Hello.Command&gt; test = BehaviorTestKit.create(Hello.create());
 TestInbox&lt;String&gt; inbox = TestInbox.create(&quot;Inboxer&quot;);
 test.run(new Hello.LogAndSayHello(inbox.getRef()));
 
@@ -732,9 +732,9 @@ CapturedLogEvent expectedLogEvent =
         new HashMap&lt;&gt;());
 assertEquals(expectedLogEvent, allLogEntries.get(0));</code></pre></dd>
 </dl>
-<p>See the other public methods and API documentation on <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span> for other types of verification.</p>
+<p>See the other public methods and API documentation on <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/BehaviorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.BehaviorTestKit"><code>BehaviorTestKit</code></a></span> for other types of verification.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/testing-sync.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/testing-sync.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -820,7 +820,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

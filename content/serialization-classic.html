@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Pekko Classic pertains to the original Actor APIs, which have been improved by more type safe and guided Actor APIs. Pekko Classic is still fully supported and existing applications can continue to use the classic APIs. It is also possible to use the new Actor APIs together with classic actors in the same ActorSystem, see <a href="typed/coexisting.html">coexistence</a>. For new projects we recommend using <a href="typed/actors.html">the new Actor API</a>.</p></div>
 <p>Serialization is the same for Classic and Typed actors. It is described in <a href="serialization.html">Serialization</a>, aside from serialization of <code>ActorRef</code> that is described <a href="serialization-classic.html#serializing-actorrefs">here</a>.</p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Serialization, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Serialization, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -430,7 +430,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code>
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -445,7 +445,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code>
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-actor_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -454,7 +454,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/serialization/SerializationDocSpec.scala#L17-L22" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/serialization/SerializationDocSpec.scala#L17-L22" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor._
 import pekko.actor.typed.scaladsl.Behaviors
 import pekko.cluster.Cluster
@@ -462,7 +462,7 @@ import pekko.serialization._
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/serialization/SerializationDocTest.java#L23-L28" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.*;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/serialization/SerializationDocTest.java#L23-L28" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.*;
 import org.apache.pekko.serialization.*;
 
 import java.nio.charset.Charset;
@@ -472,7 +472,7 @@ import java.nio.charset.StandardCharsets;
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/serialization/SerializationDocSpec.scala#L255-L264" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Serialize
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/serialization/SerializationDocSpec.scala#L255-L264" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Serialize
 // (beneath toBinary)
 val serializedRef: String = Serialization.serializedActorPath(theActorRef)
 
@@ -484,7 +484,7 @@ val deserializedRef = extendedSystem.provider.resolveActorRef(serializedRef)
 // Then use the ActorRef</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/serialization/SerializationDocTest.java#L142-L151" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Serialize
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/serialization/SerializationDocTest.java#L142-L151" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Serialize
 // (beneath toBinary)
 String serializedRef = Serialization.serializedActorPath(theActorRef);
 
@@ -499,13 +499,13 @@ final ActorRef deserializedRef = extendedSystem.provider().resolveActorRef(seria
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/serialization/SerializationDocSpec.scala#L272-L275" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val selfAddress = Cluster(system).selfAddress
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/serialization/SerializationDocSpec.scala#L272-L275" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val selfAddress = Cluster(system).selfAddress
 
 val serializedRef: String =
   theActorRef.path.toSerializationFormatWithAddress(selfAddress)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/serialization/SerializationDocTest.java#L161-L163" target="_blank" title="Go to snippet source">source</a><code class="language-java">Address selfAddress = Cluster.get(system).selfAddress();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/serialization/SerializationDocTest.java#L161-L163" target="_blank" title="Go to snippet source">source</a><code class="language-java">Address selfAddress = Cluster.get(system).selfAddress();
 
 String serializedRef = theActorRef.path().toSerializationFormatWithAddress(selfAddress);</code></pre></dd>
 </dl><div class="callout note "><div class="callout-title">Note</div>
@@ -515,18 +515,18 @@ String serializedRef = theActorRef.path().toSerializationFormatWithAddress(selfA
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/serialization/SerializationDocSpec.scala#L272-L275" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val selfAddress = Cluster(system).selfAddress
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/serialization/SerializationDocSpec.scala#L272-L275" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val selfAddress = Cluster(system).selfAddress
 
 val serializedRef: String =
   theActorRef.path.toSerializationFormatWithAddress(selfAddress)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/serialization/SerializationDocTest.java#L161-L163" target="_blank" title="Go to snippet source">source</a><code class="language-java">Address selfAddress = Cluster.get(system).selfAddress();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/serialization/SerializationDocTest.java#L161-L163" target="_blank" title="Go to snippet source">source</a><code class="language-java">Address selfAddress = Cluster.get(system).selfAddress();
 
 String serializedRef = theActorRef.path().toSerializationFormatWithAddress(selfAddress);</code></pre></dd>
 </dl>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/serialization-classic.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/serialization-classic.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -610,7 +610,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

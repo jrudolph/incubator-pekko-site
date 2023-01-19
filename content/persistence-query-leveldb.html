@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,7 +419,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h1><a href="#persistence-query-for-leveldb" name="persistence-query-for-leveldb" class="anchor"><span class="anchor-link"></span></a>Persistence Query for LevelDB</h1>
 <p>The LevelDB journal and query plugin is deprecated and it is not advised to build new applications with it. As a replacement we recommend using <a href="https://doc.akka.io/docs/akka-persistence-jdbc/current/index.html">Pekko Persistence JDBC</a>.</p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Persistence Query, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Persistence Query, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-persistence-query" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -428,7 +428,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-persistence-query" % PekkoVe
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -443,7 +443,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-persistence-query" % PekkoVe
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-persistence-query_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -455,14 +455,14 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L51-L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L51-L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.persistence.query.PersistenceQuery
 import pekko.persistence.query.journal.leveldb.scaladsl.LeveldbReadJournal
 
 val queries = PersistenceQuery(system).readJournalFor[LeveldbReadJournal](LeveldbReadJournal.Identifier)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L35-L37" target="_blank" title="Go to snippet source">source</a><code class="language-java">LeveldbReadJournal queries =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L35-L37" target="_blank" title="Go to snippet source">source</a><code class="language-java">LeveldbReadJournal queries =
     PersistenceQuery.get(system)
         .getReadJournalFor(LeveldbReadJournal.class, LeveldbReadJournal.Identifier());</code></pre></dd>
 </dl>
@@ -472,7 +472,7 @@ val queries = PersistenceQuery(system).readJournalFor[LeveldbReadJournal](Leveld
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L61-L66" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val queries = PersistenceQuery(system).readJournalFor[LeveldbReadJournal](LeveldbReadJournal.Identifier)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L61-L66" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val queries = PersistenceQuery(system).readJournalFor[LeveldbReadJournal](LeveldbReadJournal.Identifier)
 
 val src: Source[EventEnvelope, NotUsed] =
   queries.eventsByPersistenceId(&quot;some-persistence-id&quot;, 0L, Long.MaxValue)
@@ -480,7 +480,7 @@ val src: Source[EventEnvelope, NotUsed] =
 val events: Source[Any, NotUsed] = src.map(_.event)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L43-L48" target="_blank" title="Go to snippet source">source</a><code class="language-java">LeveldbReadJournal queries =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L43-L48" target="_blank" title="Go to snippet source">source</a><code class="language-java">LeveldbReadJournal queries =
     PersistenceQuery.get(system)
         .getReadJournalFor(LeveldbReadJournal.class, LeveldbReadJournal.Identifier());
 
@@ -497,12 +497,12 @@ Source&lt;EventEnvelope, NotUsed&gt; source =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L72-L74" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val queries = PersistenceQuery(system).readJournalFor[LeveldbReadJournal](LeveldbReadJournal.Identifier)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L72-L74" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val queries = PersistenceQuery(system).readJournalFor[LeveldbReadJournal](LeveldbReadJournal.Identifier)
 
 val src: Source[String, NotUsed] = queries.persistenceIds()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L54-L58" target="_blank" title="Go to snippet source">source</a><code class="language-java">LeveldbReadJournal queries =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L54-L58" target="_blank" title="Go to snippet source">source</a><code class="language-java">LeveldbReadJournal queries =
     PersistenceQuery.get(system)
         .getReadJournalFor(LeveldbReadJournal.class, LeveldbReadJournal.Identifier());
 
@@ -517,13 +517,13 @@ Source&lt;String, NotUsed&gt; source = queries.persistenceIds();</code></pre></d
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L80-L83" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val queries = PersistenceQuery(system).readJournalFor[LeveldbReadJournal](LeveldbReadJournal.Identifier)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L80-L83" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val queries = PersistenceQuery(system).readJournalFor[LeveldbReadJournal](LeveldbReadJournal.Identifier)
 
 val src: Source[EventEnvelope, NotUsed] =
   queries.eventsByTag(tag = &quot;green&quot;, offset = Sequence(0L))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L64-L68" target="_blank" title="Go to snippet source">source</a><code class="language-java">LeveldbReadJournal queries =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L64-L68" target="_blank" title="Go to snippet source">source</a><code class="language-java">LeveldbReadJournal queries =
     PersistenceQuery.get(system)
         .getReadJournalFor(LeveldbReadJournal.class, LeveldbReadJournal.Identifier());
 
@@ -533,7 +533,7 @@ Source&lt;EventEnvelope, NotUsed&gt; source = queries.eventsByTag(&quot;green&qu
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L24-L41" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/query/LeveldbPersistenceQueryDocSpec.scala#L24-L41" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.persistence.journal.WriteEventAdapter
 import pekko.persistence.journal.Tagged
 
@@ -553,7 +553,7 @@ class MyTaggingEventAdapter extends WriteEventAdapter {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L74-L95" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyTaggingEventAdapter implements WriteEventAdapter {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/query/LeveldbPersistenceQueryDocTest.java#L74-L95" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyTaggingEventAdapter implements WriteEventAdapter {
 
   @Override
   public Object toJournal(Object event) {
@@ -587,7 +587,7 @@ class MyTaggingEventAdapter extends WriteEventAdapter {
 <h2><a href="#configuration" name="configuration" class="anchor"><span class="anchor-link"></span></a>Configuration</h2>
 <p>Configuration settings can be defined in the configuration section with the absolute path corresponding to the identifier, which is <code>&quot;pekko.persistence.query.journal.leveldb&quot;</code> for the default <code>LeveldbReadJournal.Identifier</code>.</p>
 <p>It can be configured with the following properties:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-query/src/main/resources/reference.conf#L9-L28" target="_blank" title="Go to snippet source">source</a><code class="language-conf"># Configuration for the LeveldbReadJournal
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-query/src/main/resources/reference.conf#L9-L28" target="_blank" title="Go to snippet source">source</a><code class="language-conf"># Configuration for the LeveldbReadJournal
 pekko.persistence.query.journal.leveldb {
   # Implementation class of the LevelDB ReadJournalProvider
   class = &quot;org.apache.pekko.persistence.query.journal.leveldb.LeveldbReadJournalProvider&quot;
@@ -608,7 +608,7 @@ pekko.persistence.query.journal.leveldb {
   max-buffer-size = 100
 }</code></pre>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/persistence-query-leveldb.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/persistence-query-leveldb.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -695,7 +695,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

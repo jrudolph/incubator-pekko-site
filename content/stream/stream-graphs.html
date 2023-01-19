@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#working-with-graphs" name="working-with-graphs" class="anchor"><span class="anchor-link"></span></a>Working with Graphs</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -483,7 +483,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L33-L46" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.Builder[NotUsed] =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L33-L46" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.Builder[NotUsed] =&gt;
   import GraphDSL.Implicits._
   val in = Source(1 to 10)
   val out = Sink.ignore
@@ -499,7 +499,7 @@ dependencies {
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L48-L77" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Integer, NotUsed&gt; in = Source.from(Arrays.asList(1, 2, 3, 4, 5));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L48-L77" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Integer, NotUsed&gt; in = Source.from(Arrays.asList(1, 2, 3, 4, 5));
 final Sink&lt;List&lt;String&gt;, CompletionStage&lt;List&lt;String&gt;&gt;&gt; sink = Sink.head();
 final Flow&lt;Integer, Integer, NotUsed&gt; f1 = Flow.of(Integer.class).map(elem -&gt; elem + 10);
 final Flow&lt;Integer, Integer, NotUsed&gt; f2 = Flow.of(Integer.class).map(elem -&gt; elem + 20);
@@ -538,7 +538,7 @@ final RunnableGraph&lt;CompletionStage&lt;List&lt;String&gt;&gt;&gt; result =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L76-L95" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>val topHeadSink = Sink.head[Int]
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L76-L95" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>val topHeadSink = Sink.head[Int]
 val bottomHeadSink = Sink.head[Int]
 val sharedDoubler = Flow[Int].map(_ * 2)
 
@@ -554,7 +554,7 @@ RunnableGraph.fromGraph(GraphDSL.createGraph(topHeadSink, bottomHeadSink)((_, _)
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L121-L141" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Sink&lt;Integer, CompletionStage&lt;Integer&gt;&gt; topHeadSink = Sink.head();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L121-L141" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Sink&lt;Integer, CompletionStage&lt;Integer&gt;&gt; topHeadSink = Sink.head();
 final Sink&lt;Integer, CompletionStage&lt;Integer&gt;&gt; bottomHeadSink = Sink.head();
 final Flow&lt;Integer, Integer, NotUsed&gt; sharedDoubler =
     Flow.of(Integer.class).map(elem -&gt; elem * 2);
@@ -580,7 +580,7 @@ final RunnableGraph&lt;Pair&lt;CompletionStage&lt;Integer&gt;, CompletionStage&l
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/GraphOpsIntegrationSpec.scala#L222-L237" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sinks = immutable
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/GraphOpsIntegrationSpec.scala#L222-L237" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sinks = immutable
   .Seq(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
   .map(prefix =&gt; Flow[String].filter(str =&gt; str.startsWith(prefix)).toMat(Sink.head[String])(Keep.right))
 
@@ -598,7 +598,7 @@ val g: RunnableGraph[Seq[Future[String]]] = RunnableGraph.fromGraph(GraphDSL.cre
 val matList: Seq[Future[String]] = g.run()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L193-L224" target="_blank" title="Go to snippet source">source</a><code class="language-java">// create the source
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L193-L224" target="_blank" title="Go to snippet source">source</a><code class="language-java">// create the source
 final Source&lt;String, NotUsed&gt; in = Source.from(Arrays.asList(&quot;ax&quot;, &quot;bx&quot;, &quot;cx&quot;));
 // generate the sinks from code
 List&lt;String&gt; prefixes = Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);
@@ -639,7 +639,7 @@ List&lt;CompletionStage&lt;String&gt;&gt; result = g.run(system);</code></pre></
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L31-L57" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pickMaxOfThree = GraphDSL.create() { implicit b =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L31-L57" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pickMaxOfThree = GraphDSL.create() { implicit b =&gt;
   import GraphDSL.Implicits._
 
   val zip1 = b.add(ZipWith[Int, Int, Int](math.max _))
@@ -668,7 +668,7 @@ val max: Future[Int] = g.run()
 Await.result(max, 300.millis) should equal(3)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L55-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Graph&lt;FanInShape2&lt;Integer, Integer, Integer&gt;, NotUsed&gt; zip =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L55-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Graph&lt;FanInShape2&lt;Integer, Integer, Integer&gt;, NotUsed&gt; zip =
     ZipWith.create((Integer left, Integer right) -&gt; Math.max(left, right));
 
 final Graph&lt;UniformFanInShape&lt;Integer, Integer&gt;, NotUsed&gt; pickMaxOfThree =
@@ -721,7 +721,7 @@ final CompletionStage&lt;Integer&gt; max = g.run(system);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L63-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pairs = Source.fromGraph(GraphDSL.create() { implicit b =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L63-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pairs = Source.fromGraph(GraphDSL.create() { implicit b =&gt;
   import GraphDSL.Implicits._
 
   // prepare graph elements
@@ -739,7 +739,7 @@ final CompletionStage&lt;Integer&gt; max = g.run(system);</code></pre></dd>
 val firstPair: Future[(Int, Int)] = pairs.runWith(Sink.head)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L93-L128" target="_blank" title="Go to snippet source">source</a><code class="language-java">// first create an indefinite source of integer numbers
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L93-L128" target="_blank" title="Go to snippet source">source</a><code class="language-java">// first create an indefinite source of integer numbers
 class Ints implements Iterator&lt;Integer&gt; {
   private int next = 0;
 
@@ -775,7 +775,7 @@ class Ints implements Iterator&lt;Integer&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L85-L106" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pairUpWithToString =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L85-L106" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pairUpWithToString =
   Flow.fromGraph(GraphDSL.create() { implicit b =&gt;
     import GraphDSL.Implicits._
 
@@ -794,7 +794,7 @@ class Ints implements Iterator&lt;Integer&gt; {
 pairUpWithToString.runWith(Source(List(1)), Sink.head)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L136-L155" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Integer, Pair&lt;Integer, String&gt;, NotUsed&gt; pairs =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L136-L155" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Integer, Pair&lt;Integer, String&gt;, NotUsed&gt; pairs =
     Flow.fromGraph(
         GraphDSL.create(
             b -&gt; {
@@ -817,14 +817,14 @@ pairUpWithToString.runWith(Source(List(1)), Sink.head)</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L115-L119" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sourceOne = Source(List(1))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L115-L119" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sourceOne = Source(List(1))
 val sourceTwo = Source(List(2))
 val merged = Source.combine(sourceOne, sourceTwo)(Merge(_))
 
 val mergedResult: Future[Int] = merged.runWith(Sink.fold(0)(_ + _))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L164-L172" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; source1 = Source.single(1);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L164-L172" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; source1 = Source.single(1);
 Source&lt;Integer, NotUsed&gt; source2 = Source.single(2);
 
 final Source&lt;Integer, NotUsed&gt; sources =
@@ -835,7 +835,7 @@ final Source&lt;Integer, NotUsed&gt; sources =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L127-L132" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sendRemotely = Sink.actorRef(actorRef, &quot;Done&quot;, _ =&gt; &quot;Failed&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamPartialGraphDSLDocSpec.scala#L127-L132" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sendRemotely = Sink.actorRef(actorRef, &quot;Done&quot;, _ =&gt; &quot;Failed&quot;)
 val localProcessing = Sink.foreach[Int](_ =&gt; /* do something useful */ ())
 
 val sink = Sink.combine(sendRemotely, localProcessing)(Broadcast[Int](_))
@@ -843,7 +843,7 @@ val sink = Sink.combine(sendRemotely, localProcessing)(Broadcast[Int](_))
 Source(List(0, 1, 2)).runWith(sink)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L184-L193" target="_blank" title="Go to snippet source">source</a><code class="language-java">Sink&lt;Integer, NotUsed&gt; sendRemotely = Sink.actorRef(actorRef, &quot;Done&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamPartialGraphDSLDocTest.java#L184-L193" target="_blank" title="Go to snippet source">source</a><code class="language-java">Sink&lt;Integer, NotUsed&gt; sendRemotely = Sink.actorRef(actorRef, &quot;Done&quot;);
 Sink&lt;Integer, CompletionStage&lt;Done&gt;&gt; localProcessing =
     Sink.&lt;Integer&gt;foreach(
         a -&gt; {
@@ -861,7 +861,7 @@ Source.&lt;Integer&gt;from(Arrays.asList(new Integer[] {0, 1, 2})).runWith(sinks
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L106-L123" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// A shape represents the input and output ports of a reusable
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L106-L123" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// A shape represents the input and output ports of a reusable
 // processing module
 case class PriorityWorkerPoolShape[In, Out](jobsIn: Inlet[In], priorityJobsIn: Inlet[In], resultsOut: Outlet[Out])
     extends Shape {
@@ -891,7 +891,7 @@ case class PriorityWorkerPoolShape[In, Out](jobsIn: Inlet[In], priorityJobsIn: I
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L187-L196" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import FanInShape.{ Init, Name }
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L187-L196" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import FanInShape.{ Init, Name }
 
 class PriorityWorkerPoolShape2[In, Out](_init: Init[Out] = Name(&quot;PriorityWorkerPool&quot;))
     extends FanInShape[Out](_init) {
@@ -906,7 +906,7 @@ class PriorityWorkerPoolShape2[In, Out](_init: Init[Out] = Name(&quot;PriorityWo
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L127-L158" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object PriorityWorkerPool {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L127-L158" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object PriorityWorkerPool {
   def apply[In, Out](
       worker: Flow[In, Out, Any],
       workerCount: Int): Graph[PriorityWorkerPoolShape[In, Out], NotUsed] = {
@@ -943,7 +943,7 @@ class PriorityWorkerPoolShape2[In, Out](_init: Init[Out] = Name(&quot;PriorityWo
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L164-L183" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val worker1 = Flow[String].map(&quot;step 1 &quot; + _)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L164-L183" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val worker1 = Flow[String].map(&quot;step 1 &quot; + _)
 val worker2 = Flow[String].map(&quot;step 2 &quot; + _)
 
 RunnableGraph
@@ -967,7 +967,7 @@ RunnableGraph
 <a id="bidi-flow"></a>
 <h2><a href="#bidirectional-flows" name="bidirectional-flows" class="anchor"><span class="anchor-link"></span></a>Bidirectional Flows</h2>
 <p>A graph topology that is often useful is that of two flows going in opposite directions. Take for example a codec operator that serializes outgoing messages and deserializes incoming octet streams. Another such operator could add a framing protocol that attaches a length header to outgoing data and parses incoming frames back into the original octet stream chunks. These two operators are meant to be composed, applying one atop the other as part of a protocol stack. For this purpose exists the special type <code>BidiFlow</code> which is a graph that has exactly two open inlets and two open outlets. The corresponding shape is called <code>BidiShape</code> and is defined like this:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream/src/main/scala/org/apache/pekko/stream/Shape.scala#L341-L372" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/**
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream/src/main/scala/org/apache/pekko/stream/Shape.scala#L341-L372" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/**
  * A bidirectional flow of elements that consequently has two inputs and two
  * outputs, arranged like this:
  *
@@ -1001,7 +1001,7 @@ final case class BidiShape[-In1, +Out1, -In2, +Out2](
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/BidiFlowDocSpec.scala#L27-L65" target="_blank" title="Go to snippet source">source</a><code class="language-scala">trait Message
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/BidiFlowDocSpec.scala#L27-L65" target="_blank" title="Go to snippet source">source</a><code class="language-scala">trait Message
 case class Ping(id: Int) extends Message
 case class Pong(id: Int) extends Message
 
@@ -1036,7 +1036,7 @@ val codecVerbose = BidiFlow.fromGraph(GraphDSL.create() { b =&gt;
 val codec = BidiFlow.fromFunctions(toBytes _, fromBytes _)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/BidiFlowDocTest.java#L57-L142" target="_blank" title="Go to snippet source">source</a><code class="language-java">static interface Message {}
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/BidiFlowDocTest.java#L57-L142" target="_blank" title="Go to snippet source">source</a><code class="language-java">static interface Message {}
 
 static class Ping implements Message {
   final int id;
@@ -1118,7 +1118,7 @@ public final BidiFlow&lt;Message, ByteString, ByteString, Message, NotUsed&gt; c
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/BidiFlowDocSpec.scala#L32-L52" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def toBytes(msg: Message): ByteString = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/BidiFlowDocSpec.scala#L32-L52" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def toBytes(msg: Message): ByteString = {
   implicit val order = ByteOrder.LITTLE_ENDIAN
   msg match {
     case Ping(id) =&gt; ByteString.newBuilder.putByte(1).putInt(id).result()
@@ -1137,7 +1137,7 @@ def fromBytes(bytes: ByteString): Message = {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/BidiFlowDocTest.java#L100-L124" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static ByteString toBytes(Message msg) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/BidiFlowDocTest.java#L100-L124" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static ByteString toBytes(Message msg) {
   if (msg instanceof Ping) {
     final int id = ((Ping) msg).id;
     return new ByteStringBuilder().putByte((byte) 1).putInt(id, ByteOrder.LITTLE_ENDIAN).result();
@@ -1164,7 +1164,7 @@ public static Message fromBytes(ByteString bytes) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/BidiFlowDocSpec.scala#L69-L145" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val framing = BidiFlow.fromGraph(GraphDSL.create() { b =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/BidiFlowDocSpec.scala#L69-L145" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val framing = BidiFlow.fromGraph(GraphDSL.create() { b =&gt;
   implicit val order = ByteOrder.LITTLE_ENDIAN
 
   def addLengthHeader(bytes: ByteString) = {
@@ -1243,7 +1243,7 @@ public static Message fromBytes(ByteString bytes) {
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/BidiFlowDocTest.java#L146-L240" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static ByteString addLengthHeader(ByteString bytes) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/BidiFlowDocTest.java#L146-L240" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static ByteString addLengthHeader(ByteString bytes) {
   final int len = bytes.size();
   return new ByteStringBuilder().putInt(len, ByteOrder.LITTLE_ENDIAN).append(bytes).result();
 }
@@ -1343,7 +1343,7 @@ public final BidiFlow&lt;ByteString, ByteString, ByteString, ByteString, NotUsed
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/BidiFlowDocSpec.scala#L166-L183" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/* construct protocol stack
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/BidiFlowDocSpec.scala#L166-L183" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/* construct protocol stack
  *         +------------------------------------+
  *         | stack                              |
  *         |                                    |
@@ -1363,7 +1363,7 @@ val result = Source((0 to 9).map(Ping(_))).via(flow).limit(20).runWith(Sink.seq)
 Await.result(result, 1.second) should ===((0 to 9).map(Pong(_)))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/BidiFlowDocTest.java#L246-L273" target="_blank" title="Go to snippet source">source</a><code class="language-java">/* construct protocol stack
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/BidiFlowDocTest.java#L246-L273" target="_blank" title="Go to snippet source">source</a><code class="language-java">/* construct protocol stack
  *         +------------------------------------+
  *         | stack                              |
  *         |                                    |
@@ -1399,14 +1399,14 @@ assertArrayEquals(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L203-L207" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L203-L207" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
 val foldFlow: Flow[Int, Int, Future[Int]] = Flow.fromGraph(GraphDSL.createGraph(Sink.fold[Int, Int](0)(_ + _)) {
   implicit builder =&gt; fold =&gt;
     FlowShape(fold.in, builder.materializedValue.mapAsync(4)(identity).outlet)
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L151-L168" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Sink&lt;Integer, CompletionStage&lt;Integer&gt;&gt; foldSink =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L151-L168" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Sink&lt;Integer, CompletionStage&lt;Integer&gt;&gt; foldSink =
     Sink.fold(
         0,
         (a, b) -&gt; {
@@ -1429,7 +1429,7 @@ final Flow&lt;Integer, Integer, CompletionStage&lt;Integer&gt;&gt; foldingFlow =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L213-L224" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphDSLDocSpec.scala#L213-L224" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
 // This cannot produce any value:
 val cyclicFold: Source[Int, Future[Int]] =
   Source.fromGraph(GraphDSL.createGraph(Sink.fold[Int, Int](0)(_ + _)) { implicit builder =&gt; fold =&gt;
@@ -1443,7 +1443,7 @@ val cyclicFold: Source[Int, Future[Int]] =
   })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L172-L186" target="_blank" title="Go to snippet source">source</a><code class="language-java">// This cannot produce any value:
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/GraphDslTest.java#L172-L186" target="_blank" title="Go to snippet source">source</a><code class="language-java">// This cannot produce any value:
 final Source&lt;Integer, CompletionStage&lt;Integer&gt;&gt; cyclicSource =
     Source.fromGraph(
         GraphDSL.create(
@@ -1468,7 +1468,7 @@ final Source&lt;Integer, CompletionStage&lt;Integer&gt;&gt; cyclicSource =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L29-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// WARNING! The graph below deadlocks!
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L29-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// WARNING! The graph below deadlocks!
 RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
   import GraphDSL.Implicits._
 
@@ -1481,7 +1481,7 @@ RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L52-L73" target="_blank" title="Go to snippet source">source</a><code class="language-java">// WARNING! The graph below deadlocks!
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L52-L73" target="_blank" title="Go to snippet source">source</a><code class="language-java">// WARNING! The graph below deadlocks!
 final Flow&lt;Integer, Integer, NotUsed&gt; printFlow =
     Flow.of(Integer.class)
         .map(
@@ -1514,7 +1514,7 @@ RunnableGraph.fromGraph(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L47-L57" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// WARNING! The graph below stops consuming from &quot;source&quot; after a few steps
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L47-L57" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// WARNING! The graph below stops consuming from &quot;source&quot; after a few steps
 RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
   import GraphDSL.Implicits._
 
@@ -1527,7 +1527,7 @@ RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L87-L100" target="_blank" title="Go to snippet source">source</a><code class="language-java">// WARNING! The graph below stops consuming from &quot;source&quot; after a few steps
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L87-L100" target="_blank" title="Go to snippet source">source</a><code class="language-java">// WARNING! The graph below stops consuming from &quot;source&quot; after a few steps
 RunnableGraph.fromGraph(
     GraphDSL.create(
         b -&gt; {
@@ -1548,7 +1548,7 @@ RunnableGraph.fromGraph(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L65-L74" target="_blank" title="Go to snippet source">source</a><code class="language-scala">RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L65-L74" target="_blank" title="Go to snippet source">source</a><code class="language-scala">RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
   import GraphDSL.Implicits._
 
   val merge = b.add(Merge[Int](2))
@@ -1560,7 +1560,7 @@ RunnableGraph.fromGraph(
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L114-L128" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L114-L128" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
     GraphDSL.create(
         b -&gt; {
           final UniformFanInShape&lt;Integer, Integer&gt; merge = b.add(Merge.create(2));
@@ -1586,7 +1586,7 @@ RunnableGraph.fromGraph(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L82-L93" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// WARNING! The graph below never processes any elements
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L82-L93" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// WARNING! The graph below never processes any elements
 RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
   import GraphDSL.Implicits._
 
@@ -1600,7 +1600,7 @@ RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L142-L156" target="_blank" title="Go to snippet source">source</a><code class="language-java">// WARNING! The graph below never processes any elements
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L142-L156" target="_blank" title="Go to snippet source">source</a><code class="language-java">// WARNING! The graph below never processes any elements
 RunnableGraph.fromGraph(
     GraphDSL.create(
         b -&gt; {
@@ -1625,7 +1625,7 @@ RunnableGraph.fromGraph(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L101-L114" target="_blank" title="Go to snippet source">source</a><code class="language-scala">RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/GraphCyclesSpec.scala#L101-L114" target="_blank" title="Go to snippet source">source</a><code class="language-scala">RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
   import GraphDSL.Implicits._
 
   val zip = b.add(ZipWith((left: Int, right: Int) =&gt; left))
@@ -1641,7 +1641,7 @@ RunnableGraph.fromGraph(
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L170-L185" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/GraphCyclesDocTest.java#L170-L185" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
     GraphDSL.create(
         b -&gt; {
           final FanInShape2&lt;Integer, Integer, Integer&gt; zip =
@@ -1660,7 +1660,7 @@ RunnableGraph.fromGraph(
 </dl>
 <p>When we run the above example we see that processing starts and never stops. The important takeaway from this example is that balanced cycles often need an initial &ldquo;kick-off&rdquo; element to be injected into the cycle.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/stream-graphs.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/stream-graphs.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1753,7 +1753,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

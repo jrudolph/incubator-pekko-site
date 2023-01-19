@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,21 +421,21 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Stream iterator in cycled manner.</p>
 <p><a href="../index.html#source-operators">Source operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#cycle(org.apache.pekko.japi.function.Creator)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.cycle</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#cycle[T](f:()=&gt;Iterator[T]):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.cycle</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#cycle(org.apache.pekko.japi.function.Creator)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.cycle</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#cycle[T](f:()=&gt;Iterator[T]):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.cycle</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Stream iterator in cycled manner. Internally a new iterator is being created to cycle the one provided via argument meaning when the original iterator runs out of elements to process it will start all over again from the beginning of the iterator provided by the evaluation of provided parameter. If the method argument provides an empty iterator the stream will be terminated with an exception.</p>
 <h2><a href="#examples" name="examples" class="anchor"><span class="anchor-link"></span></a>Examples</h2>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/SourceSpec.scala#L352-L356" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/SourceSpec.scala#L352-L356" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source
   .cycle(() =&gt; List(1, 2, 3).iterator)
   .grouped(9)
   .runWith(Sink.head)
   // This will produce the Seq(1, 2, 3, 1, 2, 3, 1, 2, 3)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/SourceTest.java#L1023-L1026" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Integer, NotUsed&gt; source = Source.cycle(() -&gt; Arrays.asList(1, 2, 3).iterator());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/SourceTest.java#L1023-L1026" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Integer, NotUsed&gt; source = Source.cycle(() -&gt; Arrays.asList(1, 2, 3).iterator());
 CompletionStage&lt;List&lt;Integer&gt;&gt; result = source.grouped(9).runWith(Sink.head(), system);
 List&lt;Integer&gt; emittedValues = result.toCompletableFuture().get();
 assertThat(emittedValues, is(Arrays.asList(1, 2, 3, 1, 2, 3, 1, 2, 3)));</code></pre></dd>
@@ -444,14 +444,14 @@ assertThat(emittedValues, is(Arrays.asList(1, 2, 3, 1, 2, 3, 1, 2, 3)));</code><
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/SourceSpec.scala#L363-L367" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val empty = Iterator.empty
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/SourceSpec.scala#L363-L367" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val empty = Iterator.empty
 Source
   .cycle(() =&gt; empty)
   .runWith(Sink.head)
   // This will return a failed future with an `IllegalArgumentException`</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/SourceTest.java#L1038-L1041" target="_blank" title="Go to snippet source">source</a><code class="language-java">Iterator&lt;Integer&gt; emptyIterator = Collections.&lt;Integer&gt;emptyList().iterator();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/SourceTest.java#L1038-L1041" target="_blank" title="Go to snippet source">source</a><code class="language-java">Iterator&lt;Integer&gt; emptyIterator = Collections.&lt;Integer&gt;emptyList().iterator();
 Source.cycle(() -&gt; emptyIterator)
     .runWith(Sink.head(), system)
     // stream will be terminated with IllegalArgumentException</code></pre></dd>
@@ -460,7 +460,7 @@ Source.cycle(() -&gt; emptyIterator)
 <p><strong>emits</strong> the next value returned from cycled iterator</p>
 <p><strong>completes</strong> never</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source/cycle.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source/cycle.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -546,7 +546,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

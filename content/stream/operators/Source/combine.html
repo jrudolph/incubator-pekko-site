@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,26 +421,26 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Combine several sources, using a given strategy such as merge or concat, into one source.</p>
 <p><a href="../index.html#source-operators">Source operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#combine(org.apache.pekko.stream.javadsl.Source,org.apache.pekko.stream.javadsl.Source,java.util.List,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.combine</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#combine[T,U](first:org.apache.pekko.stream.scaladsl.Source[T,_],second:org.apache.pekko.stream.scaladsl.Source[T,_],rest:org.apache.pekko.stream.scaladsl.Source[T,_]*)(strategy:Int=&gt;org.apache.pekko.stream.Graph[org.apache.pekko.stream.UniformFanInShape[T,U],org.apache.pekko.NotUsed]):org.apache.pekko.stream.scaladsl.Source[U,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.combine</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#combine(org.apache.pekko.stream.javadsl.Source,org.apache.pekko.stream.javadsl.Source,java.util.List,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.combine</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#combine[T,U](first:org.apache.pekko.stream.scaladsl.Source[T,_],second:org.apache.pekko.stream.scaladsl.Source[T,_],rest:org.apache.pekko.stream.scaladsl.Source[T,_]*)(strategy:Int=&gt;org.apache.pekko.stream.Graph[org.apache.pekko.stream.UniformFanInShape[T,U],org.apache.pekko.NotUsed]):org.apache.pekko.stream.scaladsl.Source[U,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.combine</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Provides a way to create a &ldquo;fan-in&rdquo; of multiple sources without having to use the more advanced <a href="../../stream-graphs.html#constructing-graphs">GraphDSL</a>.</p>
 <p>The way the elements from the sources are combined is pluggable through the <code>strategy</code> parameter which accepts a function <span class="group-scala"><code>Int =&gt; Graph[FanInShape]</code></span><span class="group-java"><code>Integer -&gt; Graph&lt;FanInShape&gt;</code></span> where the integer parameter specifies the number of sources that the graph must accept. This makes it possible to use <code>combine</code> with the built-in <code>Concat</code> and <code>Merge</code> by <span class="group-scala">expanding their <code>apply</code> methods to functions</span><span class="group-java">using a method reference to their <code>create</code> methods</span>, but also to use an arbitrary strategy. </p>
 <p>Combine is most useful when you have more sources than 2 or want to use a custom operator, as there are more concise operators for 2-source <a href="../Source-or-Flow/concat.html">concat</a> and <a href="../Source-or-Flow/merge.html">merge</a> </p>
 <p>Some of the built-in operators that can be used as strategy are:</p>
 <ul>
-  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Merge.html" title="org.apache.pekko.stream.javadsl.Merge"><code>Merge</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Merge.html" title="org.apache.pekko.stream.scaladsl.Merge"><code>Merge</code></a></span></li>
-  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Concat.html" title="org.apache.pekko.stream.javadsl.Concat"><code>Concat</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Concat.html" title="org.apache.pekko.stream.scaladsl.Concat"><code>Concat</code></a></span></li>
-  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/MergePrioritized.html" title="org.apache.pekko.stream.javadsl.MergePrioritized"><code>MergePrioritized</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/MergePrioritized.html" title="org.apache.pekko.stream.scaladsl.MergePrioritized"><code>MergePrioritized</code></a></span></li>
-  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/MergeLatest.html" title="org.apache.pekko.stream.javadsl.MergeLatest"><code>MergeLatest</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/MergeLatest.html" title="org.apache.pekko.stream.scaladsl.MergeLatest"><code>MergeLatest</code></a></span></li>
-  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/ZipN.html" title="org.apache.pekko.stream.javadsl.ZipN"><code>ZipN</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/ZipN.html" title="org.apache.pekko.stream.scaladsl.ZipN"><code>ZipN</code></a></span></li>
-  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/ZipWithN.html" title="org.apache.pekko.stream.javadsl.ZipWithN"><code>ZipWithN</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/ZipWithN.html" title="org.apache.pekko.stream.scaladsl.ZipWithN"><code>ZipWithN</code></a></span></li>
+  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Merge.html" title="org.apache.pekko.stream.javadsl.Merge"><code>Merge</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Merge.html" title="org.apache.pekko.stream.scaladsl.Merge"><code>Merge</code></a></span></li>
+  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Concat.html" title="org.apache.pekko.stream.javadsl.Concat"><code>Concat</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Concat.html" title="org.apache.pekko.stream.scaladsl.Concat"><code>Concat</code></a></span></li>
+  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/MergePrioritized.html" title="org.apache.pekko.stream.javadsl.MergePrioritized"><code>MergePrioritized</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/MergePrioritized.html" title="org.apache.pekko.stream.scaladsl.MergePrioritized"><code>MergePrioritized</code></a></span></li>
+  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/MergeLatest.html" title="org.apache.pekko.stream.javadsl.MergeLatest"><code>MergeLatest</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/MergeLatest.html" title="org.apache.pekko.stream.scaladsl.MergeLatest"><code>MergeLatest</code></a></span></li>
+  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/ZipN.html" title="org.apache.pekko.stream.javadsl.ZipN"><code>ZipN</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/ZipN.html" title="org.apache.pekko.stream.scaladsl.ZipN"><code>ZipN</code></a></span></li>
+  <li><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/ZipWithN.html" title="org.apache.pekko.stream.javadsl.ZipWithN"><code>ZipWithN</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/ZipWithN.html" title="org.apache.pekko.stream.scaladsl.ZipWithN"><code>ZipWithN</code></a></span></li>
 </ul>
 <h2><a href="#examples" name="examples" class="anchor"><span class="anchor-link"></span></a>Examples</h2>
 <p>In this example we <code>Merge</code> three different sources of integers. The three sources will immediately start contributing elements to the combined source. The individual elements from each source will be in order but the order compared to elements from other sources is not deterministic:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/source/Combine.scala#L18-L20" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.stream.scaladsl.{ Concat, Merge, Source }
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/source/Combine.scala#L18-L20" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.stream.scaladsl.{ Concat, Merge, Source }
 // ...
 
 val source1 = Source(1 to 3)
@@ -460,7 +460,7 @@ combined.runForeach(println)
 // 3</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/source/Combine.java#L19-L23" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.stream.javadsl.Concat;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/source/Combine.java#L19-L23" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.stream.javadsl.Concat;
 import org.apache.pekko.stream.javadsl.Merge;
 import org.apache.pekko.stream.javadsl.Source;
 // ...
@@ -488,7 +488,7 @@ combined.runForeach(System.out::println, system);
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/source/Combine.scala#L49-L63" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val source1 = Source(1 to 3)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/source/Combine.scala#L49-L63" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val source1 = Source(1 to 3)
 val source2 = Source(8 to 10)
 val source3 = Source(12 to 14)
 val sources = Source.combine(source1, source2, source3)(Concat(_))
@@ -505,7 +505,7 @@ sources.runForeach(println)
 // 14</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/source/Combine.java#L56-L73" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; source1 = Source.range(1, 3);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/source/Combine.java#L56-L73" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; source1 = Source.range(1, 3);
 Source&lt;Integer, NotUsed&gt; source2 = Source.range(8, 10);
 Source&lt;Integer, NotUsed&gt; source3 = Source.range(12, 14);
 
@@ -528,7 +528,7 @@ sources.runForeach(System.out::println, system);
 <p><strong>emits</strong> when there is demand, but depending on the strategy</p>
 <p><strong>completes</strong> depends on the strategy</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source/combine.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source/combine.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -614,7 +614,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

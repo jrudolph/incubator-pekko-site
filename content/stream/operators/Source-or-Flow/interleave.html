@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,14 +421,14 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Emits a specifiable number of elements from the original source, then from the provided source and repeats.</p>
 <p><a href="../index.html#fan-in-operators">Fan-in operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#interleave(org.apache.pekko.stream.Graph,int,boolean)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.interleave</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#interleave[U&gt;:Out](that:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[U],_],segmentSize:Int,eagerClose:Boolean):FlowOps.this.Repr[U]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.interleave</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#interleave(org.apache.pekko.stream.Graph,int,boolean)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.interleave</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#interleave[U&gt;:Out](that:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[U],_],segmentSize:Int,eagerClose:Boolean):FlowOps.this.Repr[U]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.interleave</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#interleave(org.apache.pekko.stream.Graph,int,boolean)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.interleave</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#interleave[U&gt;:Out](that:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[U],_],segmentSize:Int,eagerClose:Boolean):FlowOps.this.Repr[U]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.interleave</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#interleave(org.apache.pekko.stream.Graph,int,boolean)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.interleave</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#interleave[U&gt;:Out](that:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[U],_],segmentSize:Int,eagerClose:Boolean):FlowOps.this.Repr[U]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.interleave</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Emits a specifiable number of elements from the original source, then from the provided source and repeats. If one source completes the rest of the other stream will be emitted.</p>
 <h2><a href="#example" name="example" class="anchor"><span class="anchor-link"></span></a>Example</h2>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/FlowInterleaveSpec.scala#L254-L262" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/FlowInterleaveSpec.scala#L254-L262" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.stream.scaladsl.Sink
 import pekko.stream.scaladsl.Source
 
@@ -439,7 +439,7 @@ sourceA.interleave(sourceB, segmentSize = 2).runWith(Sink.foreach(println))
 // prints 1, 2, 10, 20, 3, 4, 30, 40</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L40-L193" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.stream.javadsl.Keep;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L40-L193" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.stream.javadsl.Keep;
 import org.apache.pekko.stream.javadsl.Source;
 import org.apache.pekko.stream.javadsl.Sink;
 
@@ -456,7 +456,7 @@ sourceA.interleave(sourceB, 2).runForeach(System.out::println, system);
 <p><strong>backpressures</strong> when upstream backpressures</p>
 <p><strong>completes</strong> when both upstreams have completed</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/interleave.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/interleave.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -542,7 +542,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -468,7 +468,7 @@ pekko.persistence.state.plugin = &quot;&quot;
 <p>The LevelDB plugin cannot be used in an Pekko Cluster since the storage is in a local file system.</p></div>
 <p>The LevelDB journal is deprecated and it is not advised to build new applications with it. As a replacement we recommend using <a href="https://doc.akka.io/docs/akka-persistence-jdbc/current/index.html">Pekko Persistence JDBC</a>.</p>
 <p>The LevelDB journal plugin config entry is <code>pekko.persistence.journal.leveldb</code>. Enable this plugin by defining config property:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L38-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the journal plugin to be used
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L38-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the journal plugin to be used
 pekko.persistence.journal.plugin = &quot;pekko.persistence.journal.leveldb&quot;</code></pre>
 <p>LevelDB based plugins will also require the following additional dependency declaration:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">libraryDependencies += "org.fusesource.leveldbjni" % "leveldbjni-all" % "1.8"</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;dependencies&gt
   &lt;dependency&gt;
@@ -480,10 +480,10 @@ pekko.persistence.journal.plugin = &quot;pekko.persistence.journal.leveldb&quot;
   implementation "org.fusesource.leveldbjni:leveldbjni-all:1.8"
 }</code></pre></dd></dl>
 <p>The default location of LevelDB files is a directory named <code>journal</code> in the current working directory. This location can be changed by configuration where the specified path can be relative or absolute:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L51" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.persistence.journal.leveldb.dir = &quot;target/journal&quot;</code></pre>
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L51" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.persistence.journal.leveldb.dir = &quot;target/journal&quot;</code></pre>
 <p>With this plugin, each actor system runs its own private LevelDB instance.</p>
 <p>One peculiarity of LevelDB is that the deletion operation does not remove messages from the journal, but adds a &ldquo;tombstone&rdquo; for each deleted message instead. In the case of heavy journal usage, especially one including frequent deletes, this may be an issue as users may find themselves dealing with continuously increasing journal sizes. To this end, LevelDB offers a special journal compaction function that is exposed via the following configuration:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L61-L69" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Number of deleted messages per persistence id that will trigger journal compaction
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L61-L69" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Number of deleted messages per persistence id that will trigger journal compaction
 pekko.persistence.journal.leveldb.compaction-intervals {
   persistence-id-1 = 100
   persistence-id-2 = 200
@@ -499,22 +499,22 @@ pekko.persistence.journal.leveldb.compaction-intervals {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L158-L160" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.persistence.journal.leveldb.SharedLeveldbStore
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L158-L160" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.persistence.journal.leveldb.SharedLeveldbStore
 
 val store = system.actorOf(Props[SharedLeveldbStore](), &quot;store&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L49" target="_blank" title="Go to snippet source">source</a><code class="language-java">final ActorRef store = system.actorOf(Props.create(SharedLeveldbStore.class), &quot;store&quot;);</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L49" target="_blank" title="Go to snippet source">source</a><code class="language-java">final ActorRef store = system.actorOf(Props.create(SharedLeveldbStore.class), &quot;store&quot;);</code></pre></dd>
 </dl>
 <p>By default, the shared instance writes journaled messages to a local directory named <code>journal</code> in the current working directory. The storage location can be changed by configuration:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L131" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.persistence.journal.leveldb-shared.store.dir = &quot;target/shared&quot;</code></pre>
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L131" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.persistence.journal.leveldb-shared.store.dir = &quot;target/shared&quot;</code></pre>
 <p>Actor systems that use a shared LevelDB store must activate the <code>pekko.persistence.journal.leveldb-shared</code> plugin.</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L125" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.persistence.journal.plugin = &quot;pekko.persistence.journal.leveldb-shared&quot;</code></pre>
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L125" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.persistence.journal.plugin = &quot;pekko.persistence.journal.leveldb-shared&quot;</code></pre>
 <p>This plugin must be initialized by injecting the (remote) <code>SharedLeveldbStore</code> actor reference. Injection is done by calling the <code>SharedLeveldbJournal.setStore</code> method with the actor reference as argument.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L139-L148" target="_blank" title="Go to snippet source">source</a><code class="language-scala">trait SharedStoreUsage extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L139-L148" target="_blank" title="Go to snippet source">source</a><code class="language-scala">trait SharedStoreUsage extends Actor {
   override def preStart(): Unit = {
     context.actorSelection(&quot;pekko://example@127.0.0.1:2552/user/store&quot;) ! Identify(1)
   }
@@ -526,7 +526,7 @@ val store = system.actorOf(Props[SharedLeveldbStore](), &quot;store&quot;)</code
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L53-L78" target="_blank" title="Go to snippet source">source</a><code class="language-java">class SharedStorageUsage extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/persistence/LambdaPersistencePluginDocTest.java#L53-L78" target="_blank" title="Go to snippet source">source</a><code class="language-java">class SharedStorageUsage extends AbstractActor {
   @Override
   public void preStart() throws Exception {
     String path = &quot;pekko://example@127.0.0.1:2552/user/store&quot;;
@@ -558,10 +558,10 @@ val store = system.actorOf(Props[SharedLeveldbStore](), &quot;store&quot;)</code
 <p>This plugin writes snapshot files to the local filesystem.</p><div class="callout warning "><div class="callout-title">Warning</div>
 <p>The local snapshot store plugin cannot be used in an Pekko Cluster since the storage is in a local file system.</p></div>
 <p>The local snapshot store plugin config entry is <code>pekko.persistence.snapshot-store.local</code>. Enable this plugin by defining config property:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L43-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the snapshot store plugin to be used
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L43-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the snapshot store plugin to be used
 pekko.persistence.snapshot-store.plugin = &quot;pekko.persistence.snapshot-store.local&quot;</code></pre>
 <p>The default storage location is a directory named <code>snapshots</code> in the current working directory. This can be changed by configuration where the specified path can be relative or absolute:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L54" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.persistence.snapshot-store.local.dir = &quot;target/snapshots&quot;</code></pre>
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L54" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.persistence.snapshot-store.local.dir = &quot;target/snapshots&quot;</code></pre>
 <p>Note that it is not mandatory to specify a snapshot store plugin. If you don&rsquo;t use snapshots you don&rsquo;t have to configure it.</p>
 <h3><a href="#persistence-plugin-proxy" name="persistence-plugin-proxy" class="anchor"><span class="anchor-link"></span></a>Persistence Plugin Proxy</h3>
 <p>For testing purposes a persistence plugin proxy allows sharing of a journal and snapshot store on a single node across multiple actor systems (on the same or on different nodes). This, for example, allows persistent actors to failover to a backup node and continue using the shared journal instance from the backup node. The proxy works by forwarding all the journal/snapshot store messages to a single, shared, persistence plugin instance, and therefore supports any use case supported by the proxied plugin.</p><div class="callout warning "><div class="callout-title">Warning</div>
@@ -570,7 +570,7 @@ pekko.persistence.snapshot-store.plugin = &quot;pekko.persistence.snapshot-store
 <p>Pekko starts extensions lazily when they are required, and this includes the proxy. This means that in order for the proxy to work, the persistence plugin on the target node must be instantiated. This can be done by instantiating the <code>PersistencePluginProxyExtension</code> <a href="extending-pekko.html">extension</a>, or by calling the <code>PersistencePluginProxy.start</code> method.</p></div><div class="callout note "><div class="callout-title">Note</div>
 <p>The proxied persistence plugin can (and should) be configured using its original configuration keys.</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/persistence-plugins.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/persistence-plugins.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -654,7 +654,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

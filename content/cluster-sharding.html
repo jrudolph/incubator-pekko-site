@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Pekko Classic pertains to the original Actor APIs, which have been improved by more type safe and guided Actor APIs. Pekko Classic is still fully supported and existing applications can continue to use the classic APIs. It is also possible to use the new Actor APIs together with classic actors in the same ActorSystem, see <a href="typed/coexisting.html">coexistence</a>. For new projects we recommend using <a href="typed/actors.html">the new Actor API</a>.</p></div>
 <p>For the full documentation of this feature and for new projects see <a href="typed/cluster-sharding.html">Cluster Sharding</a>.</p>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Cluster Sharding, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Cluster Sharding, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-cluster-sharding" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -430,7 +430,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster-sharding" % PekkoVer
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -445,7 +445,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster-sharding" % PekkoVer
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-cluster-sharding_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -453,7 +453,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Cluster Sharding (classic)</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-cluster-sharding</div>
-  <div>0.0.0+26533-ec68a528-SNAPSHOT</div>
+  <div>0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -468,11 +468,11 @@ dependencies {
   <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/cluster/sharding/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
-  <div><a href="https://discuss.akka.io" target="_blank" rel="noopener noreferrer">Lightbend Discuss</a></div>
-  <div><a href="https://gitter.im/akka/akka" target="_blank" rel="noopener noreferrer">akka/akka Gitter channel</a></div>
+  <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
+  <div><a href="https://github.com/apache/incubator-pekko/discussions" target="_blank" rel="noopener noreferrer">apache/incubator-pekko discussion</a></div>
   </td></tr>
   <tr><th>Release notes</th><td><a href="https://akka.io/blog/news-archive.html">akka.io blog</a></td></tr>
-  <tr><th>Issues</th><td><a href="https://github.com/akka/akka/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
+  <tr><th>Issues</th><td><a href="https://github.com/apache/incubator-pekko/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
   <tr><th>Sources</th><td><a href="https://github.com/apache/incubator-pekko" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-pekko</a></td></tr>
 </table>
 
@@ -487,7 +487,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L39-L79" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case object Increment
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L39-L79" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case object Increment
 case object Decrement
 final case class Get(counterId: Long)
 final case class EntityEnvelope(id: Long, payload: Any)
@@ -522,7 +522,7 @@ class Counter extends PersistentActor {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L164-L246" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class Counter extends AbstractPersistentActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L164-L246" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class Counter extends AbstractPersistentActor {
 
   public enum CounterOp {
     INCREMENT,
@@ -612,7 +612,7 @@ class Counter extends PersistentActor {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L687-L692" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val counterRegion: ActorRef = ClusterSharding(system).start(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L687-L692" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val counterRegion: ActorRef = ClusterSharding(system).start(
   typeName = &quot;Counter&quot;,
   entityProps = Props[Counter](),
   settings = ClusterShardingSettings(system),
@@ -620,7 +620,7 @@ class Counter extends PersistentActor {
   extractShardId = extractShardId)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L34-L93" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.japi.Option;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L34-L93" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.japi.Option;
 import org.apache.pekko.cluster.sharding.ClusterSharding;
 import org.apache.pekko.cluster.sharding.ClusterShardingSettings;
 
@@ -634,7 +634,7 @@ ActorRef startedCounterRegion =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L197-L211" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val extractEntityId: ShardRegion.ExtractEntityId = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L197-L211" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val extractEntityId: ShardRegion.ExtractEntityId = {
   case EntityEnvelope(id, payload) =&gt; (id.toString, payload)
   case msg @ Get(id)               =&gt; (id.toString, msg)
 }
@@ -651,7 +651,7 @@ val extractShardId: ShardRegion.ExtractShardId = {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L29-L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.cluster.sharding.ShardRegion;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L29-L85" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.cluster.sharding.ShardRegion;
 
 ShardRegion.MessageExtractor messageExtractor =
     new ShardRegion.MessageExtractor() {
@@ -700,7 +700,7 @@ ShardRegion.MessageExtractor messageExtractor =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L715-L721" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val counterRegion: ActorRef = ClusterSharding(system).shardRegion(&quot;Counter&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L715-L721" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val counterRegion: ActorRef = ClusterSharding(system).shardRegion(&quot;Counter&quot;)
 counterRegion ! Get(123)
 expectMsg(0)
 
@@ -709,7 +709,7 @@ counterRegion ! Get(123)
 expectMsg(1)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L97-L101" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef counterRegion = ClusterSharding.get(system).shardRegion(&quot;Counter&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L97-L101" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef counterRegion = ClusterSharding.get(system).shardRegion(&quot;Counter&quot;);
 counterRegion.tell(new Counter.Get(123), getSelf());
 
 counterRegion.tell(new Counter.EntityEnvelope(123, Counter.CounterOp.INCREMENT), getSelf());
@@ -751,7 +751,7 @@ counterRegion.tell(new Counter.Get(123), getSelf());</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L216-L223" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val extractShardId: ShardRegion.ExtractShardId = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L216-L223" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val extractShardId: ShardRegion.ExtractShardId = {
   case EntityEnvelope(id, _)       =&gt; (id % numberOfShards).toString
   case Get(id)                     =&gt; (id % numberOfShards).toString
   case ShardRegion.StartEntity(id) =&gt;
@@ -761,7 +761,7 @@ counterRegion.tell(new Counter.Get(123), getSelf());</code></pre></dd>
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L142-L157" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L142-L157" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public String shardId(Object message) {
   int numberOfShards = 100;
   if (message instanceof Counter.EntityEnvelope) {
@@ -783,7 +783,7 @@ public String shardId(Object message) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L106-L119" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class CounterSupervisor extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L106-L119" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class CounterSupervisor extends Actor {
   val counter = context.actorOf(Props[Counter](), &quot;theCounter&quot;)
 
   override val supervisorStrategy = OneForOneStrategy() {
@@ -799,7 +799,7 @@ public String shardId(Object message) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L250-L274" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class CounterSupervisor extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L250-L274" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class CounterSupervisor extends AbstractActor {
 
   private final ActorRef counter =
       getContext().actorOf(Props.create(Counter.class), &quot;theCounter&quot;);
@@ -829,7 +829,7 @@ public String shardId(Object message) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L704-L709" target="_blank" title="Go to snippet source">source</a><code class="language-scala">ClusterSharding(system).start(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding/src/multi-jvm/scala/org/apache/pekko/cluster/sharding/ClusterShardingSpec.scala#L704-L709" target="_blank" title="Go to snippet source">source</a><code class="language-scala">ClusterSharding(system).start(
   typeName = &quot;SupervisedCounter&quot;,
   entityProps = Props[CounterSupervisor](),
   settings = ClusterShardingSettings(system),
@@ -837,7 +837,7 @@ public String shardId(Object message) {
   extractShardId = extractShardId)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L105-L107" target="_blank" title="Go to snippet source">source</a><code class="language-java">ClusterSharding.get(system)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/sharding/ClusterShardingTest.java#L105-L107" target="_blank" title="Go to snippet source">source</a><code class="language-java">ClusterSharding.get(system)
     .start(
         &quot;SupervisedCounter&quot;, Props.create(CounterSupervisor.class), settings, messageExtractor);</code></pre></dd>
 </dl>
@@ -862,7 +862,7 @@ public String shardId(Object message) {
 <p><code>ClusterShardingSettings</code> is a parameter to the <code>start</code> method of the <code>ClusterSharding</code> extension, i.e. each each entity type can be configured with different settings if needed.</p>
 <p>See <a href="typed/cluster-sharding.html#configuration">configuration</a> for more information.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/cluster-sharding.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/cluster-sharding.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -958,7 +958,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

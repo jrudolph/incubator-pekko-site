@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Transform each element into zero or more elements that are individually passed downstream.</p>
 <p><a href="../index.html#simple-operators">Simple operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#statefulMapConcat(org.apache.pekko.japi.function.Creator)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.statefulMapConcat</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#statefulMapConcat[T](f:()=&gt;Out=&gt;scala.collection.immutable.Iterable[T]):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.statefulMapConcat</code></a></span> </p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#statefulMapConcat(org.apache.pekko.japi.function.Creator)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.statefulMapConcat</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#statefulMapConcat[T](f:()=&gt;Out=&gt;scala.collection.immutable.Iterable[T]):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.statefulMapConcat</code></a></span> </p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Transform each element into zero or more elements that are individually passed downstream. The difference to <code>mapConcat</code> is that the transformation function is created from a factory for every materialization of the flow. This makes it possible to create and use mutable state for the operation, each new materialization of the stream will have its own state.</p>
 <p>For cases where no state is needed but only a way to emit zero or more elements for every incoming element you can use <a href="mapConcat.html">mapConcat</a></p>
@@ -430,7 +430,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/flow/StatefulMapConcat.scala#L26-L43" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val letterAndIndex = Source(&quot;a&quot; :: &quot;b&quot; :: &quot;c&quot; :: &quot;d&quot; :: Nil).statefulMapConcat { () =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/flow/StatefulMapConcat.scala#L26-L43" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val letterAndIndex = Source(&quot;a&quot; :: &quot;b&quot; :: &quot;c&quot; :: &quot;d&quot; :: Nil).statefulMapConcat { () =&gt;
   var index = 0L
 
   // we return the function that will be invoked for each element
@@ -450,7 +450,7 @@ letterAndIndex.runForeach(println)
 // (d,3)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/flow/StatefulMapConcat.java#L30-L52" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Pair&lt;String, Long&gt;, NotUsed&gt; letterAndIndex =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/flow/StatefulMapConcat.java#L30-L52" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Pair&lt;String, Long&gt;, NotUsed&gt; letterAndIndex =
     Source.from(Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;))
         .statefulMapConcat(
             () -&gt; {
@@ -478,7 +478,7 @@ letterAndIndex.runForeach(System.out::println, system);
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/flow/StatefulMapConcat.scala#L49-L72" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val fruitsAndDeniedCommands = Source(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/flow/StatefulMapConcat.scala#L49-L72" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val fruitsAndDeniedCommands = Source(
   &quot;banana&quot; :: &quot;pear&quot; :: &quot;orange&quot; :: &quot;deny:banana&quot; :: &quot;banana&quot; :: &quot;pear&quot; :: &quot;banana&quot; :: Nil)
 
 val denyFilterFlow = Flow[String].statefulMapConcat { () =&gt;
@@ -504,7 +504,7 @@ fruitsAndDeniedCommands.via(denyFilterFlow).runForeach(println)
 // pear</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/flow/StatefulMapConcat.java#L58-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;String, NotUsed&gt; fruitsAndDenyCommands =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/flow/StatefulMapConcat.java#L58-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;String, NotUsed&gt; fruitsAndDenyCommands =
     Source.from(
         Arrays.asList(&quot;banana&quot;, &quot;pear&quot;, &quot;orange&quot;, &quot;deny:banana&quot;, &quot;banana&quot;, &quot;pear&quot;, &quot;banana&quot;));
 
@@ -540,7 +540,7 @@ fruitsAndDenyCommands.via(denyFilterFlow).runForeach(System.out::println, system
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/flow/StatefulMapConcat.scala#L78-L105" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val words = Source(&quot;baboon&quot; :: &quot;crocodile&quot; :: &quot;bat&quot; :: &quot;flamingo&quot; :: &quot;hedgehog&quot; :: &quot;beaver&quot; :: Nil)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/flow/StatefulMapConcat.scala#L78-L105" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val words = Source(&quot;baboon&quot; :: &quot;crocodile&quot; :: &quot;bat&quot; :: &quot;flamingo&quot; :: &quot;hedgehog&quot; :: &quot;beaver&quot; :: Nil)
 
 val bWordsLast = Flow[String].concat(Source.single(&quot;-end-&quot;)).statefulMapConcat { () =&gt;
   var stashedBWords: List[String] = Nil
@@ -570,7 +570,7 @@ words.via(bWordsLast).runForeach(println)
 // beaver</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/flow/StatefulMapConcat.java#L93-L125" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;String, NotUsed&gt; words =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/flow/StatefulMapConcat.java#L93-L125" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;String, NotUsed&gt; words =
     Source.from(Arrays.asList(&quot;baboon&quot;, &quot;crocodile&quot;, &quot;bat&quot;, &quot;flamingo&quot;, &quot;hedgehog&quot;, &quot;beaver&quot;));
 
 Flow&lt;String, String, NotUsed&gt; bWordsLast =
@@ -611,7 +611,7 @@ words.via(bWordsLast).runForeach(System.out::println, system);
 <p><strong>backpressures</strong> when downstream backpressures or there are still available elements from the previously calculated collection</p>
 <p><strong>completes</strong> when upstream completes and all remaining elements has been emitted</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/statefulMapConcat.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/statefulMapConcat.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -697,7 +697,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

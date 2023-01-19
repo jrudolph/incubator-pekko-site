@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -424,7 +424,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L275-L287" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>import org.apache.pekko.persistence.typed.scaladsl.Effect
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L275-L287" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>import org.apache.pekko.persistence.typed.scaladsl.Effect
 
 EventSourcedBehavior[Command, Event, State](
   persistenceId = PersistenceId.ofUniqueId(&quot;abc&quot;),
@@ -438,7 +438,7 @@ EventSourcedBehavior[Command, Event, State](
   .withRetention(RetentionCriteria.snapshotEvery(numberOfEvents = 100, keepNSnapshots = 2))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L525-L528" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override // override retentionCriteria in EventSourcedBehavior
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L525-L528" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override // override retentionCriteria in EventSourcedBehavior
 public RetentionCriteria retentionCriteria() {
   return RetentionCriteria.snapshotEvery(100, 2);
 }</code></pre></dd>
@@ -446,7 +446,7 @@ public RetentionCriteria retentionCriteria() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L252-L260" target="_blank" title="Go to snippet source">source</a><code class="language-scala">EventSourcedBehavior[Command, Event, State](
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L252-L260" target="_blank" title="Go to snippet source">source</a><code class="language-scala">EventSourcedBehavior[Command, Event, State](
   persistenceId = PersistenceId.ofUniqueId(&quot;abc&quot;),
   emptyState = State(),
   commandHandler = (state, cmd) =&gt; throw new NotImplementedError(&quot;TODO: process the command &amp; return an Effect&quot;),
@@ -457,7 +457,7 @@ public RetentionCriteria retentionCriteria() {
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L518-L521" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override // override shouldSnapshot in EventSourcedBehavior
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L518-L521" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override // override shouldSnapshot in EventSourcedBehavior
 public boolean shouldSnapshot(State state, Event event, long sequenceNr) {
   return event instanceof BookingCompleted;
 }</code></pre></dd>
@@ -468,7 +468,7 @@ public boolean shouldSnapshot(State state, Event event, long sequenceNr) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L264-L271" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.persistence.typed.SnapshotSelectionCriteria
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L264-L271" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.persistence.typed.SnapshotSelectionCriteria
 
 EventSourcedBehavior[Command, Event, State](
   persistenceId = PersistenceId.ofUniqueId(&quot;abc&quot;),
@@ -478,7 +478,7 @@ EventSourcedBehavior[Command, Event, State](
   .withRecovery(Recovery.withSnapshotSelectionCriteria(SnapshotSelectionCriteria.none))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L577-L580" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L577-L580" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public Recovery recovery() {
   return Recovery.withSnapshotSelectionCriteria(SnapshotSelectionCriteria.none());
 }</code></pre></dd>
@@ -498,7 +498,7 @@ public Recovery recovery() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L275-L287" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>import org.apache.pekko.persistence.typed.scaladsl.Effect
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L275-L287" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>import org.apache.pekko.persistence.typed.scaladsl.Effect
 
 EventSourcedBehavior[Command, Event, State](
   persistenceId = PersistenceId.ofUniqueId(&quot;abc&quot;),
@@ -512,7 +512,7 @@ EventSourcedBehavior[Command, Event, State](
   .withRetention(RetentionCriteria.snapshotEvery(numberOfEvents = 100, keepNSnapshots = 2))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L525-L528" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override // override retentionCriteria in EventSourcedBehavior
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L525-L528" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override // override retentionCriteria in EventSourcedBehavior
 public RetentionCriteria retentionCriteria() {
   return RetentionCriteria.snapshotEvery(100, 2);
 }
@@ -528,7 +528,7 @@ public boolean shouldSnapshot(State state, Event event, long sequenceNr) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L306-L316" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>EventSourcedBehavior[Command, Event, State](
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L306-L316" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>EventSourcedBehavior[Command, Event, State](
   persistenceId = PersistenceId.ofUniqueId(&quot;abc&quot;),
   emptyState = State(),
   commandHandler = (state, cmd) =&gt; throw new NotImplementedError(&quot;TODO: process the command &amp; return an Effect&quot;),
@@ -540,7 +540,7 @@ public boolean shouldSnapshot(State state, Event event, long sequenceNr) {
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L532-L553" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L532-L553" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public SignalHandler&lt;State&gt; signalHandler() {
   return newSignalHandlerBuilder()
       .onSignal(
@@ -570,7 +570,7 @@ public SignalHandler&lt;State&gt; signalHandler() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L291-L302" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>EventSourcedBehavior[Command, Event, State](
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorCompileOnly.scala#L291-L302" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>EventSourcedBehavior[Command, Event, State](
   persistenceId = PersistenceId.ofUniqueId(&quot;abc&quot;),
   emptyState = State(),
   commandHandler = (state, cmd) =&gt; throw new NotImplementedError(&quot;TODO: process the command &amp; return an Effect&quot;),
@@ -583,7 +583,7 @@ public SignalHandler&lt;State&gt; signalHandler() {
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L564-L567" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override // override retentionCriteria in EventSourcedBehavior
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/BasicPersistentBehaviorTest.java#L564-L567" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override // override retentionCriteria in EventSourcedBehavior
 public RetentionCriteria retentionCriteria() {
   return RetentionCriteria.snapshotEvery(100, 2).withDeleteEventsOnSnapshot();
 }</code></pre></dd>
@@ -593,7 +593,7 @@ public RetentionCriteria retentionCriteria() {
 <p>Message deletion does not affect the highest sequence number of the journal, even if all messages were deleted from it after a delete occurs.</p><div class="callout note "><div class="callout-title">Note</div>
 <p>It is up to the journal implementation whether events are actually removed from storage.</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/persistence-snapshot.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/persistence-snapshot.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -679,7 +679,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

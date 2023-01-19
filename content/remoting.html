@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Remoting is the mechanism by which Actors on different nodes talk to each other internally.</p>
 <p>When building an Pekko application, you would usually not use the Remoting concepts directly, but instead use the more high-level <a href="index-cluster.html">Pekko Cluster</a> utilities or technology-agnostic protocols such as <a href="https://doc.akka.io/docs/akka-http/current/">HTTP</a>, <a href="https://doc.akka.io/docs/akka-grpc/current/">gRPC</a> etc.</p></div>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Pekko Remoting, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Remoting, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-remote" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -430,7 +430,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-remote" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -445,7 +445,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-remote" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-remote_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -453,7 +453,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Remoting</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-remote</div>
-  <div>0.0.0+26533-ec68a528-SNAPSHOT</div>
+  <div>0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -468,11 +468,11 @@ dependencies {
   <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/remote/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
-  <div><a href="https://discuss.akka.io" target="_blank" rel="noopener noreferrer">Lightbend Discuss</a></div>
-  <div><a href="https://gitter.im/akka/akka" target="_blank" rel="noopener noreferrer">akka/akka Gitter channel</a></div>
+  <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
+  <div><a href="https://github.com/apache/incubator-pekko/discussions" target="_blank" rel="noopener noreferrer">apache/incubator-pekko discussion</a></div>
   </td></tr>
   <tr><th>Release notes</th><td><a href="https://akka.io/blog/news-archive.html">akka.io blog</a></td></tr>
-  <tr><th>Issues</th><td><a href="https://github.com/akka/akka/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
+  <tr><th>Issues</th><td><a href="https://github.com/apache/incubator-pekko/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
   <tr><th>Sources</th><td><a href="https://github.com/apache/incubator-pekko" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-pekko</a></td></tr>
 </table>
 
@@ -573,11 +573,11 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/remoting/RemoteDeploymentDocSpec.scala#L73-L75" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>val actor = system.actorOf(Props[SampleActor](), &quot;sampleActor&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/remoting/RemoteDeploymentDocSpec.scala#L73-L75" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>val actor = system.actorOf(Props[SampleActor](), &quot;sampleActor&quot;)
 actor ! &quot;Pretty slick&quot;</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L84-L86" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>ActorRef actor = system.actorOf(Props.create(SampleActor.class), &quot;sampleActor&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L84-L86" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>ActorRef actor = system.actorOf(Props.create(SampleActor.class), &quot;sampleActor&quot;);
 actor.tell(&quot;Pretty slick&quot;, ActorRef.noSender());</code></pre></dd>
 </dl>
 <p>The actor class <code>SampleActor</code> has to be available to the runtimes using it, i.e. the classloader of the actor systems has to have a JAR containing the class.</p>
@@ -591,12 +591,12 @@ actor.tell(&quot;Pretty slick&quot;, ActorRef.noSender());</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/remoting/RemoteDeploymentDocSpec.scala#L19-L21" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/remoting/RemoteDeploymentDocSpec.scala#L19-L21" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.{ Address, AddressFromURIString, Deploy, Props }
 import pekko.remote.RemoteScope</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L25-L31" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.ActorRef;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L25-L31" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.ActorRef;
 import org.apache.pekko.actor.Address;
 import org.apache.pekko.actor.AddressFromURIString;
 import org.apache.pekko.actor.Deploy;
@@ -608,27 +608,27 @@ import org.apache.pekko.remote.RemoteScope;</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/remoting/RemoteDeploymentDocSpec.scala#L65-L66" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val one = AddressFromURIString(&quot;pekko://sys@host:1234&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/remoting/RemoteDeploymentDocSpec.scala#L65-L66" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val one = AddressFromURIString(&quot;pekko://sys@host:1234&quot;)
 val two = Address(&quot;pekko&quot;, &quot;sys&quot;, &quot;host&quot;, 1234) // this gives the same</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L71-L72" target="_blank" title="Go to snippet source">source</a><code class="language-java">Address addr = new Address(&quot;akka&quot;, &quot;sys&quot;, &quot;host&quot;, 1234);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L71-L72" target="_blank" title="Go to snippet source">source</a><code class="language-java">Address addr = new Address(&quot;akka&quot;, &quot;sys&quot;, &quot;host&quot;, 1234);
 addr = AddressFromURIString.parse(&quot;akka://sys@host:1234&quot;); // the same</code></pre></dd>
 </dl>
 <p>you can advise the system to create a child on that remote node like so:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/remoting/RemoteDeploymentDocSpec.scala#L49" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val ref = system.actorOf(Props[SampleActor]().withDeploy(Deploy(scope = RemoteScope(address))))</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/remoting/RemoteDeploymentDocSpec.scala#L49" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val ref = system.actorOf(Props[SampleActor]().withDeploy(Deploy(scope = RemoteScope(address))))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L75-L76" target="_blank" title="Go to snippet source">source</a><code class="language-java">Props props = Props.create(SampleActor.class).withDeploy(new Deploy(new RemoteScope(addr)));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L75-L76" target="_blank" title="Go to snippet source">source</a><code class="language-java">Props props = Props.create(SampleActor.class).withDeploy(new Deploy(new RemoteScope(addr)));
 ActorRef ref = system.actorOf(props);</code></pre></dd>
 </dl>
 <h3><a href="#remote-deployment-allow-list" name="remote-deployment-allow-list" class="anchor"><span class="anchor-link"></span></a>Remote deployment allow list</h3>
 <p>As remote deployment can potentially be abused by both users and even attackers an allow list feature is available to guard the ActorSystem from deploying unexpected actors. Please note that remote deployment is <em>not</em> remote code loading, the Actors class to be deployed onto a remote system needs to be present on that remote system. This still however may pose a security risk, and one may want to restrict remote deployment to only a specific set of known actors by enabling the allow list feature.</p>
 <p>To enable remote deployment allow list set the <code>pekko.remote.deployment.enable-allow-list</code> value to <code>on</code>. The list of allowed classes has to be configured on the &ldquo;remote&rdquo; system, in other words on the system onto which others will be attempting to remote deploy Actors. That system, locally, knows best which Actors it should or should not allow others to remote deploy onto it. The full settings section may for example look like this:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/remote/src/test/scala/org/apache/pekko/remote/classic/RemoteDeploymentAllowListSpec.scala#L133-L140" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.remote.deployment {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/remote/src/test/scala/org/apache/pekko/remote/classic/RemoteDeploymentAllowListSpec.scala#L133-L140" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.remote.deployment {
   enable-allow-list = on
   
   allowed-actor-classes = [
@@ -664,7 +664,7 @@ ActorRef ref = system.actorOf(props);</code></pre></dd>
 <h2><a href="#routers-with-remote-destinations" name="routers-with-remote-destinations" class="anchor"><span class="anchor-link"></span></a>Routers with Remote Destinations</h2>
 <p>It is absolutely feasible to combine remoting with <a href="routing.html">Routing</a>.</p>
 <p>A pool of remote deployed routees can be configured as:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/routing/RouterDocSpec.scala#L218-L224" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.actor.deployment {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/routing/RouterDocSpec.scala#L218-L224" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.actor.deployment {
   /parent/remotePool {
     router = round-robin-pool
     nr-of-instances = 10
@@ -674,7 +674,7 @@ ActorRef ref = system.actorOf(props);</code></pre></dd>
 <p>This configuration setting will clone the actor defined in the <code>Props</code> of the <code>remotePool</code> 10 times and deploy it evenly distributed across the two given target nodes.</p>
 <p>When using a pool of remote deployed routees you must ensure that all parameters of the <code>Props</code> can be <a href="serialization.html">serialized</a>.</p>
 <p>A group of remote actors can be configured as:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/routing/RouterDocSpec.scala#L238-L246" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.actor.deployment {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/routing/RouterDocSpec.scala#L238-L246" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.actor.deployment {
   /parent/remoteGroup {
     router = round-robin-group
     routees.paths = [
@@ -771,7 +771,7 @@ ActorRef ref = system.actorOf(props);</code></pre></dd>
 <h2><a href="#remote-configuration" name="remote-configuration" class="anchor"><span class="anchor-link"></span></a>Remote Configuration</h2>
 <p>There are lots of configuration properties that are related to remoting in Pekko. We refer to the <a href="general/configuration-reference.html#config-pekko-remote">reference configuration</a> for more information.</p><div class="callout note "><div class="callout-title">Note</div>
 <p>Setting properties like the listening IP and port number programmatically is best done by using something like the following:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L93-L94" target="_blank" title="Go to snippet source">source</a><code class="language-java">ConfigFactory.parseString(&quot;pekko.remote.classic.netty.tcp.hostname=\&quot;1.2.3.4\&quot;&quot;)
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/remoting/RemoteDeploymentDocTest.java#L93-L94" target="_blank" title="Go to snippet source">source</a><code class="language-java">ConfigFactory.parseString(&quot;pekko.remote.classic.netty.tcp.hostname=\&quot;1.2.3.4\&quot;&quot;)
     .withFallback(ConfigFactory.load());</code></pre></div>
 <a id="remote-configuration-nat"></a>
 <h3><a href="#pekko-behind-nat-or-in-a-docker-container" name="pekko-behind-nat-or-in-a-docker-container" class="anchor"><span class="anchor-link"></span></a>Pekko behind NAT or in a Docker container</h3>
@@ -792,7 +792,7 @@ ActorRef ref = system.actorOf(props);</code></pre></dd>
 </ul>
 <p>For further details see <a href="https://www.rfc-editor.org/rfc/rfc1597.html">RFC 1597</a> and <a href="https://www.rfc-editor.org/rfc/rfc1918.html">RFC 1918</a>.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/remoting.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/remoting.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -886,7 +886,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

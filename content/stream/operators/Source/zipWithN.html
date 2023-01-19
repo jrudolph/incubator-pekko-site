@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Combine the elements of multiple streams into a stream of sequences using a combiner function.</p>
 <p><a href="../index.html#source-operators">Source operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#zipWithN(org.apache.pekko.japi.function.Function,java.util.List)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.zipWithN</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#zipWithN[T,O](zipper:scala.collection.immutable.Seq[T]=&gt;O)(sources:scala.collection.immutable.Seq[org.apache.pekko.stream.scaladsl.Source[T,_]]):org.apache.pekko.stream.scaladsl.Source[O,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.zipWithN</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#zipWithN(org.apache.pekko.japi.function.Function,java.util.List)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.zipWithN</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#zipWithN[T,O](zipper:scala.collection.immutable.Seq[T]=&gt;O)(sources:scala.collection.immutable.Seq[org.apache.pekko.stream.scaladsl.Source[T,_]]):org.apache.pekko.stream.scaladsl.Source[O,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.zipWithN</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Combine the elements of multiple streams into a stream of sequences using a combiner function.</p>
 <p>This operator is essentially the same as using <a href="zipN.html">zipN</a> followed by <a href="../Source-or-Flow/map.html">map</a> to turn the zipped sequence into an arbitrary object to emit downstream.</p>
@@ -438,7 +438,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/source/Zip.scala#L42-L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val numbers = Source(1 :: 2 :: 3 :: 4 :: 5 :: 6 :: Nil)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/source/Zip.scala#L42-L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val numbers = Source(1 :: 2 :: 3 :: 4 :: 5 :: 6 :: Nil)
 val otherNumbers = Source(5 :: 2 :: 1 :: 4 :: 10 :: 4 :: Nil)
 val andSomeOtherNumbers = Source(3 :: 7 :: 2 :: 1 :: 1 :: Nil)
 
@@ -454,7 +454,7 @@ Source
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/source/Zip.java#L49-L63" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; numbers = Source.from(Arrays.asList(1, 2, 3, 4, 5, 6));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/source/Zip.java#L49-L63" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; numbers = Source.from(Arrays.asList(1, 2, 3, 4, 5, 6));
 Source&lt;Integer, NotUsed&gt; otherNumbers = Source.from(Arrays.asList(5, 2, 1, 4, 10, 4));
 Source&lt;Integer, NotUsed&gt; andSomeOtherNumbers = Source.from(Arrays.asList(3, 7, 2, 1, 1));
 
@@ -476,7 +476,7 @@ Source.zipWithN(
 <p><strong>completes</strong> when any upstream completes</p>
 <p><strong>backpressures</strong> all upstreams when downstream backpressures but also on an upstream that has emitted an element until all other upstreams has emitted elements</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source/zipWithN.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source/zipWithN.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -562,7 +562,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

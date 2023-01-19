@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Materialize an <code>ActorRef</code> of the classic actors API; sending messages to it will emit them on the stream. The source acknowledges reception after emitting a message, to provide back pressure from the source.</p>
 <p><a href="../index.html#actor-interop-operators">Actor interop operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#actorRefWithBackpressure(java.lang.Object,org.apache.pekko.japi.function.Function,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.actorRefWithBackpressure</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#actorRefWithBackpressure[T](ackMessage:Any,completionMatcher:PartialFunction[Any,org.apache.pekko.stream.CompletionStrategy],failureMatcher:PartialFunction[Any,Throwable]):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.actor.ActorRef]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.actorRefWithBackpressure</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#actorRefWithBackpressure(java.lang.Object,org.apache.pekko.japi.function.Function,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.actorRefWithBackpressure</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#actorRefWithBackpressure[T](ackMessage:Any,completionMatcher:PartialFunction[Any,org.apache.pekko.stream.CompletionStrategy],failureMatcher:PartialFunction[Any,Throwable]):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.actor.ActorRef]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.actorRefWithBackpressure</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Materialize an <code>ActorRef</code>, sending messages to it will emit them on the stream. The actor responds with the provided ack message once the element could be emitted allowing for backpressure from the source. Sending another message before the previous one has been acknowledged will fail the stream.</p>
 <p>See also:</p>
@@ -435,7 +435,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/SourceOperators.scala#L71-L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/SourceOperators.scala#L71-L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>import org.apache.pekko
 import pekko.actor.Status.Success
 import pekko.actor.ActorRef
 import pekko.stream.CompletionStrategy
@@ -462,7 +462,7 @@ probe.expectMsg(&quot;ack&quot;)
 actorRef ! Success(())</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SourceDocExamples.java#L27-L31" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.ActorRef;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SourceDocExamples.java#L27-L31" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.ActorRef;
 import org.apache.pekko.stream.OverflowStrategy;
 import org.apache.pekko.stream.CompletionStrategy;
 import org.apache.pekko.stream.javadsl.Sink;
@@ -491,7 +491,7 @@ actorRef.tell(&quot;complete&quot;, ActorRef.noSender());</code></pre></dd>
 <p><strong>emits</strong> when there is demand and there are messages in the buffer or a message is sent to the <code>ActorRef</code></p>
 <p><strong>completes</strong> when the passed completion matcher returns a <code>CompletionStrategy</code> or fails if the passed failure matcher returns an exception</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source/actorRefWithBackpressure.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source/actorRefWithBackpressure.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -577,7 +577,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#streamrefs-reactive-streams-over-the-network" name="streamrefs-reactive-streams-over-the-network" class="anchor"><span class="anchor-link"></span></a>StreamRefs - Reactive Streams over the network</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -465,7 +465,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L26-L51" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L26-L51" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.stream.SourceRef
 import pekko.pattern.pipe
 
@@ -493,7 +493,7 @@ class DataSource extends Actor {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L41-L73" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class RequestLogs {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L41-L73" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class RequestLogs {
   public final long streamId;
 
   public RequestLogs(long streamId) {
@@ -531,7 +531,7 @@ static class DataSource extends AbstractActor {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L55-L64" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sourceActor = system.actorOf(Props[DataSource](), &quot;dataSource&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L55-L64" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val sourceActor = system.actorOf(Props[DataSource](), &quot;dataSource&quot;)
 
 sourceActor ! RequestLogs(1337)
 val offer = expectMsgType[LogsOffer]
@@ -543,7 +543,7 @@ offer.sourceRef.runWith(Sink.foreach(println))
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L81-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef sourceActor = system.actorOf(Props.create(DataSource.class), &quot;dataSource&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L81-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef sourceActor = system.actorOf(Props.create(DataSource.class), &quot;dataSource&quot;);
 
 sourceActor.tell(new RequestLogs(1337), getTestActor());
 LogsOffer offer = expectMsgClass(LogsOffer.class);
@@ -562,7 +562,7 @@ offer.sourceRef.getSource().runWith(Sink.foreach(log -&gt; System.out.println(lo
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L70-L94" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.stream.SinkRef
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L70-L94" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.stream.SinkRef
 
 case class PrepareUpload(id: String)
 case class MeasurementsSinkReady(id: String, sinkRef: SinkRef[String])
@@ -589,7 +589,7 @@ class DataReceiver extends Actor {
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L94-L130" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class PrepareUpload {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L94-L130" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class PrepareUpload {
   final String id;
 
   public PrepareUpload(String id) {
@@ -631,7 +631,7 @@ static class DataReceiver extends AbstractActor {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L100-L106" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val receiver = system.actorOf(Props[DataReceiver](), &quot;receiver&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L100-L106" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val receiver = system.actorOf(Props[DataReceiver](), &quot;receiver&quot;)
 
 receiver ! PrepareUpload(&quot;system-42-tmp&quot;)
 val ready = expectMsgType[MeasurementsSinkReady]
@@ -640,7 +640,7 @@ val ready = expectMsgType[MeasurementsSinkReady]
 localMetrics().runWith(ready.sinkRef)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L138-L143" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef receiver = system.actorOf(Props.create(DataReceiver.class), &quot;dataReceiver&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L138-L143" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef receiver = system.actorOf(Props.create(DataReceiver.class), &quot;dataReceiver&quot;);
 
 receiver.tell(new PrepareUpload(&quot;system-42-tmp&quot;), getTestActor());
 MeasurementsSinkReady ready = expectMsgClass(MeasurementsSinkReady.class);
@@ -673,7 +673,7 @@ Source.repeat(&quot;hello&quot;).runWith(ready.sinkRef.getSink(), mat);</code></
 <h2><a href="#serialization-of-sourceref-and-sinkref" name="serialization-of-sourceref-and-sinkref" class="anchor"><span class="anchor-link"></span></a>Serialization of SourceRef and SinkRef</h2>
 <p>StreamRefs require serialization, since the whole point is to send them between nodes of a cluster. A built in serializer is provided when <code>SourceRef</code> and <code>SinkRef</code> are sent directly as messages however the recommended use is to wrap them into your own actor message classes. </p>
 <p>When <a href="../serialization-jackson.html">Pekko Jackson</a> is used, serialization of wrapped <code>SourceRef</code> and <code>SinkRef</code> will work out of the box.</p>
-<p>If you are using some other form of serialization you will need to use the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/StreamRefResolver.html" title="org.apache.pekko.stream.StreamRefResolver"><code>StreamRefResolver</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/StreamRefResolver.html" title="org.apache.pekko.stream.StreamRefResolver"><code>StreamRefResolver</code></a></span> extension from your serializer to get the <code>SourceRef</code> and <code>SinkRef</code>. The extension provides the methods <code>toSerializationFormat(sink or source)</code> to transform from refs to string and <code>resolve{Sink,Source}Ref(String)</code> to resolve refs from strings.</p>
+<p>If you are using some other form of serialization you will need to use the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/StreamRefResolver.html" title="org.apache.pekko.stream.StreamRefResolver"><code>StreamRefResolver</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/StreamRefResolver.html" title="org.apache.pekko.stream.StreamRefResolver"><code>StreamRefResolver</code></a></span> extension from your serializer to get the <code>SourceRef</code> and <code>SinkRef</code>. The extension provides the methods <code>toSerializationFormat(sink or source)</code> to transform from refs to string and <code>resolve{Sink,Source}Ref(String)</code> to resolve refs from strings.</p>
 <h2><a href="#configuration" name="configuration" class="anchor"><span class="anchor-link"></span></a>Configuration</h2>
 <h3><a href="#stream-reference-subscription-timeouts" name="stream-reference-subscription-timeouts" class="anchor"><span class="anchor-link"></span></a>Stream reference subscription timeouts</h3>
 <p>All stream references have a subscription timeout, which is intended to prevent resource leaks in case a remote node requests the allocation of many streams but never actually runs them. In order to prevent this, each stream reference has a default timeout (of 30 seconds), after which the origin will abort the stream offer if the target has not materialized the stream ref. After the timeout has triggered, materialization of the target side will fail, pointing out that the origin is missing.</p>
@@ -681,7 +681,7 @@ Source.repeat(&quot;hello&quot;).runWith(ready.sinkRef.getSink(), mat);</code></
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L112-L125" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// configure the timeout for source
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/FlowStreamRefsDocSpec.scala#L112-L125" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// configure the timeout for source
 import scala.concurrent.duration._
 import org.apache.pekko.stream.StreamRefAttributes
 
@@ -697,7 +697,7 @@ StreamRefs
   .runWith(Sink.ignore) // not very interesting Sink, just an example</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L154-L165" target="_blank" title="Go to snippet source">source</a><code class="language-java">FiniteDuration timeout = FiniteDuration.create(5, TimeUnit.SECONDS);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/FlowStreamRefsDocTest.java#L154-L165" target="_blank" title="Go to snippet source">source</a><code class="language-java">FiniteDuration timeout = FiniteDuration.create(5, TimeUnit.SECONDS);
 Attributes timeoutAttributes = StreamRefAttributes.subscriptionTimeout(timeout);
 
 // configuring Sink.sourceRef (notice that we apply the attributes to the Sink!):
@@ -712,7 +712,7 @@ StreamRefs.&lt;String&gt;sinkRef()
 </dl>
 <h3><a href="#general-configuration" name="general-configuration" class="anchor"><span class="anchor-link"></span></a>General configuration</h3>
 <p>Other settings can be set globally in your <code>application.conf</code>, by overriding any of the following values in the <code>pekko.stream.materializer.stream-ref.*</code> keyspace:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream/src/main/resources/reference.conf#L129-L161" target="_blank" title="Go to snippet source">source</a><code class="language-conf"># configure defaults for SourceRef and SinkRef
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream/src/main/resources/reference.conf#L129-L161" target="_blank" title="Go to snippet source">source</a><code class="language-conf"># configure defaults for SourceRef and SinkRef
 stream-ref {
   # Buffer of a SinkRef that is used to batch Request elements from the other side of the stream ref
   #
@@ -746,7 +746,7 @@ stream-ref {
   final-termination-signal-deadline = 2 seconds
 }</code></pre>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/stream-refs.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/stream-refs.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -834,7 +834,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

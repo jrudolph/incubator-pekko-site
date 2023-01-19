@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Allow for a temporarily faster upstream events by buffering <code>size</code> elements.</p>
 <p><a href="../index.html#backpressure-aware-operators">Backpressure aware operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#buffer(int,org.apache.pekko.stream.OverflowStrategy)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.buffer</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#buffer(size:Int,overflowStrategy:org.apache.pekko.stream.OverflowStrategy):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.buffer</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#buffer(int,org.apache.pekko.stream.OverflowStrategy)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.buffer</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#buffer(size:Int,overflowStrategy:org.apache.pekko.stream.OverflowStrategy):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.buffer</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#buffer(int,org.apache.pekko.stream.OverflowStrategy)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.buffer</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#buffer(size:Int,overflowStrategy:org.apache.pekko.stream.OverflowStrategy):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.buffer</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#buffer(int,org.apache.pekko.stream.OverflowStrategy)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.buffer</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#buffer(size:Int,overflowStrategy:org.apache.pekko.stream.OverflowStrategy):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.buffer</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Allow for a temporarily faster upstream events by buffering <code>size</code> elements. When the buffer is full, a new element is handled according to the specified <code>OverflowStrategy</code>:</p>
 <ul>
@@ -437,7 +437,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p><strong>backpressures</strong> when <code>OverflowStrategy</code> is <code>backpressure</code> and buffer is full</p>
 <p><strong>completes</strong> when upstream completes and buffered elements has been drained, or when <code>OverflowStrategy</code> is <code>fail</code>, the buffer is full and a new element arrives</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/buffer.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/buffer.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -522,7 +522,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

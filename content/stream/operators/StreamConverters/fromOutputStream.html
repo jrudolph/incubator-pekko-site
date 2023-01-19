@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,9 +421,9 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Create a sink that wraps an <code>OutputStream</code>.</p>
 <p><a href="../index.html#additional-sink-and-source-converters">Additional Sink and Source converters</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/StreamConverters$.html#fromOutputStream(org.apache.pekko.japi.function.Creator)" title="org.apache.pekko.stream.javadsl.StreamConverters"><code>StreamConverters.fromOutputStream</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/StreamConverters$.html#fromOutputStream(out:()=%3Cjava.io.OutputStream,autoFlush:Boolean):org.apache.pekko.stream.scaladsl.Sink[org.apache.pekko.util.ByteString,scala.concurrent.Future[org.apache.pekko.stream.IOResult]]" title="org.apache.pekko.stream.scaladsl.StreamConverters"><code>StreamConverters.fromOutputStream</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/StreamConverters$.html#fromOutputStream(org.apache.pekko.japi.function.Creator)" title="org.apache.pekko.stream.javadsl.StreamConverters"><code>StreamConverters.fromOutputStream</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/StreamConverters$.html#fromOutputStream(out:()=%3Cjava.io.OutputStream,autoFlush:Boolean):org.apache.pekko.stream.scaladsl.Sink[org.apache.pekko.util.ByteString,scala.concurrent.Future[org.apache.pekko.stream.IOResult]]" title="org.apache.pekko.stream.scaladsl.StreamConverters"><code>StreamConverters.fromOutputStream</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
-<p>Creates a Sink which writes incoming <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/ByteString.html" title="org.apache.pekko.util.ByteString"><code>ByteString</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/ByteString.html" title="org.apache.pekko.util.ByteString"><code>ByteString</code></a></span>s to a <code>java.io.OutputStream</code> created by the given function.</p>
+<p>Creates a Sink which writes incoming <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/ByteString.html" title="org.apache.pekko.util.ByteString"><code>ByteString</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/ByteString.html" title="org.apache.pekko.util.ByteString"><code>ByteString</code></a></span>s to a <code>java.io.OutputStream</code> created by the given function.</p>
 <p>Materializes a <span class="group-java"><code>CompletionStage</code></span><span class="group-scala"><code>Future</code></span> of <code>IOResult</code> that will be completed with the size of the file (in bytes) on completion, and a possible exception if IO operation was not completed successfully.</p>
 <p>You can configure the default dispatcher for this Source by changing the <code>org.apache.pekko.stream.materializer.blocking-io-dispatcher</code> or set it for a given Source by using <code>org.apache.pekko.stream.ActorAttributes</code>.</p>
 <p>If <code>autoFlush</code> is true the OutputStream will be flushed whenever a byte array is written, defaults to false. The <code>OutputStream</code> will be closed when the stream flowing into this <code>Sink</code> is completed. The <code>Sink</code> will cancel the stream when the <code>OutputStream</code> is no longer writable.</p>
@@ -433,7 +433,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/converters/ToFromJavaIOStreams.scala#L36-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val bytes = &quot;Some random input&quot;.getBytes
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/converters/ToFromJavaIOStreams.scala#L36-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val bytes = &quot;Some random input&quot;.getBytes
 val inputStream = new ByteArrayInputStream(bytes)
 val outputStream = new ByteArrayOutputStream()
 
@@ -447,7 +447,7 @@ val eventualResult = source.via(toUpperCase).runWith(sink)
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/converters/ToFromJavaIOStreams.java#L75-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java">java.io.InputStream inputStream = new ByteArrayInputStream(bytes);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/converters/ToFromJavaIOStreams.java#L75-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java">java.io.InputStream inputStream = new ByteArrayInputStream(bytes);
 Source&lt;ByteString, CompletionStage&lt;IOResult&gt;&gt; source =
     StreamConverters.fromInputStream(() -&gt; inputStream);
 
@@ -465,7 +465,7 @@ CompletionStage&lt;IOResult&gt; ioResultCompletionStage =
 // will contain the uppercase representation of the bytes read from the inputStream.</code></pre></dd>
 </dl>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/StreamConverters/fromOutputStream.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/StreamConverters/fromOutputStream.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -550,7 +550,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

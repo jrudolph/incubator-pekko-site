@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,11 +419,11 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#shopping-cart-example" name="shopping-cart-example" class="anchor"><span class="anchor-link"></span></a>Shopping cart example</h1>
 <p>The provided CRDT data structures can be used as the root state of a replicated <code>EventSourcedBehavior</code> but they can also be nested inside another data structure. This requires a bit more careful thinking about the eventual consistency.</p>
-<p>In this sample we model a shopping cart as a map of product ids and the number of that product added or removed in the shopping cart. By using the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/crdt/Counter.html" title="org.apache.pekko.persistence.typed.crdt.Counter"><code>Counter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/crdt/Counter.html" title="org.apache.pekko.persistence.typed.crdt.Counter"><code>Counter</code></a></span> CRDT and persisting its <code>Update</code> in our events we can be sure that an add or remove of items in any data center will eventually lead to all data centers ending up with the same number of each product. </p>
+<p>In this sample we model a shopping cart as a map of product ids and the number of that product added or removed in the shopping cart. By using the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/crdt/Counter.html" title="org.apache.pekko.persistence.typed.crdt.Counter"><code>Counter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/crdt/Counter.html" title="org.apache.pekko.persistence.typed.crdt.Counter"><code>Counter</code></a></span> CRDT and persisting its <code>Update</code> in our events we can be sure that an add or remove of items in any data center will eventually lead to all data centers ending up with the same number of each product. </p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed-tests/src/test/scala/docs/org/apache/pekko/persistence/typed/ReplicatedShoppingCartExampleSpec.scala#L38-L91" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object ShoppingCart {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed-tests/src/test/scala/docs/org/apache/pekko/persistence/typed/ReplicatedShoppingCartExampleSpec.scala#L38-L91" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object ShoppingCart {
 
   type ProductId = String
 
@@ -479,7 +479,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed-tests/src/test/java/jdocs/org/apache/pekko/persistence/typed/ReplicatedShoppingCartExample.java#L37-L165" target="_blank" title="Go to snippet source">source</a><code class="language-java">public final class ShoppingCart
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed-tests/src/test/java/jdocs/org/apache/pekko/persistence/typed/ReplicatedShoppingCartExample.java#L37-L165" target="_blank" title="Go to snippet source">source</a><code class="language-java">public final class ShoppingCart
     extends ReplicatedEventSourcedBehavior&lt;
         ShoppingCart.Command, ShoppingCart.Event, ShoppingCart.State&gt; {
 
@@ -612,7 +612,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>With this model we cannot have a <code>ClearCart</code> command as that could give different states in different data centers. It is quite easy to imagine such a scenario: commands arriving in the order <code>ClearCart</code>, <code>AddItem(&#39;a&#39;, 5)</code> in one data center and the order <code>AddItem(&#39;a&#39;, 5), ClearCart</code> in another.</p>
 <p>To clear a cart a client would instead have to remove as many items of each product as it sees in the cart at the time of removal.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/replicated-eventsourcing-cart.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/replicated-eventsourcing-cart.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -682,7 +682,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

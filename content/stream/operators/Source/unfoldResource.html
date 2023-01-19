@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Wrap any resource that can be opened, queried for next element (in a blocking way) and closed using three distinct functions into a source.</p>
 <p><a href="../index.html#source-operators">Source operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#unfoldResource(org.apache.pekko.japi.function.Creator,org.apache.pekko.japi.function.Function,org.apache.pekko.japi.function.Procedure)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.unfoldResource</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#unfoldResource[T,S](create:()=&gt;S,read:S=&gt;Option[T],close:S=&gt;Unit):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.unfoldResource</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#unfoldResource(org.apache.pekko.japi.function.Creator,org.apache.pekko.japi.function.Function,org.apache.pekko.japi.function.Procedure)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.unfoldResource</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#unfoldResource[T,S](create:()=&gt;S,read:S=&gt;Option[T],close:S=&gt;Unit):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.unfoldResource</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p><code>Source.unfoldResource</code> allows us to safely extract stream elements from blocking resources by providing it with three functions: </p>
 <ol>
@@ -436,7 +436,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/source/UnfoldResource.scala#L24-L34" target="_blank" title="Go to snippet source">source</a><code class="language-scala">trait Database {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/source/UnfoldResource.scala#L24-L34" target="_blank" title="Go to snippet source">source</a><code class="language-scala">trait Database {
   // blocking query
   def doQuery(): QueryResult
 }
@@ -449,7 +449,7 @@ trait QueryResult {
 trait DatabaseEntry</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/source/UnfoldResource.java#L25-L39" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface Database {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/source/UnfoldResource.java#L25-L39" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface Database {
   // blocking query
   QueryResult doQuery();
 }
@@ -469,7 +469,7 @@ interface DatabaseEntry {}
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/source/UnfoldResource.scala#L40-L61" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// we don&#39;t actually have one, it was just made up for the sample
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/source/UnfoldResource.scala#L40-L61" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// we don&#39;t actually have one, it was just made up for the sample
 val database: Database = ???
 
 val queryResultSource: Source[DatabaseEntry, NotUsed] =
@@ -493,7 +493,7 @@ val queryResultSource: Source[DatabaseEntry, NotUsed] =
 queryResultSource.runForeach(println)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/source/UnfoldResource.java#L46-L61" target="_blank" title="Go to snippet source">source</a><code class="language-java">// we don&#39;t actually have one, it was just made up for the sample
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/source/UnfoldResource.java#L46-L61" target="_blank" title="Go to snippet source">source</a><code class="language-java">// we don&#39;t actually have one, it was just made up for the sample
 Database database = null;
 
 Source&lt;DatabaseEntry, NotUsed&gt; queryResultSource =
@@ -515,7 +515,7 @@ queryResultSource.runForeach(entry -&gt; System.out.println(entry.toString()), s
 <p><strong>emits</strong> when there is demand and the <code>read</code> function returns a value</p>
 <p><strong>completes</strong> when the <code>read</code> function returns <span class="group-scala"><code>None</code></span><span class="group-java">an empty <code>Optional</code></span></p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source/unfoldResource.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source/unfoldResource.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -601,7 +601,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

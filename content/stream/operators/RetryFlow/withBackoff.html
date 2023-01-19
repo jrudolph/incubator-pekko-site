@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,10 +418,10 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="page-content row">
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#retryflow-withbackoff" name="retryflow-withbackoff" class="anchor"><span class="anchor-link"></span></a>RetryFlow.withBackoff</h1>
-<p>Wrap the given <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow</code></a></span> and retry individual elements in that stream with an exponential backoff. A decider function tests every emitted element and can return a new element to be sent to the wrapped flow for another try.</p>
+<p>Wrap the given <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow</code></a></span> and retry individual elements in that stream with an exponential backoff. A decider function tests every emitted element and can return a new element to be sent to the wrapped flow for another try.</p>
 <p><a href="../index.html#error-handling">Error handling</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/RetryFlow$.html#withBackoff(java.time.Duration,java.time.Duration,double,int,org.apache.pekko.stream.javadsl.Flow,org.apache.pekko.japi.function.Function2)" title="org.apache.pekko.stream.javadsl.RetryFlow"><code>RetryFlow.withBackoff</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/RetryFlow$.html#withBackoff[In,Out,Mat](minBackoff:scala.concurrent.duration.FiniteDuration,maxBackoff:scala.concurrent.duration.FiniteDuration,randomFactor:Double,maxRetries:Int,flow:org.apache.pekko.stream.scaladsl.Flow[In,Out,Mat])(decideRetry:(In,Out)=&gt;Option[In]):org.apache.pekko.stream.scaladsl.Flow[In,Out,Mat]" title="org.apache.pekko.stream.scaladsl.RetryFlow"><code>RetryFlow.withBackoff</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/RetryFlow$.html#withBackoff(java.time.Duration,java.time.Duration,double,int,org.apache.pekko.stream.javadsl.Flow,org.apache.pekko.japi.function.Function2)" title="org.apache.pekko.stream.javadsl.RetryFlow"><code>RetryFlow.withBackoff</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/RetryFlow$.html#withBackoff[In,Out,Mat](minBackoff:scala.concurrent.duration.FiniteDuration,maxBackoff:scala.concurrent.duration.FiniteDuration,randomFactor:Double,maxRetries:Int,flow:org.apache.pekko.stream.scaladsl.Flow[In,Out,Mat])(decideRetry:(In,Out)=&gt;Option[In]):org.apache.pekko.stream.scaladsl.Flow[In,Out,Mat]" title="org.apache.pekko.stream.scaladsl.RetryFlow"><code>RetryFlow.withBackoff</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>When an element is emitted by the wrapped <code>flow</code> it is passed to the <code>decideRetry</code> function, which may return an element to retry in the <code>flow</code>. </p>
 <p>The retry backoff is controlled by the <code>minBackoff</code>, <code>maxBackoff</code> and <code>randomFactor</code> parameters. At most <code>maxRetries</code> will be made after the initial try.</p>
@@ -432,7 +432,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/RetryFlowSpec.scala#L90-L101" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val flow: Flow[Int, Int, NotUsed] = // ???
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/RetryFlowSpec.scala#L90-L101" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val flow: Flow[Int, Int, NotUsed] = // ???
 
 val retryFlow: Flow[Int, Int, NotUsed] =
   RetryFlow.withBackoff(minBackoff = 10.millis, maxBackoff = 5.seconds, randomFactor = 0d, maxRetries = 3, flow)(
@@ -442,7 +442,7 @@ val retryFlow: Flow[Int, Int, NotUsed] =
     })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/RetryFlowTest.java#L85-L102" target="_blank" title="Go to snippet source">source</a><code class="language-java">Flow&lt;Integer, Integer, NotUsed&gt; flow = // ...
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/java/org/apache/pekko/stream/javadsl/RetryFlowTest.java#L85-L102" target="_blank" title="Go to snippet source">source</a><code class="language-java">Flow&lt;Integer, Integer, NotUsed&gt; flow = // ...
     // the wrapped flow
 
 Flow&lt;Integer, Integer, NotUsed&gt; retryFlow =
@@ -463,7 +463,7 @@ Flow&lt;Integer, Integer, NotUsed&gt; retryFlow =
 <p><strong>completes</strong> when upstream or the wrapped flow completes</p>
 <p><strong>cancels</strong> when downstream or the wrapped flow cancels</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/RetryFlow/withBackoff.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/RetryFlow/withBackoff.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -548,7 +548,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

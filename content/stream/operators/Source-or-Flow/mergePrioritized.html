@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,14 +421,14 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Merge multiple sources.</p>
 <p><a href="../index.html#fan-in-operators">Fan-in operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#mergePrioritized(org.apache.pekko.stream.Graph,int,int,boolean)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.mergePrioritized</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#mergePrioritized[U&gt;:Out,M](that:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[U],M],leftPriority:Int,rightPriority:Int,eagerComplete:Boolean):FlowOps.this.Repr[U]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.mergePrioritized</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#mergePrioritized(org.apache.pekko.stream.Graph,int,int,boolean)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.mergePrioritized</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#mergePrioritized[U&gt;:Out,M](that:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[U],M],leftPriority:Int,rightPriority:Int,eagerComplete:Boolean):FlowOps.this.Repr[U]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.mergePrioritized</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#mergePrioritized(org.apache.pekko.stream.Graph,int,int,boolean)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.mergePrioritized</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#mergePrioritized[U&gt;:Out,M](that:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[U],M],leftPriority:Int,rightPriority:Int,eagerComplete:Boolean):FlowOps.this.Repr[U]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.mergePrioritized</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#mergePrioritized(org.apache.pekko.stream.Graph,int,int,boolean)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.mergePrioritized</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#mergePrioritized[U&gt;:Out,M](that:org.apache.pekko.stream.Graph[org.apache.pekko.stream.SourceShape[U],M],leftPriority:Int,rightPriority:Int,eagerComplete:Boolean):FlowOps.this.Repr[U]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.mergePrioritized</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Merge multiple sources. Prefer sources depending on priorities if all sources have elements ready. If a subset of all sources have elements ready the relative priorities for those sources are used to prioritize. For example, when used with only two sources, the left source has a probability of <code>(leftPriority) / (leftPriority + rightPriority)</code> of being prioritized and similarly for the right source. The priorities for each source must be positive integers. </p>
 <h2><a href="#example" name="example" class="anchor"><span class="anchor-link"></span></a>Example</h2>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/FlowMergeSpec.scala#L159-L167" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.stream.scaladsl.{ Sink, Source }
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-tests/src/test/scala/org/apache/pekko/stream/scaladsl/FlowMergeSpec.scala#L159-L167" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.stream.scaladsl.{ Sink, Source }
 
 val sourceA = Source(List(1, 2, 3, 4))
 val sourceB = Source(List(10, 20, 30, 40))
@@ -439,7 +439,7 @@ sourceA.mergePrioritized(sourceB, 99, 1).runWith(Sink.foreach(println))
 // while sourceB has a 1% chance</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L249-L255" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; sourceA = Source.from(Arrays.asList(1, 2, 3, 4));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L249-L255" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; sourceA = Source.from(Arrays.asList(1, 2, 3, 4));
 Source&lt;Integer, NotUsed&gt; sourceB = Source.from(Arrays.asList(10, 20, 30, 40));
 
 sourceA.mergePrioritized(sourceB, 99, 1, false).runForeach(System.out::println, system);
@@ -452,7 +452,7 @@ sourceA.mergePrioritized(sourceB, 99, 1, false).runForeach(System.out::println, 
 <p><strong>backpressures</strong> when downstream backpressures</p>
 <p><strong>completes</strong> when all upstreams complete (This behavior is changeable to completing when any upstream completes by setting <code>eagerComplete=true</code>.)</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/mergePrioritized.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/mergePrioritized.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -538,7 +538,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

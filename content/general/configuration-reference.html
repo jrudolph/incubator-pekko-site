@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -422,7 +422,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>The purpose of <code>reference.conf</code> files is for libraries, like Pekko, to define default values that are used if an application doesn&rsquo;t define a more specific value. It&rsquo;s also a good place to document the existence and meaning of the configuration properties. One library must not try to override properties in its own <code>reference.conf</code> for properties originally defined by another library&rsquo;s <code>reference.conf</code>, because the effective value would be nondeterministic when loading the configuration.`</p>
 <a id="config-pekko-actor"></a>
 <h3><a href="#pekko-actor" name="pekko-actor" class="anchor"><span class="anchor-link"></span></a>pekko-actor</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">####################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">####################################
 # Pekko Actor Reference Config File #
 ####################################
 
@@ -1775,7 +1775,7 @@ pekko {
 }</code></pre>
 <a id="config-pekko-actor-typed"></a>
 <h3><a href="#pekko-actor-typed" name="pekko-actor-typed" class="anchor"><span class="anchor-link"></span></a>pekko-actor-typed</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">pekko.actor.typed {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">pekko.actor.typed {
 
   # List FQCN of `org.apache.pekko.actor.typed.ExtensionId`s which shall be loaded at actor system startup.
   # Should be on the format: &#39;extensions = [&quot;com.example.MyExtId1&quot;, &quot;com.example.MyExtId2&quot;]&#39; etc.
@@ -1906,7 +1906,7 @@ pekko.reliable-delivery {
 }</code></pre>
 <a id="config-pekko-cluster-typed"></a>
 <h3><a href="#pekko-cluster-typed" name="pekko-cluster-typed" class="anchor"><span class="anchor-link"></span></a>pekko-cluster-typed</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-typed/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">############################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-typed/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">############################################
 # Pekko Cluster Typed Reference Config File #
 ############################################
 
@@ -1974,7 +1974,7 @@ pekko {
 }</code></pre>
 <a id="config-pekko-cluster"></a>
 <h3><a href="#pekko-cluster" name="pekko-cluster" class="anchor"><span class="anchor-link"></span></a>pekko-cluster</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">######################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">######################################
 # Pekko Cluster Reference Config File #
 ######################################
 
@@ -2480,7 +2480,7 @@ pekko.cluster.split-brain-resolver.lease-majority {
 #//#lease-majority</code></pre>
 <a id="config-pekko-discovery"></a>
 <h3><a href="#pekko-discovery" name="pekko-discovery" class="anchor"><span class="anchor-link"></span></a>pekko-discovery</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/discovery/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">######################################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/discovery/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">######################################################
 # Pekko Discovery Config                              #
 ######################################################
 
@@ -2557,7 +2557,7 @@ pekko.discovery {
 </code></pre>
 <a id="config-pekko-coordination"></a>
 <h3><a href="#pekko-coordination" name="pekko-coordination" class="anchor"><span class="anchor-link"></span></a>pekko-coordination</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/coordination/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">pekko.coordination {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/coordination/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">pekko.coordination {
 
   # Defaults for any lease implementation that doesn&#39;t include these properties
   lease {
@@ -2581,7 +2581,7 @@ pekko.discovery {
 }</code></pre>
 <a id="config-pekko-multi-node-testkit"></a>
 <h3><a href="#pekko-multi-node-testkit" name="pekko-multi-node-testkit" class="anchor"><span class="anchor-link"></span></a>pekko-multi-node-testkit</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/multi-node-testkit/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">#############################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/multi-node-testkit/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">#############################################
 # Pekko Remote Testing Reference Config File #
 #############################################
 
@@ -2648,7 +2648,7 @@ pekko {
 }</code></pre>
 <a id="config-pekko-persistence-typed"></a>
 <h3><a href="#pekko-persistence-typed" name="pekko-persistence-typed" class="anchor"><span class="anchor-link"></span></a>pekko-persistence-typed</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">pekko.actor {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">pekko.actor {
 
   serialization-identifiers.&quot;org.apache.pekko.persistence.typed.serialization.ReplicatedEventSourcingSerializer&quot; = 40
 
@@ -2727,7 +2727,7 @@ pekko.reliable-delivery {
 }</code></pre>
 <a id="config-pekko-persistence"></a>
 <h3><a href="#pekko-persistence" name="pekko-persistence" class="anchor"><span class="anchor-link"></span></a>pekko-persistence</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">###########################################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">###########################################################
 # Pekko Persistence Extension Reference Configuration File #
 ###########################################################
 
@@ -3084,7 +3084,7 @@ pekko.persistence.snapshot-store.proxy {
 #        &lt;/dependency&gt;</code></pre>
 <a id="config-pekko-persistence-query"></a>
 <h3><a href="#pekko-persistence-query" name="pekko-persistence-query" class="anchor"><span class="anchor-link"></span></a>pekko-persistence-query</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-query/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">#######################################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-query/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">#######################################################
 # Pekko Persistence Query Reference Configuration File #
 #######################################################
 
@@ -3128,7 +3128,7 @@ pekko.actor {
 }</code></pre>
 <a id="config-pekko-persistence-testkit"></a>
 <h3><a href="#pekko-persistence-testkit" name="pekko-persistence-testkit" class="anchor"><span class="anchor-link"></span></a>pekko-persistence-testkit</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-testkit/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">##################################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-testkit/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">##################################################
 # Pekko Persistence Testkit Reference Config File #
 ##################################################
 
@@ -3168,7 +3168,7 @@ pekko.persistence.testkit.state {
 }</code></pre>
 <a id="config-pekko-remote-artery"></a>
 <h3><a href="#pekko-remote-artery" name="pekko-remote-artery" class="anchor"><span class="anchor-link"></span></a>pekko-remote artery</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/remote/src/main/resources/reference.conf#L2-L263" target="_blank" title="Go to snippet source">source</a><code class="language-none">#####################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/remote/src/main/resources/reference.conf#L2-L263" target="_blank" title="Go to snippet source">source</a><code class="language-none">#####################################
 # Pekko Remote Reference Config File #
 #####################################
 
@@ -3953,7 +3953,7 @@ pekko {
 }</code></pre>
 <a id="config-pekko-remote"></a>
 <h3><a href="#pekko-remote-classic-deprecated-" name="pekko-remote-classic-deprecated-" class="anchor"><span class="anchor-link"></span></a>pekko-remote classic (deprecated)</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/remote/src/main/resources/reference.conf#L2-L263" target="_blank" title="Go to snippet source">source</a><code class="language-none">#####################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/remote/src/main/resources/reference.conf#L2-L263" target="_blank" title="Go to snippet source">source</a><code class="language-none">#####################################
 # Pekko Remote Reference Config File #
 #####################################
 
@@ -4680,7 +4680,7 @@ pekko {
 }</code></pre>
 <a id="config-pekko-testkit"></a>
 <h3><a href="#pekko-testkit" name="pekko-testkit" class="anchor"><span class="anchor-link"></span></a>pekko-testkit</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/testkit/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">######################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/testkit/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">######################################
 # Pekko Testkit Reference Config File #
 ######################################
 
@@ -4730,7 +4730,7 @@ pekko {
 }</code></pre>
 <a id="config-cluster-metrics"></a>
 <h3><a href="#pekko-cluster-metrics" name="pekko-cluster-metrics" class="anchor"><span class="anchor-link"></span></a>pekko-cluster-metrics</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-metrics/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">##############################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-metrics/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">##############################################
 # Pekko Cluster Metrics Reference Config File #
 ##############################################
 
@@ -4843,7 +4843,7 @@ pekko.actor {
 }</code></pre>
 <a id="config-cluster-tools"></a>
 <h3><a href="#pekko-cluster-tools" name="pekko-cluster-tools" class="anchor"><span class="anchor-link"></span></a>pekko-cluster-tools</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-tools/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">############################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-tools/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">############################################
 # Pekko Cluster Tools Reference Config File #
 ############################################
 
@@ -5076,7 +5076,7 @@ pekko.actor {
 }</code></pre>
 <a id="config-cluster-sharding-typed"></a>
 <h3><a href="#pekko-cluster-sharding-typed" name="pekko-cluster-sharding-typed" class="anchor"><span class="anchor-link"></span></a>pekko-cluster-sharding-typed</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding-typed/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf"><br/># //#sharding-ext-config
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding-typed/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf"><br/># //#sharding-ext-config
 # //#number-of-shards
 pekko.cluster.sharding {
   # Number of shards used by the default HashCodeMessageExtractor
@@ -5156,7 +5156,7 @@ pekko.reliable-delivery {
 }</code></pre>
 <a id="config-cluster-sharding"></a>
 <h3><a href="#pekko-cluster-sharding" name="pekko-cluster-sharding" class="anchor"><span class="anchor-link"></span></a>pekko-cluster-sharding</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/cluster-sharding/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">###############################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-sharding/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">###############################################
 # Pekko Cluster Sharding Reference Config File #
 ###############################################
 
@@ -5631,7 +5631,7 @@ pekko.actor {
 }</code></pre>
 <a id="config-distributed-data"></a>
 <h3><a href="#pekko-distributed-data" name="pekko-distributed-data" class="anchor"><span class="anchor-link"></span></a>pekko-distributed-data</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/distributed-data/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">##############################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/distributed-data/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">##############################################
 # Pekko Distributed DataReference Config File #
 ##############################################
 
@@ -5792,7 +5792,7 @@ pekko.actor {
 }</code></pre>
 <a id="config-pekko-stream"></a>
 <h3><a href="#pekko-stream" name="pekko-stream" class="anchor"><span class="anchor-link"></span></a>pekko-stream</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">#####################################
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">#####################################
 # Pekko Stream Reference Config File #
 #####################################
 
@@ -5994,11 +5994,11 @@ ssl-config {
 }</code></pre>
 <a id="config-pekko-stream-testkit"></a>
 <h3><a href="#pekko-stream-testkit" name="pekko-stream-testkit" class="anchor"><span class="anchor-link"></span></a>pekko-stream-testkit</h3>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/stream-testkit/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">pekko.stream.testkit {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/stream-testkit/src/main/resources/reference.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">pekko.stream.testkit {
   all-stages-stopped-timeout = 5 s
 }</code></pre>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/general/configuration-reference.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/general/configuration-reference.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -6101,7 +6101,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

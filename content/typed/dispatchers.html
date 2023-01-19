@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,7 +419,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h1><a href="#dispatchers" name="dispatchers" class="anchor"><span class="anchor-link"></span></a>Dispatchers</h1>
 <p>You are viewing the documentation for the new actor APIs, to view the Pekko Classic documentation, see <a href="../dispatchers.html">Classic Dispatchers</a>.</p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>Dispatchers are part of core Pekko, which means that they are part of the <code>pekko-actor</code> dependency. This page describes how to use dispatchers with <code>pekko-actor-typed</code>, which has dependency:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>Dispatchers are part of core Pekko, which means that they are part of the <code>pekko-actor</code> dependency. This page describes how to use dispatchers with <code>pekko-actor-typed</code>, which has dependency:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -428,7 +428,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion<
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -443,7 +443,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion<
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-actor-typed_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -459,12 +459,12 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/DispatcherDocSpec.scala#L40-L42" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// for use with Futures, Scheduler, etc.
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/DispatcherDocSpec.scala#L40-L42" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// for use with Futures, Scheduler, etc.
 import org.apache.pekko.actor.typed.DispatcherSelector
 implicit val executionContext = context.system.dispatchers.lookup(DispatcherSelector.fromConfig(&quot;my-dispatcher&quot;))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/DispatcherDocTest.java#L57-L61" target="_blank" title="Go to snippet source">source</a><code class="language-java">// this is scala.concurrent.ExecutionContextExecutor, which implements
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/DispatcherDocTest.java#L57-L61" target="_blank" title="Go to snippet source">source</a><code class="language-java">// this is scala.concurrent.ExecutionContextExecutor, which implements
 // both scala.concurrent.ExecutionContext (for use with Futures, Scheduler, etc.)
 // and java.util.concurrent.Executor (for use with CompletableFuture etc.)
 final ExecutionContextExecutor ex =
@@ -476,7 +476,7 @@ final ExecutionContextExecutor ex =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/DispatchersDocSpec.scala#L56-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.typed.DispatcherSelector
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/DispatchersDocSpec.scala#L56-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.typed.DispatcherSelector
 
 context.spawn(yourBehavior, &quot;DefaultDispatcher&quot;)
 context.spawn(yourBehavior, &quot;ExplicitDefaultDispatcher&quot;, DispatcherSelector.default())
@@ -485,7 +485,7 @@ context.spawn(yourBehavior, &quot;ParentDispatcher&quot;, DispatcherSelector.sam
 context.spawn(yourBehavior, &quot;DispatcherFromConfig&quot;, DispatcherSelector.fromConfig(&quot;your-dispatcher&quot;))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/DispatchersDocTest.java#L24-L29" target="_blank" title="Go to snippet source">source</a><code class="language-java">context.spawn(behavior, &quot;DefaultDispatcher&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/DispatchersDocTest.java#L24-L29" target="_blank" title="Go to snippet source">source</a><code class="language-java">context.spawn(behavior, &quot;DefaultDispatcher&quot;);
 context.spawn(behavior, &quot;ExplicitDefaultDispatcher&quot;, DispatcherSelector.defaultDispatcher());
 context.spawn(behavior, &quot;BlockingDispatcher&quot;, DispatcherSelector.blocking());
 context.spawn(behavior, &quot;ParentDispatcher&quot;, DispatcherSelector.sameAsParent());
@@ -500,7 +500,7 @@ context.spawn(
 </ul>
 <p>The final example shows how to load a custom dispatcher from configuration and relies on this being in your <code>application.conf</code>:</p>
 <!-- Same between Java and Scala -->
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/DispatchersDocSpec.scala#L34-L41" target="_blank" title="Go to snippet source">source</a><code class="language-scala">your-dispatcher {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/DispatchersDocSpec.scala#L34-L41" target="_blank" title="Go to snippet source">source</a><code class="language-scala">your-dispatcher {
   type = Dispatcher
   executor = &quot;thread-pool-executor&quot;
   thread-pool-executor {
@@ -534,7 +534,7 @@ context.spawn(
 </ul>
 <p>Here is an example configuration of a Fork Join Pool dispatcher:</p>
 <!--same config text for Scala & Java-->
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L58-L76" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-dispatcher {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L58-L76" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-dispatcher {
   # Dispatcher is the name of the event-based dispatcher
   type = Dispatcher
   # What kind of ExecutionService to use
@@ -570,7 +570,7 @@ context.spawn(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/BlockingActor.scala#L17-L32" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/BlockingActor.scala#L17-L32" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.typed.Behavior
 import pekko.actor.typed.scaladsl.Behaviors
 
@@ -588,7 +588,7 @@ object BlockingActor {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/BlockingActor.java#L17-L45" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.typed.*;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/BlockingActor.java#L17-L45" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.typed.*;
 import org.apache.pekko.actor.typed.javadsl.*;
 
 public class BlockingActor extends AbstractBehavior&lt;Integer&gt; {
@@ -626,7 +626,7 @@ public class BlockingActor extends AbstractBehavior&lt;Integer&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/PrintActor.scala#L20-L26" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object PrintActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/PrintActor.scala#L20-L26" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object PrintActor {
   def apply(): Behavior[Integer] =
     Behaviors.receiveMessage { i =&gt;
       println(s&quot;PrintActor: $i&quot;)
@@ -635,7 +635,7 @@ public class BlockingActor extends AbstractBehavior&lt;Integer&gt; {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/PrintActor.java#L20-L41" target="_blank" title="Go to snippet source">source</a><code class="language-java">class PrintActor extends AbstractBehavior&lt;Integer&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/PrintActor.java#L20-L41" target="_blank" title="Go to snippet source">source</a><code class="language-java">class PrintActor extends AbstractBehavior&lt;Integer&gt; {
 
   public static Behavior&lt;Integer&gt; create() {
     return Behaviors.setup(PrintActor::new);
@@ -661,7 +661,7 @@ public class BlockingActor extends AbstractBehavior&lt;Integer&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/BlockingDispatcherSample.scala#L70-L77" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val root = Behaviors.setup[Nothing] { context =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/BlockingDispatcherSample.scala#L70-L77" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val root = Behaviors.setup[Nothing] { context =&gt;
   for (i &lt;- 1 to 100) {
     context.spawn(BlockingFutureActor(), s&quot;futureActor-$i&quot;) ! i
     context.spawn(PrintActor(), s&quot;printActor-$i&quot;) ! i
@@ -671,7 +671,7 @@ public class BlockingActor extends AbstractBehavior&lt;Integer&gt; {
 val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/BlockingDispatcherTest.java#L22-L30" target="_blank" title="Go to snippet source">source</a><code class="language-java">Behavior&lt;Void&gt; root =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/BlockingDispatcherTest.java#L22-L30" target="_blank" title="Go to snippet source">source</a><code class="language-java">Behavior&lt;Void&gt; root =
     Behaviors.setup(
         context -&gt; {
           for (int i = 0; i &lt; 100; i++) {
@@ -707,7 +707,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/BlockingDispatcherSample.scala#L23-L41" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object BlockingFutureActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/BlockingDispatcherSample.scala#L23-L41" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object BlockingFutureActor {
   def apply(): Behavior[Int] =
     Behaviors.setup { context =&gt;
       implicit val executionContext: ExecutionContext = context.executionContext
@@ -735,7 +735,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 <p>An efficient method of isolating the blocking behavior, such that it does not impact the rest of the system, is to prepare and use a dedicated dispatcher for all those blocking operations. This technique is often referred to as &ldquo;bulk-heading&rdquo; or simply &ldquo;isolating blocking&rdquo;.</p>
 <p>In <code>application.conf</code>, the dispatcher dedicated to blocking behavior should be configured as follows:</p>
 <!--same config text for Scala & Java-->
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/BlockingDispatcherSample.scala#L87-L94" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-blocking-dispatcher {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/BlockingDispatcherSample.scala#L87-L94" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-blocking-dispatcher {
   type = Dispatcher
   executor = &quot;thread-pool-executor&quot;
   thread-pool-executor {
@@ -749,7 +749,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/BlockingDispatcherSample.scala#L45-L64" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object SeparateDispatcherFutureActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/BlockingDispatcherSample.scala#L45-L64" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object SeparateDispatcherFutureActor {
   def apply(): Behavior[Int] =
     Behaviors.setup { context =&gt;
       implicit val executionContext: ExecutionContext =
@@ -771,7 +771,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/SeparateDispatcherCompletionStageActor.java#L23-L66" target="_blank" title="Go to snippet source">source</a><code class="language-java">class SeparateDispatcherFutureActor extends AbstractBehavior&lt;Integer&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/SeparateDispatcherCompletionStageActor.java#L23-L66" target="_blank" title="Go to snippet source">source</a><code class="language-java">class SeparateDispatcherFutureActor extends AbstractBehavior&lt;Integer&gt; {
   private final Executor ec;
 
   public static Behavior&lt;Integer&gt; create() {
@@ -836,7 +836,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 <h2><a href="#more-dispatcher-configuration-examples" name="more-dispatcher-configuration-examples" class="anchor"><span class="anchor-link"></span></a>More dispatcher configuration examples</h2>
 <h3><a href="#fixed-pool-size" name="fixed-pool-size" class="anchor"><span class="anchor-link"></span></a>Fixed pool size</h3>
 <p>Configuring a dispatcher with fixed thread pool size, e.g. for actors that perform blocking IO:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L140-L147" target="_blank" title="Go to snippet source">source</a><code class="language-scala">blocking-io-dispatcher {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L140-L147" target="_blank" title="Go to snippet source">source</a><code class="language-scala">blocking-io-dispatcher {
   type = Dispatcher
   executor = &quot;thread-pool-executor&quot;
   thread-pool-executor {
@@ -847,7 +847,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 <h3><a href="#cores" name="cores" class="anchor"><span class="anchor-link"></span></a>Cores</h3>
 <p>Another example that uses the thread pool based on the number of cores (e.g. for CPU bound tasks)</p>
 <!--same config text for Scala & Java-->
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L80-L98" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-thread-pool-dispatcher {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L80-L98" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-thread-pool-dispatcher {
   # Dispatcher is the name of the event-based dispatcher
   type = Dispatcher
   # What kind of ExecutionService to use
@@ -870,7 +870,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 <p>A separate thread is dedicated for each actor that is configured to use the pinned dispatcher. </p>
 <p>Configuring a <code>PinnedDispatcher</code>:</p>
 <!--same config text for Scala & Java-->
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L151-L154" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-pinned-dispatcher {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L151-L154" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-pinned-dispatcher {
   executor = &quot;thread-pool-executor&quot;
   type = PinnedDispatcher
 }</code></pre>
@@ -879,7 +879,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 <h3><a href="#thread-shutdown-timeout" name="thread-shutdown-timeout" class="anchor"><span class="anchor-link"></span></a>Thread shutdown timeout</h3>
 <p>Both the <code>fork-join-executor</code> and <code>thread-pool-executor</code> may shutdown threads when they are not used. If it&rsquo;s desired to keep the threads alive longer there are some timeout settings that can be adjusted.</p>
 <!--same config text for Scala & Java-->
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L102-L114" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-dispatcher-with-timeouts {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/dispatcher/DispatcherDocSpec.scala#L102-L114" target="_blank" title="Go to snippet source">source</a><code class="language-scala">my-dispatcher-with-timeouts {
   type = Dispatcher
   executor = &quot;thread-pool-executor&quot;
   thread-pool-executor {
@@ -894,7 +894,7 @@ val system = ActorSystem[Nothing](root, &quot;BlockingDispatcherSample&quot;)</c
 }</code></pre>
 <p>When using the dispatcher as an <code>ExecutionContext</code> without assigning actors to it the <code>shutdown-timeout</code> should typically be increased, since the default of 1 second may cause too frequent shutdown of the entire thread pool.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/dispatchers.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/dispatchers.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -986,7 +986,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

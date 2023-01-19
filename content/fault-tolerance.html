@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Pekko Classic pertains to the original Actor APIs, which have been improved by more type safe and guided Actor APIs. Pekko Classic is still fully supported and existing applications can continue to use the classic APIs. It is also possible to use the new Actor APIs together with classic actors in the same ActorSystem, see <a href="typed/coexisting.html">coexistence</a>. For new projects we recommend using <a href="typed/actors.html">the new Actor API</a>.</p></div>
 <p>For the full documentation of this feature and for new projects see <a href="typed/fault-tolerance.html">fault tolerance</a>.</p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>The concept of fault tolerance relates to actors, so in order to use these make sure to depend on actors:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>The concept of fault tolerance relates to actors, so in order to use these make sure to depend on actors:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -430,7 +430,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code>
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -445,7 +445,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor" % PekkoVersion</code>
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-actor_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -460,7 +460,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L36-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L36-L47" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.OneForOneStrategy
 import pekko.actor.SupervisorStrategy._
 import scala.concurrent.duration._
@@ -474,7 +474,7 @@ override val supervisorStrategy =
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L67-L81" target="_blank" title="Go to snippet source">source</a><code class="language-java">private static SupervisorStrategy strategy =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L67-L81" target="_blank" title="Go to snippet source">source</a><code class="language-java">private static SupervisorStrategy strategy =
     new OneForOneStrategy(
         10,
         Duration.ofMinutes(1),
@@ -523,7 +523,7 @@ public SupervisorStrategy supervisorStrategy() {
 </ul>
 <p>If the exception escalate all the way up to the root guardian it will handle it in the same way as the default strategy defined above.</p><div class="group-scala">
 <p>You can combine your own strategy with the default strategy:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L83-L93" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L83-L93" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.OneForOneStrategy
 import pekko.actor.SupervisorStrategy._
 import scala.concurrent.duration._
@@ -548,7 +548,7 @@ override val supervisorStrategy =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L31-L53" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.Actor
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L31-L53" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.Actor
 
 class Supervisor extends Actor {
   import org.apache.pekko
@@ -570,7 +570,7 @@ class Supervisor extends Actor {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L41-L95" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.japi.pf.DeciderBuilder;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L41-L95" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.japi.pf.DeciderBuilder;
 import org.apache.pekko.actor.SupervisorStrategy;
 
 static class Supervisor extends AbstractActor {
@@ -608,7 +608,7 @@ static class Supervisor extends AbstractActor {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L31-L107" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.Actor
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L31-L107" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.Actor
 
 class Child extends Actor {
   var state = 0
@@ -620,7 +620,7 @@ class Child extends Actor {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L141-L157" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class Child extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L141-L157" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class Child extends AbstractActor {
   int state = 0;
 
   @Override
@@ -642,7 +642,7 @@ class Child extends Actor {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L21-L206" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import com.typesafe.config.{ Config, ConfigFactory }
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L21-L206" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import com.typesafe.config.{ Config, ConfigFactory }
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpecLike
@@ -678,7 +678,7 @@ class FaultHandlingDocSpec(_system: ActorSystem)
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L28-L232" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.testkit.TestProbe;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L28-L232" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.testkit.TestProbe;
 import org.apache.pekko.testkit.ErrorFilter;
 import org.apache.pekko.testkit.EventFilter;
 import org.apache.pekko.testkit.TestEvent;
@@ -714,13 +714,13 @@ public class FaultHandlingTest extends AbstractJavaTest {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L144-L147" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor = system.actorOf(Props[Supervisor](), &quot;supervisor&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L144-L147" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor = system.actorOf(Props[Supervisor](), &quot;supervisor&quot;)
 
 supervisor ! Props[Child]()
 val child = expectMsgType[ActorRef] // retrieve answer from TestKit’s testActor</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L188-L191" target="_blank" title="Go to snippet source">source</a><code class="language-java">Props superprops = Props.create(Supervisor.class);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L188-L191" target="_blank" title="Go to snippet source">source</a><code class="language-java">Props superprops = Props.create(Supervisor.class);
 ActorRef supervisor = system.actorOf(superprops, &quot;supervisor&quot;);
 ActorRef child =
     (ActorRef) Await.result(ask(supervisor, Props.create(Child.class), 5000), timeout);</code></pre></dd>
@@ -729,7 +729,7 @@ ActorRef child =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L151-L157" target="_blank" title="Go to snippet source">source</a><code class="language-scala">child ! 42 // set state to 42
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L151-L157" target="_blank" title="Go to snippet source">source</a><code class="language-scala">child ! 42 // set state to 42
 child ! &quot;get&quot;
 expectMsg(42)
 
@@ -738,7 +738,7 @@ child ! &quot;get&quot;
 expectMsg(42)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L195-L198" target="_blank" title="Go to snippet source">source</a><code class="language-java">child.tell(42, ActorRef.noSender());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L195-L198" target="_blank" title="Go to snippet source">source</a><code class="language-java">child.tell(42, ActorRef.noSender());
 assertEquals(42, Await.result(ask(child, &quot;get&quot;, 5000), timeout));
 child.tell(new ArithmeticException(), ActorRef.noSender());
 assertEquals(42, Await.result(ask(child, &quot;get&quot;, 5000), timeout));</code></pre></dd>
@@ -747,24 +747,24 @@ assertEquals(42, Await.result(ask(child, &quot;get&quot;, 5000), timeout));</cod
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L162-L164" target="_blank" title="Go to snippet source">source</a><code class="language-scala">child ! new NullPointerException // crash it harder
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L162-L164" target="_blank" title="Go to snippet source">source</a><code class="language-scala">child ! new NullPointerException // crash it harder
 child ! &quot;get&quot;
 expectMsg(0)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L202-L203" target="_blank" title="Go to snippet source">source</a><code class="language-java">child.tell(new NullPointerException(), ActorRef.noSender());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L202-L203" target="_blank" title="Go to snippet source">source</a><code class="language-java">child.tell(new NullPointerException(), ActorRef.noSender());
 assertEquals(0, Await.result(ask(child, &quot;get&quot;, 5000), timeout));</code></pre></dd>
 </dl>
 <p>And finally in case of the fatal <code>IllegalArgumentException</code> the child will be terminated by the supervisor:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L169-L171" target="_blank" title="Go to snippet source">source</a><code class="language-scala">watch(child) // have testActor watch “child”
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L169-L171" target="_blank" title="Go to snippet source">source</a><code class="language-scala">watch(child) // have testActor watch “child”
 child ! new IllegalArgumentException // break it
 expectMsgPF() { case Terminated(`child`) =&gt; () }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L207-L210" target="_blank" title="Go to snippet source">source</a><code class="language-java">final TestProbe probe = new TestProbe(system);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L207-L210" target="_blank" title="Go to snippet source">source</a><code class="language-java">final TestProbe probe = new TestProbe(system);
 probe.watch(child);
 child.tell(new IllegalArgumentException(), ActorRef.noSender());
 probe.expectMsgClass(Terminated.class);</code></pre></dd>
@@ -773,7 +773,7 @@ probe.expectMsgClass(Terminated.class);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L176-L185" target="_blank" title="Go to snippet source">source</a><code class="language-scala">supervisor ! Props[Child]() // create new child
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L176-L185" target="_blank" title="Go to snippet source">source</a><code class="language-scala">supervisor ! Props[Child]() // create new child
 val child2 = expectMsgType[ActorRef]
 watch(child2)
 child2 ! &quot;get&quot; // verify it is alive
@@ -785,7 +785,7 @@ expectMsgPF() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L214-L218" target="_blank" title="Go to snippet source">source</a><code class="language-java">child = (ActorRef) Await.result(ask(supervisor, Props.create(Child.class), 5000), timeout);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L214-L218" target="_blank" title="Go to snippet source">source</a><code class="language-java">child = (ActorRef) Await.result(ask(supervisor, Props.create(Child.class), 5000), timeout);
 probe.watch(child);
 assertEquals(0, Await.result(ask(child, &quot;get&quot;, 5000), timeout));
 child.tell(new Exception(), ActorRef.noSender());
@@ -796,7 +796,7 @@ probe.expectMsgClass(Terminated.class);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L57-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Supervisor2 extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L57-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Supervisor2 extends Actor {
   import org.apache.pekko
   import pekko.actor.OneForOneStrategy
   import pekko.actor.SupervisorStrategy._
@@ -818,7 +818,7 @@ probe.expectMsgClass(Terminated.class);</code></pre></dd>
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L100-L136" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class Supervisor2 extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L100-L136" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class Supervisor2 extends AbstractActor {
 
   private static SupervisorStrategy strategy =
       new OneForOneStrategy(
@@ -858,7 +858,7 @@ probe.expectMsgClass(Terminated.class);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L188-L199" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor2 = system.actorOf(Props[Supervisor2](), &quot;supervisor2&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/FaultHandlingDocSpec.scala#L188-L199" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor2 = system.actorOf(Props[Supervisor2](), &quot;supervisor2&quot;)
 
 supervisor2 ! Props[Child]()
 val child3 = expectMsgType[ActorRef]
@@ -872,7 +872,7 @@ child3 ! &quot;get&quot;
 expectMsg(0)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L222-L228" target="_blank" title="Go to snippet source">source</a><code class="language-java">superprops = Props.create(Supervisor2.class);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/FaultHandlingTest.java#L222-L228" target="_blank" title="Go to snippet source">source</a><code class="language-java">superprops = Props.create(Supervisor2.class);
 supervisor = system.actorOf(superprops);
 child = (ActorRef) Await.result(ask(supervisor, Props.create(Child.class), 5000), timeout);
 child.tell(23, ActorRef.noSender());
@@ -897,18 +897,18 @@ assertEquals(0, Await.result(ask(child, &quot;get&quot;, 5000), timeout));</code
 <h3><a href="#sharding" name="sharding" class="anchor"><span class="anchor-link"></span></a>Sharding</h3>
 <p>If the &lsquo;on stop&rsquo; strategy is used for sharded actors a final termination message should be configured and used to terminate the actor on passivation. Otherwise the supervisor will just stop and start the actor again.</p>
 <p>The termination message is configured with:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L125-L128" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor = BackoffSupervisor.props(
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L125-L128" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor = BackoffSupervisor.props(
   BackoffOpts
     .onStop(childProps, childName = &quot;myEcho&quot;, minBackoff = 3.seconds, maxBackoff = 30.seconds, randomFactor = 0.2)
     .withFinalStopMessage(_ == StopMessage))</code></pre>
 <p>And must be used for passivation:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L132" target="_blank" title="Go to snippet source">source</a><code class="language-scala">context.parent ! Passivate(StopMessage)</code></pre>
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L132" target="_blank" title="Go to snippet source">source</a><code class="language-scala">context.parent ! Passivate(StopMessage)</code></pre>
 <h3><a href="#simple-backoff" name="simple-backoff" class="anchor"><span class="anchor-link"></span></a>Simple backoff</h3>
 <p>The following snippet shows how to create a backoff supervisor which will start the given echo actor after it has stopped because of a failure, in increasing intervals of 3, 6, 12, 24 and finally 30 seconds:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L28-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val childProps = Props(classOf[EchoActor])
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L28-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val childProps = Props(classOf[EchoActor])
 
 val supervisor = BackoffSupervisor.props(
   BackoffOpts.onStop(
@@ -922,7 +922,7 @@ val supervisor = BackoffSupervisor.props(
 system.actorOf(supervisor, name = &quot;echoSupervisor&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/pattern/BackoffSupervisorDocTest.java#L28-L39" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Props childProps = Props.create(EchoActor.class);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/pattern/BackoffSupervisorDocTest.java#L28-L39" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Props childProps = Props.create(EchoActor.class);
 
 final Props supervisorProps =
     BackoffSupervisor.props(
@@ -941,7 +941,7 @@ system.actorOf(supervisorProps, &quot;echoSupervisor&quot;);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L48-L59" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val childProps = Props(classOf[EchoActor])
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L48-L59" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val childProps = Props(classOf[EchoActor])
 
 val supervisor = BackoffSupervisor.props(
   BackoffOpts.onFailure(
@@ -955,7 +955,7 @@ val supervisor = BackoffSupervisor.props(
 system.actorOf(supervisor, name = &quot;echoSupervisor&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/pattern/BackoffSupervisorDocTest.java#L45-L56" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Props childProps = Props.create(EchoActor.class);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/pattern/BackoffSupervisorDocTest.java#L45-L56" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Props childProps = Props.create(EchoActor.class);
 
 final Props supervisorProps =
     BackoffSupervisor.props(
@@ -972,7 +972,7 @@ system.actorOf(supervisorProps, &quot;echoSupervisor&quot;);</code></pre></dd>
 <p>The <code>org.apache.pekko.pattern.BackoffOnFailureOptions</code> and <code>org.apache.pekko.pattern.BackoffOnRestartOptions</code> can be used to customize the behavior of the back-off supervisor actor. Options are: * <code>withAutoReset</code>: The backoff is reset if no failure/stop occurs within the duration. This is the default behaviour with <code>minBackoff</code> as default value * <code>withManualReset</code>: The child must send <code>BackoffSupervisor.Reset</code> to its backoff supervisor (parent) * <code>withSupervisionStrategy</code>: Sets a custom <code>OneForOneStrategy</code> (as each backoff supervisor only has one child). The default strategy uses the <code>pekko.actor.SupervisorStrategy.defaultDecider</code> which stops and starts the child on exceptions. * <code>withMaxNrOfRetries</code>: Sets the maximum number of retries until the supervisor will give up (<code>-1</code> is default which means no limit of retries). Note: This is set on the supervision strategy, so setting a different strategy resets the <code>maxNrOfRetries</code>. * <code>withReplyWhileStopped</code>: By default all messages received while the child is stopped are forwarded to dead letters. With this set, the supervisor will reply to the sender instead.</p>
 <p>Only available on <code>BackoffOnStopOptions</code>: * <code>withDefaultStoppingStrategy</code>: Sets a <code>OneForOneStrategy</code> with the stopping decider that stops the child on all exceptions. * <code>withFinalStopMessage</code>: Allows to define a predicate to decide on finally stopping the child (and supervisor). Used for passivate sharded actors - see above.</p>
 <p>Some examples:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L70-L81" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor = BackoffSupervisor.props(
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L70-L81" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor = BackoffSupervisor.props(
   BackoffOpts
     .onStop(
       childProps,
@@ -985,7 +985,7 @@ system.actorOf(supervisorProps, &quot;echoSupervisor&quot;);</code></pre></dd>
     .withDefaultStoppingStrategy // Stop at any Exception thrown
 )</code></pre>
 <p>The above code sets up a back-off supervisor that requires the child actor to send a <code>org.apache.pekko.pattern.BackoffSupervisor.Reset</code> message to its parent when a message is successfully processed, resetting the back-off. It also uses a default stopping strategy, any exception will cause the child to stop.</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L94-L107" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor = BackoffSupervisor.props(
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/pattern/BackoffSupervisorDocSpec.scala#L94-L107" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val supervisor = BackoffSupervisor.props(
   BackoffOpts
     .onFailure(
       childProps,
@@ -1001,7 +1001,7 @@ system.actorOf(supervisorProps, &quot;echoSupervisor&quot;);</code></pre></dd>
     }))</code></pre>
 <p>The above code sets up a back-off supervisor that stops and starts the child after back-off if MyException is thrown, any other exception will be escalated. The back-off is automatically reset if the child does not throw any errors within 10 seconds.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/fault-tolerance.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/fault-tolerance.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1090,7 +1090,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

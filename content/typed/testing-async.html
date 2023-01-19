@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,14 +419,14 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h2><a href="#asynchronous-testing" name="asynchronous-testing" class="anchor"><span class="anchor-link"></span></a>Asynchronous testing</h2>
 <p>You are viewing the documentation for the new actor APIs, to view the Pekko Classic documentation, see <a href="../testing.html">Classic Testing</a>.</p>
-<p>Asynchronous testing uses a real <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> that allows you to test your Actors in a more realistic environment.</p>
+<p>Asynchronous testing uses a real <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> that allows you to test your Actors in a more realistic environment.</p>
 <p>The minimal setup consists of the test procedure, which provides the desired stimuli, the actor under test, and an actor receiving replies. Bigger systems replace the actor under test with a network of actors, apply stimuli at varying injection points and arrange results to be sent from different emission points, but the basic principle stays the same in that a single procedure drives the test.</p>
 <h3><a href="#basic-example" name="basic-example" class="anchor"><span class="anchor-link"></span></a>Basic example</h3>
 <p>Actor under test:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L41-L50" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object Echo {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L41-L50" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object Echo {
   case class Ping(message: String, response: ActorRef[Pong])
   case class Pong(message: String)
 
@@ -438,7 +438,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L48-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class Echo {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L48-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class Echo {
   public static class Ping {
     public final String message;
     public final ActorRef&lt;Pong&gt; replyTo;
@@ -482,7 +482,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   }
 }</code></pre></dd>
 </dl>
-<p>Tests create an instance of <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit"><code>ActorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit"><code>ActorTestKit</code></a></span>. This provides access to:</p>
+<p>Tests create an instance of <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit"><code>ActorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit"><code>ActorTestKit</code></a></span>. This provides access to:</p>
 <ul>
   <li>An ActorSystem</li>
   <li>Methods for spawning Actors. These are created under the special testkit user guardian</li>
@@ -492,7 +492,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L20-L151" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L20-L151" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit
 
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.matchers.should.Matchers
@@ -506,21 +506,21 @@ class AsyncTestingExampleSpec
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L22-L207" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L22-L207" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit;
 
 public class AsyncTestingExampleTest
 {
   static final ActorTestKit testKit = ActorTestKit.create();
 }</code></pre></dd>
 </dl>
-<p>Your test is responsible for shutting down the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> e.g. using <span class="group-scala"><code>BeforeAndAfterAll</code> when using ScalaTest</span><span class="group-java"><code>@AfterClass</code> when using JUnit</span>.</p>
+<p>Your test is responsible for shutting down the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> e.g. using <span class="group-scala"><code>BeforeAndAfterAll</code> when using ScalaTest</span><span class="group-java"><code>@AfterClass</code> when using JUnit</span>.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L148" target="_blank" title="Go to snippet source">source</a><code class="language-scala">override def afterAll(): Unit = testKit.shutdownTestKit()</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L148" target="_blank" title="Go to snippet source">source</a><code class="language-scala">override def afterAll(): Unit = testKit.shutdownTestKit()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L130-L133" target="_blank" title="Go to snippet source">source</a><code class="language-java">@AfterClass
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L130-L133" target="_blank" title="Go to snippet source">source</a><code class="language-java">@AfterClass
 public static void cleanup() {
   testKit.shutdownTestKit();
 }</code></pre></dd>
@@ -531,17 +531,17 @@ public static void cleanup() {
   <li>Creating a <code>TestProbe</code></li>
   <li>Verifying that the actor under test responds via the <code>TestProbe</code></li>
 </ul>
-<p>Note that it is possible to use a <code>TestProbe</code> directly as a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/RecipientRef.html" title="org.apache.pekko.actor.typed.RecipientRef"><code>RecipientRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/RecipientRef.html" title="org.apache.pekko.actor.typed.RecipientRef"><code>RecipientRef</code></a></span> (a common supertype of <code>ActorRef</code> and <a href="cluster-sharding.html">Cluster Sharding</a> <code>EntityRef</code>), in cases where a message protocol uses <code>RecipientRef</code> instead of specifying <code>ActorRef</code> or <code>EntityRef</code>.</p>
+<p>Note that it is possible to use a <code>TestProbe</code> directly as a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/RecipientRef.html" title="org.apache.pekko.actor.typed.RecipientRef"><code>RecipientRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/RecipientRef.html" title="org.apache.pekko.actor.typed.RecipientRef"><code>RecipientRef</code></a></span> (a common supertype of <code>ActorRef</code> and <a href="cluster-sharding.html">Cluster Sharding</a> <code>EntityRef</code>), in cases where a message protocol uses <code>RecipientRef</code> instead of specifying <code>ActorRef</code> or <code>EntityRef</code>.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L87-L90" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pinger = testKit.spawn(Echo(), &quot;ping&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L87-L90" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pinger = testKit.spawn(Echo(), &quot;ping&quot;)
 val probe = testKit.createTestProbe[Echo.Pong]()
 pinger ! Echo.Ping(&quot;hello&quot;, probe.ref)
 probe.expectMessage(Echo.Pong(&quot;hello&quot;))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L139-L142" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef&lt;Echo.Ping&gt; pinger = testKit.spawn(Echo.create(), &quot;ping&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L139-L142" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef&lt;Echo.Ping&gt; pinger = testKit.spawn(Echo.create(), &quot;ping&quot;);
 TestProbe&lt;Echo.Pong&gt; probe = testKit.createTestProbe();
 pinger.tell(new Echo.Ping(&quot;hello&quot;, probe.ref()));
 probe.expectMessage(new Echo.Pong(&quot;hello&quot;));</code></pre></dd>
@@ -550,10 +550,10 @@ probe.expectMessage(new Echo.Pong(&quot;hello&quot;));</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pinger = testKit.spawn(Echo())</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pinger = testKit.spawn(Echo())</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L149" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef&lt;Echo.Ping&gt; pinger = testKit.spawn(Echo.create());</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L149" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef&lt;Echo.Ping&gt; pinger = testKit.spawn(Echo.create());</code></pre></dd>
 </dl>
 <p>Note that you can add <code>import testKit._</code> to get access to the <code>spawn</code> and <code>createTestProbe</code> methods at the top level without prefixing them with <code>testKit</code>.</p>
 <h4><a href="#stopping-actors" name="stopping-actors" class="anchor"><span class="anchor-link"></span></a>Stopping actors</h4>
@@ -561,7 +561,7 @@ probe.expectMessage(new Echo.Pong(&quot;hello&quot;));</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L107-L116" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pinger1 = testKit.spawn(Echo(), &quot;pinger&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L107-L116" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val pinger1 = testKit.spawn(Echo(), &quot;pinger&quot;)
 pinger1 ! Echo.Ping(&quot;hello&quot;, probe.ref)
 probe.expectMessage(Echo.Pong(&quot;hello&quot;))
 testKit.stop(pinger1) // Uses default timeout
@@ -573,7 +573,7 @@ probe.expectMessage(Echo.Pong(&quot;hello&quot;))
 testKit.stop(pinger2, 10.seconds) // Custom timeout</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L160-L169" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef&lt;Echo.Ping&gt; pinger1 = testKit.spawn(Echo.create(), &quot;pinger&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L160-L169" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef&lt;Echo.Ping&gt; pinger1 = testKit.spawn(Echo.create(), &quot;pinger&quot;);
 pinger1.tell(new Echo.Ping(&quot;hello&quot;, probe.ref()));
 probe.expectMessage(new Echo.Pong(&quot;hello&quot;));
 testKit.stop(pinger1);
@@ -584,14 +584,14 @@ pinger2.tell(new Echo.Ping(&quot;hello&quot;, probe.ref()));
 probe.expectMessage(new Echo.Pong(&quot;hello&quot;));
 testKit.stop(pinger2, Duration.ofSeconds(10));</code></pre></dd>
 </dl>
-<p>The <code>stop</code> method can only be used for actors that were spawned by the same <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit"><code>ActorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit"><code>ActorTestKit</code></a></span>. Other actors will not be stopped by that method.</p>
+<p>The <code>stop</code> method can only be used for actors that were spawned by the same <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit"><code>ActorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit"><code>ActorTestKit</code></a></span>. Other actors will not be stopped by that method.</p>
 <h3><a href="#observing-mocked-behavior" name="observing-mocked-behavior" class="anchor"><span class="anchor-link"></span></a>Observing mocked behavior</h3>
 <p>When testing a component (which may be an actor or not) that interacts with other actors it can be useful to not have to run the other actors it depends on. Instead, you might want to create mock behaviors that accept and possibly respond to messages in the same way the other actor would do but without executing any actual logic. In addition to this it can also be useful to observe those interactions to assert that the component under test did send the expected messages. This allows the same kinds of tests as classic <code>TestActor</code>/<code>Autopilot</code>.</p>
 <p>As an example, let&rsquo;s assume we&rsquo;d like to test the following component:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L54-L66" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class Message(i: Int, replyTo: ActorRef[Try[Int]])
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L54-L66" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class Message(i: Int, replyTo: ActorRef[Try[Int]])
 
 class Producer(publisher: ActorRef[Message])(implicit scheduler: Scheduler) {
 
@@ -606,7 +606,7 @@ class Producer(publisher: ActorRef[Message])(implicit scheduler: Scheduler) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L94-L126" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>static class Message {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L94-L126" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>static class Message {
   int i;
   ActorRef&lt;Integer&gt; replyTo;
 
@@ -643,7 +643,7 @@ public static class Producer {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L123-L142" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import testKit._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/AsyncTestingExampleSpec.scala#L123-L142" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import testKit._
 
 // simulate the happy path
 val mockedBehavior = Behaviors.receiveMessage[Message] { msg =&gt;
@@ -665,7 +665,7 @@ for (i &lt;- 0 until messages) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L176-L198" target="_blank" title="Go to snippet source">source</a><code class="language-java">// simulate the happy path
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/AsyncTestingExampleTest.java#L176-L198" target="_blank" title="Go to snippet source">source</a><code class="language-java">// simulate the happy path
 Behavior&lt;Message&gt; mockedBehavior =
     Behaviors.receiveMessage(
         message -&gt; {
@@ -697,7 +697,7 @@ IntStream.range(0, messages)
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/ScalaTestIntegrationExampleSpec.scala#L23-L41" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import pekko.actor.testkit.typed.scaladsl.ScalaTestWithActorTestKit
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/ScalaTestIntegrationExampleSpec.scala#L23-L41" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import pekko.actor.testkit.typed.scaladsl.ScalaTestWithActorTestKit
 import org.scalatest.wordspec.AnyWordSpecLike
 
 class ScalaTestIntegrationExampleSpec extends ScalaTestWithActorTestKit with AnyWordSpecLike {
@@ -713,7 +713,7 @@ class ScalaTestIntegrationExampleSpec extends ScalaTestWithActorTestKit with Any
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/JunitIntegrationExampleTest.java#L22-L44" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.TestKitJunitResource;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/JunitIntegrationExampleTest.java#L22-L44" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.TestKitJunitResource;
 import org.apache.pekko.actor.testkit.typed.javadsl.TestProbe;
 import org.apache.pekko.actor.typed.ActorRef;
 import org.junit.ClassRule;
@@ -739,12 +739,12 @@ public class JunitIntegrationExampleTest {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/TestConfigExample.scala#L21-L23" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import com.typesafe.config.ConfigFactory
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/TestConfigExample.scala#L21-L23" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import com.typesafe.config.ConfigFactory
 
 ConfigFactory.load()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/TestConfigExample.java#L17-L26" target="_blank" title="Go to snippet source">source</a><code class="language-java">import com.typesafe.config.ConfigFactory;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/TestConfigExample.java#L17-L26" target="_blank" title="Go to snippet source">source</a><code class="language-java">import com.typesafe.config.ConfigFactory;
 
 ConfigFactory.load()</code></pre></dd>
 </dl>
@@ -752,25 +752,25 @@ ConfigFactory.load()</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/TestConfigExample.scala#L27-L30" target="_blank" title="Go to snippet source">source</a><code class="language-scala">ConfigFactory.parseString(&quot;&quot;&quot;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/TestConfigExample.scala#L27-L30" target="_blank" title="Go to snippet source">source</a><code class="language-scala">ConfigFactory.parseString(&quot;&quot;&quot;
   pekko.loglevel = DEBUG
   pekko.log-config-on-start = on
   &quot;&quot;&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/TestConfigExample.java#L31" target="_blank" title="Go to snippet source">source</a><code class="language-java">ConfigFactory.parseString(&quot;pekko.loglevel = DEBUG \n&quot; + &quot;pekko.log-config-on-start = on \n&quot;)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/TestConfigExample.java#L31" target="_blank" title="Go to snippet source">source</a><code class="language-java">ConfigFactory.parseString(&quot;pekko.loglevel = DEBUG \n&quot; + &quot;pekko.log-config-on-start = on \n&quot;)</code></pre></dd>
 </dl>
 <p>Combining those approaches using <code>withFallback</code>:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/TestConfigExample.scala#L34-L37" target="_blank" title="Go to snippet source">source</a><code class="language-scala">ConfigFactory.parseString(&quot;&quot;&quot;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/TestConfigExample.scala#L34-L37" target="_blank" title="Go to snippet source">source</a><code class="language-scala">ConfigFactory.parseString(&quot;&quot;&quot;
   pekko.loglevel = DEBUG
   pekko.log-config-on-start = on
   &quot;&quot;&quot;).withFallback(ConfigFactory.load())</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/TestConfigExample.java#L36-L37" target="_blank" title="Go to snippet source">source</a><code class="language-java">ConfigFactory.parseString(&quot;pekko.loglevel = DEBUG \n&quot; + &quot;pekko.log-config-on-start = on \n&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/TestConfigExample.java#L36-L37" target="_blank" title="Go to snippet source">source</a><code class="language-java">ConfigFactory.parseString(&quot;pekko.loglevel = DEBUG \n&quot; + &quot;pekko.log-config-on-start = on \n&quot;)
     .withFallback(ConfigFactory.load())</code></pre></dd>
 </dl>
 <p>More information can be found in the <a href="https://github.com/lightbend/config#using-the-library">documentation of the configuration library</a>.</p><div class="callout note "><div class="callout-title">Note</div>
@@ -781,7 +781,7 @@ ConfigFactory.load()</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/ManualTimerExampleSpec.scala#L17-L128" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.concurrent.duration._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/ManualTimerExampleSpec.scala#L17-L128" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.concurrent.duration._
 import org.apache.pekko
 import pekko.actor.testkit.typed.scaladsl.ScalaTestWithActorTestKit
 import pekko.actor.testkit.typed.scaladsl.ManualTime
@@ -824,7 +824,7 @@ class ManualTimerExampleSpec
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/ManualTimerExampleTest.java#L17-L73" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>import org.apache.pekko.actor.testkit.typed.javadsl.LogCapturing;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/ManualTimerExampleTest.java#L17-L73" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>import org.apache.pekko.actor.testkit.typed.javadsl.LogCapturing;
 import org.apache.pekko.actor.typed.Behavior;
 import org.apache.pekko.actor.testkit.typed.javadsl.ManualTime;
 import org.apache.pekko.actor.testkit.typed.javadsl.TestKitJunitResource;
@@ -882,13 +882,13 @@ public class ManualTimerExampleTest extends JUnitSuite {
 }</code></pre></dd>
 </dl>
 <h3><a href="#test-of-logging" name="test-of-logging" class="anchor"><span class="anchor-link"></span></a>Test of logging</h3>
-<p>To verify that certain <a href="logging.html">logging</a> events are emitted there is a utility called <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> . You define a criteria of the expected logging events and it will assert that the given number of occurrences of matching logging events are emitted within a block of code.</p><div class="callout note "><div class="callout-title">Note</div>
-<p>The <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> implementation <a href="logging.html#logback">requires Logback dependency</a>.</p></div>
+<p>To verify that certain <a href="logging.html">logging</a> events are emitted there is a utility called <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> . You define a criteria of the expected logging events and it will assert that the given number of occurrences of matching logging events are emitted within a block of code.</p><div class="callout note "><div class="callout-title">Note</div>
+<p>The <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> implementation <a href="logging.html#logback">requires Logback dependency</a>.</p></div>
 <p>For example, a criteria that verifies that an <code>INFO</code> level event with a message containing &ldquo;Received message&rdquo; is logged:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/LoggingDocExamples.scala#L126-L133" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/LoggingDocExamples.scala#L126-L133" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit
 
 // implicit ActorSystem is needed, but that is given by ScalaTestWithActorTestKit
 // implicit val system: ActorSystem[_]
@@ -898,7 +898,7 @@ LoggingTestKit.info(&quot;Received message&quot;).expect {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/LoggingDocExamples.java#L34-L176" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/LoggingDocExamples.java#L34-L176" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit;
 
 LoggingTestKit.info(&quot;Received message&quot;)
     .expect(
@@ -912,7 +912,7 @@ LoggingTestKit.info(&quot;Received message&quot;)
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/LoggingDocExamples.scala#L137-L150" target="_blank" title="Go to snippet source">source</a><code class="language-scala">LoggingTestKit
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/LoggingDocExamples.scala#L137-L150" target="_blank" title="Go to snippet source">source</a><code class="language-scala">LoggingTestKit
   .error[IllegalArgumentException]
   .withMessageRegex(&quot;.*was rejected.*expecting ascii input.*&quot;)
   .withCustom { event =&gt;
@@ -928,7 +928,7 @@ LoggingTestKit.info(&quot;Received message&quot;)
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/LoggingDocExamples.java#L180-L193" target="_blank" title="Go to snippet source">source</a><code class="language-java">LoggingTestKit.error(IllegalArgumentException.class)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/LoggingDocExamples.java#L180-L193" target="_blank" title="Go to snippet source">source</a><code class="language-java">LoggingTestKit.error(IllegalArgumentException.class)
     .withMessageRegex(&quot;.*was rejected.*expecting ascii input.*&quot;)
     .withCustom(
         event -&gt;
@@ -943,7 +943,7 @@ LoggingTestKit.info(&quot;Received message&quot;)
           return null;
         });</code></pre></dd>
 </dl>
-<p>See <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> for more details.</p>
+<p>See <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> for more details.</p>
 <h3><a href="#silence-logging-output-from-tests" name="silence-logging-output-from-tests" class="anchor"><span class="anchor-link"></span></a>Silence logging output from tests</h3>
 <p>When running tests, it&rsquo;s typically preferred to have the output to standard out, together with the output from the testing framework (<span class="group-scala">ScalaTest</span><span class="group-java">JUnit</span>). On one hand you want the output to be clean without logging noise, but on the other hand you want as much information as possible if there is a test failure (for example in CI builds).</p>
 <p>The Pekko TestKit provides a <code>LogCapturing</code> utility to support this with ScalaTest or JUnit. It will buffer log events instead of emitting them to the <code>ConsoleAppender</code> immediately (or whatever Logback appender that is configured). When there is a test failure the buffered events are flushed to the target appenders, typically a <code>ConsoleAppender</code>.</p><div class="callout note "><div class="callout-title">Note</div>
@@ -952,7 +952,7 @@ LoggingTestKit.info(&quot;Received message&quot;)
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/ScalaTestIntegrationExampleSpec.scala#L20-L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/scala/docs/org/apache/pekko/actor/testkit/typed/scaladsl/ScalaTestIntegrationExampleSpec.scala#L20-L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.testkit.typed.scaladsl.LogCapturing
 import pekko.actor.testkit.typed.scaladsl.ScalaTestWithActorTestKit
 import org.scalatest.wordspec.AnyWordSpecLike
@@ -970,7 +970,7 @@ class LogCapturingExampleSpec extends ScalaTestWithActorTestKit with AnyWordSpec
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/LogCapturingExampleTest.java#L19-L40" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.LogCapturing;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-testkit-typed/src/test/java/jdocs/org/apache/pekko/actor/testkit/typed/javadsl/LogCapturingExampleTest.java#L19-L40" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.LogCapturing;
 import org.apache.pekko.actor.testkit.typed.javadsl.TestKitJunitResource;
 import org.apache.pekko.actor.testkit.typed.javadsl.TestProbe;
 import org.apache.pekko.actor.typed.ActorRef;
@@ -994,7 +994,7 @@ public class LogCapturingExampleTest {
 }</code></pre></dd>
 </dl>
 <p>Then you also need to configure the <code>CapturingAppender</code> and <code>CapturingAppenderDelegate</code> in <code>src/test/resources/logback-test.xml</code>:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/resources/logback-doc-test.xml" target="_blank" title="Go to snippet source">source</a><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/resources/logback-doc-test.xml" target="_blank" title="Go to snippet source">source</a><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;configuration&gt;
 
     &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
@@ -1027,7 +1027,7 @@ public class LogCapturingExampleTest {
     &lt;/root&gt;
 &lt;/configuration&gt;</code></pre>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/testing-async.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/testing-async.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1116,7 +1116,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

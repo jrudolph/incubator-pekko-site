@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,22 +421,22 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Limit the total weight of incoming elements</p>
 <p><a href="../index.html#simple-operators">Simple operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#limitWeighted(long,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.limitWeighted</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#limitWeighted[T](max:Long)(costFn:Out=&gt;Long):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.limitWeighted</code></a></span> </p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#limitWeighted(long,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.limitWeighted</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#limitWeighted[T](max:Long)(costFn:Out=&gt;Long):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.limitWeighted</code></a></span> </p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
-<p>A weight function returns the weight of each element, then the total accumulated weight is compared to a max and if it has passed the max the stream is failed with a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/StreamLimitReachedException.html" title="org.apache.pekko.stream.StreamLimitReachedException"><code>StreamLimitReachedException</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/StreamLimitReachedException.html" title="org.apache.pekko.stream.StreamLimitReachedException"><code>StreamLimitReachedException</code></a></span>.</p>
+<p>A weight function returns the weight of each element, then the total accumulated weight is compared to a max and if it has passed the max the stream is failed with a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/StreamLimitReachedException.html" title="org.apache.pekko.stream.StreamLimitReachedException"><code>StreamLimitReachedException</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/StreamLimitReachedException.html" title="org.apache.pekko.stream.StreamLimitReachedException"><code>StreamLimitReachedException</code></a></span>.</p>
 <p>See also <a href="limit.html">limit</a> which puts a limit on the number of elements instead (the same as always returning <code>1</code> from the weight function).</p>
 <h2><a href="#examples" name="examples" class="anchor"><span class="anchor-link"></span></a>Examples</h2>
 <p><code>limitWeighted</code> can protect a stream coming from an untrusted source into an in-memory aggregate that grows with the number of elements from filling the heap and causing an out-of-memory error. In this sample we use the number of bytes in each <code>ByteString</code> element as weight and accept at most a total of 10 000 bytes from the untrusted source elements into the aggregated <code>ByteString</code> of all bytes, if the untrusted source emits more elements the stream and the materialized <span class="group-scala"><code>Future[ByteString]</code></span><span class="group-java"><code>CompletionStage&lt;ByteString&gt;</code></span> will be failed:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/LimitWeighted.scala#L29-L32" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val untrustedSource: Source[ByteString, NotUsed] = Source.repeat(ByteString(&quot;element&quot;))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/LimitWeighted.scala#L29-L32" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val untrustedSource: Source[ByteString, NotUsed] = Source.repeat(ByteString(&quot;element&quot;))
 
 val allBytes: Future[ByteString] =
   untrustedSource.limitWeighted(max = 10000)(_.length).runReduce(_ ++ _)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/sourceorflow/LimitWeighted.java#L27-L35" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;ByteString, NotUsed&gt; untrustedSource = Source.repeat(ByteString.fromString(&quot;element&quot;));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/sourceorflow/LimitWeighted.java#L27-L35" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;ByteString, NotUsed&gt; untrustedSource = Source.repeat(ByteString.fromString(&quot;element&quot;));
 
 CompletionStage&lt;ByteString&gt; allBytes =
     untrustedSource
@@ -451,7 +451,7 @@ CompletionStage&lt;ByteString&gt; allBytes =
 <p><strong>backpressures</strong> when downstream backpressures</p>
 <p><strong>completes</strong> when upstream completes and the number of emitted elements has not reached max</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/limitWeighted.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/limitWeighted.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -537,7 +537,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -422,7 +422,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor/src/main/scala/org/apache/pekko/event/EventBus.scala#L39-L61" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/**
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor/src/main/scala/org/apache/pekko/event/EventBus.scala#L39-L61" target="_blank" title="Go to snippet source">source</a><code class="language-scala">/**
  * Attempts to register the subscriber to the specified Classifier
  * @return true if successful and false if not (because it was already
  *   subscribed to that Classifier, or otherwise)
@@ -447,7 +447,7 @@ def unsubscribe(subscriber: Subscriber): Unit
 def publish(event: Event): Unit</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L62-L95" target="_blank" title="Go to snippet source">source</a><code class="language-java">/**
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L62-L95" target="_blank" title="Go to snippet source">source</a><code class="language-java">/**
  * Attempts to register the subscriber to the specified Classifier
  *
  * @return true if successful and false if not (because it was already subscribed to that
@@ -480,14 +480,14 @@ public void publish(Event event);
 </ul>
 <p>The traits below are still generic in these types, but they need to be defined for any concrete implementation.</p>
 <h2><a href="#classifiers" name="classifiers" class="anchor"><span class="anchor-link"></span></a>Classifiers</h2>
-<p>The classifiers presented here are part of the Pekko distribution, but rolling your own in case you do not find a perfect match is not difficult, check the implementation of the existing ones on <a href="https://github.com/akka/akka/tree/main/pekko-actor/src/main/scala/org/apache/pekko/event/EventBus.scala">github</a> </p>
+<p>The classifiers presented here are part of the Pekko distribution, but rolling your own in case you do not find a perfect match is not difficult, check the implementation of the existing ones on <a href="https://github.com/apache/incubator-pekko/tree/main/pekko-actor/src/main/scala/org/apache/pekko/event/EventBus.scala">github</a> </p>
 <h3><a href="#lookup-classification" name="lookup-classification" class="anchor"><span class="anchor-link"></span></a>Lookup Classification</h3>
-<p>The simplest classification is just to extract an arbitrary classifier from each event and maintaining a set of subscribers for each possible classifier. This can be compared to tuning in on a radio station. The <span class="group-scala">trait <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/event/LookupClassification.html" title="pekko.event.LookupClassification"><code>LookupClassification</code></a></span><span class="group-java">abstract class <a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/event/japi/LookupEventBus.html" title="org.apache.pekko.event.japi.LookupEventBus"><code>LookupEventBus</code></a></span> is still generic in that it abstracts over how to compare subscribers and how exactly to classify them.</p>
+<p>The simplest classification is just to extract an arbitrary classifier from each event and maintaining a set of subscribers for each possible classifier. This can be compared to tuning in on a radio station. The <span class="group-scala">trait <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/event/LookupClassification.html" title="pekko.event.LookupClassification"><code>LookupClassification</code></a></span><span class="group-java">abstract class <a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/event/japi/LookupEventBus.html" title="org.apache.pekko.event.japi.LookupEventBus"><code>LookupEventBus</code></a></span> is still generic in that it abstracts over how to compare subscribers and how exactly to classify them.</p>
 <p>The necessary methods to be implemented are illustrated with the following example:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L24-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L24-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.event.EventBus
 import pekko.event.LookupClassification
 
@@ -524,7 +524,7 @@ class LookupBusImpl extends EventBus with LookupClassification {
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L31-L147" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.event.japi.LookupEventBus;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L31-L147" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.event.japi.LookupEventBus;
 
 static class MsgEnvelope {
   public final String topic;
@@ -574,14 +574,14 @@ static class LookupBusImpl extends LookupEventBus&lt;MsgEnvelope, ActorRef, Stri
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L163-L167" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val lookupBus = new LookupBusImpl
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L163-L167" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val lookupBus = new LookupBusImpl
 lookupBus.subscribe(testActor, &quot;greetings&quot;)
 lookupBus.publish(MsgEnvelope(&quot;time&quot;, System.currentTimeMillis()))
 lookupBus.publish(MsgEnvelope(&quot;greetings&quot;, &quot;hello&quot;))
 expectMsg(&quot;hello&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L282-L286" target="_blank" title="Go to snippet source">source</a><code class="language-java">LookupBusImpl lookupBus = new LookupBusImpl();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L282-L286" target="_blank" title="Go to snippet source">source</a><code class="language-java">LookupBusImpl lookupBus = new LookupBusImpl();
 lookupBus.subscribe(getTestActor(), &quot;greetings&quot;);
 lookupBus.publish(new MsgEnvelope(&quot;time&quot;, System.currentTimeMillis()));
 lookupBus.publish(new MsgEnvelope(&quot;greetings&quot;, &quot;hello&quot;));
@@ -594,7 +594,7 @@ expectMsgEquals(&quot;hello&quot;);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L62-L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.util.Subclassification
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L62-L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.util.Subclassification
 
 class StartsWithSubclassification extends Subclassification[String] {
   override def isEqual(x: String, y: String): Boolean =
@@ -631,7 +631,7 @@ class SubchannelBusImpl extends EventBus with SubchannelClassification {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L36-L193" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.event.japi.SubchannelEventBus;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L36-L193" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.event.japi.SubchannelEventBus;
 
 static class StartsWithSubclassification implements Subclassification&lt;String&gt; {
   @Override
@@ -676,7 +676,7 @@ static class SubchannelBusImpl extends SubchannelEventBus&lt;MsgEnvelope, ActorR
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L173-L180" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val subchannelBus = new SubchannelBusImpl
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L173-L180" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val subchannelBus = new SubchannelBusImpl
 subchannelBus.subscribe(testActor, &quot;abc&quot;)
 subchannelBus.publish(MsgEnvelope(&quot;xyzabc&quot;, &quot;x&quot;))
 subchannelBus.publish(MsgEnvelope(&quot;bcdef&quot;, &quot;b&quot;))
@@ -686,7 +686,7 @@ subchannelBus.publish(MsgEnvelope(&quot;abcdef&quot;, &quot;d&quot;))
 expectMsg(&quot;d&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L297-L304" target="_blank" title="Go to snippet source">source</a><code class="language-java">SubchannelBusImpl subchannelBus = new SubchannelBusImpl();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L297-L304" target="_blank" title="Go to snippet source">source</a><code class="language-java">SubchannelBusImpl subchannelBus = new SubchannelBusImpl();
 subchannelBus.subscribe(getTestActor(), &quot;abc&quot;);
 subchannelBus.publish(new MsgEnvelope(&quot;xyzabc&quot;, &quot;x&quot;));
 subchannelBus.publish(new MsgEnvelope(&quot;bcdef&quot;, &quot;b&quot;));
@@ -702,7 +702,7 @@ expectMsgEquals(&quot;d&quot;);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L100-L130" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.event.ScanningClassification
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L100-L130" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.event.ScanningClassification
 
 /**
  * Publishes String messages with length less than or equal to the length
@@ -735,7 +735,7 @@ class ScanningBusImpl extends EventBus with ScanningClassification {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L41-L230" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.event.japi.ScanningEventBus;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L41-L230" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.event.japi.ScanningEventBus;
 
 /**
  * Publishes String messages with length less than or equal to the length specified when
@@ -775,7 +775,7 @@ static class ScanningBusImpl extends ScanningEventBus&lt;String, ActorRef, Integ
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L186-L192" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val scanningBus = new ScanningBusImpl
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L186-L192" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val scanningBus = new ScanningBusImpl
 scanningBus.subscribe(testActor, 3)
 scanningBus.publish(&quot;xyzabc&quot;)
 scanningBus.publish(&quot;ab&quot;)
@@ -784,7 +784,7 @@ scanningBus.publish(&quot;abc&quot;)
 expectMsg(&quot;abc&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L315-L321" target="_blank" title="Go to snippet source">source</a><code class="language-java">ScanningBusImpl scanningBus = new ScanningBusImpl();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L315-L321" target="_blank" title="Go to snippet source">source</a><code class="language-java">ScanningBusImpl scanningBus = new ScanningBusImpl();
 scanningBus.subscribe(getTestActor(), 3);
 scanningBus.publish(&quot;xyzabc&quot;);
 scanningBus.publish(&quot;ab&quot;);
@@ -794,13 +794,13 @@ expectMsgEquals(&quot;abc&quot;);</code></pre></dd>
 </dl>
 <p>This classifier takes always a time which is proportional to the number of subscriptions, independent of how many actually match.</p>
 <h3><a href="#actor-classification" name="actor-classification" class="anchor"><span class="anchor-link"></span></a>Actor Classification</h3>
-<p>This classification was originally developed specifically for implementing <a href="actors.html#deathwatch">DeathWatch</a>: subscribers as well as classifiers are of type <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span>.</p>
-<p>This classification requires an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span> in order to perform book-keeping operations related to the subscribers being Actors, which can terminate without first unsubscribing from the EventBus. ManagedActorClassification maintains a system Actor which takes care of unsubscribing terminated actors automatically.</p>
+<p>This classification was originally developed specifically for implementing <a href="actors.html#deathwatch">DeathWatch</a>: subscribers as well as classifiers are of type <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span>.</p>
+<p>This classification requires an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span> in order to perform book-keeping operations related to the subscribers being Actors, which can terminate without first unsubscribing from the EventBus. ManagedActorClassification maintains a system Actor which takes care of unsubscribing terminated actors automatically.</p>
 <p>The necessary methods to be implemented are illustrated with the following example:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L134-L153" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L134-L153" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.event.ActorEventBus
 import pekko.event.ManagedActorClassification
 import pekko.event.ActorClassifier
@@ -822,7 +822,7 @@ class ActorBusImpl(val system: ActorSystem)
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L46-L268" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.event.japi.ManagedActorEventBus;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L46-L268" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.event.japi.ManagedActorEventBus;
 
 static class Notification {
   public final ActorRef ref;
@@ -859,7 +859,7 @@ static class ActorBusImpl extends ManagedActorEventBus&lt;Notification&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L198-L213" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val observer1 = TestProbe().ref
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/EventBusDocSpec.scala#L198-L213" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val observer1 = TestProbe().ref
 val observer2 = TestProbe().ref
 val probe1 = TestProbe()
 val probe2 = TestProbe()
@@ -877,7 +877,7 @@ probe2.expectMsg(Notification(observer2, 101))
 probe1.expectNoMessage(500.millis)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L330-L347" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef observer1 = new TestKit(system).getRef();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/EventBusDocTest.java#L330-L347" target="_blank" title="Go to snippet source">source</a><code class="language-java">ActorRef observer1 = new TestKit(system).getRef();
 ActorRef observer2 = new TestKit(system).getRef();
 TestKit probe1 = new TestKit(system);
 TestKit probe2 = new TestKit(system);
@@ -898,8 +898,8 @@ probe1.expectNoMessage(Duration.ofMillis(500));</code></pre></dd>
 </dl>
 <p>This classifier is still is generic in the event type, and it is efficient for all use cases.</p>
 <h2><a href="#event-stream" name="event-stream" class="anchor"><span class="anchor-link"></span></a>Event Stream</h2>
-<p>The event stream is the main event bus of each actor system: it is used for carrying <a href="logging.html">log messages</a> and <a href="event-bus.html#dead-letters">Dead Letters</a> and may be used by the user code for other purposes as well. It uses <a href="event-bus.html#subchannel-classification">Subchannel Classification</a> which enables registering to related sets of channels (as is used for <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/remote/RemotingLifecycleEvent.html" title="org.apache.pekko.remote.RemotingLifecycleEvent"><code>RemotingLifecycleEvent</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/remote/RemotingLifecycleEvent.html" title="org.apache.pekko.remote.RemotingLifecycleEvent"><code>RemotingLifecycleEvent</code></a></span>). The following example demonstrates how a simple subscription works. Given a simple actor:</p><div class="group-scala">
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/LoggingDocSpec.scala#L131-L180" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.{ Actor, DeadLetter, Props }
+<p>The event stream is the main event bus of each actor system: it is used for carrying <a href="logging.html">log messages</a> and <a href="event-bus.html#dead-letters">Dead Letters</a> and may be used by the user code for other purposes as well. It uses <a href="event-bus.html#subchannel-classification">Subchannel Classification</a> which enables registering to related sets of channels (as is used for <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/remote/RemotingLifecycleEvent.html" title="org.apache.pekko.remote.RemotingLifecycleEvent"><code>RemotingLifecycleEvent</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/remote/RemotingLifecycleEvent.html" title="org.apache.pekko.remote.RemotingLifecycleEvent"><code>RemotingLifecycleEvent</code></a></span>). The following example demonstrates how a simple subscription works. Given a simple actor:</p><div class="group-scala">
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/LoggingDocSpec.scala#L131-L180" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.{ Actor, DeadLetter, Props }
 
 class DeadLetterListener extends Actor {
   def receive = {
@@ -909,9 +909,9 @@ class DeadLetterListener extends Actor {
 
 val listener = system.actorOf(Props[DeadLetterListener]())
 system.eventStream.subscribe(listener, classOf[DeadLetter])</code></pre></div><div class="group-java">
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L44-L45" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.ActorRef;
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L44-L45" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.ActorRef;
 import org.apache.pekko.actor.ActorSystem;</code></pre>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L258-L269" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class DeadLetterActor extends AbstractActor {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L258-L269" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class DeadLetterActor extends AbstractActor {
   @Override
   public Receive createReceive() {
     return receiveBuilder()
@@ -924,14 +924,14 @@ import org.apache.pekko.actor.ActorSystem;</code></pre>
   }
 }</code></pre>
 <p>it can be subscribed like this:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L69-L71" target="_blank" title="Go to snippet source">source</a><code class="language-java">final ActorSystem system = ActorSystem.create(&quot;DeadLetters&quot;);
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L69-L71" target="_blank" title="Go to snippet source">source</a><code class="language-java">final ActorSystem system = ActorSystem.create(&quot;DeadLetters&quot;);
 final ActorRef actor = system.actorOf(Props.create(DeadLetterActor.class));
 system.getEventStream().subscribe(actor, DeadLetter.class);</code></pre></div>
 <p>It is also worth pointing out that thanks to the way the subchannel classification is implemented in the event stream, it is possible to subscribe to a group of events, by subscribing to their common superclass as demonstrated in the following example:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/LoggingDocSpec.scala#L141-L197" target="_blank" title="Go to snippet source">source</a><code class="language-scala">abstract class AllKindsOfMusic { def artist: String }
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/LoggingDocSpec.scala#L141-L197" target="_blank" title="Go to snippet source">source</a><code class="language-scala">abstract class AllKindsOfMusic { def artist: String }
 case class Jazz(artist: String) extends AllKindsOfMusic
 case class Electronic(artist: String) extends AllKindsOfMusic
 
@@ -954,7 +954,7 @@ system.eventStream.publish(Electronic(&quot;Parov Stelar&quot;))
 system.eventStream.publish(Jazz(&quot;Sonny Rollins&quot;))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L77-L127" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface AllKindsOfMusic {}
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L77-L127" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface AllKindsOfMusic {}
 
 class Jazz implements AllKindsOfMusic {
   public final String artist;
@@ -1000,7 +1000,7 @@ static class Listener extends AbstractActor {
   system.getEventStream().publish(new Jazz(&quot;Sonny Rollins&quot;));
 </code></pre></dd>
 </dl>
-<p>Similarly to <a href="event-bus.html#actor-classification">Actor Classification</a>, <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/event/EventStream.html" title="org.apache.pekko.event.EventStream"><code>EventStream</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/event/EventStream.html" title="org.apache.pekko.event.EventStream"><code>EventStream</code></a></span> will automatically remove subscribers when they terminate.</p><div class="callout note "><div class="callout-title">Note</div>
+<p>Similarly to <a href="event-bus.html#actor-classification">Actor Classification</a>, <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/event/EventStream.html" title="org.apache.pekko.event.EventStream"><code>EventStream</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/event/EventStream.html" title="org.apache.pekko.event.EventStream"><code>EventStream</code></a></span> will automatically remove subscribers when they terminate.</p><div class="callout note "><div class="callout-title">Note</div>
 <p>The event stream is a <em>local facility</em>, meaning that it will <em>not</em> distribute events to other nodes in a clustered environment (unless you subscribe a Remote Actor to the stream explicitly). If you need to broadcast events in a Pekko cluster, <em>without</em> knowing your recipients explicitly (i.e. obtaining their ActorRefs), you may want to look into: <a href="distributed-pub-sub.html">Distributed Publish Subscribe in Cluster</a>.</p></div>
 <h3><a href="#default-handlers" name="default-handlers" class="anchor"><span class="anchor-link"></span></a>Default Handlers</h3>
 <p>Upon start-up the actor system creates and subscribes actors to the event stream for logging: these are the handlers which are configured for example in <code>application.conf</code>:</p>
@@ -1021,32 +1021,32 @@ static class Listener extends AbstractActor {
 </dl>
 <p>This means that log events for a level which will not be logged are typically not dispatched at all (unless manual subscriptions to the respective event class have been done)</p>
 <h3><a href="#dead-letters" name="dead-letters" class="anchor"><span class="anchor-link"></span></a>Dead Letters</h3>
-<p>As described at <a href="actors.html#stopping-actors">Stopping actors</a>, messages queued when an actor terminates or sent after its death are re-routed to the dead letter mailbox, which by default will publish the messages wrapped in <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/DeadLetter.html" title="org.apache.pekko.actor.DeadLetter"><code>DeadLetter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/DeadLetter.html" title="org.apache.pekko.actor.DeadLetter"><code>DeadLetter</code></a></span>. This wrapper holds the original sender, receiver and message of the envelope which was redirected.</p>
-<p>Some internal messages (marked with the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/DeadLetterSuppression.html" title="org.apache.pekko.actor.DeadLetterSuppression"><code>DeadLetterSuppression</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/DeadLetterSuppression.html" title="org.apache.pekko.actor.DeadLetterSuppression"><code>DeadLetterSuppression</code></a></span> <span class="group-scala">trait</span><span class="group-java">interface</span>) will not end up as dead letters like normal messages. These are by design safe and expected to sometimes arrive at a terminated actor and since they are nothing to worry about, they are suppressed from the default dead letters logging mechanism.</p>
+<p>As described at <a href="actors.html#stopping-actors">Stopping actors</a>, messages queued when an actor terminates or sent after its death are re-routed to the dead letter mailbox, which by default will publish the messages wrapped in <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/DeadLetter.html" title="org.apache.pekko.actor.DeadLetter"><code>DeadLetter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/DeadLetter.html" title="org.apache.pekko.actor.DeadLetter"><code>DeadLetter</code></a></span>. This wrapper holds the original sender, receiver and message of the envelope which was redirected.</p>
+<p>Some internal messages (marked with the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/DeadLetterSuppression.html" title="org.apache.pekko.actor.DeadLetterSuppression"><code>DeadLetterSuppression</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/DeadLetterSuppression.html" title="org.apache.pekko.actor.DeadLetterSuppression"><code>DeadLetterSuppression</code></a></span> <span class="group-scala">trait</span><span class="group-java">interface</span>) will not end up as dead letters like normal messages. These are by design safe and expected to sometimes arrive at a terminated actor and since they are nothing to worry about, they are suppressed from the default dead letters logging mechanism.</p>
 <p>However, in case you find yourself in need of debugging these kinds of low level suppressed dead letters, it&rsquo;s still possible to subscribe to them explicitly:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/LoggingDocSpec.scala#L206-L207" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.SuppressedDeadLetter
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/LoggingDocSpec.scala#L206-L207" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.SuppressedDeadLetter
 system.eventStream.subscribe(listener, classOf[SuppressedDeadLetter])</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L138" target="_blank" title="Go to snippet source">source</a><code class="language-java">system.getEventStream().subscribe(actor, SuppressedDeadLetter.class);</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L138" target="_blank" title="Go to snippet source">source</a><code class="language-java">system.getEventStream().subscribe(actor, SuppressedDeadLetter.class);</code></pre></dd>
 </dl>
 <p>or all dead letters (including the suppressed ones):</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/event/LoggingDocSpec.scala#L211-L212" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.AllDeadLetters
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/event/LoggingDocSpec.scala#L211-L212" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.AllDeadLetters
 system.eventStream.subscribe(listener, classOf[AllDeadLetters])</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L150" target="_blank" title="Go to snippet source">source</a><code class="language-java">system.getEventStream().subscribe(actor, AllDeadLetters.class);</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/event/LoggingDocTest.java#L150" target="_blank" title="Go to snippet source">source</a><code class="language-java">system.getEventStream().subscribe(actor, AllDeadLetters.class);</code></pre></dd>
 </dl>
 <h3><a href="#other-uses" name="other-uses" class="anchor"><span class="anchor-link"></span></a>Other Uses</h3>
 <p>The event stream is always there and ready to be used, you can publish your own events (it accepts <span class="group-scala"><a href="http://www.scala-lang.org/api/2.13.8/scala/AnyRef.html" title="scala.AnyRef"><code>AnyRef</code></a></span><span class="group-java"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="java.lang.Object"><code>Object</code></a></span>) and subscribe listeners to the corresponding JVM classes.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/event-bus.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/event-bus.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1130,7 +1130,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

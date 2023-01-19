@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Defers creation and materialization of a <code>Flow</code> until there is a first element.</p>
 <p><a href="../index.html#simple-operators">Simple operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow$.html#lazyFlow(org.apache.pekko.japi.function.Creator)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.lazyFlow</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow$.html#lazyFlow[I,O,M](create:()=&gt;org.apache.pekko.stream.scaladsl.Flow[I,O,M]):org.apache.pekko.stream.scaladsl.Flow[I,O,scala.concurrent.Future[M]]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.lazyFlow</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow$.html#lazyFlow(org.apache.pekko.japi.function.Creator)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.lazyFlow</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow$.html#lazyFlow[I,O,M](create:()=&gt;org.apache.pekko.stream.scaladsl.Flow[I,O,M]):org.apache.pekko.stream.scaladsl.Flow[I,O,scala.concurrent.Future[M]]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.lazyFlow</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Defers <code>Flow</code> creation and materialization until when the first element arrives at the <code>lazyFlow</code> from upstream. After that the stream behaves as if the nested flow replaced the <code>lazyFlow</code>. The nested <code>Flow</code> will not be created if the outer flow completes or fails before any elements arrive.</p>
 <p>Note that asynchronous boundaries and many other operators in the stream may do pre-fetching or trigger demand and thereby making an early element come throught the stream leading to creation of the inner flow earlier than you would expect.</p>
@@ -438,7 +438,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/flow/Lazy.scala#L29-L51" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val numbers = Source
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/flow/Lazy.scala#L29-L51" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val numbers = Source
   .unfold(0) { n =&gt;
     val next = n + 1
     println(s&quot;Source producing $next&quot;)
@@ -463,7 +463,7 @@ numbers.via(flow).run()
 // Actual flow mapped 2</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/flow/Lazy.java#L34-L61" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; numbers =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/flow/Lazy.java#L34-L61" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source&lt;Integer, NotUsed&gt; numbers =
     Source.unfold(
             0,
             n -&gt; {
@@ -496,7 +496,7 @@ numbers.via(flow).run(system);
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/flow/Lazy.scala#L57-L74" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val mutableFold = Flow.lazyFlow { () =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/flow/Lazy.scala#L57-L74" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val mutableFold = Flow.lazyFlow { () =&gt;
   val zero = new util.ArrayList[Int]()
   Flow[Int].fold(zero) { (list, element) =&gt;
     list.add(element)
@@ -516,7 +516,7 @@ stream.run()
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/flow/Lazy.java#L67-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java">Flow&lt;Integer, List&lt;Integer&gt;, CompletionStage&lt;NotUsed&gt;&gt; mutableFold =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/flow/Lazy.java#L67-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java">Flow&lt;Integer, List&lt;Integer&gt;, CompletionStage&lt;NotUsed&gt;&gt; mutableFold =
     Flow.lazyFlow(
         () -&gt; {
           List&lt;Integer&gt; zero = new ArrayList&lt;&gt;();
@@ -549,7 +549,7 @@ stream.run(system);
 <p><strong>completes</strong> when upstream completes and all futures have been completed and all elements have been emitted</p>
 <p><strong>cancels</strong> when downstream cancels (keep reading)  The operator&rsquo;s default behaviour in case of downstream cancellation before nested flow materialization (future completion) is to cancel immediately.  This behaviour can be controlled by setting the <a href="./org.apache.pekko.stream.Attributes.NestedMaterializationCancellationPolicy.PropagateToNested.html">org.apache.pekko.stream.Attributes.NestedMaterializationCancellationPolicy.PropagateToNested</a> attribute,  this will delay downstream cancellation until nested flow&rsquo;s materialization which is then immediately cancelled (with the original cancellation cause).</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Flow/lazyFlow.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Flow/lazyFlow.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -635,7 +635,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

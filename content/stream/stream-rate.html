@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#buffers-and-working-with-rate" name="buffers-and-working-with-rate" class="anchor"><span class="anchor-link"></span></a>Buffers and working with rate</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -455,7 +455,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L26-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source(1 to 3)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L26-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source(1 to 3)
   .map { i =&gt;
     println(s&quot;A: $i&quot;); i
   }
@@ -471,7 +471,7 @@ dependencies {
   .runWith(Sink.ignore)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L52-L71" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source.from(Arrays.asList(1, 2, 3))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L52-L71" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source.from(Arrays.asList(1, 2, 3))
     .map(
         i -&gt; {
           System.out.println(&quot;A: &quot; + i);
@@ -514,7 +514,7 @@ C: 3
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L45-L50" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val section = Flow[Int].map(_ * 2).async.addAttributes(Attributes.inputBuffer(initial = 1, max = 1)) // the buffer size of this map is 1
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L45-L50" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val section = Flow[Int].map(_ * 2).async.addAttributes(Attributes.inputBuffer(initial = 1, max = 1)) // the buffer size of this map is 1
 val flow = section.via(Flow[Int].map(_ / 2)).async // the buffer size of this map is the default
 val runnableGraph =
   Source(1 to 10).via(flow).to(Sink.foreach(elem =&gt; println(elem)))
@@ -522,7 +522,7 @@ val runnableGraph =
 val withOverriddenDefaults = runnableGraph.withAttributes(Attributes.inputBuffer(initial = 64, max = 64))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L79-L93" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Integer, Integer, NotUsed&gt; flow1 =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L79-L93" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Integer, Integer, NotUsed&gt; flow1 =
     Flow.of(Integer.class)
         .map(elem -&gt; elem * 2)
         .async()
@@ -542,7 +542,7 @@ final RunnableGraph&lt;NotUsed&gt; withOverridenDefaults =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L56-L73" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.concurrent.duration._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L56-L73" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.concurrent.duration._
 case class Tick()
 
 RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
@@ -562,7 +562,7 @@ RunnableGraph.fromGraph(GraphDSL.create() { implicit b =&gt;
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L100-L118" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Duration oneSecond = Duration.ofSeconds(1);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L100-L118" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Duration oneSecond = Duration.ofSeconds(1);
 final Source&lt;String, Cancellable&gt; msgSource = Source.tick(oneSecond, oneSecond, &quot;message!&quot;);
 final Source&lt;String, Cancellable&gt; tickSource =
     Source.tick(oneSecond.multipliedBy(3), oneSecond.multipliedBy(3), &quot;tick&quot;);
@@ -590,12 +590,12 @@ RunnableGraph.fromGraph(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L81-L83" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Getting a stream of jobs from an imaginary external system as a Source
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L81-L83" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Getting a stream of jobs from an imaginary external system as a Source
 val jobs: Source[Job, NotUsed] = inboundJobsConnector()
 jobs.buffer(1000, OverflowStrategy.backpressure)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L126-L128" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Getting a stream of jobs from an imaginary external system as a Source
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L126-L128" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Getting a stream of jobs from an imaginary external system as a Source
 final Source&lt;Job, NotUsed&gt; jobs = inboundJobsConnector;
 jobs.buffer(1000, OverflowStrategy.backpressure());</code></pre></dd>
 </dl>
@@ -603,46 +603,46 @@ jobs.buffer(1000, OverflowStrategy.backpressure());</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L87" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.dropTail)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L87" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.dropTail)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L132" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.dropTail());</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L132" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.dropTail());</code></pre></dd>
 </dl>
 <p>Instead of dropping the youngest element from the tail of the buffer a new element can be dropped without enqueueing it to the buffer at all.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L91" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.dropNew)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L91" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.dropNew)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L136" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.dropNew());</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L136" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.dropNew());</code></pre></dd>
 </dl>
 <p>Here is another example with a queue of 1000 jobs, but it makes space for the new element by dropping one element from the <em>head</em> of the buffer. This is the <em>oldest</em> waiting job. This is the preferred strategy if jobs are expected to be resent if not processed in a certain period. The oldest element will be retransmitted soon, (in fact a retransmitted duplicate might be already in the queue!) so it makes sense to drop it first.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L95" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.dropHead)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L95" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.dropHead)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L140" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.dropHead());</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L140" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.dropHead());</code></pre></dd>
 </dl>
 <p>Compared to the dropping strategies above, dropBuffer drops all the 1000 jobs it has enqueued once the buffer gets full. This aggressive strategy is useful when dropping jobs is preferred to delaying jobs.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L99" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.dropBuffer)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L99" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.dropBuffer)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L144" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.dropBuffer());</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L144" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.dropBuffer());</code></pre></dd>
 </dl>
 <p>If our imaginary external job provider is a client using our API, we might want to enforce that the client cannot have more than 1000 queued jobs otherwise we consider it flooding and terminate the connection. This is achievable by the error strategy which fails the stream once the buffer gets full.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L103" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.fail)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/StreamBuffersRateSpec.scala#L103" target="_blank" title="Go to snippet source">source</a><code class="language-scala">jobs.buffer(1000, OverflowStrategy.fail)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L148" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.fail());</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/StreamBuffersRateDocTest.java#L148" target="_blank" title="Go to snippet source">source</a><code class="language-java">jobs.buffer(1000, OverflowStrategy.fail());</code></pre></dd>
 </dl>
 <h2><a href="#rate-transformation" name="rate-transformation" class="anchor"><span class="anchor-link"></span></a>Rate transformation</h2>
 <h3><a href="#understanding-conflate" name="understanding-conflate" class="anchor"><span class="anchor-link"></span></a>Understanding conflate</h3>
@@ -651,7 +651,7 @@ jobs.buffer(1000, OverflowStrategy.backpressure());</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L31-L36" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val statsFlow = Flow[Double].conflateWithSeed(immutable.Seq(_))(_ :+ _).map { s =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L31-L36" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val statsFlow = Flow[Double].conflateWithSeed(immutable.Seq(_))(_ :+ _).map { s =&gt;
   val μ = s.sum / s.size
   val se = s.map(x =&gt; pow(x - μ, 2))
   val σ = sqrt(se.sum / se.size)
@@ -659,7 +659,7 @@ jobs.buffer(1000, OverflowStrategy.backpressure());</code></pre></dd>
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L69-L83" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Double, Tuple3&lt;Double, Double, Integer&gt;, NotUsed&gt; statsFlow =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L69-L83" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Double, Tuple3&lt;Double, Double, Integer&gt;, NotUsed&gt; statsFlow =
     Flow.of(Double.class)
         .conflateWithSeed(
             elem -&gt; Collections.singletonList(elem),
@@ -680,7 +680,7 @@ jobs.buffer(1000, OverflowStrategy.backpressure());</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L51-L57" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val p = 0.01
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L51-L57" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val p = 0.01
 val sampleFlow = Flow[Double]
   .conflateWithSeed(immutable.Seq(_)) {
     case (acc, elem) if Random.nextDouble() &lt; p =&gt; acc :+ elem
@@ -689,7 +689,7 @@ val sampleFlow = Flow[Double]
   .mapConcat(identity)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L99-L111" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Double p = 0.01;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L99-L111" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Double p = 0.01;
 final Flow&lt;Double, Double, NotUsed&gt; sampleFlow =
     Flow.of(Double.class)
         .conflateWithSeed(
@@ -710,21 +710,21 @@ final Flow&lt;Double, Double, NotUsed&gt; sampleFlow =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L67" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val lastFlow = Flow[Double].extrapolate(Iterator.continually(_))</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L67" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val lastFlow = Flow[Double].extrapolate(Iterator.continually(_))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L125-L126" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Double, Double, NotUsed&gt; lastFlow =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L125-L126" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Double, Double, NotUsed&gt; lastFlow =
     Flow.of(Double.class).extrapolate(in -&gt; Stream.iterate(in, i -&gt; i).iterator());</code></pre></dd>
 </dl>
 <p>For situations where there may be downstream demand before any element is emitted from upstream, you can use the <code>initial</code> parameter of <code>extrapolate</code> to &ldquo;seed&rdquo; the stream.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L80-L81" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val initial = 2.0
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L80-L81" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val initial = 2.0
 val seedFlow = Flow[Double].extrapolate(Iterator.continually(_), Some(initial))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L147-L149" target="_blank" title="Go to snippet source">source</a><code class="language-java">Double initial = 2.0;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L147-L149" target="_blank" title="Go to snippet source">source</a><code class="language-java">Double initial = 2.0;
 final Flow&lt;Double, Double, NotUsed&gt; lastFlow =
     Flow.of(Double.class).extrapolate(in -&gt; Stream.iterate(in, i -&gt; i).iterator(), initial);</code></pre></dd>
 </dl>
@@ -732,10 +732,10 @@ final Flow&lt;Double, Double, NotUsed&gt; lastFlow =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L93" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val driftFlow = Flow[Double].map(_ -&gt; 0).extrapolate[(Double, Int)] { case (i, _) =&gt; Iterator.from(1).map(i -&gt; _) }</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L93" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val driftFlow = Flow[Double].map(_ -&gt; 0).extrapolate[(Double, Int)] { case (i, _) =&gt; Iterator.from(1).map(i -&gt; _) }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L168-L172" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Double, Pair&lt;Double, Integer&gt;, NotUsed&gt; driftFlow =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L168-L172" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Double, Pair&lt;Double, Integer&gt;, NotUsed&gt; driftFlow =
     Flow.of(Double.class)
         .map(d -&gt; new Pair&lt;&gt;(d, 0))
         .extrapolate(
@@ -745,10 +745,10 @@ final Flow&lt;Double, Double, NotUsed&gt; lastFlow =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L116" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val driftFlow = Flow[Double].expand(i =&gt; Iterator.from(0).map(i -&gt; _))</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/RateTransformationDocSpec.scala#L116" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val driftFlow = Flow[Double].expand(i =&gt; Iterator.from(0).map(i -&gt; _))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L215-L217" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Double, Pair&lt;Double, Integer&gt;, NotUsed&gt; driftFlow =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/RateTransformationDocTest.java#L215-L217" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Flow&lt;Double, Pair&lt;Double, Integer&gt;, NotUsed&gt; driftFlow =
     Flow.of(Double.class)
         .expand(d -&gt; Stream.iterate(0, i -&gt; i + 1).map(i -&gt; new Pair&lt;&gt;(d, i)).iterator());</code></pre></dd>
 </dl>
@@ -758,7 +758,7 @@ final Flow&lt;Double, Double, NotUsed&gt; lastFlow =
 <p>Regardless, since we provide a non-empty <code>Iterator</code> in both examples, this means that the output of this flow is going to report a drift of zero if the producer is fast enough - or a larger drift otherwise.</p>
 <p>See also <a href="operators/Source-or-Flow/extrapolate.html"><code>extrapolate</code></a> and <a href="operators/Source-or-Flow/expand.html"><code>expand</code></a> for more information and examples.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/stream-rate.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/stream-rate.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -845,7 +845,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

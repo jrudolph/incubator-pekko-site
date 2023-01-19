@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#coordinated-shutdown" name="coordinated-shutdown" class="anchor"><span class="anchor-link"></span></a>Coordinated Shutdown</h1>
 <p>Under normal conditions, when an <code>ActorSystem</code> is terminated or the JVM process is shut down, certain actors and services will be stopped in a specific order. </p>
-<p>The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$.html" title="org.apache.pekko.actor.CoordinatedShutdown"><code>CoordinatedShutdown</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$.html" title="org.apache.pekko.actor.CoordinatedShutdown"><code>CoordinatedShutdown</code></a></span> extension registers internal and user-defined tasks to be executed during the shutdown process. The tasks are grouped in configuration-defined &ldquo;phases&rdquo; which define the shutdown order.</p>
+<p>The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$.html" title="org.apache.pekko.actor.CoordinatedShutdown"><code>CoordinatedShutdown</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$.html" title="org.apache.pekko.actor.CoordinatedShutdown"><code>CoordinatedShutdown</code></a></span> extension registers internal and user-defined tasks to be executed during the shutdown process. The tasks are grouped in configuration-defined &ldquo;phases&rdquo; which define the shutdown order.</p>
 <p>Especially the phases <code>before-service-unbind</code>, <code>before-cluster-shutdown</code> and <code>before-actor-system-terminate</code> are intended for application specific phases or tasks.</p>
 <p>The order of the shutdown phases is defined in configuration <code>pekko.coordinated-shutdown.phases</code>. See the default phases in the <code>reference.conf</code> tab:</p>
 <dl>
@@ -449,7 +449,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   <dt>reference.conf (HOCON)
   </dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor/src/main/resources/reference.conf#L1203-L1306" target="_blank" title="Go to snippet source">source</a><code class="language-conf"># CoordinatedShutdown is enabled by default and will run the tasks that
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor/src/main/resources/reference.conf#L1203-L1306" target="_blank" title="Go to snippet source">source</a><code class="language-conf"># CoordinatedShutdown is enabled by default and will run the tasks that
 # are added to these phases by individual Pekko modules and user logic.
 #
 # The phases are ordered as a DAG by defining the dependencies between the phases
@@ -560,7 +560,7 @@ phases {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/CoordinatedActorShutdownSpec.scala#L29-L56" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object MyActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/CoordinatedActorShutdownSpec.scala#L29-L56" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object MyActor {
 
   trait Messages
   case class Stop(replyTo: ActorRef[Done]) extends Messages
@@ -582,7 +582,7 @@ phases {
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/CoordinatedActorShutdownTest.java#L24-L86" target="_blank" title="Go to snippet source">source</a><code class="language-java">import static org.apache.pekko.actor.typed.javadsl.AskPattern.ask;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/CoordinatedActorShutdownTest.java#L24-L86" target="_blank" title="Go to snippet source">source</a><code class="language-java">import static org.apache.pekko.actor.typed.javadsl.AskPattern.ask;
 
 public static class MyActor extends AbstractBehavior&lt;MyActor.Messages&gt; {
   interface Messages {}
@@ -623,7 +623,7 @@ public static class MyActor extends AbstractBehavior&lt;MyActor.Messages&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/CoordinatedActorShutdownSpec.scala#L69-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val c: Cancellable =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/CoordinatedActorShutdownSpec.scala#L69-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val c: Cancellable =
   CoordinatedShutdown(system).addCancellableTask(CoordinatedShutdown.PhaseBeforeServiceUnbind, &quot;cleanup&quot;) { () =&gt;
     Future {
       cleanup()
@@ -635,25 +635,25 @@ public static class MyActor extends AbstractBehavior&lt;MyActor.Messages&gt; {
 c.cancel()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/CoordinatedActorShutdownTest.java#L110-L115" target="_blank" title="Go to snippet source">source</a><code class="language-java">Cancellable cancellable =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/CoordinatedActorShutdownTest.java#L110-L115" target="_blank" title="Go to snippet source">source</a><code class="language-java">Cancellable cancellable =
     CoordinatedShutdown.get(system)
         .addCancellableTask(
             CoordinatedShutdown.PhaseBeforeServiceUnbind(), &quot;someTaskCleanup&quot;, () -&gt; cleanup());
 // much later...
 cancellable.cancel();</code></pre></dd>
 </dl>
-<p>In the above example, it may be more convenient to simply stop the actor when it&rsquo;s done shutting down, rather than send back a done message, and for the shutdown task to not complete until the actor is terminated. A convenience method is provided that adds a task that sends a message to the actor and then watches its termination (there is currently no corresponding functionality for the new actors API <a href="https://github.com/akka/akka/issues/29056">see #29056</a>):</p>
+<p>In the above example, it may be more convenient to simply stop the actor when it&rsquo;s done shutting down, rather than send back a done message, and for the shutdown task to not complete until the actor is terminated. A convenience method is provided that adds a task that sends a message to the actor and then watches its termination (there is currently no corresponding functionality for the new actors API <a href="https://github.com/apache/incubator-pekko/issues/29056">see #29056</a>):</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/ActorDocSpec.scala#L744-L748" target="_blank" title="Go to snippet source">source</a><code class="language-scala">CoordinatedShutdown(system).addActorTerminationTask(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/ActorDocSpec.scala#L744-L748" target="_blank" title="Go to snippet source">source</a><code class="language-scala">CoordinatedShutdown(system).addActorTerminationTask(
   CoordinatedShutdown.PhaseBeforeServiceUnbind,
   &quot;someTaskName&quot;,
   someActor,
   Some(&quot;stop&quot;))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/ActorDocTest.java#L900-L905" target="_blank" title="Go to snippet source">source</a><code class="language-java">CoordinatedShutdown.get(system)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/ActorDocTest.java#L900-L905" target="_blank" title="Go to snippet source">source</a><code class="language-java">CoordinatedShutdown.get(system)
     .addActorTerminationTask(
         CoordinatedShutdown.PhaseBeforeServiceUnbind(),
         &quot;someTaskName&quot;,
@@ -661,11 +661,11 @@ cancellable.cancel();</code></pre></dd>
         Optional.of(&quot;stop&quot;));</code></pre></dd>
 </dl>
 <p>Tasks should typically be registered as early as possible after system startup. When running the coordinated shutdown tasks that have been registered will be performed but tasks that are added too late will not be run.</p>
-<p>To start the coordinated shutdown process you can either invoke <code>terminate()</code> on the <code>ActorSystem</code>, or <span class="group-scala"><code>run</code></span> <span class="group-java"><code>runAll</code></span> on the <code>CoordinatedShutdown</code> extension and pass it a class implementing <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$$Reason.html" title="org.apache.pekko.actor.CoordinatedShutdown.Reason"><code>CoordinatedShutdown.Reason</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$$Reason.html" title="org.apache.pekko.actor.CoordinatedShutdown.Reason"><code>CoordinatedShutdown.Reason</code></a></span> for informational purposes:</p>
+<p>To start the coordinated shutdown process you can either invoke <code>terminate()</code> on the <code>ActorSystem</code>, or <span class="group-scala"><code>run</code></span> <span class="group-java"><code>runAll</code></span> on the <code>CoordinatedShutdown</code> extension and pass it a class implementing <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$$Reason.html" title="org.apache.pekko.actor.CoordinatedShutdown.Reason"><code>CoordinatedShutdown.Reason</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$$Reason.html" title="org.apache.pekko.actor.CoordinatedShutdown.Reason"><code>CoordinatedShutdown.Reason</code></a></span> for informational purposes:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/CoordinatedActorShutdownSpec.scala#L90-L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// shut down with `ActorSystemTerminateReason`
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/CoordinatedActorShutdownSpec.scala#L90-L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// shut down with `ActorSystemTerminateReason`
 system.terminate()
 
 // or define a specific reason
@@ -674,7 +674,7 @@ case object UserInitiatedShutdown extends CoordinatedShutdown.Reason
 val done: Future[Done] = CoordinatedShutdown(system).run(UserInitiatedShutdown)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/CoordinatedActorShutdownTest.java#L126-L138" target="_blank" title="Go to snippet source">source</a><code class="language-java">// shut down with `ActorSystemTerminateReason`
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/CoordinatedActorShutdownTest.java#L126-L138" target="_blank" title="Go to snippet source">source</a><code class="language-java">// shut down with `ActorSystemTerminateReason`
 system.terminate();
 
 // or define a specific reason
@@ -701,12 +701,12 @@ CompletionStage&lt;Done&gt; done =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/actor/typed/CoordinatedActorShutdownSpec.scala#L82-L84" target="_blank" title="Go to snippet source">source</a><code class="language-scala">CoordinatedShutdown(system).addJvmShutdownHook {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/actor/typed/CoordinatedActorShutdownSpec.scala#L82-L84" target="_blank" title="Go to snippet source">source</a><code class="language-scala">CoordinatedShutdown(system).addJvmShutdownHook {
   println(&quot;custom JVM shutdown hook...&quot;)
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/actor/typed/CoordinatedActorShutdownTest.java#L119-L120" target="_blank" title="Go to snippet source">source</a><code class="language-java">CoordinatedShutdown.get(system)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/actor/typed/CoordinatedActorShutdownTest.java#L119-L120" target="_blank" title="Go to snippet source">source</a><code class="language-java">CoordinatedShutdown.get(system)
     .addJvmShutdownHook(() -&gt; System.out.println(&quot;custom JVM shutdown hook...&quot;));</code></pre></dd>
 </dl>
 <p>For some tests it might be undesired to terminate the <code>ActorSystem</code> via <code>CoordinatedShutdown</code>. You can disable that by adding the following to the configuration of the <code>ActorSystem</code> that is used in the test:</p>
@@ -717,7 +717,7 @@ pekko.coordinated-shutdown.run-by-jvm-shutdown-hook = off
 pekko.cluster.run-coordinated-shutdown-when-down = off
 </code></pre>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/coordinated-shutdown.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/coordinated-shutdown.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -787,7 +787,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

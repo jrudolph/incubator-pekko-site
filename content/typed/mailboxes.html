@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,7 +419,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h1><a href="#mailboxes" name="mailboxes" class="anchor"><span class="anchor-link"></span></a>Mailboxes</h1>
 <p>You are viewing the documentation for the new actor APIs, to view the Pekko Classic documentation, see <a href="../mailboxes.html">Classic Mailboxes</a>.</p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>Mailboxes are part of core Pekko, which means that they are part of the <code>pekko-actor</code> dependency. This page describes how to use mailboxes with <code>pekko-actor-typed</code>, which has dependency:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>Mailboxes are part of core Pekko, which means that they are part of the <code>pekko-actor</code> dependency. This page describes how to use mailboxes with <code>pekko-actor-typed</code>, which has dependency:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -428,7 +428,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion<
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -443,7 +443,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion<
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-actor-typed_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -454,37 +454,37 @@ dependencies {
 <p>For advanced use cases it is also possible to defer mailbox selection to config by pointing to a config path.</p>
 <h2><a href="#selecting-what-mailbox-is-used" name="selecting-what-mailbox-is-used" class="anchor"><span class="anchor-link"></span></a>Selecting what mailbox is used</h2>
 <h3><a href="#selecting-a-mailbox-type-for-an-actor" name="selecting-a-mailbox-type-for-an-actor" class="anchor"><span class="anchor-link"></span></a>Selecting a Mailbox Type for an Actor</h3>
-<p>To select a specific mailbox for an actor use <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/MailboxSelector$.html" title="org.apache.pekko.actor.typed.MailboxSelector"><code>MailboxSelector</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/MailboxSelector$.html" title="org.apache.pekko.actor.typed.MailboxSelector"><code>MailboxSelector</code></a></span> to create a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Props.html" title="org.apache.pekko.actor.typed.Props"><code>Props</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Props.html" title="org.apache.pekko.actor.typed.Props"><code>Props</code></a></span> instance for spawning your actor:</p>
+<p>To select a specific mailbox for an actor use <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/MailboxSelector$.html" title="org.apache.pekko.actor.typed.MailboxSelector"><code>MailboxSelector</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/MailboxSelector$.html" title="org.apache.pekko.actor.typed.MailboxSelector"><code>MailboxSelector</code></a></span> to create a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Props.html" title="org.apache.pekko.actor.typed.Props"><code>Props</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Props.html" title="org.apache.pekko.actor.typed.Props"><code>Props</code></a></span> instance for spawning your actor:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/MailboxDocSpec.scala#L37-L40" target="_blank" title="Go to snippet source">source</a><code class="language-scala">context.spawn(childBehavior, &quot;bounded-mailbox-child&quot;, MailboxSelector.bounded(100))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/scala/docs/org/apache/pekko/typed/MailboxDocSpec.scala#L37-L40" target="_blank" title="Go to snippet source">source</a><code class="language-scala">context.spawn(childBehavior, &quot;bounded-mailbox-child&quot;, MailboxSelector.bounded(100))
 
 val props = MailboxSelector.fromConfig(&quot;my-app.my-special-mailbox&quot;)
 context.spawn(childBehavior, &quot;from-config-mailbox-child&quot;, props)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/MailboxDocTest.java#L47-L52" target="_blank" title="Go to snippet source">source</a><code class="language-java">context.spawn(childBehavior, &quot;bounded-mailbox-child&quot;, MailboxSelector.bounded(100));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/MailboxDocTest.java#L47-L52" target="_blank" title="Go to snippet source">source</a><code class="language-java">context.spawn(childBehavior, &quot;bounded-mailbox-child&quot;, MailboxSelector.bounded(100));
 
 context.spawn(
     childBehavior,
     &quot;from-config-mailbox-child&quot;,
     MailboxSelector.fromConfig(&quot;my-app.my-special-mailbox&quot;));</code></pre></dd>
 </dl>
-<p><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/MailboxSelector$.html#fromConfig(path:String):org.apache.pekko.actor.typed.MailboxSelector" title="org.apache.pekko.actor.typed.MailboxSelector"><code>fromConfig</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/MailboxSelector$.html#fromConfig(java.lang.String)" title="org.apache.pekko.actor.typed.MailboxSelector"><code>fromConfig</code></a></span> takes an absolute config path to a block defining the dispatcher in the config file:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/actor-typed-tests/src/test/resources/mailbox-config-sample.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">my-app {
+<p><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/MailboxSelector$.html#fromConfig(path:String):org.apache.pekko.actor.typed.MailboxSelector" title="org.apache.pekko.actor.typed.MailboxSelector"><code>fromConfig</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/MailboxSelector$.html#fromConfig(java.lang.String)" title="org.apache.pekko.actor.typed.MailboxSelector"><code>fromConfig</code></a></span> takes an absolute config path to a block defining the dispatcher in the config file:</p>
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/resources/mailbox-config-sample.conf" target="_blank" title="Go to snippet source">source</a><code class="language-conf">my-app {
   my-special-mailbox {
     mailbox-type = &quot;org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox&quot;
   }
 }</code></pre>
 <h3><a href="#default-mailbox" name="default-mailbox" class="anchor"><span class="anchor-link"></span></a>Default Mailbox</h3>
-<p>The default mailbox is used when the mailbox is not specified and is the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/SingleConsumerOnlyUnboundedMailbox.html" title="org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox"><code>SingleConsumerOnlyUnboundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/SingleConsumerOnlyUnboundedMailbox.html" title="org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox"><code>SingleConsumerOnlyUnboundedMailbox</code></a></span></p>
+<p>The default mailbox is used when the mailbox is not specified and is the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/SingleConsumerOnlyUnboundedMailbox.html" title="org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox"><code>SingleConsumerOnlyUnboundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/SingleConsumerOnlyUnboundedMailbox.html" title="org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox"><code>SingleConsumerOnlyUnboundedMailbox</code></a></span></p>
 <h3><a href="#which-configuration-is-passed-to-the-mailbox-type" name="which-configuration-is-passed-to-the-mailbox-type" class="anchor"><span class="anchor-link"></span></a>Which Configuration is passed to the Mailbox Type</h3>
-<p>Each mailbox type is implemented by a class which extends <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/MailboxType.html" title="org.apache.pekko.dispatch.MailboxType"><code>MailboxType</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/MailboxType.html" title="org.apache.pekko.dispatch.MailboxType"><code>MailboxType</code></a></span> and takes two constructor arguments: a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Settings.html" title="org.apache.pekko.actor.typed.Settings"><code>ActorSystem.Settings</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Settings.html" title="org.apache.pekko.actor.typed.Settings"><code>ActorSystem.Settings</code></a></span> object and a <a href="https://lightbend.github.io/config/latest/api/index.html?com/typesafe/config/Config.html">Config</a> section. The latter is computed by obtaining the named configuration section from the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> configuration, overriding its <code>id</code> key with the configuration path of the mailbox type and adding a fall-back to the default mailbox configuration section.</p>
+<p>Each mailbox type is implemented by a class which extends <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/MailboxType.html" title="org.apache.pekko.dispatch.MailboxType"><code>MailboxType</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/MailboxType.html" title="org.apache.pekko.dispatch.MailboxType"><code>MailboxType</code></a></span> and takes two constructor arguments: a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Settings.html" title="org.apache.pekko.actor.typed.Settings"><code>ActorSystem.Settings</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Settings.html" title="org.apache.pekko.actor.typed.Settings"><code>ActorSystem.Settings</code></a></span> object and a <a href="https://lightbend.github.io/config/latest/api/index.html?com/typesafe/config/Config.html">Config</a> section. The latter is computed by obtaining the named configuration section from the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> configuration, overriding its <code>id</code> key with the configuration path of the mailbox type and adding a fall-back to the default mailbox configuration section.</p>
 <h2><a href="#mailbox-implementations" name="mailbox-implementations" class="anchor"><span class="anchor-link"></span></a>Mailbox Implementations</h2>
 <p>Pekko ships with a number of mailbox implementations:</p>
 <ul>
-  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/SingleConsumerOnlyUnboundedMailbox.html" title="org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox"><code>SingleConsumerOnlyUnboundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/SingleConsumerOnlyUnboundedMailbox.html" title="org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox"><code>SingleConsumerOnlyUnboundedMailbox</code></a></span> (default)
+  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/SingleConsumerOnlyUnboundedMailbox.html" title="org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox"><code>SingleConsumerOnlyUnboundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/SingleConsumerOnlyUnboundedMailbox.html" title="org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox"><code>SingleConsumerOnlyUnboundedMailbox</code></a></span> (default)
     <ul>
       <li>This is the default</li>
       <li>Backed by a Multiple-Producer Single-Consumer queue, cannot be used with <code>BalancingDispatcher</code></li>
@@ -493,7 +493,7 @@ context.spawn(
       <li>Configuration name: <code>&quot;org.apache.pekko.dispatch.SingleConsumerOnlyUnboundedMailbox&quot;</code></li>
     </ul>
   </li>
-  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/UnboundedMailbox.html" title="org.apache.pekko.dispatch.UnboundedMailbox"><code>UnboundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/UnboundedMailbox.html" title="org.apache.pekko.dispatch.UnboundedMailbox"><code>UnboundedMailbox</code></a></span>
+  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/UnboundedMailbox.html" title="org.apache.pekko.dispatch.UnboundedMailbox"><code>UnboundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/UnboundedMailbox.html" title="org.apache.pekko.dispatch.UnboundedMailbox"><code>UnboundedMailbox</code></a></span>
     <ul>
       <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentLinkedQueue.html" title="java.util.concurrent.ConcurrentLinkedQueue"><code>java.util.concurrent.ConcurrentLinkedQueue</code></a></li>
       <li>Blocking: No</li>
@@ -502,7 +502,7 @@ context.spawn(
     </ul>
   </li>
   <li>
-    <p><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/NonBlockingBoundedMailbox.html" title="org.apache.pekko.dispatch.NonBlockingBoundedMailbox"><code>NonBlockingBoundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/NonBlockingBoundedMailbox.html" title="org.apache.pekko.dispatch.NonBlockingBoundedMailbox"><code>NonBlockingBoundedMailbox</code></a></span></p>
+    <p><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/NonBlockingBoundedMailbox.html" title="org.apache.pekko.dispatch.NonBlockingBoundedMailbox"><code>NonBlockingBoundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/NonBlockingBoundedMailbox.html" title="org.apache.pekko.dispatch.NonBlockingBoundedMailbox"><code>NonBlockingBoundedMailbox</code></a></span></p>
     <ul>
       <li>Backed by a very efficient Multiple-Producer Single-Consumer queue</li>
       <li>Blocking: No (discards overflowing messages into deadLetters)</li>
@@ -510,16 +510,16 @@ context.spawn(
       <li>Configuration name: <code>&quot;org.apache.pekko.dispatch.NonBlockingBoundedMailbox&quot;</code></li>
     </ul>
   </li>
-  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/UnboundedControlAwareMailbox.html" title="org.apache.pekko.dispatch.UnboundedControlAwareMailbox"><code>UnboundedControlAwareMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/UnboundedControlAwareMailbox.html" title="org.apache.pekko.dispatch.UnboundedControlAwareMailbox"><code>UnboundedControlAwareMailbox</code></a></span>
+  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/UnboundedControlAwareMailbox.html" title="org.apache.pekko.dispatch.UnboundedControlAwareMailbox"><code>UnboundedControlAwareMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/UnboundedControlAwareMailbox.html" title="org.apache.pekko.dispatch.UnboundedControlAwareMailbox"><code>UnboundedControlAwareMailbox</code></a></span>
     <ul>
-      <li>Delivers messages that extend <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/ControlMessage.html" title="org.apache.pekko.dispatch.ControlMessage"><code>dispatch.ControlMessage</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/ControlMessage.html" title="org.apache.pekko.dispatch.ControlMessage"><code>dispatch.ControlMessage</code></a></span> with higher priority</li>
+      <li>Delivers messages that extend <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/ControlMessage.html" title="org.apache.pekko.dispatch.ControlMessage"><code>dispatch.ControlMessage</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/ControlMessage.html" title="org.apache.pekko.dispatch.ControlMessage"><code>dispatch.ControlMessage</code></a></span> with higher priority</li>
       <li>Backed by two <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentLinkedQueue.html" title="java.util.concurrent.ConcurrentLinkedQueue"><code>java.util.concurrent.ConcurrentLinkedQueue</code></a></li>
       <li>Blocking: No</li>
       <li>Bounded: No</li>
       <li>Configuration name: <code>&quot;org.apache.pekko.dispatch.UnboundedControlAwareMailbox&quot;</code></li>
     </ul>
   </li>
-  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/UnboundedPriorityMailbox.html" title="org.apache.pekko.dispatch.UnboundedPriorityMailbox"><code>UnboundedPriorityMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/UnboundedPriorityMailbox.html" title="org.apache.pekko.dispatch.UnboundedPriorityMailbox"><code>UnboundedPriorityMailbox</code></a></span>
+  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/UnboundedPriorityMailbox.html" title="org.apache.pekko.dispatch.UnboundedPriorityMailbox"><code>UnboundedPriorityMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/UnboundedPriorityMailbox.html" title="org.apache.pekko.dispatch.UnboundedPriorityMailbox"><code>UnboundedPriorityMailbox</code></a></span>
     <ul>
       <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/PriorityBlockingQueue.html" title="java.util.concurrent.PriorityBlockingQueue"><code>java.util.concurrent.PriorityBlockingQueue</code></a></li>
       <li>Delivery order for messages of equal priority is undefined - contrast with the <code>UnboundedStablePriorityMailbox</code></li>
@@ -528,9 +528,9 @@ context.spawn(
       <li>Configuration name: <code>&quot;org.apache.pekko.dispatch.UnboundedPriorityMailbox&quot;</code></li>
     </ul>
   </li>
-  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/UnboundedStablePriorityMailbox.html" title="org.apache.pekko.dispatch.UnboundedStablePriorityMailbox"><code>UnboundedStablePriorityMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/UnboundedStablePriorityMailbox.html" title="org.apache.pekko.dispatch.UnboundedStablePriorityMailbox"><code>UnboundedStablePriorityMailbox</code></a></span>
+  <li> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/UnboundedStablePriorityMailbox.html" title="org.apache.pekko.dispatch.UnboundedStablePriorityMailbox"><code>UnboundedStablePriorityMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/UnboundedStablePriorityMailbox.html" title="org.apache.pekko.dispatch.UnboundedStablePriorityMailbox"><code>UnboundedStablePriorityMailbox</code></a></span>
     <ul>
-      <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/PriorityBlockingQueue.html" title="java.util.concurrent.PriorityBlockingQueue"><code>java.util.concurrent.PriorityBlockingQueue</code></a> wrapped in an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/PriorityQueueStabilizer.html" title="org.apache.pekko.util.PriorityQueueStabilizer"><code>util.PriorityQueueStabilizer</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/PriorityQueueStabilizer.html" title="org.apache.pekko.util.PriorityQueueStabilizer"><code>util.PriorityQueueStabilizer</code></a></span></li>
+      <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/PriorityBlockingQueue.html" title="java.util.concurrent.PriorityBlockingQueue"><code>java.util.concurrent.PriorityBlockingQueue</code></a> wrapped in an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/PriorityQueueStabilizer.html" title="org.apache.pekko.util.PriorityQueueStabilizer"><code>util.PriorityQueueStabilizer</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/PriorityQueueStabilizer.html" title="org.apache.pekko.util.PriorityQueueStabilizer"><code>util.PriorityQueueStabilizer</code></a></span></li>
       <li>FIFO order is preserved for messages of equal priority - contrast with the <code>UnboundedPriorityMailbox</code></li>
       <li>Blocking: No</li>
       <li>Bounded: No</li>
@@ -541,7 +541,7 @@ context.spawn(
 <p>Other bounded mailbox implementations which will block the sender if the capacity is reached and configured with non-zero <code>mailbox-push-timeout-time</code>. </p><div class="callout note "><div class="callout-title">Note</div>
 <p>The following mailboxes should only be used with zero <code>mailbox-push-timeout-time</code>.</p></div>
 <ul>
-  <li><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/BoundedMailbox.html" title="org.apache.pekko.dispatch.BoundedMailbox"><code>BoundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/BoundedMailbox.html" title="org.apache.pekko.dispatch.BoundedMailbox"><code>BoundedMailbox</code></a></span>
+  <li><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/BoundedMailbox.html" title="org.apache.pekko.dispatch.BoundedMailbox"><code>BoundedMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/BoundedMailbox.html" title="org.apache.pekko.dispatch.BoundedMailbox"><code>BoundedMailbox</code></a></span>
     <ul>
       <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html" title="java.util.concurrent.LinkedBlockingQueue"><code>java.util.concurrent.LinkedBlockingQueue</code></a></li>
       <li>Blocking: Yes if used with non-zero <code>mailbox-push-timeout-time</code>, otherwise No</li>
@@ -549,27 +549,27 @@ context.spawn(
       <li>Configuration name: <code>&quot;bounded&quot;</code> or <code>&quot;org.apache.pekko.dispatch.BoundedMailbox&quot;</code></li>
     </ul>
   </li>
-  <li><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/BoundedPriorityMailbox.html" title="org.apache.pekko.dispatch.BoundedPriorityMailbox"><code>BoundedPriorityMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/BoundedPriorityMailbox.html" title="org.apache.pekko.dispatch.BoundedPriorityMailbox"><code>BoundedPriorityMailbox</code></a></span>
+  <li><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/BoundedPriorityMailbox.html" title="org.apache.pekko.dispatch.BoundedPriorityMailbox"><code>BoundedPriorityMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/BoundedPriorityMailbox.html" title="org.apache.pekko.dispatch.BoundedPriorityMailbox"><code>BoundedPriorityMailbox</code></a></span>
     <ul>
-      <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html" title="java.util.PriorityQueue"><code>java.util.PriorityQueue</code></a> wrapped in an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/BoundedBlockingQueue.html" title="org.apache.pekko.util.BoundedBlockingQueue"><code>util.BoundedBlockingQueue</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/BoundedBlockingQueue.html" title="org.apache.pekko.util.BoundedBlockingQueue"><code>util.BoundedBlockingQueue</code></a></span></li>
+      <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html" title="java.util.PriorityQueue"><code>java.util.PriorityQueue</code></a> wrapped in an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/BoundedBlockingQueue.html" title="org.apache.pekko.util.BoundedBlockingQueue"><code>util.BoundedBlockingQueue</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/BoundedBlockingQueue.html" title="org.apache.pekko.util.BoundedBlockingQueue"><code>util.BoundedBlockingQueue</code></a></span></li>
       <li>Delivery order for messages of equal priority is undefined - contrast with the <code>BoundedStablePriorityMailbox</code></li>
       <li>Blocking: Yes if used with non-zero <code>mailbox-push-timeout-time</code>, otherwise No</li>
       <li>Bounded: Yes</li>
       <li>Configuration name: <code>&quot;org.apache.pekko.dispatch.BoundedPriorityMailbox&quot;</code></li>
     </ul>
   </li>
-  <li><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/BoundedStablePriorityMailbox.html" title="org.apache.pekko.dispatch.BoundedStablePriorityMailbox"><code>BoundedStablePriorityMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/BoundedStablePriorityMailbox.html" title="org.apache.pekko.dispatch.BoundedStablePriorityMailbox"><code>BoundedStablePriorityMailbox</code></a></span>
+  <li><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/BoundedStablePriorityMailbox.html" title="org.apache.pekko.dispatch.BoundedStablePriorityMailbox"><code>BoundedStablePriorityMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/BoundedStablePriorityMailbox.html" title="org.apache.pekko.dispatch.BoundedStablePriorityMailbox"><code>BoundedStablePriorityMailbox</code></a></span>
     <ul>
-      <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html" title="java.util.PriorityQueue"><code>java.util.PriorityQueue</code></a> wrapped in an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/PriorityQueueStabilizer.html" title="org.apache.pekko.util.PriorityQueueStabilizer"><code>util.PriorityQueueStabilizer</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/PriorityQueueStabilizer.html" title="org.apache.pekko.util.PriorityQueueStabilizer"><code>util.PriorityQueueStabilizer</code></a></span> and an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/BoundedBlockingQueue.html" title="org.apache.pekko.util.BoundedBlockingQueue"><code>util.BoundedBlockingQueue</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/BoundedBlockingQueue.html" title="org.apache.pekko.util.BoundedBlockingQueue"><code>util.BoundedBlockingQueue</code></a></span></li>
+      <li>Backed by a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html" title="java.util.PriorityQueue"><code>java.util.PriorityQueue</code></a> wrapped in an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/PriorityQueueStabilizer.html" title="org.apache.pekko.util.PriorityQueueStabilizer"><code>util.PriorityQueueStabilizer</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/PriorityQueueStabilizer.html" title="org.apache.pekko.util.PriorityQueueStabilizer"><code>util.PriorityQueueStabilizer</code></a></span> and an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/BoundedBlockingQueue.html" title="org.apache.pekko.util.BoundedBlockingQueue"><code>util.BoundedBlockingQueue</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/BoundedBlockingQueue.html" title="org.apache.pekko.util.BoundedBlockingQueue"><code>util.BoundedBlockingQueue</code></a></span></li>
       <li>FIFO order is preserved for messages of equal priority - contrast with the BoundedPriorityMailbox</li>
       <li>Blocking: Yes if used with non-zero <code>mailbox-push-timeout-time</code>, otherwise No</li>
       <li>Bounded: Yes</li>
       <li>Configuration name: <code>&quot;org.apache.pekko.dispatch.BoundedStablePriorityMailbox&quot;</code></li>
     </ul>
   </li>
-  <li><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/BoundedControlAwareMailbox.html" title="org.apache.pekko.dispatch.BoundedControlAwareMailbox"><code>BoundedControlAwareMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/BoundedControlAwareMailbox.html" title="org.apache.pekko.dispatch.BoundedControlAwareMailbox"><code>BoundedControlAwareMailbox</code></a></span>
+  <li><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/BoundedControlAwareMailbox.html" title="org.apache.pekko.dispatch.BoundedControlAwareMailbox"><code>BoundedControlAwareMailbox</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/BoundedControlAwareMailbox.html" title="org.apache.pekko.dispatch.BoundedControlAwareMailbox"><code>BoundedControlAwareMailbox</code></a></span>
     <ul>
-      <li>Delivers messages that extend <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/ControlMessage.html" title="org.apache.pekko.dispatch.ControlMessage"><code>dispatch.ControlMessage</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/dispatch/ControlMessage.html" title="org.apache.pekko.dispatch.ControlMessage"><code>dispatch.ControlMessage</code></a></span> with higher priority</li>
+      <li>Delivers messages that extend <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/ControlMessage.html" title="org.apache.pekko.dispatch.ControlMessage"><code>dispatch.ControlMessage</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/dispatch/ControlMessage.html" title="org.apache.pekko.dispatch.ControlMessage"><code>dispatch.ControlMessage</code></a></span> with higher priority</li>
       <li>Backed by two <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentLinkedQueue.html" title="java.util.concurrent.ConcurrentLinkedQueue"><code>java.util.concurrent.ConcurrentLinkedQueue</code></a> and blocking on enqueue if capacity has been reached</li>
       <li>Blocking: Yes if used with non-zero <code>mailbox-push-timeout-time</code>, otherwise No</li>
       <li>Bounded: Yes</li>
@@ -582,17 +582,17 @@ context.spawn(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/dispatcher/MyUnboundedMailbox.scala#L66-L67" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Marker trait used for mailbox requirements mapping
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/dispatcher/MyUnboundedMailbox.scala#L66-L67" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Marker trait used for mailbox requirements mapping
 trait MyUnboundedMessageQueueSemantics</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/dispatcher/MyUnboundedMessageQueueSemantics.java#L17-L18" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Marker interface used for mailbox requirements mapping
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/dispatcher/MyUnboundedMessageQueueSemantics.java#L17-L18" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Marker interface used for mailbox requirements mapping
 public interface MyUnboundedMessageQueueSemantics {}</code></pre></dd>
 </dl>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/dispatcher/MyUnboundedMailbox.scala#L17-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/dispatcher/MyUnboundedMailbox.scala#L17-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.ActorRef
 import pekko.actor.ActorSystem
 import pekko.dispatch.Envelope
@@ -640,7 +640,7 @@ class MyUnboundedMailbox extends MailboxType with ProducesMessageQueue[MyUnbound
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/dispatcher/MyUnboundedMailbox.java#L17-L68" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.ActorRef;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/dispatcher/MyUnboundedMailbox.java#L17-L68" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.ActorRef;
 import org.apache.pekko.actor.ActorSystem;
 import org.apache.pekko.dispatch.Envelope;
 import org.apache.pekko.dispatch.MailboxType;
@@ -694,9 +694,9 @@ public class MyUnboundedMailbox
 }</code></pre></dd>
 </dl>
 <p>And then you specify the FQCN of your MailboxType as the value of the &ldquo;mailbox-type&rdquo; in the dispatcher configuration, or the mailbox configuration.</p><div class="callout note "><div class="callout-title">Note</div>
-<p>Make sure to include a constructor which takes <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem$$Settings.html" title="org.apache.pekko.actor.ActorSystem.Settings"><code>actor.ActorSystem.Settings</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem$$Settings.html" title="org.apache.pekko.actor.ActorSystem.Settings"><code>actor.ActorSystem.Settings</code></a></span> and <a href="https://lightbend.github.io/config/latest/api/index.html?com/typesafe/config/Config.html">com.typesafe.config.Config</a> arguments, as this constructor is invoked reflectively to construct your mailbox type. The config passed in as second argument is that section from the configuration which describes the dispatcher or mailbox setting using this mailbox type; the mailbox type will be instantiated once for each dispatcher or mailbox setting using it.</p></div>
+<p>Make sure to include a constructor which takes <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem$$Settings.html" title="org.apache.pekko.actor.ActorSystem.Settings"><code>actor.ActorSystem.Settings</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem$$Settings.html" title="org.apache.pekko.actor.ActorSystem.Settings"><code>actor.ActorSystem.Settings</code></a></span> and <a href="https://lightbend.github.io/config/latest/api/index.html?com/typesafe/config/Config.html">com.typesafe.config.Config</a> arguments, as this constructor is invoked reflectively to construct your mailbox type. The config passed in as second argument is that section from the configuration which describes the dispatcher or mailbox setting using this mailbox type; the mailbox type will be instantiated once for each dispatcher or mailbox setting using it.</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/mailboxes.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/mailboxes.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -783,7 +783,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

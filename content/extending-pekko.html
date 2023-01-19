@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,16 +418,16 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="page-content row">
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#classic-pekko-extensions" name="classic-pekko-extensions" class="anchor"><span class="anchor-link"></span></a>Classic Pekko Extensions</h1>
-<p>If you want to add features to Pekko, there is a very elegant, but powerful mechanism for doing so. It&rsquo;s called Pekko Extensions and comprises 2 basic components: an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span> and an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span>.</p>
-<p>Extensions will only be loaded once per <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span>, which will be managed by Pekko. You can choose to have your Extension loaded on-demand or at <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span> creation time through the Pekko configuration. Details on how to make that happens are below, in the <a href="extending-pekko.html#loading">Loading from Configuration</a> section.</p><div class="callout warning "><div class="callout-title">Warning</div>
+<p>If you want to add features to Pekko, there is a very elegant, but powerful mechanism for doing so. It&rsquo;s called Pekko Extensions and comprises 2 basic components: an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span> and an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span>.</p>
+<p>Extensions will only be loaded once per <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span>, which will be managed by Pekko. You can choose to have your Extension loaded on-demand or at <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span> creation time through the Pekko configuration. Details on how to make that happens are below, in the <a href="extending-pekko.html#loading">Loading from Configuration</a> section.</p><div class="callout warning "><div class="callout-title">Warning</div>
 <p>Since an extension is a way to hook into Pekko itself, the implementor of the extension needs to ensure the thread safety of his/her extension.</p></div>
 <h2><a href="#building-an-extension" name="building-an-extension" class="anchor"><span class="anchor-link"></span></a>Building an Extension</h2>
 <p>So let&rsquo;s create a sample extension that lets us count the number of times something has happened.</p>
-<p>First, we define what our <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span> should do:</p>
+<p>First, we define what our <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span> should do:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L23-L32" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.Extension
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L23-L32" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.Extension
 
 class CountExtensionImpl extends Extension {
   // Since this Extension is a shared instance
@@ -439,7 +439,7 @@ class CountExtensionImpl extends Extension {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/extension/ExtensionDocTest.java#L17-L19" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.*;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/extension/ExtensionDocTest.java#L17-L19" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 static class CountExtensionImpl implements Extension {
@@ -454,11 +454,11 @@ static class CountExtensionImpl implements Extension {
 }
 </code></pre></dd>
 </dl>
-<p>Then we need to create an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span> for our extension so we can grab a hold of it.</p>
+<p>Then we need to create an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span> for our extension so we can grab a hold of it.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L36-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L36-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.ActorSystem
 import pekko.actor.ExtensionId
 import pekko.actor.ExtensionIdProvider
@@ -483,7 +483,7 @@ object CountExtension extends ExtensionId[CountExtensionImpl] with ExtensionIdPr
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/extension/ExtensionDocTest.java#L17-L19" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.*;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/extension/ExtensionDocTest.java#L17-L19" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 static class CountExtension extends AbstractExtensionId&lt;CountExtensionImpl&gt;
@@ -513,10 +513,10 @@ static class CountExtension extends AbstractExtensionId&lt;CountExtensionImpl&gt
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L98" target="_blank" title="Go to snippet source">source</a><code class="language-scala">CountExtension(system).increment()</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L98" target="_blank" title="Go to snippet source">source</a><code class="language-scala">CountExtension(system).increment()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/extension/ExtensionDocTest.java#L91-L93" target="_blank" title="Go to snippet source">source</a><code class="language-java">// typically you would use static import of the
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/extension/ExtensionDocTest.java#L91-L93" target="_blank" title="Go to snippet source">source</a><code class="language-java">// typically you would use static import of the
 // CountExtension.CountExtensionProvider field
 CountExtension.CountExtensionProvider.get(system).increment();</code></pre></dd>
 </dl>
@@ -524,7 +524,7 @@ CountExtension.CountExtensionProvider.get(system).increment();</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L72-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>class MyActor extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L72-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>class MyActor extends Actor {
   def receive = {
     case someMessage =&gt;
       CountExtension(context.system).increment()
@@ -532,7 +532,7 @@ CountExtension.CountExtensionProvider.get(system).increment();</code></pre></dd>
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/extension/ExtensionDocTest.java#L70-L83" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyActor extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/extension/ExtensionDocTest.java#L70-L83" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyActor extends AbstractActor {
   @Override
   public Receive createReceive() {
     return receiveBuilder()
@@ -548,7 +548,7 @@ CountExtension.CountExtensionProvider.get(system).increment();</code></pre></dd>
 </code></pre></dd>
 </dl><div class="group-scala">
 <p>You can also hide extension behind traits:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L82-L90" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>trait Counting { self: Actor =&gt;
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L82-L90" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>trait Counting { self: Actor =&gt;
   def increment() = CountExtension(context.system).increment()
 }
 class MyCounterActor extends Actor with Counting {
@@ -559,11 +559,11 @@ class MyCounterActor extends Actor with Counting {
 <p>That&rsquo;s all there is to it!</p>
 <a id="loading"></a>
 <h2><a href="#loading-from-configuration" name="loading-from-configuration" class="anchor"><span class="anchor-link"></span></a>Loading from Configuration</h2>
-<p>To be able to load extensions from your Pekko configuration you must add FQCNs of implementations of either <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span> or <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ExtensionIdProvider.html" title="org.apache.pekko.actor.ExtensionIdProvider"><code>ExtensionIdProvider</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ExtensionIdProvider.html" title="org.apache.pekko.actor.ExtensionIdProvider"><code>ExtensionIdProvider</code></a></span> in the <code>pekko.extensions</code> section of the config you provide to your <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span>.</p>
+<p>To be able to load extensions from your Pekko configuration you must add FQCNs of implementations of either <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span> or <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ExtensionIdProvider.html" title="org.apache.pekko.actor.ExtensionIdProvider"><code>ExtensionIdProvider</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ExtensionIdProvider.html" title="org.apache.pekko.actor.ExtensionIdProvider"><code>ExtensionIdProvider</code></a></span> in the <code>pekko.extensions</code> section of the config you provide to your <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span>.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L65-L67" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/ExtensionDocSpec.scala#L65-L67" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko {
   extensions = [&quot;docs.extension.CountExtension&quot;]
 }</code></pre></dd>
   <dt>Java</dt>
@@ -579,7 +579,7 @@ class MyCounterActor extends Actor with Counting {
 <h3><a href="#application-specific-settings" name="application-specific-settings" class="anchor"><span class="anchor-link"></span></a>Application specific settings</h3>
 <p>The <a href="general/configuration.html">configuration</a> can be used for application specific settings. A good practice is to place those settings in an Extension.</p>
 <p>Sample configuration:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/SettingsExtensionDocSpec.scala#L63-L70" target="_blank" title="Go to snippet source">source</a><code class="language-scala">myapp {
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/SettingsExtensionDocSpec.scala#L63-L70" target="_blank" title="Go to snippet source">source</a><code class="language-scala">myapp {
   db {
     uri = &quot;mongodb://example1.com:27017,example2.com:27017&quot;
   }
@@ -587,11 +587,11 @@ class MyCounterActor extends Actor with Counting {
     timeout = 30 seconds
   }
 }</code></pre>
-<p>The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span>:</p>
+<p>The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span>:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/SettingsExtensionDocSpec.scala#L17-L29" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/SettingsExtensionDocSpec.scala#L17-L29" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.ActorSystem
 import pekko.actor.Extension
 import pekko.actor.ExtensionId
@@ -624,7 +624,7 @@ object Settings extends ExtensionId[SettingsImpl] with ExtensionIdProvider {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/extension/SettingsExtensionDocTest.java#L17-L25" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.Extension;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/extension/SettingsExtensionDocTest.java#L17-L25" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.Extension;
 import org.apache.pekko.actor.AbstractExtensionId;
 import org.apache.pekko.actor.ExtensionIdProvider;
 import org.apache.pekko.actor.ActorSystem;
@@ -665,13 +665,13 @@ static class Settings extends AbstractExtensionId&lt;SettingsImpl&gt; implements
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/extension/SettingsExtensionDocSpec.scala#L75-L79" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>class MyActor extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/extension/SettingsExtensionDocSpec.scala#L75-L79" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>class MyActor extends Actor {
   val settings = Settings(context.system)
   val connection = connect(settings.DbUri, settings.CircuitBreakerTimeout)
 </code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/extension/SettingsExtensionDocTest.java#L71-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyActor extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/extension/SettingsExtensionDocTest.java#L71-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyActor extends AbstractActor {
   // typically you would use static import of the Settings.SettingsProvider field
   final SettingsImpl settings = Settings.SettingsProvider.get(getContext().getSystem());
   Connection connection = connect(settings.DB_URI, settings.CIRCUIT_BREAKER_TIMEOUT);
@@ -685,7 +685,7 @@ static class Settings extends AbstractExtensionId&lt;SettingsImpl&gt; implements
 <p>As there is no way to selectively remove such extensions, it should be used with care and only when there is no case where the user would ever want it disabled or have specific support for disabling such sub-features. One example where this could be important is in tests.</p><div class="callout warning "><div class="callout-title">Warning</div>
 <p>The<code>pekko.library-extensions</code> must never be assigned (<code>= [&quot;Extension&quot;]</code>) instead of appending as this will break the library-extension mechanism and make behavior depend on class path ordering.</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/extending-pekko.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/extending-pekko.md">here</a>.
 </div>
 
 </div>
@@ -768,7 +768,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

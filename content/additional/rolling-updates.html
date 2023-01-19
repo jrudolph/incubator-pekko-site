@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -435,7 +435,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>To make use of this feature you need to define the <code>app-version</code> and increase it for each rolling update.</p>
 <pre><code>pekko.cluster.app-version = 1.2.3
 </code></pre>
-<p>To understand which is old and new it compares the version numbers using normal conventions, see <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/Version.html" title="org.apache.pekko.util.Version"><code>Version</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/util/Version.html" title="org.apache.pekko.util.Version"><code>Version</code></a></span> for more details.</p>
+<p>To understand which is old and new it compares the version numbers using normal conventions, see <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/Version.html" title="org.apache.pekko.util.Version"><code>Version</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/util/Version.html" title="org.apache.pekko.util.Version"><code>Version</code></a></span> for more details.</p>
 <p>Rebalance is also disabled during rolling updates, since shards from stopped nodes are anyway supposed to be started on new nodes. Messages to shards that were stopped on the old nodes will allocate corresponding shards on the new nodes, without waiting for rebalance actions. </p>
 <p>You should also enable the <a href="../typed/cluster-sharding.html#health-check">health check for Cluster Sharding</a> if you use Pekko Management. The readiness check will delay incoming traffic to the node until Sharding has been initialized and can accept messages.</p>
 <p>The <code>ShardCoordinator</code> is itself a cluster singleton. To minimize downtime of the shard coordinator, see the strategies about <a href="rolling-updates.html#cluster-singleton">ClusterSingleton</a> rolling updates below.</p>
@@ -478,7 +478,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h3><a href="#migrating-from-classic-sharding-to-typed-sharding" name="migrating-from-classic-sharding-to-typed-sharding" class="anchor"><span class="anchor-link"></span></a>Migrating from Classic Sharding to Typed Sharding</h3>
 <p>If you have been using classic sharding it is possible to do a rolling update to typed sharding using a 3 step procedure. The steps along with example commits are detailed in <a href="https://github.com/akka/akka-samples/pull/110">this sample PR</a> </p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/additional/rolling-updates.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/additional/rolling-updates.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -566,7 +566,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

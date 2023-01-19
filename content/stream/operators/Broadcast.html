@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Emit each incoming element each of <code>n</code> outputs.</p>
 <p><a href="index.html#fan-out-operators">Fan-out operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Broadcast.html" title="org.apache.pekko.stream.javadsl.Broadcast"><code>Broadcast</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Broadcast.html" title="org.apache.pekko.stream.scaladsl.Broadcast"><code>Broadcast</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Broadcast.html" title="org.apache.pekko.stream.javadsl.Broadcast"><code>Broadcast</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Broadcast.html" title="org.apache.pekko.stream.scaladsl.Broadcast"><code>Broadcast</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Emit each incoming element each of <code>n</code> outputs.</p>
 <h2><a href="#example" name="example" class="anchor"><span class="anchor-link"></span></a>Example</h2>
@@ -429,7 +429,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/BroadcastDocExample.scala#L28-L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/BroadcastDocExample.scala#L28-L55" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.NotUsed
 import pekko.stream.ClosedShape
 import pekko.stream.scaladsl.GraphDSL
@@ -459,7 +459,7 @@ val (count: Future[Int], min: Future[Int], max: Future[Int]) =
     .run()</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/BroadcastDocExample.java#L19-L30" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.NotUsed;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/BroadcastDocExample.java#L19-L30" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.NotUsed;
 import org.apache.pekko.japi.tuple.Tuple3;
 import org.apache.pekko.stream.ClosedShape;
 import org.apache.pekko.stream.UniformFanOutShape;
@@ -505,7 +505,7 @@ final Tuple3&lt;CompletionStage&lt;Integer&gt;, CompletionStage&lt;Integer&gt;, 
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/BroadcastDocExample.scala#L59-L68" target="_blank" title="Go to snippet source">source</a><code class="language-scala">RunnableGraph.fromGraph(GraphDSL.createGraph(countSink.async, minSink.async, maxSink.async)(Tuple3.apply) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/BroadcastDocExample.scala#L59-L68" target="_blank" title="Go to snippet source">source</a><code class="language-scala">RunnableGraph.fromGraph(GraphDSL.createGraph(countSink.async, minSink.async, maxSink.async)(Tuple3.apply) {
   implicit builder =&gt; (countS, minS, maxS) =&gt;
     import GraphDSL.Implicits._
     val broadcast = builder.add(Broadcast[Int](3))
@@ -517,7 +517,7 @@ final Tuple3&lt;CompletionStage&lt;Integer&gt;, CompletionStage&lt;Integer&gt;, 
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/BroadcastDocExample.java#L72-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/BroadcastDocExample.java#L72-L87" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
     GraphDSL.create3(
         countSink.async(),
         minSink.async(),
@@ -540,7 +540,7 @@ final Tuple3&lt;CompletionStage&lt;Integer&gt;, CompletionStage&lt;Integer&gt;, 
 <p><strong>completes</strong> when upstream completes</p>
 <p><strong>cancels</strong> depends on the <code>eagerCancel</code> flag. If it is true, when any downstream cancels, if false, when all downstreams cancel.</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Broadcast.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Broadcast.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -626,7 +626,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#modularity-composition-and-hierarchy" name="modularity-composition-and-hierarchy" class="anchor"><span class="anchor-link"></span></a>Modularity, Composition and Hierarchy</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -456,7 +456,7 @@ dependencies {
 <p>The following figure demonstrates various composite operators, that contain various other type of operators internally, but hiding them behind a <em>shape</em> that looks like a <code>Source</code>, <code>Flow</code>, etc.</p>
 <p><img src="../images/compose_composites.png" alt="compose_composites.png" /></p>
 <p>One interesting example above is a <code>Flow</code> which is composed of a disconnected <code>Sink</code> and <code>Source</code>. This can be achieved by using the <code>fromSinkAndSource()</code> constructor method on <code>Flow</code> which takes the two parts as parameters.</p>
-<p>Please note that when combining a <code>Flow</code> using that method, the termination signals are not carried &ldquo;through&rdquo; as the <code>Sink</code> and <code>Source</code> are assumed to be fully independent. If however you want to construct a <code>Flow</code> like this but need the termination events to trigger &ldquo;the other side&rdquo; of the composite flow, you can use <code>Flow.fromSinkAndSourceCoupled</code> or <code>Flow.fromSinkAndSourceCoupledMat</code> which does just that. For example the cancellation of the composite flows source-side will then lead to completion of its sink-side. Read <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow</code></a></span>&rsquo;s API documentation for a detailed explanation how this works.</p>
+<p>Please note that when combining a <code>Flow</code> using that method, the termination signals are not carried &ldquo;through&rdquo; as the <code>Sink</code> and <code>Source</code> are assumed to be fully independent. If however you want to construct a <code>Flow</code> like this but need the termination events to trigger &ldquo;the other side&rdquo; of the composite flow, you can use <code>Flow.fromSinkAndSourceCoupled</code> or <code>Flow.fromSinkAndSourceCoupledMat</code> which does just that. For example the cancellation of the composite flows source-side will then lead to completion of its sink-side. Read <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow</code></a></span>&rsquo;s API documentation for a detailed explanation how this works.</p>
 <p>The example <code>BidiFlow</code> demonstrates that internally a module can be of arbitrary complexity, and the exposed ports can be wired in flexible ways. The only constraint is that all the ports of enclosed modules must be either connected to each other, or exposed as interface ports, and the number of such ports needs to match the requirement of the shape, for example a <code>Source</code> allows only one exposed output port, the rest of the internal ports must be properly connected.</p>
 <p>These mechanics allow arbitrary nesting of modules. For example the following figure demonstrates a <code>RunnableGraph</code> that is built from a composite <code>Source</code> and a composite <code>Sink</code> (which in turn contains a composite <code>Flow</code>).</p>
 <p><img src="../images/compose_nested_flow.png" alt="compose_nested_flow.png" /></p>
@@ -465,12 +465,12 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L32-L34" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source.single(0).map(_ + 1).filter(_ != 0).map(_ - 2).to(Sink.fold(0)(_ + _))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L32-L34" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source.single(0).map(_ + 1).filter(_ != 0).map(_ - 2).to(Sink.fold(0)(_ + _))
 
 // ... where is the nesting?</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L54-L60" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source.single(0)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L54-L60" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source.single(0)
     .map(i -&gt; i + 1)
     .filter(i -&gt; i != 0)
     .map(i -&gt; i - 2)
@@ -483,7 +483,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L40-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val nestedSource =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L40-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val nestedSource =
   Source
     .single(0) // An atomic source
     .map(_ + 1) // an atomic processing stage
@@ -504,7 +504,7 @@ val nestedSink =
 val runnableGraph = nestedSource.to(nestedSink)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L67-L84" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Integer, NotUsed&gt; nestedSource =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L67-L84" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Integer, NotUsed&gt; nestedSource =
     Source.single(0) // An atomic source
         .map(i -&gt; i + 1) // an atomic processing stage
         .named(&quot;nestedSource&quot;); // wraps up the current Source and gives it a name
@@ -529,14 +529,14 @@ final RunnableGraph&lt;NotUsed&gt; runnableGraph = nestedSource.to(nestedSink);<
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L81-L85" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Create a RunnableGraph from our components
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L81-L85" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Create a RunnableGraph from our components
 val runnableGraph = nestedSource.to(nestedSink)
 
 // Usage is uniform, no matter if modules are composite or atomic
 val runnableGraph2 = Source.single(0).to(Sink.fold(0)(_ + _))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L107-L112" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Create a RunnableGraph from our components
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L107-L112" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Create a RunnableGraph from our components
 final RunnableGraph&lt;NotUsed&gt; runnableGraph = nestedSource.to(nestedSink);
 
 // Usage is uniform, no matter if modules are composite or atomic
@@ -551,7 +551,7 @@ final RunnableGraph&lt;NotUsed&gt; runnableGraph2 =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L92-L108" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L92-L108" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
 RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =&gt;
   val A: Outlet[Int]                  = builder.add(Source.single(0)).out
   val B: UniformFanOutShape[Int, Int] = builder.add(Broadcast[Int](2))
@@ -570,7 +570,7 @@ RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =&gt;
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L119-L136" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L119-L136" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
     GraphDSL.create(
         builder -&gt; {
           final Outlet&lt;Integer&gt; A = builder.add(Source.single(0)).out();
@@ -593,7 +593,7 @@ RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =&gt;
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L112-L125" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L112-L125" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
 RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =&gt;
   val B = builder.add(Broadcast[Int](2))
   val C = builder.add(Merge[Int](2))
@@ -609,7 +609,7 @@ RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =&gt;
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L140-L160" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L140-L160" target="_blank" title="Go to snippet source">source</a><code class="language-java">RunnableGraph.fromGraph(
     GraphDSL.create(
         builder -&gt; {
           final SourceShape&lt;Integer&gt; A = builder.add(Source.single(0));
@@ -637,7 +637,7 @@ RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =&gt;
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L133-L144" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L133-L144" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import GraphDSL.Implicits._
 val partial = GraphDSL.create() { implicit builder =&gt;
   val B = builder.add(Broadcast[Int](2))
   val C = builder.add(Merge[Int](2))
@@ -651,7 +651,7 @@ val partial = GraphDSL.create() { implicit builder =&gt;
 }.named(&quot;partial&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L167-L185" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Graph&lt;FlowShape&lt;Integer, Integer&gt;, NotUsed&gt; partial =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L167-L185" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Graph&lt;FlowShape&lt;Integer, Integer&gt;, NotUsed&gt; partial =
     GraphDSL.create(
         builder -&gt; {
           final UniformFanOutShape&lt;Integer, Integer&gt; B = builder.add(Broadcast.create(2));
@@ -678,10 +678,10 @@ val partial = GraphDSL.create() { implicit builder =&gt;
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L149" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source.single(0).via(partial).to(Sink.ignore)</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L149" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Source.single(0).via(partial).to(Sink.ignore)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L189" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source.single(0).via(partial).to(Sink.ignore());</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L189" target="_blank" title="Go to snippet source">source</a><code class="language-java">Source.single(0).via(partial).to(Sink.ignore());</code></pre></dd>
 </dl>
 <p>It is not possible to use it as a <code>Flow</code> yet, though (i.e. we cannot call <code>.filter()</code> on it), but <code>Flow</code> has a <code>fromGraph()</code> method that adds the DSL to a <code>FlowShape</code>. There are similar methods on <code>Source</code>, <code>Sink</code> and <code>BidiShape</code>, so it is easy to get back to the simpler DSL if an operator has the right shape. For convenience, it is also possible to skip the partial graph creation, and use one of the convenience creator methods. To demonstrate this, we will create the following graph:</p>
 <p><img src="../images/compose_graph_flow.png" alt="compose_graph_flow.png" /></p>
@@ -689,7 +689,7 @@ val partial = GraphDSL.create() { implicit builder =&gt;
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L154-L175" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Convert the partial graph of FlowShape to a Flow to get
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L154-L175" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Convert the partial graph of FlowShape to a Flow to get
 // access to the fluid DSL (for example to be able to call .filter())
 val flow = Flow.fromGraph(partial)
 
@@ -713,7 +713,7 @@ val sink = {
 val closed = source.via(flow.filter(_ &gt; 1)).to(sink)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L193-L214" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Convert the partial graph of FlowShape to a Flow to get
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L193-L214" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Convert the partial graph of FlowShape to a Flow to get
 // access to the fluid DSL (for example to be able to call .filter())
 final Flow&lt;Integer, Integer, NotUsed&gt; flow = Flow.fromGraph(partial);
 
@@ -741,7 +741,7 @@ final RunnableGraph&lt;NotUsed&gt; closed = source.via(flow.filter(i -&gt; i &gt
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L182-L187" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val closed1 = Source.single(0).to(Sink.foreach(println))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L182-L187" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val closed1 = Source.single(0).to(Sink.foreach(println))
 val closed2 = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =&gt;
   val embeddedClosed: ClosedShape = builder.add(closed1)
   // …
@@ -749,7 +749,7 @@ val closed2 = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =&gt;
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L221-L228" target="_blank" title="Go to snippet source">source</a><code class="language-java">final RunnableGraph&lt;NotUsed&gt; closed1 = Source.single(0).to(Sink.foreach(System.out::println));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L221-L228" target="_blank" title="Go to snippet source">source</a><code class="language-java">final RunnableGraph&lt;NotUsed&gt; closed1 = Source.single(0).to(Sink.foreach(System.out::println));
 final RunnableGraph&lt;NotUsed&gt; closed2 =
     RunnableGraph.fromGraph(
         GraphDSL.create(
@@ -775,7 +775,7 @@ final RunnableGraph&lt;NotUsed&gt; closed2 =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L193-L201" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Materializes to Promise[Option[Int]]                                   (red)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L193-L201" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Materializes to Promise[Option[Int]]                                   (red)
 val source: Source[Int, Promise[Option[Int]]] = Source.maybe[Int]
 
 // Materializes to NotUsed                                               (black)
@@ -786,7 +786,7 @@ val nestedSource: Source[Int, Promise[Option[Int]]] =
   source.viaMat(flow1)(Keep.left).named(&quot;nestedSource&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L259-L267" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Materializes to CompletableFuture&lt;Optional&lt;Integer&gt;&gt;                   (red)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L259-L267" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Materializes to CompletableFuture&lt;Optional&lt;Integer&gt;&gt;                   (red)
 final Source&lt;Integer, CompletableFuture&lt;Optional&lt;Integer&gt;&gt;&gt; source = Source.&lt;Integer&gt;maybe();
 
 // Materializes to NotUsed                                                (black)
@@ -800,7 +800,7 @@ final Source&lt;Integer, CompletableFuture&lt;Optional&lt;Integer&gt;&gt;&gt; ne
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L205-L216" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Materializes to NotUsed                                                (orange)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L205-L216" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Materializes to NotUsed                                                (orange)
 val flow2: Flow[Int, ByteString, NotUsed] = Flow[Int].map { i =&gt;
   ByteString(i.toString)
 }
@@ -814,7 +814,7 @@ val nestedFlow: Flow[Int, ByteString, Future[OutgoingConnection]] =
   flow2.viaMat(flow3)(Keep.right).named(&quot;nestedFlow&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L271-L281" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Materializes to NotUsed                                                (orange)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L271-L281" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Materializes to NotUsed                                                (orange)
 final Flow&lt;Integer, ByteString, NotUsed&gt; flow2 =
     Flow.of(Integer.class).map(i -&gt; ByteString.fromString(i.toString()));
 
@@ -830,7 +830,7 @@ final Flow&lt;Integer, ByteString, CompletionStage&lt;OutgoingConnection&gt;&gt;
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L220-L225" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Materializes to Future[String]                                         (green)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L220-L225" target="_blank" title="Go to snippet source">source</a><code class="language-scala">// Materializes to Future[String]                                         (green)
 val sink: Sink[ByteString, Future[String]] = Sink.fold(&quot;&quot;)(_ + _.utf8String)
 
 // Materializes to (Future[OutgoingConnection], Future[String])           (blue)
@@ -838,7 +838,7 @@ val nestedSink: Sink[Int, (Future[OutgoingConnection], Future[String])] =
   nestedFlow.toMat(sink)(Keep.both)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L285-L291" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Materializes to Future&lt;String&gt;                                         (green)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L285-L291" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Materializes to Future&lt;String&gt;                                         (green)
 final Sink&lt;ByteString, CompletionStage&lt;String&gt;&gt; sink =
     Sink.&lt;String, ByteString&gt;fold(&quot;&quot;, (acc, i) -&gt; acc + i.utf8String());
 
@@ -850,7 +850,7 @@ final Sink&lt;Integer, Pair&lt;CompletionStage&lt;OutgoingConnection&gt;, Comple
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L229-L241" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class MyClass(private val p: Promise[Option[Int]], conn: OutgoingConnection) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L229-L241" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class MyClass(private val p: Promise[Option[Int]], conn: OutgoingConnection) {
   def close() = p.trySuccess(None)
 }
 
@@ -865,7 +865,7 @@ val runnableGraph: RunnableGraph[Future[MyClass]] =
   nestedSource.toMat(nestedSink)(f)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-    <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L233-L253" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyClass {
+    <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L233-L253" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyClass {
   private CompletableFuture&lt;Optional&lt;Integer&gt;&gt; p;
   private OutgoingConnection conn;
 
@@ -886,7 +886,7 @@ static class Combiner {
     return rest.first().thenApply(c -&gt; new MyClass(p, c));
   }
 }</code></pre>
-    <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L295-L297" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Materializes to Future&lt;MyClass&gt;                                        (purple)
+    <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L295-L297" target="_blank" title="Go to snippet source">source</a><code class="language-java">// Materializes to Future&lt;MyClass&gt;                                        (purple)
 final RunnableGraph&lt;CompletionStage&lt;MyClass&gt;&gt; runnableGraph =
     nestedSource.toMat(nestedSink, Combiner::f);</code></pre>
   </dd>
@@ -900,7 +900,7 @@ final RunnableGraph&lt;CompletionStage&lt;MyClass&gt;&gt; runnableGraph =
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L247-L260" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import Attributes._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/CompositionDocSpec.scala#L247-L260" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import Attributes._
 val nestedSource =
   Source.single(0).map(_ + 1).named(&quot;nestedSource&quot;) // Wrap, no inputBuffer set
 
@@ -916,7 +916,7 @@ val nestedSink =
     .withAttributes(name(&quot;nestedSink&quot;) and inputBuffer(3, 3)) // override</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L304-L320" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Integer, NotUsed&gt; nestedSource =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/CompositionDocTest.java#L304-L320" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Source&lt;Integer, NotUsed&gt; nestedSource =
     Source.single(0).map(i -&gt; i + 1).named(&quot;nestedSource&quot;); // Wrap, no inputBuffer set
 
 final Flow&lt;Integer, Integer, NotUsed&gt; nestedFlow =
@@ -938,7 +938,7 @@ final Sink&lt;Integer, NotUsed&gt; nestedSink =
 <p><img src="../images/compose_attributes.png" alt="compose_attributes.png" /></p>
 <p>This diagram illustrates the inheritance process for the example code (representing the materializer default attributes as the color <em>red</em>, the attributes set on <code>nestedSink</code> as <em>blue</em> and the attributes set on <code>nestedFlow</code> as <em>green</em>).</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/stream-composition.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/stream-composition.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1026,7 +1026,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

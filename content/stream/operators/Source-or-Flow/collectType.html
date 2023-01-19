@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Transform this stream by testing the type of each of the elements on which the element is an instance of the provided type as they pass through this processing step.</p>
 <p><a href="../index.html#simple-operators">Simple operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#collectType(java.lang.Class)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.collectType</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#collectType[T](implicittag:scala.reflect.ClassTag[T]):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.collectType</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#collectType(java.lang.Class)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.collectType</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#collectType[T](implicittag:scala.reflect.ClassTag[T]):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.collectType</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#collectType(java.lang.Class)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.collectType</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#collectType[T](implicittag:scala.reflect.ClassTag[T]):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.collectType</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#collectType(java.lang.Class)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.collectType</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#collectType[T](implicittag:scala.reflect.ClassTag[T]):FlowOps.this.Repr[T]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.collectType</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Filter elements that is of a given type.</p>
 <h2><a href="#example" name="example" class="anchor"><span class="anchor-link"></span></a>Example</h2>
@@ -429,12 +429,12 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/Collect.scala#L21-L23" target="_blank" title="Go to snippet source">source</a><code class="language-scala">trait Message
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/Collect.scala#L21-L23" target="_blank" title="Go to snippet source">source</a><code class="language-scala">trait Message
 final case class Ping(id: Int) extends Message
 final case class Pong(id: Int)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L374-L390" target="_blank" title="Go to snippet source">source</a><code class="language-java">static interface Message {}
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L374-L390" target="_blank" title="Go to snippet source">source</a><code class="language-java">static interface Message {}
 
 static class Ping implements Message {
   final int id;
@@ -456,11 +456,11 @@ static class Pong {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/Collect.scala#L37-L38" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val flow: Flow[Message, Pong, NotUsed] =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/stream/operators/sourceorflow/Collect.scala#L37-L38" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val flow: Flow[Message, Pong, NotUsed] =
   Flow[Message].collectType[Ping].filter(_.id != 0).map(p =&gt; Pong(p.id))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L406-L410" target="_blank" title="Go to snippet source">source</a><code class="language-java">Flow&lt;Message, Pong, NotUsed&gt; flow =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/stream/operators/SourceOrFlow.java#L406-L410" target="_blank" title="Go to snippet source">source</a><code class="language-java">Flow&lt;Message, Pong, NotUsed&gt; flow =
     Flow.of(Message.class)
         .collectType(Ping.class)
         .filter(p -&gt; p.id != 0)
@@ -471,7 +471,7 @@ static class Pong {
 <p><strong>backpressures</strong> the element is of the given type and downstream backpressures</p>
 <p><strong>completes</strong> when upstream completes</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/collectType.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/operators/Source-or-Flow/collectType.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -557,7 +557,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

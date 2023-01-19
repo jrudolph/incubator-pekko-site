@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -420,7 +420,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h1><a href="#classic-persistent-fsm" name="classic-persistent-fsm" class="anchor"><span class="anchor-link"></span></a>Classic Persistent FSM</h1><div class="callout note "><div class="callout-title">Note</div>
 <p>Pekko Classic pertains to the original Actor APIs, which have been improved by more type safe and guided Actor APIs. Pekko Classic is still fully supported and existing applications can continue to use the classic APIs. It is also possible to use the new Actor APIs together with classic actors in the same ActorSystem, see <a href="typed/coexisting.html">coexistence</a>. For new projects we recommend using <a href="typed/actors.html">the new Actor API</a>.</p></div>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>Persistent FSMs are part of Pekko persistence, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>Persistent FSMs are part of Pekko persistence, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-persistence" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -429,7 +429,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-persistence" % PekkoVersion<
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -444,7 +444,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-persistence" % PekkoVersion<
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-persistence_${versions.ScalaBinary}"
 }</code></pre></dd></dl><div class="callout warning "><div class="callout-title">Warning</div>
@@ -455,14 +455,14 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L447-L451" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L447-L451" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
 case class AddItem(item: Item) extends Command
 case object Buy extends Command
 case object Leave extends Command
 case object GetCurrentCart extends Command</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L123-L145" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class AddItem implements Command {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L123-L145" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class AddItem implements Command {
   private final Item item;
 
   public AddItem(Item item) {
@@ -491,7 +491,7 @@ public enum GetCurrentCart implements Command {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L414-L426" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait UserState extends FSMState
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L414-L426" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait UserState extends FSMState
 case object LookingAround extends UserState {
   override def identifier: String = &quot;Looking Around&quot;
 }
@@ -506,7 +506,7 @@ case object Paid extends UserState {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L37-L53" target="_blank" title="Go to snippet source">source</a><code class="language-java">enum UserState implements PersistentFSM.FSMState {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L37-L53" target="_blank" title="Go to snippet source">source</a><code class="language-java">enum UserState implements PersistentFSM.FSMState {
   LOOKING_AROUND(&quot;Looking Around&quot;),
   SHOPPING(&quot;Shopping&quot;),
   INACTIVE(&quot;Inactive&quot;),
@@ -530,14 +530,14 @@ case object Paid extends UserState {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L455-L459" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait DomainEvent
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L455-L459" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait DomainEvent
 case class ItemAdded(item: Item) extends DomainEvent
 case object OrderExecuted extends DomainEvent
 case object OrderDiscarded extends DomainEvent
 case object CustomerInactive extends DomainEvent</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L151-L169" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class ItemAdded implements DomainEvent {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L151-L169" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class ItemAdded implements DomainEvent {
   private final Item item;
 
   public ItemAdded(Item item) {
@@ -561,7 +561,7 @@ public enum OrderDiscarded implements DomainEvent {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L430-L443" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class Item(id: String, name: String, price: Float)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L430-L443" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class Item(id: String, name: String, price: Float)
 
 sealed trait ShoppingCart {
   def addItem(item: Item): ShoppingCart
@@ -577,7 +577,7 @@ case class NonEmptyShoppingCart(items: Seq[Item]) extends ShoppingCart {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L57-L117" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class ShoppingCart {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L57-L117" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class ShoppingCart {
   private final List&lt;Item&gt; items = new ArrayList&lt;&gt;();
 
   public ShoppingCart(Item initialItem) {
@@ -643,7 +643,7 @@ public static class Item implements Serializable {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L498-L548" target="_blank" title="Go to snippet source">source</a><code class="language-scala">startWith(LookingAround, EmptyShoppingCart)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L498-L548" target="_blank" title="Go to snippet source">source</a><code class="language-scala">startWith(LookingAround, EmptyShoppingCart)
 
 when(LookingAround) {
   case Event(AddItem(item), _) =&gt;
@@ -690,7 +690,7 @@ when(Paid) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L215-L288" target="_blank" title="Go to snippet source">source</a><code class="language-java">startWith(UserState.LOOKING_AROUND, new ShoppingCart());
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L215-L288" target="_blank" title="Go to snippet source">source</a><code class="language-java">startWith(UserState.LOOKING_AROUND, new ShoppingCart());
 
 when(
     UserState.LOOKING_AROUND,
@@ -763,7 +763,7 @@ when(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L558-L565" target="_blank" title="Go to snippet source">source</a><code class="language-scala">override def applyEvent(event: DomainEvent, cartBeforeEvent: ShoppingCart): ShoppingCart = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L558-L565" target="_blank" title="Go to snippet source">source</a><code class="language-scala">override def applyEvent(event: DomainEvent, cartBeforeEvent: ShoppingCart): ShoppingCart = {
   event match {
     case ItemAdded(item)  =&gt; cartBeforeEvent.addItem(item)
     case OrderExecuted    =&gt; cartBeforeEvent
@@ -773,7 +773,7 @@ when(
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L299-L311" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L299-L311" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public ShoppingCart applyEvent(DomainEvent event, ShoppingCart currentData) {
   if (event instanceof ItemAdded) {
     currentData.addItem(((ItemAdded) event).getItem());
@@ -791,13 +791,13 @@ public ShoppingCart applyEvent(DomainEvent event, ShoppingCart currentData) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L512-L519" target="_blank" title="Go to snippet source">source</a><code class="language-scala">goto(Paid).applying(OrderExecuted).andThen {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L512-L519" target="_blank" title="Go to snippet source">source</a><code class="language-scala">goto(Paid).applying(OrderExecuted).andThen {
   case NonEmptyShoppingCart(items) =&gt;
     reportActor ! PurchaseWasMade(items)
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L236-L246" target="_blank" title="Go to snippet source">source</a><code class="language-java">(event, data) -&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L236-L246" target="_blank" title="Go to snippet source">source</a><code class="language-java">(event, data) -&gt;
     goTo(UserState.PAID)
         .applying(OrderExecuted.INSTANCE)
         .andThen(
@@ -810,14 +810,14 @@ public ShoppingCart applyEvent(DomainEvent event, ShoppingCart currentData) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L523-L527" target="_blank" title="Go to snippet source">source</a><code class="language-scala">stop().applying(OrderDiscarded).andThen {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/scala/org/apache/pekko/persistence/fsm/PersistentFSMSpec.scala#L523-L527" target="_blank" title="Go to snippet source">source</a><code class="language-scala">stop().applying(OrderDiscarded).andThen {
   case _ =&gt;
     reportActor ! ShoppingCardDiscarded
     saveStateSnapshot()
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L251-L259" target="_blank" title="Go to snippet source">source</a><code class="language-java">(event, data) -&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence/src/test/java/org/apache/pekko/persistence/fsm/AbstractPersistentFSMTest.java#L251-L259" target="_blank" title="Go to snippet source">source</a><code class="language-java">(event, data) -&gt;
     stop()
         .applying(OrderDiscarded.INSTANCE)
         .andThen(
@@ -829,23 +829,23 @@ public ShoppingCart applyEvent(DomainEvent event, ShoppingCart currentData) {
 </dl>
 <p>On recovery state data is initialized according to the latest available snapshot, then the remaining domain events are replayed, triggering the <code>applyEvent</code> method.</p>
 <h2><a href="#migration-to-eventsourcedbehavior" name="migration-to-eventsourcedbehavior" class="anchor"><span class="anchor-link"></span></a>Migration to EventSourcedBehavior</h2>
-<p>Persistent FSMs can be represented using <a href="typed/persistence.html">Persistence Typed</a>. The data stored by Persistence FSM can be read by an <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> using a snapshot adapter and an event adapter. The adapters are required as Persistent FSM doesn&rsquo;t store snapshots and user data directly, it wraps them in internal types that include state transition information.</p>
+<p>Persistent FSMs can be represented using <a href="typed/persistence.html">Persistence Typed</a>. The data stored by Persistence FSM can be read by an <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> using a snapshot adapter and an event adapter. The adapters are required as Persistent FSM doesn&rsquo;t store snapshots and user data directly, it wraps them in internal types that include state transition information.</p>
 <p>Before reading the migration guide it is advised to understand <a href="typed/persistence.html">Persistence Typed</a>. </p>
 <h3><a href="#migration-steps" name="migration-steps" class="anchor"><span class="anchor-link"></span></a>Migration steps</h3>
 <ol>
-  <li>Modify or create new commands to include <code>replyTo</code> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span></li>
+  <li>Modify or create new commands to include <code>replyTo</code> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span></li>
   <li>Typically persisted events will remain the same</li>
   <li>Create an <code>EventSourcedBehavior</code> that mimics the old <code>PersistentFSM</code></li>
   <li>Replace any state timeouts with <code>Behaviors.withTimers</code> either hard coded or stored in the state</li>
-  <li>Add an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/EventAdapter.html" title="org.apache.pekko.persistence.typed.EventAdapter"><code>EventAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/EventAdapter.html" title="org.apache.pekko.persistence.typed.EventAdapter"><code>EventAdapter</code></a></span> to convert state transition events added by <code>PersistentFSM</code> into private events or filter them</li>
-  <li>If snapshots are used add a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span> to convert PersistentFSM snapshots into the <code>EventSourcedBehavior</code>s <code>State</code></li>
+  <li>Add an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/EventAdapter.html" title="org.apache.pekko.persistence.typed.EventAdapter"><code>EventAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/EventAdapter.html" title="org.apache.pekko.persistence.typed.EventAdapter"><code>EventAdapter</code></a></span> to convert state transition events added by <code>PersistentFSM</code> into private events or filter them</li>
+  <li>If snapshots are used add a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span> to convert PersistentFSM snapshots into the <code>EventSourcedBehavior</code>s <code>State</code></li>
 </ol>
 <p>The following is the shopping cart example above converted to an <code>EventSourcedBehavior</code>. </p>
 <p>The new commands, note the replyTo field for getting the current cart.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L65-L70" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L65-L70" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
 case class AddItem(item: Item) extends Command
 case object Buy extends Command
 case object Leave extends Command
@@ -853,7 +853,7 @@ case class GetCurrentCart(replyTo: ActorRef[ShoppingCart]) extends Command
 private case object Timeout extends Command</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L29-L57" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface Command {}
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L29-L57" target="_blank" title="Go to snippet source">source</a><code class="language-java">interface Command {}
 
 public static class AddItem implements Command {
   public final Item item;
@@ -887,14 +887,14 @@ private enum Timeout implements Command {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L74-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait State
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L74-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait State
 case class LookingAround(cart: ShoppingCart) extends State
 case class Shopping(cart: ShoppingCart) extends State
 case class Inactive(cart: ShoppingCart) extends State
 case class Paid(cart: ShoppingCart) extends State</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L61-L91" target="_blank" title="Go to snippet source">source</a><code class="language-java">abstract static class State {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L61-L91" target="_blank" title="Go to snippet source">source</a><code class="language-java">abstract static class State {
   public final ShoppingCart cart;
 
   protected State(ShoppingCart cart) {
@@ -930,7 +930,7 @@ public static class Paid extends State {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L119-L164" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def commandHandler(timers: TimerScheduler[Command])(state: State, command: Command): Effect[DomainEvent, State] =
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L119-L164" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def commandHandler(timers: TimerScheduler[Command])(state: State, command: Command): Effect[DomainEvent, State] =
   state match {
     case LookingAround(cart) =&gt;
       command match {
@@ -978,7 +978,7 @@ public static class Paid extends State {
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L144-L164" target="_blank" title="Go to snippet source">source</a><code class="language-java">  CommandHandlerBuilder&lt;Command, DomainEvent, State&gt; builder = newCommandHandlerBuilder();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L144-L164" target="_blank" title="Go to snippet source">source</a><code class="language-java">  CommandHandlerBuilder&lt;Command, DomainEvent, State&gt; builder = newCommandHandlerBuilder();
 
   builder.forStateType(LookingAround.class).onCommand(AddItem.class, this::addItem);
 
@@ -1004,7 +1004,7 @@ public static class Paid extends State {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L203-L210" target="_blank" title="Go to snippet source">source</a><code class="language-scala">.receiveSignal {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L203-L210" target="_blank" title="Go to snippet source">source</a><code class="language-scala">.receiveSignal {
   case (state, RecoveryCompleted) =&gt;
     state match {
       case _: Shopping | _: Inactive =&gt;
@@ -1014,7 +1014,7 @@ public static class Paid extends State {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L227-L238" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L227-L238" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public SignalHandler&lt;State&gt; signalHandler() {
   return newSignalHandlerBuilder()
       .onSignal(
@@ -1031,7 +1031,7 @@ public SignalHandler&lt;State&gt; signalHandler() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L168-L190" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def eventHandler(state: State, event: DomainEvent): State = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L168-L190" target="_blank" title="Go to snippet source">source</a><code class="language-scala">def eventHandler(state: State, event: DomainEvent): State = {
   state match {
     case la @ LookingAround(cart) =&gt;
       event match {
@@ -1056,7 +1056,7 @@ public SignalHandler&lt;State&gt; signalHandler() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L195-L218" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L195-L218" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public EventHandler&lt;State, DomainEvent&gt; eventHandler() {
   EventHandlerBuilder&lt;State, DomainEvent&gt; eventHandlerBuilder = newEventHandlerBuilder();
 
@@ -1081,11 +1081,11 @@ public EventHandler&lt;State, DomainEvent&gt; eventHandler() {
   return eventHandlerBuilder.build();
 }</code></pre></dd>
 </dl>
-<p>The last step is the adapters that will allow the new <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> to read the old data:</p>
+<p>The last step is the adapters that will allow the new <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> to read the old data:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L96-L113" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class PersistentFsmEventAdapter extends EventAdapter[DomainEvent, Any] {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L96-L113" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class PersistentFsmEventAdapter extends EventAdapter[DomainEvent, Any] {
   override def toJournal(e: DomainEvent): Any = e
   override def manifest(event: DomainEvent): String = &quot;&quot;
   override def fromJournal(journalEvent: Any, manifest: String): EventSeq[DomainEvent] = {
@@ -1105,7 +1105,7 @@ public EventHandler&lt;State, DomainEvent&gt; eventHandler() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L95-L122" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class PersistentFSMEventAdapter extends EventAdapter&lt;DomainEvent, Object&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L95-L122" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static class PersistentFSMEventAdapter extends EventAdapter&lt;DomainEvent, Object&gt; {
 
   @Override
   public Object toJournal(DomainEvent domainEvent) {
@@ -1134,11 +1134,11 @@ public EventHandler&lt;State, DomainEvent&gt; eventHandler() {
     }
   }</code></pre></dd>
 </dl>
-<p>The snapshot adapter needs to adapt an internal type of PersistentFSM so a helper function is provided to build the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span>:</p>
+<p>The snapshot adapter needs to adapt an internal type of PersistentFSM so a helper function is provided to build the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span>:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L82-L92" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val persistentFSMSnapshotAdapter: SnapshotAdapter[State] = PersistentFSMMigration.snapshotAdapter[State] {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/scala/docs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationSpec.scala#L82-L92" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val persistentFSMSnapshotAdapter: SnapshotAdapter[State] = PersistentFSMMigration.snapshotAdapter[State] {
   case (stateIdentifier, data, _) =&gt;
     val cart = data.asInstanceOf[ShoppingCart]
     stateIdentifier match {
@@ -1151,7 +1151,7 @@ public EventHandler&lt;State, DomainEvent&gt; eventHandler() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L242-L260" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/persistence-typed/src/test/java/jdocs/org/apache/pekko/persistence/typed/PersistentFsmToTypedMigrationCompileOnlyTest.java#L242-L260" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Override
 public SnapshotAdapter&lt;State&gt; snapshotAdapter() {
   return PersistentFSMMigration.snapshotAdapter(
       (stateIdentifier, snapshot, timeout) -&gt; {
@@ -1171,10 +1171,10 @@ public SnapshotAdapter&lt;State&gt; snapshotAdapter() {
       });
 }</code></pre></dd>
 </dl>
-<p>That concludes all the steps to allow an <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> to read a <code>PersistentFSM</code>&rsquo;s data. Once the new code has been running you can not roll back as the PersistentFSM will not be able to read data written by Persistence Typed. </p><div class="callout note "><div class="callout-title">Note</div>
+<p>That concludes all the steps to allow an <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> to read a <code>PersistentFSM</code>&rsquo;s data. Once the new code has been running you can not roll back as the PersistentFSM will not be able to read data written by Persistence Typed. </p><div class="callout note "><div class="callout-title">Note</div>
 <p>There is one case where <a href="additional/rolling-updates.html#migrating-from-persistentfsm-to-eventsourcedbehavior">a full shutdown and startup is required</a>.</p></div>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/persistence-fsm.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/persistence-fsm.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1258,7 +1258,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

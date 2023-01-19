@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -453,7 +453,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceManager.scala#L50-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>final case class RequestAllTemperatures(requestId: Long, groupId: String, replyTo: ActorRef[RespondAllTemperatures])
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceManager.scala#L50-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala"><br/>final case class RequestAllTemperatures(requestId: Long, groupId: String, replyTo: ActorRef[RespondAllTemperatures])
     extends DeviceGroupQuery.Command
     with DeviceGroup.Command
     with DeviceManager.Command
@@ -467,7 +467,7 @@ case object DeviceNotAvailable extends TemperatureReading
 case object DeviceTimedOut extends TemperatureReading</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceManager.java#L78-L145" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>public static final class RequestAllTemperatures
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceManager.java#L78-L145" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>public static final class RequestAllTemperatures
     implements DeviceGroupQuery.Command, DeviceGroup.Command, Command {
 
   final long requestId;
@@ -547,14 +547,14 @@ public enum DeviceTimedOut implements TemperatureReading {
   <li>A deadline that indicates how long the query should wait for replies. Making this a parameter will simplify testing.</li>
 </ul>
 <h4><a href="#scheduling-the-query-timeout" name="scheduling-the-query-timeout" class="anchor"><span class="anchor-link"></span></a>Scheduling the query timeout</h4>
-<p>Since we need a way to indicate how long we are willing to wait for responses, it is time to introduce a new Pekko feature that we have not used yet, the built-in scheduler facility. Using <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/Behaviors$.html#withTimers(org.apache.pekko.japi.function.Function)" title="org.apache.pekko.actor.typed.javadsl.Behaviors"><code>Behaviors.withTimers</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/Behaviors$.html#withTimers[T](factory:org.apache.pekko.actor.typed.scaladsl.TimerScheduler[T]=%3Eorg.apache.pekko.actor.typed.Behavior[T]):org.apache.pekko.actor.typed.Behavior[T]" title="org.apache.pekko.actor.typed.scaladsl.Behaviors"><code>Behaviors.withTimers</code></a></span> and <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/TimerScheduler.html#startSingleTimer(java.lang.Object,T,java.time.Duration)" title="org.apache.pekko.actor.typed.javadsl.TimerScheduler"><code>startSingleTimer</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/TimerScheduler.html#startSingleTimer(key:Any,msg:T,delay:scala.concurrent.duration.FiniteDuration):Unit" title="org.apache.pekko.actor.typed.scaladsl.TimerScheduler"><code>startSingleTimer</code></a></span> to schedule a message that will be sent after a given delay.</p>
+<p>Since we need a way to indicate how long we are willing to wait for responses, it is time to introduce a new Pekko feature that we have not used yet, the built-in scheduler facility. Using <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/Behaviors$.html#withTimers(org.apache.pekko.japi.function.Function)" title="org.apache.pekko.actor.typed.javadsl.Behaviors"><code>Behaviors.withTimers</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/Behaviors$.html#withTimers[T](factory:org.apache.pekko.actor.typed.scaladsl.TimerScheduler[T]=%3Eorg.apache.pekko.actor.typed.Behavior[T]):org.apache.pekko.actor.typed.Behavior[T]" title="org.apache.pekko.actor.typed.scaladsl.Behaviors"><code>Behaviors.withTimers</code></a></span> and <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/TimerScheduler.html#startSingleTimer(java.lang.Object,T,java.time.Duration)" title="org.apache.pekko.actor.typed.javadsl.TimerScheduler"><code>startSingleTimer</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/TimerScheduler.html#startSingleTimer(key:Any,msg:T,delay:scala.concurrent.duration.FiniteDuration):Unit" title="org.apache.pekko.actor.typed.scaladsl.TimerScheduler"><code>startSingleTimer</code></a></span> to schedule a message that will be sent after a given delay.</p>
 <p>We need to create a message that represents the query timeout. We create a simple message <code>CollectionTimeout</code> without any parameters for this purpose.</p>
 <p>At the start of the query, we need to ask each of the device actors for the current temperature. To be able to quickly detect devices that stopped before they got the <code>ReadTemperature</code> message we will also watch each of the actors. This way, we get <code>DeviceTerminated</code> messages for those that stop during the lifetime of the query, so we don&rsquo;t need to wait until the timeout to mark these as not available.</p>
 <p>Putting this together, the outline of our <code>DeviceGroupQuery</code> actor looks like this:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuery.scala#L28-L134" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object DeviceGroupQuery {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuery.scala#L28-L134" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object DeviceGroupQuery {
 
   def apply(
       deviceIdToActor: Map[String, ActorRef[Device.Command]],
@@ -608,7 +608,7 @@ class DeviceGroupQuery(
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQuery.java#L32-L156" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class DeviceGroupQuery extends AbstractBehavior&lt;DeviceGroupQuery.Command&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQuery.java#L32-L156" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class DeviceGroupQuery extends AbstractBehavior&lt;DeviceGroupQuery.Command&gt; {
 
   public interface Command {}
 
@@ -697,7 +697,7 @@ class DeviceGroupQuery(
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuery.scala#L74-L120" target="_blank" title="Go to snippet source">source</a><code class="language-scala">private var repliesSoFar = Map.empty[String, TemperatureReading]
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuery.scala#L74-L120" target="_blank" title="Go to snippet source">source</a><code class="language-scala">private var repliesSoFar = Map.empty[String, TemperatureReading]
 private var stillWaiting = deviceIdToActor.keySet
 
 override def onMessage(msg: Command): Behavior[Command] =
@@ -735,7 +735,7 @@ private def onCollectionTimout(): Behavior[Command] = {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQuery.java#L73-L141" target="_blank" title="Go to snippet source">source</a><code class="language-java">private Map&lt;String, DeviceManager.TemperatureReading&gt; repliesSoFar = new HashMap&lt;&gt;();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQuery.java#L73-L141" target="_blank" title="Go to snippet source">source</a><code class="language-java">private Map&lt;String, DeviceManager.TemperatureReading&gt; repliesSoFar = new HashMap&lt;&gt;();
 private final Set&lt;String&gt; stillWaiting;
 
 @Override
@@ -781,10 +781,10 @@ private Behavior&lt;Command&gt; onCollectionTimeout(CollectionTimeout timeout) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/Device.scala#L35" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class RespondTemperature(requestId: Long, deviceId: String, value: Option[Double])</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/Device.scala#L35" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class RespondTemperature(requestId: Long, deviceId: String, value: Option[Double])</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/Device.java#L61-L71" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class RespondTemperature {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/Device.java#L61-L71" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class RespondTemperature {
   final long requestId;
   final String deviceId;
   final Optional&lt;Double&gt; value;
@@ -800,12 +800,12 @@ private Behavior&lt;Command&gt; onCollectionTimeout(CollectionTimeout timeout) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/Device.scala#L60-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case ReadTemperature(id, replyTo) =&gt;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/Device.scala#L60-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case ReadTemperature(id, replyTo) =&gt;
   replyTo ! RespondTemperature(id, deviceId, lastTemperatureReading)
   this</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/Device.java#L113-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java">private Behavior&lt;Command&gt; onReadTemperature(ReadTemperature r) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/Device.java#L113-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java">private Behavior&lt;Command&gt; onReadTemperature(ReadTemperature r) {
   r.replyTo.tell(new RespondTemperature(r.requestId, deviceId, lastTemperatureReading));
   return this;
 }</code></pre></dd>
@@ -817,7 +817,7 @@ private Behavior&lt;Command&gt; onCollectionTimeout(CollectionTimeout timeout) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuery.scala#L124-L131" target="_blank" title="Go to snippet source">source</a><code class="language-scala">private def respondWhenAllCollected(): Behavior[Command] = {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuery.scala#L124-L131" target="_blank" title="Go to snippet source">source</a><code class="language-scala">private def respondWhenAllCollected(): Behavior[Command] = {
   if (stillWaiting.isEmpty) {
     requester ! RespondAllTemperatures(requestId, repliesSoFar)
     Behaviors.stopped
@@ -827,7 +827,7 @@ private Behavior&lt;Command&gt; onCollectionTimeout(CollectionTimeout timeout) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQuery.java#L145-L152" target="_blank" title="Go to snippet source">source</a><code class="language-java">private Behavior&lt;Command&gt; respondWhenAllCollected() {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQuery.java#L145-L152" target="_blank" title="Go to snippet source">source</a><code class="language-java">private Behavior&lt;Command&gt; respondWhenAllCollected() {
   if (stillWaiting.isEmpty()) {
     requester.tell(new DeviceManager.RespondAllTemperatures(requestId, repliesSoFar));
     return Behaviors.stopped();
@@ -840,7 +840,7 @@ private Behavior&lt;Command&gt; onCollectionTimeout(CollectionTimeout timeout) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuery.scala#L28-L134" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object DeviceGroupQuery {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuery.scala#L28-L134" target="_blank" title="Go to snippet source">source</a><code class="language-scala">object DeviceGroupQuery {
 
   def apply(
       deviceIdToActor: Map[String, ActorRef[Device.Command]],
@@ -939,7 +939,7 @@ class DeviceGroupQuery(
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQuery.java#L32-L156" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class DeviceGroupQuery extends AbstractBehavior&lt;DeviceGroupQuery.Command&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQuery.java#L32-L156" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class DeviceGroupQuery extends AbstractBehavior&lt;DeviceGroupQuery.Command&gt; {
 
   public interface Command {}
 
@@ -1056,11 +1056,11 @@ class DeviceGroupQuery(
 }</code></pre></dd>
 </dl>
 <h3><a href="#testing-the-query-actor" name="testing-the-query-actor" class="anchor"><span class="anchor-link"></span></a>Testing the query actor</h3>
-<p>Now let&rsquo;s verify the correctness of the query actor implementation. There are various scenarios we need to test individually to make sure everything works as expected. To be able to do this, we need to simulate the device actors somehow to exercise various normal or failure scenarios. Thankfully we took the list of collaborators (actually a <code>Map</code>) as a parameter to the query actor, so we can pass in <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestProbe.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestProbe"><code>TestProbe</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestProbe.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestProbe"><code>TestProbe</code></a></span> references. In our first test, we try out the case when there are two devices and both report a temperature:</p>
+<p>Now let&rsquo;s verify the correctness of the query actor implementation. There are various scenarios we need to test individually to make sure everything works as expected. To be able to do this, we need to simulate the device actors somehow to exercise various normal or failure scenarios. Thankfully we took the list of collaborators (actually a <code>Map</code>) as a parameter to the query actor, so we can pass in <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestProbe.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestProbe"><code>TestProbe</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestProbe.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestProbe"><code>TestProbe</code></a></span> references. In our first test, we try out the case when there are two devices and both report a temperature:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L32-L53" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return temperature value for working devices&quot; in {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L32-L53" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return temperature value for working devices&quot; in {
   val requester = createTestProbe[RespondAllTemperatures]()
 
   val device1 = createTestProbe[Command]()
@@ -1084,7 +1084,7 @@ class DeviceGroupQuery(
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L42-L77" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L42-L77" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
 public void testReturnTemperatureValueForWorkingDevices() {
   TestProbe&lt;RespondAllTemperatures&gt; requester =
       testKit.createTestProbe(RespondAllTemperatures.class);
@@ -1125,7 +1125,7 @@ public void testReturnTemperatureValueForWorkingDevices() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L57-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return TemperatureNotAvailable for devices with no readings&quot; in {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L57-L78" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return TemperatureNotAvailable for devices with no readings&quot; in {
   val requester = createTestProbe[RespondAllTemperatures]()
 
   val device1 = createTestProbe[Command]()
@@ -1149,7 +1149,7 @@ public void testReturnTemperatureValueForWorkingDevices() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L81-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L81-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
 public void testReturnTemperatureNotAvailableForDevicesWithNoReadings() {
   TestProbe&lt;RespondAllTemperatures&gt; requester =
       testKit.createTestProbe(RespondAllTemperatures.class);
@@ -1190,7 +1190,7 @@ public void testReturnTemperatureNotAvailableForDevicesWithNoReadings() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L82-L104" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return DeviceNotAvailable if device stops before answering&quot; in {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L82-L104" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return DeviceNotAvailable if device stops before answering&quot; in {
   val requester = createTestProbe[RespondAllTemperatures]()
 
   val device1 = createTestProbe[Command]()
@@ -1215,7 +1215,7 @@ public void testReturnTemperatureNotAvailableForDevicesWithNoReadings() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L120-L153" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L120-L153" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
 public void testReturnDeviceNotAvailableIfDeviceStopsBeforeAnswering() {
   TestProbe&lt;RespondAllTemperatures&gt; requester =
       testKit.createTestProbe(RespondAllTemperatures.class);
@@ -1250,11 +1250,11 @@ public void testReturnDeviceNotAvailableIfDeviceStopsBeforeAnswering() {
   assertEquals(expectedTemperatures, response.temperatures);
 }</code></pre></dd>
 </dl>
-<p>If you remember, there is another case related to device actors stopping. It is possible that we get a normal reply from a device actor, but then receive a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Terminated.html" title="org.apache.pekko.actor.typed.Terminated"><code>Terminated</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528-SNAPSHOT/org/apache/pekko/actor/typed/Terminated.html" title="org.apache.pekko.actor.typed.Terminated"><code>Terminated</code></a></span> for the same actor later. In this case, we would like to keep the first reply and not mark the device as <code>DeviceNotAvailable</code>. We should test this, too:</p>
+<p>If you remember, there is another case related to device actors stopping. It is possible that we get a normal reply from a device actor, but then receive a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Terminated.html" title="org.apache.pekko.actor.typed.Terminated"><code>Terminated</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Terminated.html" title="org.apache.pekko.actor.typed.Terminated"><code>Terminated</code></a></span> for the same actor later. In this case, we would like to keep the first reply and not mark the device as <code>DeviceNotAvailable</code>. We should test this, too:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L108-L131" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return temperature reading even if device stops after answering&quot; in {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L108-L131" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return temperature reading even if device stops after answering&quot; in {
   val requester = createTestProbe[RespondAllTemperatures]()
 
   val device1 = createTestProbe[Command]()
@@ -1280,7 +1280,7 @@ public void testReturnDeviceNotAvailableIfDeviceStopsBeforeAnswering() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L157-L194" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L157-L194" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
 public void testReturnTemperatureReadingEvenIfDeviceStopsAfterAnswering() {
   TestProbe&lt;RespondAllTemperatures&gt; requester =
       testKit.createTestProbe(RespondAllTemperatures.class);
@@ -1323,7 +1323,7 @@ public void testReturnTemperatureReadingEvenIfDeviceStopsAfterAnswering() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L135-L157" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return DeviceTimedOut if device does not answer in time&quot; in {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupQuerySpec.scala#L135-L157" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;return DeviceTimedOut if device does not answer in time&quot; in {
   val requester = createTestProbe[RespondAllTemperatures]()
 
   val device1 = createTestProbe[Command]()
@@ -1348,7 +1348,7 @@ public void testReturnTemperatureReadingEvenIfDeviceStopsAfterAnswering() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L198-L231" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupQueryTest.java#L198-L231" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
 public void testReturnDeviceTimedOutIfDeviceDoesNotAnswerInTime() {
   TestProbe&lt;RespondAllTemperatures&gt; requester =
       testKit.createTestProbe(RespondAllTemperatures.class);
@@ -1389,7 +1389,7 @@ public void testReturnDeviceTimedOutIfDeviceDoesNotAnswerInTime() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroup.scala#L39-L106" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class DeviceGroup(context: ActorContext[DeviceGroup.Command], groupId: String)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroup.scala#L39-L106" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class DeviceGroup(context: ActorContext[DeviceGroup.Command], groupId: String)
     extends AbstractBehavior[DeviceGroup.Command](context) {
   import DeviceGroup._
   import DeviceManager.{
@@ -1425,7 +1425,7 @@ public void testReturnDeviceTimedOutIfDeviceDoesNotAnswerInTime() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroup.java#L29-L140" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class DeviceGroup extends AbstractBehavior&lt;DeviceGroup.Command&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroup.java#L29-L140" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class DeviceGroup extends AbstractBehavior&lt;DeviceGroup.Command&gt; {
 
   public interface Command {}
 
@@ -1490,7 +1490,7 @@ public void testReturnDeviceTimedOutIfDeviceDoesNotAnswerInTime() {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupSpec.scala#L118-L146" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;be able to collect temperatures from all active devices&quot; in {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_5/DeviceGroupSpec.scala#L118-L146" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;be able to collect temperatures from all active devices&quot; in {
   val registeredProbe = createTestProbe[DeviceRegistered]()
   val groupActor = spawn(DeviceGroup(&quot;group&quot;))
 
@@ -1521,7 +1521,7 @@ public void testReturnDeviceTimedOutIfDeviceDoesNotAnswerInTime() {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupTest.java#L144-L179" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_5/DeviceGroupTest.java#L144-L179" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
 public void testCollectTemperaturesFromAllActiveDevices() {
   TestProbe&lt;DeviceRegistered&gt; registeredProbe = testKit.createTestProbe(DeviceRegistered.class);
   ActorRef&lt;DeviceGroup.Command&gt; groupActor = testKit.spawn(DeviceGroup.create(&quot;group&quot;));
@@ -1577,7 +1577,7 @@ public void testCollectTemperaturesFromAllActiveDevices() {
   <li><a href="https://doc.akka.io/docs/akka-http/current/introduction.html">Pekko HTTP</a> is a HTTP server and client library, making it possible to publish and consume HTTP endpoints</li>
 </ul>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/guide/tutorial_5.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/guide/tutorial_5.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1665,7 +1665,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

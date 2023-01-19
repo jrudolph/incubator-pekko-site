@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -442,7 +442,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceInProgress.scala#L18-L35" target="_blank" title="Go to snippet source">source</a><code class="language-scala">package com.example
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceInProgress.scala#L18-L35" target="_blank" title="Go to snippet source">source</a><code class="language-scala">package com.example
 
   import org.apache.pekko.actor.typed.ActorRef
 
@@ -453,7 +453,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/inprogress1/Device.java#L18-L46" target="_blank" title="Go to snippet source">source</a><code class="language-java">package com.example;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/inprogress1/Device.java#L18-L46" target="_blank" title="Go to snippet source">source</a><code class="language-java">package com.example;
 
 import org.apache.pekko.actor.typed.ActorRef;
 import java.util.Optional;
@@ -547,12 +547,12 @@ public class Device {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceInProgress.scala#L56-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceInProgress.scala#L56-L58" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
 final case class ReadTemperature(requestId: Long, replyTo: ActorRef[RespondTemperature]) extends Command
 final case class RespondTemperature(requestId: Long, value: Option[Double])</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/inprogress2/Device.java#L29-L88" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class Device extends AbstractBehavior&lt;Device.Command&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/inprogress2/Device.java#L29-L88" target="_blank" title="Go to snippet source">source</a><code class="language-java">public class Device extends AbstractBehavior&lt;Device.Command&gt; {
   public interface Command {}
 
   public static final class ReadTemperature implements Command {
@@ -581,7 +581,7 @@ final case class RespondTemperature(requestId: Long, value: Option[Double])</cod
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceInProgress.scala#L44-L84" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceInProgress.scala#L44-L84" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.typed.Behavior
 import pekko.actor.typed.scaladsl.AbstractBehavior
 import pekko.actor.typed.scaladsl.ActorContext
@@ -622,7 +622,7 @@ class Device(context: ActorContext[Device.Command], groupId: String, deviceId: S
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/inprogress2/Device.java#L17-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>import org.apache.pekko.actor.typed.ActorRef;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/inprogress2/Device.java#L17-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>import org.apache.pekko.actor.typed.ActorRef;
 import org.apache.pekko.actor.typed.Behavior;
 import org.apache.pekko.actor.typed.PostStop;
 import org.apache.pekko.actor.typed.javadsl.AbstractBehavior;
@@ -704,7 +704,7 @@ public class Device extends AbstractBehavior&lt;Device.Command&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceSpec.scala#L17-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.testkit.typed.scaladsl.ScalaTestWithActorTestKit
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceSpec.scala#L17-L62" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.testkit.typed.scaladsl.ScalaTestWithActorTestKit
 import org.scalatest.wordspec.AnyWordSpecLike
 
 class DeviceSpec extends ScalaTestWithActorTestKit with AnyWordSpecLike {
@@ -724,7 +724,7 @@ class DeviceSpec extends ScalaTestWithActorTestKit with AnyWordSpecLike {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/DeviceTest.java#L17-L78" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.TestKitJunitResource;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/DeviceTest.java#L17-L78" target="_blank" title="Go to snippet source">source</a><code class="language-java">import org.apache.pekko.actor.testkit.typed.javadsl.TestKitJunitResource;
 import org.apache.pekko.actor.testkit.typed.javadsl.TestProbe;
 import org.apache.pekko.actor.typed.ActorRef;
 import org.junit.ClassRule;
@@ -756,11 +756,11 @@ public class DeviceTest {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceInProgress.scala#L93-L94" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceInProgress.scala#L93-L94" target="_blank" title="Go to snippet source">source</a><code class="language-scala">sealed trait Command
 final case class RecordTemperature(value: Double) extends Command</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/inprogress3/Device.java#L21-L27" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class RecordTemperature implements Command {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/inprogress3/Device.java#L21-L27" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class RecordTemperature implements Command {
   final double value;
 
   public RecordTemperature(double value) {
@@ -772,12 +772,12 @@ final case class RecordTemperature(value: Double) extends Command</code></pre></
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_3/Device.scala#L37-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class RecordTemperature(requestId: Long, value: Double, replyTo: ActorRef[TemperatureRecorded])
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_3/Device.scala#L37-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class RecordTemperature(requestId: Long, value: Double, replyTo: ActorRef[TemperatureRecorded])
     extends Command
 final case class TemperatureRecorded(requestId: Long)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/Device.java#L33-L51" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class RecordTemperature implements Command {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/Device.java#L33-L51" target="_blank" title="Go to snippet source">source</a><code class="language-java">public static final class RecordTemperature implements Command {
   final long requestId;
   final double value;
   final ActorRef&lt;TemperatureRecorded&gt; replyTo;
@@ -802,7 +802,7 @@ public static final class TemperatureRecorded {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_3/Device.scala#L17-L71" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_3/Device.scala#L17-L71" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.typed.ActorRef
 import pekko.actor.typed.Behavior
 import pekko.actor.typed.PostStop
@@ -857,7 +857,7 @@ class Device(context: ActorContext[Device.Command], groupId: String, deviceId: S
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/Device.java#L17-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>import java.util.Optional;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/Device.java#L17-L116" target="_blank" title="Go to snippet source">source</a><code class="language-java"><br/>import java.util.Optional;
 
 import org.apache.pekko.actor.typed.ActorRef;
 import org.apache.pekko.actor.typed.Behavior;
@@ -959,7 +959,7 @@ public class Device extends AbstractBehavior&lt;Device.Command&gt; {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceSpec.scala#L37-L57" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;reply with latest temperature reading&quot; in {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/typed/tutorial_3/DeviceSpec.scala#L37-L57" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;reply with latest temperature reading&quot; in {
   val recordProbe = createTestProbe[TemperatureRecorded]()
   val readProbe = createTestProbe[RespondTemperature]()
   val deviceActor = spawn(Device(&quot;group&quot;, &quot;device&quot;))
@@ -982,7 +982,7 @@ public class Device extends AbstractBehavior&lt;Device.Command&gt; {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/DeviceTest.java#L51-L74" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/typed/tutorial_3/DeviceTest.java#L51-L74" target="_blank" title="Go to snippet source">source</a><code class="language-java">@Test
 public void testReplyWithLatestTemperatureReading() {
   TestProbe&lt;Device.TemperatureRecorded&gt; recordProbe =
       testKit.createTestProbe(Device.TemperatureRecorded.class);
@@ -1010,7 +1010,7 @@ public void testReplyWithLatestTemperatureReading() {
 <h2><a href="#whats-next-" name="whats-next-" class="anchor"><span class="anchor-link"></span></a>What&rsquo;s Next?</h2>
 <p>So far, we have started designing our overall architecture, and we wrote the first actor that directly corresponds to the domain. We now have to create the component that is responsible for maintaining groups of devices and the device actors themselves.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/typed/guide/tutorial_3.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/typed/guide/tutorial_3.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1100,7 +1100,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

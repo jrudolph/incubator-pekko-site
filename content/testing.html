@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528*
+0.0.0+26533-ec68a528+20230119-1442*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Pekko Classic pertains to the original Actor APIs, which have been improved by more type safe and guided Actor APIs. Pekko Classic is still fully supported and existing applications can continue to use the classic APIs. It is also possible to use the new Actor APIs together with classic actors in the same ActorSystem, see <a href="typed/coexisting.html">coexistence</a>. For new projects we recommend using <a href="typed/actors.html">the new Actor API</a>.</p></div>
 <p>For the new API see <a href="typed/testing.html">testing</a>.</p>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Pekko Testkit, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528-SNAPSHOT"
+<p>To use Pekko Testkit, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-testkit" % PekkoVersion % Test</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -430,7 +430,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-testkit" % PekkoVersion % Te
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -446,7 +446,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-testkit" % PekkoVersion % Te
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
 
   testImplementation "org.apache.pekko:pekko-testkit_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -454,7 +454,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Actor Testkit (classic)</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-testkit</div>
-  <div>0.0.0+26533-ec68a528-SNAPSHOT</div>
+  <div>0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -469,11 +469,11 @@ dependencies {
   <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/testkit/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
-  <div><a href="https://discuss.akka.io" target="_blank" rel="noopener noreferrer">Lightbend Discuss</a></div>
-  <div><a href="https://gitter.im/akka/akka" target="_blank" rel="noopener noreferrer">akka/akka Gitter channel</a></div>
+  <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
+  <div><a href="https://github.com/apache/incubator-pekko/discussions" target="_blank" rel="noopener noreferrer">apache/incubator-pekko discussion</a></div>
   </td></tr>
   <tr><th>Release notes</th><td><a href="https://akka.io/blog/news-archive.html">akka.io blog</a></td></tr>
-  <tr><th>Issues</th><td><a href="https://github.com/akka/akka/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
+  <tr><th>Issues</th><td><a href="https://github.com/apache/incubator-pekko/issues" target="_blank" rel="noopener noreferrer">Github issues</a></td></tr>
   <tr><th>Sources</th><td><a href="https://github.com/apache/incubator-pekko" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-pekko</a></td></tr>
 </table>
 
@@ -491,7 +491,7 @@ dependencies {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/PlainWordSpec.scala#L17-L46" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/PlainWordSpec.scala#L17-L46" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.actor.ActorSystem
 import pekko.testkit.{ ImplicitSender, TestActors, TestKit }
 import org.scalatest.BeforeAndAfterAll
@@ -521,7 +521,7 @@ class MySpec()
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitSampleTest.java#L17-L110" target="_blank" title="Go to snippet source">source</a><code class="language-java">import jdocs.AbstractJavaTest;
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitSampleTest.java#L17-L110" target="_blank" title="Go to snippet source">source</a><code class="language-java">import jdocs.AbstractJavaTest;
 import org.apache.pekko.testkit.javadsl.TestKit;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -624,7 +624,7 @@ public class TestKitSampleTest extends AbstractJavaTest {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L132-L141" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val hello: String = expectMsg(&quot;hello&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L132-L141" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val hello: String = expectMsg(&quot;hello&quot;)
 val any: String = expectMsgAnyOf(&quot;hello&quot;, &quot;world&quot;)
 val all: immutable.Seq[String] = expectMsgAllOf(&quot;hello&quot;, &quot;world&quot;)
 val i: Int = expectMsgType[Int]
@@ -632,7 +632,7 @@ expectNoMessage(200.millis)
 val two: immutable.Seq[AnyRef] = receiveN(2)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L262-L272" target="_blank" title="Go to snippet source">source</a><code class="language-java">final String hello = expectMsgEquals(&quot;hello&quot;);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L262-L272" target="_blank" title="Go to snippet source">source</a><code class="language-java">final String hello = expectMsgEquals(&quot;hello&quot;);
 final String any = expectMsgAnyOf(&quot;hello&quot;, &quot;world&quot;);
 final List&lt;String&gt; all = expectMsgAllOf(&quot;hello&quot;, &quot;world&quot;);
 final int i = expectMsgClass(Integer.class);
@@ -691,7 +691,7 @@ final List&lt;Object&gt; two = receiveN(2);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L333-L348" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.EventFilter
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L333-L348" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.EventFilter
 import com.typesafe.config.ConfigFactory
 
 implicit val system: ActorSystem = ActorSystem(
@@ -709,7 +709,7 @@ try {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L514-L530" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L514-L530" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     assertEquals(&quot;TestKitDocTest&quot;, system.name());
     final ActorRef victim = system.actorOf(Props.empty(), &quot;victim&quot;);
@@ -736,7 +736,7 @@ try {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L84-L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class TriggerScheduling(foo: String)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L84-L96" target="_blank" title="Go to snippet source">source</a><code class="language-scala">case class TriggerScheduling(foo: String)
 
 object SchedKey
 case class ScheduledMessage(foo: String)
@@ -751,7 +751,7 @@ class TestTimerActor extends Actor with Timers {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L94-L109" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class TestTimerActor extends AbstractActorWithTimers {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L94-L109" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class TestTimerActor extends AbstractActorWithTimers {
   private static Object SCHED_KEY = &quot;SchedKey&quot;;
 
   static final class TriggerScheduling {}
@@ -772,7 +772,7 @@ class TestTimerActor extends Actor with Timers {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L309-L320" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L309-L320" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.testkit.TestProbe
 import pekko.actor.Props
 
@@ -786,7 +786,7 @@ actor ! TriggerScheduling(&quot;abc&quot;)
 probe.expectMsg(ScheduledMessage(&quot;abc&quot;))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L442-L459" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L442-L459" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     final TestKit probe = new TestKit(system);
     final ActorRef target =
@@ -811,7 +811,7 @@ probe.expectMsg(ScheduledMessage(&quot;abc&quot;))</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L214-L223" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.Props
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L214-L223" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.actor.Props
 import scala.concurrent.duration._
 
 val worker = system.actorOf(Props[Worker]())
@@ -823,7 +823,7 @@ within(200 millis) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L141-L152" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L141-L152" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     getRef().tell(42, ActorRef.noSender());
     within(
@@ -846,12 +846,12 @@ within(200 millis) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L229-L231" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.concurrent.duration._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L229-L231" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.concurrent.duration._
 import org.apache.pekko.testkit._
 10.milliseconds.dilated</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L305-L311" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L305-L311" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     final Duration original = Duration.ofSeconds(1);
     final Duration stretched = dilated(original);
@@ -861,7 +861,7 @@ import org.apache.pekko.testkit._
 </dl><div class="group-scala">
 <h3><a href="#resolving-conflicts-with-implicit-actorref" name="resolving-conflicts-with-implicit-actorref" class="anchor"><span class="anchor-link"></span></a>Resolving Conflicts with Implicit ActorRef</h3>
 <p>If you want the sender of messages inside your TestKit-based tests to be the <code>testActor</code>  mix in <code>ImplicitSender</code> into your test.</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/PlainWordSpec.scala#L25-L30" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MySpec()
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/PlainWordSpec.scala#L25-L30" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MySpec()
     extends TestKit(ActorSystem(&quot;MySpec&quot;))
     with ImplicitSender
     with AnyWordSpecLike
@@ -872,11 +872,11 @@ import org.apache.pekko.testkit._
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L21-L24" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.concurrent.duration._
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L21-L24" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.concurrent.duration._
 import org.apache.pekko.actor._
 import org.apache.pekko.testkit.TestProbe
 </code></pre>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L53-L65" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MyDoubleEcho extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L53-L65" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class MyDoubleEcho extends Actor {
   var dest1: ActorRef = _
   var dest2: ActorRef = _
   def receive = {
@@ -889,7 +889,7 @@ import org.apache.pekko.testkit.TestProbe
   }
 }
 </code></pre>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L237-L243" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe1 = TestProbe()
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L237-L243" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe1 = TestProbe()
 val probe2 = TestProbe()
 val actor = system.actorOf(Props[MyDoubleEcho]())
 actor ! ((probe1.ref, probe2.ref))
@@ -898,7 +898,7 @@ probe1.expectMsg(500 millis, &quot;hello&quot;)
 probe2.expectMsg(500 millis, &quot;hello&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L318-L349" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L318-L349" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     // simple actor which only forwards messages
     class Forwarder extends AbstractActor {
@@ -936,14 +936,14 @@ probe2.expectMsg(500 millis, &quot;hello&quot;)</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L262-L266" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val worker = TestProbe(&quot;worker&quot;)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L262-L266" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val worker = TestProbe(&quot;worker&quot;)
 val aggregator = TestProbe(&quot;aggregator&quot;)
 
 worker.ref.path.name should startWith(&quot;worker&quot;)
 aggregator.ref.path.name should startWith(&quot;aggregator&quot;)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L356-L364" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L356-L364" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     final TestProbe worker = new TestProbe(system, &quot;worker&quot;);
     final TestProbe aggregator = new TestProbe(system, &quot;aggregator&quot;);
@@ -957,7 +957,7 @@ aggregator.ref.path.name should startWith(&quot;aggregator&quot;)</code></pre></
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L247-L256" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class Update(id: Int, value: String)
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L247-L256" target="_blank" title="Go to snippet source">source</a><code class="language-scala">final case class Update(id: Int, value: String)
 
 val probe = new TestProbe(system) {
   def expectUpdate(x: Int) = {
@@ -969,7 +969,7 @@ val probe = new TestProbe(system) {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L371-L387" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L371-L387" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     class MyProbe extends TestKit {
       public MyProbe() {
@@ -994,13 +994,13 @@ val probe = new TestProbe(system) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L274-L277" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L274-L277" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
 probe.watch(target)
 target ! PoisonPill
 probe.expectTerminated(target)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L395-L403" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L395-L403" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     final TestKit probe = new TestKit(system);
     probe.watch(target);
@@ -1015,14 +1015,14 @@ probe.expectTerminated(target)</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L286-L290" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L286-L290" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
 val future = probe.ref ? &quot;hello&quot;
 probe.expectMsg(0 millis, &quot;hello&quot;) // TestActor runs on CallingThreadDispatcher
 probe.reply(&quot;world&quot;)
 assert(future.isCompleted &amp;&amp; future.value.contains(Success(&quot;world&quot;)))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L410-L419" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L410-L419" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     final TestKit probe = new TestKit(system);
     probe.getRef().tell(&quot;hello&quot;, getRef());
@@ -1038,7 +1038,7 @@ assert(future.isCompleted &amp;&amp; future.value.contains(Success(&quot;world&q
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L69-L80" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Source(target: ActorRef) extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L69-L80" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Source(target: ActorRef) extends Actor {
   def receive = {
     case &quot;start&quot; =&gt; target ! &quot;work&quot;
   }
@@ -1050,7 +1050,7 @@ class Destination extends Actor {
   }
 }
 </code></pre>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L298-L303" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L298-L303" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
 val source = system.actorOf(Props(classOf[Source], probe.ref))
 val dest = system.actorOf(Props[Destination]())
 source ! &quot;start&quot;
@@ -1058,7 +1058,7 @@ probe.expectMsg(&quot;work&quot;)
 probe.forward(dest)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L426-L435" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L426-L435" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     final TestKit probe = new TestKit(system);
     probe.getRef().tell(&quot;hello&quot;, getRef());
@@ -1076,7 +1076,7 @@ B</code>, as long as a certain protocol is obeyed.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/testkit/src/test/scala/org/apache/pekko/testkit/TestProbeSpec.scala#L129-L136" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/testkit/src/test/scala/org/apache/pekko/testkit/TestProbeSpec.scala#L129-L136" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
 probe.setAutoPilot(new TestActor.AutoPilot {
   def run(sender: ActorRef, msg: Any): TestActor.AutoPilot =
     msg match {
@@ -1086,7 +1086,7 @@ probe.setAutoPilot(new TestActor.AutoPilot {
 })</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L482-L500" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L482-L500" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     final TestKit probe = new TestKit(system);
     // install auto-pilot
@@ -1112,13 +1112,13 @@ probe.setAutoPilot(new TestActor.AutoPilot {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L374-L377" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L374-L377" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val probe = TestProbe()
 within(1 second) {
   probe.expectMsg(&quot;hello&quot;)
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L467-L472" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L467-L472" target="_blank" title="Go to snippet source">source</a><code class="language-java">new TestKit(system) {
   {
     final TestKit probe = new TestKit(system);
     within(Duration.ofSeconds(1), () -&gt; probe.expectMsgEquals(&quot;hello&quot;));
@@ -1141,7 +1141,7 @@ within(1 second) {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L32-L46" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Parent extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L32-L46" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class Parent extends Actor {
   val child = context.actorOf(Props[Child](), &quot;child&quot;)
   var ponged = false
 
@@ -1158,7 +1158,7 @@ class Child extends Actor {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L39-L63" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class Parent extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L39-L63" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class Parent extends AbstractActor {
   final ActorRef child = getContext().actorOf(Props.create(Child.class), &quot;child&quot;);
   boolean ponged = false;
 
@@ -1189,14 +1189,14 @@ static class Child extends AbstractActor {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L50-L54" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class DependentChild(parent: ActorRef) extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L50-L54" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class DependentChild(parent: ActorRef) extends Actor {
   def receive = {
     case &quot;ping&quot; =&gt; parent ! &quot;pong&quot;
   }
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L68-L81" target="_blank" title="Go to snippet source">source</a><code class="language-java">class DependentChild extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L68-L81" target="_blank" title="Go to snippet source">source</a><code class="language-java">class DependentChild extends AbstractActor {
   private final ActorRef parent;
 
   public DependentChild(ActorRef parent) {
@@ -1216,7 +1216,7 @@ static class Child extends AbstractActor {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L134-L141" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;A TestProbe serving as parent&quot; should {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L134-L141" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;A TestProbe serving as parent&quot; should {
   &quot;test its child responses&quot; in {
     val parent = TestProbe()
     val child = parent.childActorOf(Props(new Child))
@@ -1226,7 +1226,7 @@ static class Child extends AbstractActor {
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L198-L202" target="_blank" title="Go to snippet source">source</a><code class="language-java">TestKit parent = new TestKit(system);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L198-L202" target="_blank" title="Go to snippet source">source</a><code class="language-java">TestKit parent = new TestKit(system);
 ActorRef child = parent.childActorOf(Props.create(Child.class));
 
 parent.send(child, &quot;ping&quot;);
@@ -1237,7 +1237,7 @@ parent.expectMsgEquals(&quot;pong&quot;);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L145-L159" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;A fabricated parent&quot; should {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L145-L159" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;A fabricated parent&quot; should {
   &quot;test its child responses&quot; in {
     val proxy = TestProbe()
     val parent = system.actorOf(Props(new Actor {
@@ -1254,7 +1254,7 @@ parent.expectMsgEquals(&quot;pong&quot;);</code></pre></dd>
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L165-L192" target="_blank" title="Go to snippet source">source</a><code class="language-java">class FabricatedParentCreator implements Creator&lt;Actor&gt; {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L165-L192" target="_blank" title="Go to snippet source">source</a><code class="language-java">class FabricatedParentCreator implements Creator&lt;Actor&gt; {
   private final TestProbe proxy;
 
   public FabricatedParentCreator(TestProbe proxy) {
@@ -1282,7 +1282,7 @@ parent.expectMsgEquals(&quot;pong&quot;);</code></pre></dd>
     };
   }
 }</code></pre>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L210-L214" target="_blank" title="Go to snippet source">source</a><code class="language-java">TestProbe proxy = new TestProbe(system);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L210-L214" target="_blank" title="Go to snippet source">source</a><code class="language-java">TestProbe proxy = new TestProbe(system);
 ActorRef parent = system.actorOf(Props.create(Actor.class, new FabricatedParentCreator(proxy)));
 
 proxy.send(parent, &quot;ping&quot;);
@@ -1293,7 +1293,7 @@ proxy.expectMsg(&quot;pong&quot;);</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L58-L75" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class DependentParent(childProps: Props, probe: ActorRef) extends Actor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L58-L75" target="_blank" title="Go to snippet source">source</a><code class="language-scala">class DependentParent(childProps: Props, probe: ActorRef) extends Actor {
   val child = context.actorOf(childProps, &quot;child&quot;)
 
   def receive = {
@@ -1313,7 +1313,7 @@ class GenericDependentParent(childMaker: ActorRefFactory =&gt; ActorRef) extends
 }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L86-L102" target="_blank" title="Go to snippet source">source</a><code class="language-java">class DependentParent extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L86-L102" target="_blank" title="Go to snippet source">source</a><code class="language-java">class DependentParent extends AbstractActor {
   final ActorRef child;
   final ActorRef probe;
 
@@ -1330,7 +1330,7 @@ class GenericDependentParent(childMaker: ActorRefFactory =&gt; ActorRef) extends
         .build();
   }
 }</code></pre>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L107-L122" target="_blank" title="Go to snippet source">source</a><code class="language-java">class GenericDependentParent extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L107-L122" target="_blank" title="Go to snippet source">source</a><code class="language-java">class GenericDependentParent extends AbstractActor {
   final ActorRef child;
   boolean ponged = false;
 
@@ -1351,22 +1351,22 @@ class GenericDependentParent(childMaker: ActorRefFactory =&gt; ActorRef) extends
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L118-L119" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val maker = (_: ActorRefFactory) =&gt; probe.ref
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L118-L119" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val maker = (_: ActorRefFactory) =&gt; probe.ref
 val parent = system.actorOf(Props(new GenericDependentParent(maker)))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L149-L150" target="_blank" title="Go to snippet source">source</a><code class="language-java">Function&lt;ActorRefFactory, ActorRef&gt; maker = param -&gt; probe.ref();
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L149-L150" target="_blank" title="Go to snippet source">source</a><code class="language-java">Function&lt;ActorRefFactory, ActorRef&gt; maker = param -&gt; probe.ref();
 ActorRef parent = system.actorOf(Props.create(GenericDependentParent.class, maker));</code></pre></dd>
 </dl>
 <p>And like this in your application code:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L127-L128" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val maker = (f: ActorRefFactory) =&gt; f.actorOf(Props(new Child))
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/ParentChildSpec.scala#L127-L128" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val maker = (f: ActorRefFactory) =&gt; f.actorOf(Props(new Child))
 val parent = system.actorOf(Props(new GenericDependentParent(maker)))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L158-L159" target="_blank" title="Go to snippet source">source</a><code class="language-java">Function&lt;ActorRefFactory, ActorRef&gt; maker = f -&gt; f.actorOf(Props.create(Child.class));
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/ParentChildTest.java#L158-L159" target="_blank" title="Go to snippet source">source</a><code class="language-java">Function&lt;ActorRefFactory, ActorRef&gt; maker = f -&gt; f.actorOf(Props.create(Child.class));
 ActorRef parent = system.actorOf(Props.create(GenericDependentParent.class, maker));</code></pre></dd>
 </dl>
 <p>Which of these methods is the best depends on what is most important to test. The most generic option is to create the parent actor by passing it a function that is responsible for the Actor creation, but <span class="group-scala">the</span><span class="group-java">using <code>TestProbe</code> or having a</span> fabricated parent is often sufficient.</p>
@@ -1378,11 +1378,11 @@ ActorRef parent = system.actorOf(Props.create(GenericDependentParent.class, make
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L326-L327" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.CallingThreadDispatcher
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L326-L327" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.CallingThreadDispatcher
 val ref = system.actorOf(Props[MyActor]().withDispatcher(CallingThreadDispatcher.Id))</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L507" target="_blank" title="Go to snippet source">source</a><code class="language-java">system.actorOf(Props.create(MyActor.class).withDispatcher(CallingThreadDispatcher.Id()));</code></pre></dd>
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L507" target="_blank" title="Go to snippet source">source</a><code class="language-java">system.actorOf(Props.create(MyActor.class).withDispatcher(CallingThreadDispatcher.Id()));</code></pre></dd>
 </dl>
 <h3><a href="#how-it-works" name="how-it-works" class="anchor"><span class="anchor-link"></span></a>How it works</h3>
 <p>When receiving an invocation, the <code>CallingThreadDispatcher</code> checks whether the receiving actor is already active on the current thread. The simplest example of this situation is an actor which sends a message to itself. In this case, processing cannot continue immediately as that would violate the actor model, so the invocation is queued and will be processed when the active invocation on that actor finishes its processing; thus, it will be processed on the calling thread, but after the actor finishes its previous work. In the other case, the invocation is processed immediately on the current thread. Futures scheduled via this dispatcher are also executed immediately.</p>
@@ -1419,7 +1419,7 @@ latch.countDown()
 <ul>
   <li><em>Logging of message invocations on certain actors</em>  This is enabled by a setting in the <a href="general/configuration-reference.html#config-pekko-actor">Configuration</a> — namely <code>pekko.actor.debug.receive</code> — which enables the <code>loggable</code> statement to be applied to an actor’s <code>receive</code> function:</li>
 </ul>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L101-L107" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.event.LoggingReceive
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L101-L107" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.event.LoggingReceive
 def receive = LoggingReceive {
   case msg =&gt; // Do something ...
 }
@@ -1449,7 +1449,7 @@ def otherState: Receive = LoggingReceive.withLabel(&quot;other&quot;) {
 <p>This section contains a collection of known gotchas with some other frameworks, which is by no means exhaustive and does not imply an endorsement or special support.</p>
 <h3><a href="#when-you-need-it-to-be-a-trait" name="when-you-need-it-to-be-a-trait" class="anchor"><span class="anchor-link"></span></a>When you need it to be a trait</h3>
 <p>If for some reason it is a problem to inherit from <code>TestKit</code> due to it being a concrete class instead of a trait, there’s <code>TestKitBase</code>:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L354-L367" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.TestKitBase
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L354-L367" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.TestKitBase
 
 class MyTest extends TestKitBase {
   implicit lazy val system: ActorSystem = ActorSystem()
@@ -1479,7 +1479,7 @@ class MyTest extends TestKitBase {
 <p>There are several configuration properties for the TestKit module, please refer to the <a href="general/configuration-reference.html#config-pekko-testkit">reference configuration</a>.</p><div class="group-scala">
 <h2><a href="#example" name="example" class="anchor"><span class="anchor-link"></span></a>Example</h2>
 <p>Ray Roestenburg&rsquo;s example code from his blog, which unfortunately is only available on <a href="https://web.archive.org/web/20180114133958/http://roestenburg.agilesquad.com/2011/02/unit-testing-pekko-actors-with-testkit_12.html">web archive</a>, adapted to work with Pekko 2.x.</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestKitUsageSpec.scala#L19-L160" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.util.Random
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestKitUsageSpec.scala#L19-L160" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import scala.util.Random
 
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.wordspec.AnyWordSpecLike
@@ -1632,13 +1632,13 @@ object TestKitUsageSpec {
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L117-L120" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.TestActorRef
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L117-L120" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.TestActorRef
 
 val actorRef = TestActorRef[MyActor]
 val actor = actorRef.underlyingActor</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L62-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyActor extends AbstractActor {
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L62-L90" target="_blank" title="Go to snippet source">source</a><code class="language-java">static class MyActor extends AbstractActor {
   @Override
   public Receive createReceive() {
     return receiveBuilder()
@@ -1672,7 +1672,7 @@ public void demonstrateTestActorRef() {
 <a id="testfsmref"></a>
 <h3><a href="#testing-finite-state-machines" name="testing-finite-state-machines" class="anchor"><span class="anchor-link"></span></a>Testing Finite State Machines</h3>
 <p>If your actor under test is an <code>FSM</code>, you may use the special <code>TestFSMRef</code> which offers all features of a normal <code>TestActorRef</code> and besides allows access to the internal state:</p>
-<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L150-L170" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.TestFSMRef
+<pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L150-L170" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.TestFSMRef
 import scala.concurrent.duration._
 
 val fsm = TestFSMRef(new TestFsmActor)
@@ -1699,7 +1699,7 @@ assert(fsm.isTimerActive(&quot;test&quot;) == false)</code></pre>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L177-L184" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L177-L184" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko
 import pekko.testkit.TestActorRef
 import pekko.pattern.ask
 
@@ -1709,7 +1709,7 @@ val future: Future[Any] = actorRef ? Say42
 future.futureValue should be(42)</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L115-L120" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Props props = Props.create(MyActor.class);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L115-L120" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Props props = Props.create(MyActor.class);
 final TestActorRef&lt;MyActor&gt; ref = TestActorRef.create(system, props, &quot;testB&quot;);
 final CompletableFuture&lt;Object&gt; future =
     Patterns.ask(ref, &quot;say42&quot;, Duration.ofMillis(3000)).toCompletableFuture();
@@ -1724,7 +1724,7 @@ assertEquals(42, future.get());</code></pre></dd>
 <dl>
   <dt>Scala</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L200-L207" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.TestActorRef
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/testkit/TestkitDocSpec.scala#L200-L207" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.testkit.TestActorRef
 
 val actorRef = TestActorRef(new Actor {
   def receive = {
@@ -1734,7 +1734,7 @@ val actorRef = TestActorRef(new Actor {
 intercept[IllegalArgumentException] { actorRef.receive(&quot;hello&quot;) }</code></pre></dd>
   <dt>Java</dt>
   <dd>
-  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/akka/akka/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L127-L134" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Props props = Props.create(MyActor.class);
+  <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/testkit/TestKitDocTest.java#L127-L134" target="_blank" title="Go to snippet source">source</a><code class="language-java">final Props props = Props.create(MyActor.class);
 final TestActorRef&lt;MyActor&gt; ref = TestActorRef.create(system, props, &quot;myActor&quot;);
 try {
   ref.receive(new Exception(&quot;expected&quot;));
@@ -1751,7 +1751,7 @@ try {
 </ul>
 <p>Feel free to experiment with the possibilities, and if you find useful patterns, don&rsquo;t hesitate to let the Pekko forums know about them! Who knows, common operations might even be worked into nice DSLs.</p>
 <div class="source-github">
-The source code for this page can be found <a href="https://github.com/akka/akka/tree/main/docs/src/main/paradox/testing.md">here</a>.
+The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/testing.md">here</a>.
 </div>
 
 <div class="nav-next">
@@ -1842,7 +1842,7 @@ The source code for this page can be found <a href="https://github.com/akka/akka
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>
