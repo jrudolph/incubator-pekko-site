@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Materialize a <code>BoundedSourceQueue</code> or <code>SourceQueue</code> onto which elements can be pushed for emitting from the source.</p>
 <p><a href="../index.html#source-operators">Source operators</a></p>
 <h2><a href="#signature-boundedsourcequeue-" name="signature-boundedsourcequeue-" class="anchor"><span class="anchor-link"></span></a>Signature (<code>BoundedSourceQueue</code>)</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#queue(int)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.queue</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#queue[T](bufferSize:Int):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.stream.scaladsl.BoundedSourceQueue[T]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.queue</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#queue(int)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.queue</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#queue[T](bufferSize:Int):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.stream.scaladsl.BoundedSourceQueue[T]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.queue</code></a></span></p>
 <h2><a href="#description-boundedsourcequeue-" name="description-boundedsourcequeue-" class="anchor"><span class="anchor-link"></span></a>Description (<code>BoundedSourceQueue</code>)</h2>
 <p>The <code>BoundedSourceQueue</code> is an optimized variant of the <code>SourceQueue</code> with <code>OverflowStrategy.dropNew</code>. The <code>BoundedSourceQueue</code> will give immediate, synchronous feedback whether an element was accepted or not and is therefore recommended for situations where overload and dropping elements is expected and needs to be handled quickly.</p>
 <p>In contrast, the <code>SourceQueue</code> offers more variety of <code>OverflowStrategies</code> but feedback is only asynchronously provided through a <span class="group-scala"><code>Future</code></span><span class="group-java"><code>CompletionStage</code></span> value. In cases where elements need to be discarded quickly at times of overload to avoid out-of-memory situations, delivering feedback asynchronously can itself become a problem. This happens if elements come in faster than the feedback can be delivered in which case the feedback mechanism itself is part of the reason that an out-of-memory situation arises.</p>
@@ -482,7 +482,7 @@ fastElements.stream()
 </code></pre></dd>
 </dl>
 <h2><a href="#signature-sourcequeue-" name="signature-sourcequeue-" class="anchor"><span class="anchor-link"></span></a>Signature (<code>SourceQueue</code>)</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#queue(int,org.apache.pekko.stream.OverflowStrategy)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.queue</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#queue[T](bufferSize:Int,overflowStrategy:org.apache.pekko.stream.OverflowStrategy):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.stream.scaladsl.SourceQueueWithComplete[T]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.queue</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#queue(int,org.apache.pekko.stream.OverflowStrategy,int)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.queue</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#queue[T](bufferSize:Int,overflowStrategy:org.apache.pekko.stream.OverflowStrategy,maxConcurrentOffers:Int):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.stream.scaladsl.SourceQueueWithComplete[T]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.queue</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#queue(int,org.apache.pekko.stream.OverflowStrategy)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.queue</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#queue[T](bufferSize:Int,overflowStrategy:org.apache.pekko.stream.OverflowStrategy):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.stream.scaladsl.SourceQueueWithComplete[T]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.queue</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#queue(int,org.apache.pekko.stream.OverflowStrategy,int)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.queue</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#queue[T](bufferSize:Int,overflowStrategy:org.apache.pekko.stream.OverflowStrategy,maxConcurrentOffers:Int):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.stream.scaladsl.SourceQueueWithComplete[T]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.queue</code></a></span></p>
 <h2><a href="#description-sourcequeue-" name="description-sourcequeue-" class="anchor"><span class="anchor-link"></span></a>Description (<code>SourceQueue</code>)</h2>
 <p>Materialize a <code>SourceQueue</code> onto which elements can be pushed for emitting from the source. The queue contains a buffer, if elements are pushed onto the queue faster than the source is consumed the overflow will be handled with a strategy specified by the user. Functionality for tracking when an element has been emitted is available through <code>SourceQueue.offer</code>.</p>
 <p>Using <code>Source.queue</code> you can push elements to the queue and they will be emitted to the stream if there is demand from downstream, otherwise they will be buffered until request for demand is received. Elements in the buffer will be discarded if downstream is terminated.</p>
@@ -624,7 +624,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

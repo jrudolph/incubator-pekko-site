@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Integration with Reactive Streams, materializes into a <code>org.reactivestreams.Publisher</code>.</p>
 <p><a href="../index.html#sink-operators">Sink operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Sink$.html#asPublisher(org.apache.pekko.stream.javadsl.AsPublisher)" title="org.apache.pekko.stream.javadsl.Sink"><code>Sink.asPublisher</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Sink$.html#asPublisher[T](fanout:Boolean):org.apache.pekko.stream.scaladsl.Sink[T,org.reactivestreams.Publisher[T]]" title="org.apache.pekko.stream.scaladsl.Sink"><code>Sink.asPublisher</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Sink$.html#asPublisher(org.apache.pekko.stream.javadsl.AsPublisher)" title="org.apache.pekko.stream.javadsl.Sink"><code>Sink.asPublisher</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Sink$.html#asPublisher[T](fanout:Boolean):org.apache.pekko.stream.scaladsl.Sink[T,org.reactivestreams.Publisher[T]]" title="org.apache.pekko.stream.scaladsl.Sink"><code>Sink.asPublisher</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>This method gives you the capability to publish the data from the <code>Sink</code> through a Reactive Streams <a href="https://www.reactive-streams.org/reactive-streams-1.0.3-javadoc/org/reactivestreams/Publisher.html">Publisher</a>. Generally, in Pekko Streams a <code>Sink</code> is considered a subscriber, which consumes the data from source. To integrate with other Reactive Stream implementations <code>Sink.asPublisher</code> provides a <code>Publisher</code> materialized value when run. Now, the data from this publisher can be consumed by subscribing to it. We can control if we allow more than one downstream subscriber from the single running Pekko stream through the <code>fanout</code> parameter. In Java 9, the Reactive Stream API was included in the JDK, and <code>Publisher</code> is available through <a href="https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.Publisher.html">Flow.Publisher</a>. Since those APIs are identical but exist at different package namespaces and does not depend on the Reactive Streams package a separate publisher sink for those is available through <span class="group-scala"><code>org.apache.pekko.stream.scaladsl.JavaFlowSupport.Sink#asPublisher</code></span><span class="group-java"><code>org.apache.pekko.stream.javadsl.JavaFlowSupport.Sink#asPublisher</code></span>.</p>
 <h2><a href="#example" name="example" class="anchor"><span class="anchor-link"></span></a>Example</h2>
@@ -544,7 +544,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

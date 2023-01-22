@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -462,10 +462,10 @@ pekko.persistence.state.plugin = &quot;&quot;
 }
 </code></pre>
 <h2><a href="#pre-packaged-plugins" name="pre-packaged-plugins" class="anchor"><span class="anchor-link"></span></a>Pre-packaged plugins</h2>
-<p>The Pekko Persistence module comes with few built-in persistence plugins, but none of these are suitable for production usage in an Pekko Cluster. </p>
+<p>The Pekko Persistence module comes with few built-in persistence plugins, but none of these are suitable for production usage in a Pekko Cluster. </p>
 <h3><a href="#local-leveldb-journal" name="local-leveldb-journal" class="anchor"><span class="anchor-link"></span></a>Local LevelDB journal</h3>
 <p>This plugin writes events to a local LevelDB instance.</p><div class="callout warning "><div class="callout-title">Warning</div>
-<p>The LevelDB plugin cannot be used in an Pekko Cluster since the storage is in a local file system.</p></div>
+<p>The LevelDB plugin cannot be used in a Pekko Cluster since the storage is in a local file system.</p></div>
 <p>The LevelDB journal is deprecated and it is not advised to build new applications with it. As a replacement we recommend using <a href="https://doc.akka.io/docs/akka-persistence-jdbc/current/index.html">Pekko Persistence JDBC</a>.</p>
 <p>The LevelDB journal plugin config entry is <code>pekko.persistence.journal.leveldb</code>. Enable this plugin by defining config property:</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L38-L39" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the journal plugin to be used
@@ -556,7 +556,7 @@ val store = system.actorOf(Props[SharedLeveldbStore](), &quot;store&quot;)</code
 <p>Internal journal commands (sent by persistent actors) are buffered until injection completes. Injection is idempotent i.e. only the first injection is used.</p>
 <h3><a href="#local-snapshot-store" name="local-snapshot-store" class="anchor"><span class="anchor-link"></span></a>Local snapshot store</h3>
 <p>This plugin writes snapshot files to the local filesystem.</p><div class="callout warning "><div class="callout-title">Warning</div>
-<p>The local snapshot store plugin cannot be used in an Pekko Cluster since the storage is in a local file system.</p></div>
+<p>The local snapshot store plugin cannot be used in a Pekko Cluster since the storage is in a local file system.</p></div>
 <p>The local snapshot store plugin config entry is <code>pekko.persistence.snapshot-store.local</code>. Enable this plugin by defining config property:</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/scala/docs/persistence/PersistencePluginDocSpec.scala#L43-L44" target="_blank" title="Go to snippet source">source</a><code class="language-scala"># Path to the snapshot store plugin to be used
 pekko.persistence.snapshot-store.plugin = &quot;pekko.persistence.snapshot-store.local&quot;</code></pre>
@@ -654,7 +654,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

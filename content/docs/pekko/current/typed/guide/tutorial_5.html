@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -547,7 +547,7 @@ public enum DeviceTimedOut implements TemperatureReading {
   <li>A deadline that indicates how long the query should wait for replies. Making this a parameter will simplify testing.</li>
 </ul>
 <h4><a href="#scheduling-the-query-timeout" name="scheduling-the-query-timeout" class="anchor"><span class="anchor-link"></span></a>Scheduling the query timeout</h4>
-<p>Since we need a way to indicate how long we are willing to wait for responses, it is time to introduce a new Pekko feature that we have not used yet, the built-in scheduler facility. Using <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/Behaviors$.html#withTimers(org.apache.pekko.japi.function.Function)" title="org.apache.pekko.actor.typed.javadsl.Behaviors"><code>Behaviors.withTimers</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/Behaviors$.html#withTimers[T](factory:org.apache.pekko.actor.typed.scaladsl.TimerScheduler[T]=%3Eorg.apache.pekko.actor.typed.Behavior[T]):org.apache.pekko.actor.typed.Behavior[T]" title="org.apache.pekko.actor.typed.scaladsl.Behaviors"><code>Behaviors.withTimers</code></a></span> and <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/TimerScheduler.html#startSingleTimer(java.lang.Object,T,java.time.Duration)" title="org.apache.pekko.actor.typed.javadsl.TimerScheduler"><code>startSingleTimer</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/TimerScheduler.html#startSingleTimer(key:Any,msg:T,delay:scala.concurrent.duration.FiniteDuration):Unit" title="org.apache.pekko.actor.typed.scaladsl.TimerScheduler"><code>startSingleTimer</code></a></span> to schedule a message that will be sent after a given delay.</p>
+<p>Since we need a way to indicate how long we are willing to wait for responses, it is time to introduce a new Pekko feature that we have not used yet, the built-in scheduler facility. Using <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/Behaviors$.html#withTimers(org.apache.pekko.japi.function.Function)" title="org.apache.pekko.actor.typed.javadsl.Behaviors"><code>Behaviors.withTimers</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/Behaviors$.html#withTimers[T](factory:org.apache.pekko.actor.typed.scaladsl.TimerScheduler[T]=%3Eorg.apache.pekko.actor.typed.Behavior[T]):org.apache.pekko.actor.typed.Behavior[T]" title="org.apache.pekko.actor.typed.scaladsl.Behaviors"><code>Behaviors.withTimers</code></a></span> and <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/javadsl/TimerScheduler.html#startSingleTimer(java.lang.Object,T,java.time.Duration)" title="org.apache.pekko.actor.typed.javadsl.TimerScheduler"><code>startSingleTimer</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/scaladsl/TimerScheduler.html#startSingleTimer(key:Any,msg:T,delay:scala.concurrent.duration.FiniteDuration):Unit" title="org.apache.pekko.actor.typed.scaladsl.TimerScheduler"><code>startSingleTimer</code></a></span> to schedule a message that will be sent after a given delay.</p>
 <p>We need to create a message that represents the query timeout. We create a simple message <code>CollectionTimeout</code> without any parameters for this purpose.</p>
 <p>At the start of the query, we need to ask each of the device actors for the current temperature. To be able to quickly detect devices that stopped before they got the <code>ReadTemperature</code> message we will also watch each of the actors. This way, we get <code>DeviceTerminated</code> messages for those that stop during the lifetime of the query, so we don&rsquo;t need to wait until the timeout to mark these as not available.</p>
 <p>Putting this together, the outline of our <code>DeviceGroupQuery</code> actor looks like this:</p>
@@ -1056,7 +1056,7 @@ class DeviceGroupQuery(
 }</code></pre></dd>
 </dl>
 <h3><a href="#testing-the-query-actor" name="testing-the-query-actor" class="anchor"><span class="anchor-link"></span></a>Testing the query actor</h3>
-<p>Now let&rsquo;s verify the correctness of the query actor implementation. There are various scenarios we need to test individually to make sure everything works as expected. To be able to do this, we need to simulate the device actors somehow to exercise various normal or failure scenarios. Thankfully we took the list of collaborators (actually a <code>Map</code>) as a parameter to the query actor, so we can pass in <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestProbe.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestProbe"><code>TestProbe</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestProbe.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestProbe"><code>TestProbe</code></a></span> references. In our first test, we try out the case when there are two devices and both report a temperature:</p>
+<p>Now let&rsquo;s verify the correctness of the query actor implementation. There are various scenarios we need to test individually to make sure everything works as expected. To be able to do this, we need to simulate the device actors somehow to exercise various normal or failure scenarios. Thankfully we took the list of collaborators (actually a <code>Map</code>) as a parameter to the query actor, so we can pass in <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/TestProbe.html" title="org.apache.pekko.actor.testkit.typed.javadsl.TestProbe"><code>TestProbe</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/TestProbe.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.TestProbe"><code>TestProbe</code></a></span> references. In our first test, we try out the case when there are two devices and both report a temperature:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -1250,7 +1250,7 @@ public void testReturnDeviceNotAvailableIfDeviceStopsBeforeAnswering() {
   assertEquals(expectedTemperatures, response.temperatures);
 }</code></pre></dd>
 </dl>
-<p>If you remember, there is another case related to device actors stopping. It is possible that we get a normal reply from a device actor, but then receive a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Terminated.html" title="org.apache.pekko.actor.typed.Terminated"><code>Terminated</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/Terminated.html" title="org.apache.pekko.actor.typed.Terminated"><code>Terminated</code></a></span> for the same actor later. In this case, we would like to keep the first reply and not mark the device as <code>DeviceNotAvailable</code>. We should test this, too:</p>
+<p>If you remember, there is another case related to device actors stopping. It is possible that we get a normal reply from a device actor, but then receive a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/Terminated.html" title="org.apache.pekko.actor.typed.Terminated"><code>Terminated</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/Terminated.html" title="org.apache.pekko.actor.typed.Terminated"><code>Terminated</code></a></span> for the same actor later. In this case, we would like to keep the first reply and not mark the device as <code>DeviceNotAvailable</code>. We should test this, too:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -1665,7 +1665,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

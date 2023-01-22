@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -420,7 +420,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h1><a href="#classic-persistent-fsm" name="classic-persistent-fsm" class="anchor"><span class="anchor-link"></span></a>Classic Persistent FSM</h1><div class="callout note "><div class="callout-title">Note</div>
 <p>Pekko Classic pertains to the original Actor APIs, which have been improved by more type safe and guided Actor APIs. Pekko Classic is still fully supported and existing applications can continue to use the classic APIs. It is also possible to use the new Actor APIs together with classic actors in the same ActorSystem, see <a href="typed/coexisting.html">coexistence</a>. For new projects we recommend using <a href="typed/actors.html">the new Actor API</a>.</p></div>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>Persistent FSMs are part of Pekko persistence, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
+<p>Persistent FSMs are part of Pekko persistence, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-persistence" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -429,7 +429,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-persistence" % PekkoVersion<
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -444,7 +444,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-persistence" % PekkoVersion<
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-persistence_${versions.ScalaBinary}"
 }</code></pre></dd></dl><div class="callout warning "><div class="callout-title">Warning</div>
@@ -829,16 +829,16 @@ public ShoppingCart applyEvent(DomainEvent event, ShoppingCart currentData) {
 </dl>
 <p>On recovery state data is initialized according to the latest available snapshot, then the remaining domain events are replayed, triggering the <code>applyEvent</code> method.</p>
 <h2><a href="#migration-to-eventsourcedbehavior" name="migration-to-eventsourcedbehavior" class="anchor"><span class="anchor-link"></span></a>Migration to EventSourcedBehavior</h2>
-<p>Persistent FSMs can be represented using <a href="typed/persistence.html">Persistence Typed</a>. The data stored by Persistence FSM can be read by an <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> using a snapshot adapter and an event adapter. The adapters are required as Persistent FSM doesn&rsquo;t store snapshots and user data directly, it wraps them in internal types that include state transition information.</p>
+<p>Persistent FSMs can be represented using <a href="typed/persistence.html">Persistence Typed</a>. The data stored by Persistence FSM can be read by an <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> using a snapshot adapter and an event adapter. The adapters are required as Persistent FSM doesn&rsquo;t store snapshots and user data directly, it wraps them in internal types that include state transition information.</p>
 <p>Before reading the migration guide it is advised to understand <a href="typed/persistence.html">Persistence Typed</a>. </p>
 <h3><a href="#migration-steps" name="migration-steps" class="anchor"><span class="anchor-link"></span></a>Migration steps</h3>
 <ol>
-  <li>Modify or create new commands to include <code>replyTo</code> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span></li>
+  <li>Modify or create new commands to include <code>replyTo</code> <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/ActorRef.html" title="org.apache.pekko.actor.typed.ActorRef"><code>ActorRef</code></a></span></li>
   <li>Typically persisted events will remain the same</li>
   <li>Create an <code>EventSourcedBehavior</code> that mimics the old <code>PersistentFSM</code></li>
   <li>Replace any state timeouts with <code>Behaviors.withTimers</code> either hard coded or stored in the state</li>
-  <li>Add an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/EventAdapter.html" title="org.apache.pekko.persistence.typed.EventAdapter"><code>EventAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/EventAdapter.html" title="org.apache.pekko.persistence.typed.EventAdapter"><code>EventAdapter</code></a></span> to convert state transition events added by <code>PersistentFSM</code> into private events or filter them</li>
-  <li>If snapshots are used add a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span> to convert PersistentFSM snapshots into the <code>EventSourcedBehavior</code>s <code>State</code></li>
+  <li>Add an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/EventAdapter.html" title="org.apache.pekko.persistence.typed.EventAdapter"><code>EventAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/EventAdapter.html" title="org.apache.pekko.persistence.typed.EventAdapter"><code>EventAdapter</code></a></span> to convert state transition events added by <code>PersistentFSM</code> into private events or filter them</li>
+  <li>If snapshots are used add a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span> to convert PersistentFSM snapshots into the <code>EventSourcedBehavior</code>s <code>State</code></li>
 </ol>
 <p>The following is the shopping cart example above converted to an <code>EventSourcedBehavior</code>. </p>
 <p>The new commands, note the replyTo field for getting the current cart.</p>
@@ -1081,7 +1081,7 @@ public EventHandler&lt;State, DomainEvent&gt; eventHandler() {
   return eventHandlerBuilder.build();
 }</code></pre></dd>
 </dl>
-<p>The last step is the adapters that will allow the new <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> to read the old data:</p>
+<p>The last step is the adapters that will allow the new <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> to read the old data:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -1134,7 +1134,7 @@ public EventHandler&lt;State, DomainEvent&gt; eventHandler() {
     }
   }</code></pre></dd>
 </dl>
-<p>The snapshot adapter needs to adapt an internal type of PersistentFSM so a helper function is provided to build the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span>:</p>
+<p>The snapshot adapter needs to adapt an internal type of PersistentFSM so a helper function is provided to build the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/SnapshotAdapter.html" title="org.apache.pekko.persistence.typed.SnapshotAdapter"><code>SnapshotAdapter</code></a></span>:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -1171,7 +1171,7 @@ public SnapshotAdapter&lt;State&gt; snapshotAdapter() {
       });
 }</code></pre></dd>
 </dl>
-<p>That concludes all the steps to allow an <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> to read a <code>PersistentFSM</code>&rsquo;s data. Once the new code has been running you can not roll back as the PersistentFSM will not be able to read data written by Persistence Typed. </p><div class="callout note "><div class="callout-title">Note</div>
+<p>That concludes all the steps to allow an <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/javadsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.javadsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/scaladsl/EventSourcedBehavior.html" title="org.apache.pekko.persistence.typed.scaladsl.EventSourcedBehavior"><code>EventSourcedBehavior</code></a></span> to read a <code>PersistentFSM</code>&rsquo;s data. Once the new code has been running you can not roll back as the PersistentFSM will not be able to read data written by Persistence Typed. </p><div class="callout note "><div class="callout-title">Note</div>
 <p>There is one case where <a href="additional/rolling-updates.html#migrating-from-persistentfsm-to-eventsourcedbehavior">a full shutdown and startup is required</a>.</p></div>
 <div class="source-github">
 The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/persistence-fsm.md">here</a>.
@@ -1258,7 +1258,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

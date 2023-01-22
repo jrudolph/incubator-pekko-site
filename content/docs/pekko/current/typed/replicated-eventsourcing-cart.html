@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,7 +419,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#shopping-cart-example" name="shopping-cart-example" class="anchor"><span class="anchor-link"></span></a>Shopping cart example</h1>
 <p>The provided CRDT data structures can be used as the root state of a replicated <code>EventSourcedBehavior</code> but they can also be nested inside another data structure. This requires a bit more careful thinking about the eventual consistency.</p>
-<p>In this sample we model a shopping cart as a map of product ids and the number of that product added or removed in the shopping cart. By using the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/crdt/Counter.html" title="org.apache.pekko.persistence.typed.crdt.Counter"><code>Counter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/persistence/typed/crdt/Counter.html" title="org.apache.pekko.persistence.typed.crdt.Counter"><code>Counter</code></a></span> CRDT and persisting its <code>Update</code> in our events we can be sure that an add or remove of items in any data center will eventually lead to all data centers ending up with the same number of each product. </p>
+<p>In this sample we model a shopping cart as a map of product ids and the number of that product added or removed in the shopping cart. By using the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/crdt/Counter.html" title="org.apache.pekko.persistence.typed.crdt.Counter"><code>Counter</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/persistence/typed/crdt/Counter.html" title="org.apache.pekko.persistence.typed.crdt.Counter"><code>Counter</code></a></span> CRDT and persisting its <code>Update</code> in our events we can be sure that an add or remove of items in any data center will eventually lead to all data centers ending up with the same number of each product. </p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -682,7 +682,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

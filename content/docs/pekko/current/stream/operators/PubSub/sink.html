@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,12 +418,12 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="page-content row">
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#pubsub-sink" name="pubsub-sink" class="anchor"><span class="anchor-link"></span></a>PubSub.sink</h1>
-<p>A sink that will publish emitted messages to a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span>.</p>
+<p>A sink that will publish emitted messages to a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span>.</p>
 <p><a href="../index.html#actor-interop-operators">Actor interop operators</a></p>
 <p>Note that there is no backpressure from the topic, so care must be taken to not publish messages at a higher rate than that can be handled by subscribers.</p>
 <p>If the topic does not have any subscribers when a message is published, or the topic actor is stopped, the message is sent to dead letters.</p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>This operator is included in:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
+<p>This operator is included in:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream-typed" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -432,7 +432,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream-typed" % PekkoVersion
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -447,12 +447,12 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream-typed" % PekkoVersion
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream-typed_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/typed/javadsl/PubSub$.html#sink(org.apache.pekko.actor.typed.Topic)" title="org.apache.pekko.stream.typed.javadsl.PubSub"><code>PubSub.sink</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/typed/scaladsl/PubSub$.html#sink[T](topic:org.apache.pekko.actor.typed.Toppic[T]):org.apache.pekko.stream.scaladsl.Sink[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.typed.scaladsl.PubSub"><code>PubSub.sink</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/typed/javadsl/PubSub$.html#sink(org.apache.pekko.actor.typed.Topic)" title="org.apache.pekko.stream.typed.javadsl.PubSub"><code>PubSub.sink</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/typed/scaladsl/PubSub$.html#sink[T](topic:org.apache.pekko.actor.typed.Toppic[T]):org.apache.pekko.stream.scaladsl.Sink[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.typed.scaladsl.PubSub"><code>PubSub.sink</code></a></span></p>
 <h2><a href="#reactive-streams-semantics" name="reactive-streams-semantics" class="anchor"><span class="anchor-link"></span></a>Reactive Streams semantics</h2><div class="callout">
 <p><strong>cancels</strong> never</p>
 <p><strong>backpressures</strong> never</p></div>
@@ -542,7 +542,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

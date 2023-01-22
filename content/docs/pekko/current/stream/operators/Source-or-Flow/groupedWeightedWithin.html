@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Chunk up this stream into groups of elements received within a time window, or limited by the weight of the elements, whatever happens first.</p>
 <p><a href="../index.html#timer-driven-operators">Timer driven operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#groupedWeightedWithin(long,org.apache.pekko.japi.function.Function,java.time.Duration)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.groupedWeightedWithin</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#groupedWeightedWithin(maxWeight:Long,d:scala.concurrent.duration.FiniteDuration)(costFn:Out=&gt;Long):FlowOps.this.Repr[scala.collection.immutable.Seq[Out]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.groupedWeightedWithin</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#groupedWeightedWithin(long,org.apache.pekko.japi.function.Function,java.time.Duration)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.groupedWeightedWithin</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#groupedWeightedWithin(maxWeight:Long,d:scala.concurrent.duration.FiniteDuration)(costFn:Out=&gt;Long):FlowOps.this.Repr[scala.collection.immutable.Seq[Out]]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.groupedWeightedWithin</code></a></span></p>
+<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#groupedWeightedWithin(long,org.apache.pekko.japi.function.Function,java.time.Duration)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.groupedWeightedWithin</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#groupedWeightedWithin(maxWeight:Long,d:scala.concurrent.duration.FiniteDuration)(costFn:Out=&gt;Long):FlowOps.this.Repr[scala.collection.immutable.Seq[Out]]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.groupedWeightedWithin</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#groupedWeightedWithin(long,org.apache.pekko.japi.function.Function,java.time.Duration)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.groupedWeightedWithin</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#groupedWeightedWithin(maxWeight:Long,d:scala.concurrent.duration.FiniteDuration)(costFn:Out=&gt;Long):FlowOps.this.Repr[scala.collection.immutable.Seq[Out]]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.groupedWeightedWithin</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Chunk up this stream into groups of elements received within a time window, or limited by the weight and number of the elements, whatever happens first. Empty groups will not be emitted if no elements are received from upstream. The last group before end-of-stream will contain the buffered elements since the previously emitted group.</p>
 <p>See also:</p>
@@ -520,7 +520,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>

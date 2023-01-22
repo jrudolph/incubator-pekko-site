@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26533-ec68a528+20230119-1442*
+0.0.0+26537-d5470465*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#serialization-with-jackson" name="serialization-with-jackson" class="anchor"><span class="anchor-link"></span></a>Serialization with Jackson</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Jackson Serialization, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT"
+<p>To use Jackson Serialization, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-serialization-jackson" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-serialization-jackson" % Pek
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-serialization-jackson" % Pek
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-serialization-jackson_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -801,7 +801,7 @@ final case class Superhero(name: String, @JsonScalaEnumeration(classOf[PlanetTyp
   }
 }</code></pre></dd>
 </dl>
-<p>To add a new mandatory field we have to use a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>JacksonMigration</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>JacksonMigration</code></a></span> class and set the default value in the migration code.</p>
+<p>To add a new mandatory field we have to use a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>JacksonMigration</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>JacksonMigration</code></a></span> class and set the default value in the migration code.</p>
 <p>This is how a migration class would look like for adding a <code>discount</code> field:</p>
 <dl>
   <dt>Scala</dt>
@@ -848,7 +848,7 @@ public class ItemAddedMigration extends JacksonMigration {
 }</code></pre></dd>
 </dl>
 <p>Override the <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/serialization/jackson/JacksonMigration.html#currentVersion:Int" title="pekko.serialization.jackson.JacksonMigration"><code>currentVersion</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/serialization/jackson/JacksonMigration.html#currentVersion()" title="pekko.serialization.jackson.JacksonMigration"><code>currentVersion()</code></a></span> method to define the version number of the current (latest) version. The first version, when no migration was used, is always 1. Increase this version number whenever you perform a change that is not backwards compatible without migration code.</p>
-<p>Implement the transformation of the old JSON structure to the new JSON structure in the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html#transform(fromVersion:Int,json:com.fasterxml.jackson.databind.JsonNode):com.fasterxml.jackson.databind.JsonNode" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>transform(fromVersion, jsonNode)</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html#transform(int,com.fasterxml.jackson.databind.JsonNode)" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>transform(fromVersion, jsonNode)</code></a></span> method. The <a href="https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/com/fasterxml/jackson/databind/JsonNode.html" title="com.fasterxml.jackson.databind.JsonNode"><code>JsonNode</code></a> is mutable so you can add and remove fields, or change values. Note that you have to cast to specific sub-classes such as <a href="https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/com/fasterxml/jackson/databind/node/ObjectNode.html" title="com.fasterxml.jackson.databind.node.ObjectNode"><code>ObjectNode</code></a> and <a href="https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/com/fasterxml/jackson/databind/node/ArrayNode.html" title="com.fasterxml.jackson.databind.node.ArrayNode"><code>ArrayNode</code></a> to get access to mutators.</p>
+<p>Implement the transformation of the old JSON structure to the new JSON structure in the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html#transform(fromVersion:Int,json:com.fasterxml.jackson.databind.JsonNode):com.fasterxml.jackson.databind.JsonNode" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>transform(fromVersion, jsonNode)</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html#transform(int,com.fasterxml.jackson.databind.JsonNode)" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>transform(fromVersion, jsonNode)</code></a></span> method. The <a href="https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/com/fasterxml/jackson/databind/JsonNode.html" title="com.fasterxml.jackson.databind.JsonNode"><code>JsonNode</code></a> is mutable so you can add and remove fields, or change values. Note that you have to cast to specific sub-classes such as <a href="https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/com/fasterxml/jackson/databind/node/ObjectNode.html" title="com.fasterxml.jackson.databind.node.ObjectNode"><code>ObjectNode</code></a> and <a href="https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/com/fasterxml/jackson/databind/node/ArrayNode.html" title="com.fasterxml.jackson.databind.node.ArrayNode"><code>ArrayNode</code></a> to get access to mutators.</p>
 <p>The migration class must be defined in configuration file:</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/serialization-jackson/src/test/scala/doc/org/apache/pekko/serialization/jackson/SerializationDocSpec.scala#L57-L59" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.serialization.jackson.migrations {
   &quot;com.myservice.event.ItemAdded&quot; = &quot;com.myservice.event.ItemAddedMigration&quot;
@@ -1112,7 +1112,7 @@ public class CustomerMigration extends JacksonMigration {
   }
 }</code></pre></dd>
 </dl>
-<p>Note the override of the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html#transformClassName(fromVersion:Int,className:String):String" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>transformClassName(fromVersion, className)</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html#transformClassName(int,java.lang.String)" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>transformClassName(fromVersion, className)</code></a></span> method to define the new class name.</p>
+<p>Note the override of the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html#transformClassName(fromVersion:Int,className:String):String" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>transformClassName(fromVersion, className)</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/JacksonMigration.html#transformClassName(int,java.lang.String)" title="org.apache.pekko.serialization.jackson.JacksonMigration"><code>transformClassName(fromVersion, className)</code></a></span> method to define the new class name.</p>
 <p>That type of migration must be configured with the old class name as key. The actual class can be removed.</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/serialization-jackson/src/test/scala/doc/org/apache/pekko/serialization/jackson/SerializationDocSpec.scala#L65-L67" target="_blank" title="Go to snippet source">source</a><code class="language-scala">pekko.serialization.jackson.migrations {
   &quot;com.myservice.event.OrderAdded&quot; = &quot;com.myservice.event.OrderPlacedMigration&quot;
@@ -1321,7 +1321,7 @@ pekko.serialization.jackson.jackson-json.compression {
 <p>Compression can be disabled by setting the <code>algorithm</code> property to <code>off</code>. It will still be able to decompress payloads that were compressed when serialized, e.g. if this configuration is changed.</p>
 <p>For the <code>jackson-cbor</code> and custom bindings other than <code>jackson-json</code> compression is by default disabled, but can be enabled in the same way as the configuration shown above but replacing <code>jackson-json</code> with the binding name (for example <code>jackson-cbor</code>).</p>
 <h2><a href="#using-pekko-serialization-for-embedded-types" name="using-pekko-serialization-for-embedded-types" class="anchor"><span class="anchor-link"></span></a>Using Pekko Serialization for embedded types</h2>
-<p>For types that already have an Pekko Serializer defined that are embedded in types serialized with Jackson the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/PekkoSerializationSerializer.html" title="org.apache.pekko.serialization.jackson.PekkoSerializationSerializer"><code>PekkoSerializationSerializer</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/PekkoSerializationSerializer.html" title="org.apache.pekko.serialization.jackson.PekkoSerializationSerializer"><code>PekkoSerializationSerializer</code></a></span> and <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/PekkoSerializationDeserializer.html" title="org.apache.pekko.serialization.jackson.PekkoSerializationDeserializer"><code>PekkoSerializationDeserializer</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT/org/apache/pekko/serialization/jackson/PekkoSerializationDeserializer.html" title="org.apache.pekko.serialization.jackson.PekkoSerializationDeserializer"><code>PekkoSerializationDeserializer</code></a></span> can be used to Pekko Serialization for individual fields. </p>
+<p>For types that already have a Pekko Serializer defined that are embedded in types serialized with Jackson the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/PekkoSerializationSerializer.html" title="org.apache.pekko.serialization.jackson.PekkoSerializationSerializer"><code>PekkoSerializationSerializer</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/PekkoSerializationSerializer.html" title="org.apache.pekko.serialization.jackson.PekkoSerializationSerializer"><code>PekkoSerializationSerializer</code></a></span> and <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/PekkoSerializationDeserializer.html" title="org.apache.pekko.serialization.jackson.PekkoSerializationDeserializer"><code>PekkoSerializationDeserializer</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/serialization/jackson/PekkoSerializationDeserializer.html" title="org.apache.pekko.serialization.jackson.PekkoSerializationDeserializer"><code>PekkoSerializationDeserializer</code></a></span> can be used to Pekko Serialization for individual fields. </p>
 <p>The serializer/deserializer are not enabled automatically. The <a href="https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/com/fasterxml/jackson/databind/annotation/JsonSerialize.html" title="com.fasterxml.jackson.databind.annotation.JsonSerialize"><code>@JsonSerialize</code></a> and <a href="https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/com/fasterxml/jackson/databind/annotation/JsonDeserialize.html" title="com.fasterxml.jackson.databind.annotation.JsonDeserialize"><code>@JsonDeserialize</code></a> annotation needs to be added to the fields containing the types to be serialized with Pekko Serialization.</p>
 <p>The type will be embedded as an object with the fields:</p>
 <ul>
@@ -1660,7 +1660,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26533-ec68a528+20230119-1442-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
 
 
 </html>
