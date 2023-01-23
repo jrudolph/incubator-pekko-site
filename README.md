@@ -4,11 +4,17 @@ Publishing the Apache Pekko web site requires:
 
 1. Clone https://github.com/apache/incubator-pekko-site into a local directory.
 2. Check out the asf-staging branch.
-3. In `incubator-pekko` repo, run `sbt unidoc docs/paradox`.
+3. In `incubator-pekko` repo, run
+```
+sbt unidoc docs/paradox
+# next line requires Java 11 or above
+sbt -Dpekko.genjavadoc.enabled=true javaunidoc/doc 
+```
 4. Go back to your local copy of `incubator-pekko-site` and run
 ```
 cp -r <path>/incubator-pekko/docs/target/paradox/site/main/ content/docs/pekko/current
 cp -r <path>/incubator-pekko/target/scala-2.13/unidoc/ content/api/pekko/current
+cp -r <path>/incubator-pekko/target/javaunidoc/ content/japi/pekko/current
 ```
 5. Perform `git add` on the affected files and `git commit`.
 6. Perform `git push`.
