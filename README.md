@@ -8,7 +8,7 @@ Publishing the Apache Pekko web site requires:
 ```
 sbt unidoc docs/paradox
 # next line requires Java 11 or above
-sbt -Dpekko.genjavadoc.enabled=true javaunidoc/doc 
+sbt -Dpekko.genjavadoc.enabled=true Javaunidoc/doc 
 ```
 4. Go back to your local copy of `incubator-pekko-site` and run
 ```
