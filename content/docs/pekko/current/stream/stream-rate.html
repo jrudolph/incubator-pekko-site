@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentstream/stream-rate.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentstream/stream-rate.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#buffers-and-working-with-rate" name="buffers-and-working-with-rate" class="anchor"><span class="anchor-link"></span></a>Buffers and working with rate</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -451,7 +451,7 @@ dependencies {
 <a id="async-stream-buffers"></a>
 <h2><a href="#buffers-for-asynchronous-operators" name="buffers-for-asynchronous-operators" class="anchor"><span class="anchor-link"></span></a>Buffers for asynchronous operators</h2>
 <p>In this section we will discuss internal buffers that are introduced as an optimization when using asynchronous operators.</p>
-<p>To run an operator asynchronously it has to be marked explicitly as such using the <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/stream/Graph.html#shape:S" title="pekko.stream.Graph"><code>`.async`</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/stream/Graph.html#async--" title="pekko.stream.Graph"><code>`.async()`</code></a></span> method. Being run asynchronously means that an operator, after handing out an element to its downstream consumer is able to immediately process the next message. To demonstrate what we mean by this, let&rsquo;s take a look at the following example:</p>
+<p>To run an operator asynchronously it has to be marked explicitly as such using the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/stream/Graph.html#shape:S" title="pekko.stream.Graph"><code>`.async`</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/stream/Graph.html#async--" title="pekko.stream.Graph"><code>`.async()`</code></a></span> method. Being run asynchronously means that an operator, after handing out an element to its downstream consumer is able to immediately process the next message. To demonstrate what we mean by this, let&rsquo;s take a look at the following example:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -510,7 +510,7 @@ C: 3
 <p>As we have explained, for performance reasons Pekko Streams introduces a buffer for every asynchronous operator. The purpose of these buffers is solely optimization, in fact the size of 1 would be the most natural choice if there would be no need for throughput improvements. Therefore it is recommended to keep these buffer sizes small, and increase them only to a level suitable for the throughput requirements of the application. Default buffer sizes can be set through configuration:</p>
 <pre><code>pekko.stream.materializer.max-input-buffer-size = 16
 </code></pre>
-<p>Alternatively they can be set per stream by adding an attribute to the complete <code>RunnableGraph</code> or on smaller segments of the stream it is possible by defining a separate <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/stream/scaladsl/Flow.html" title="pekko.stream.scaladsl.Flow"><code>`Flow`</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/stream/javadsl/Flow.html" title="pekko.stream.javadsl.Flow"><code>`Flow`</code></a></span> with these attributes:</p>
+<p>Alternatively they can be set per stream by adding an attribute to the complete <code>RunnableGraph</code> or on smaller segments of the stream it is possible by defining a separate <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/stream/scaladsl/Flow.html" title="pekko.stream.scaladsl.Flow"><code>`Flow`</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/stream/javadsl/Flow.html" title="pekko.stream.javadsl.Flow"><code>`Flow`</code></a></span> with these attributes:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -582,7 +582,7 @@ RunnableGraph.fromGraph(
             }))
     .run(system);</code></pre></dd>
 </dl>
-<p>Running the above example one would expect the number <em>3</em> to be printed in every 3 seconds (the <code>conflateWithSeed</code> step here is configured so that it counts the number of elements received before the downstream <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/stream/scaladsl/ZipWith$.html" title="pekko.stream.scaladsl.ZipWith"><code>`ZipWith`</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/stream/javadsl/ZipWith$.html" title="pekko.stream.javadsl.ZipWith"><code>`ZipWith`</code></a></span> consumes them). What is being printed is different though, we will see the number <em>1</em>. The reason for this is the internal buffer which is by default 16 elements large, and prefetches elements before the <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/stream/scaladsl/ZipWith$.html" title="pekko.stream.scaladsl.ZipWith"><code>`ZipWith`</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/stream/javadsl/ZipWith$.html" title="pekko.stream.javadsl.ZipWith"><code>`ZipWith`</code></a></span> starts consuming them. It is possible to fix this issue by changing the buffer size of <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/stream/scaladsl/ZipWith$.html" title="pekko.stream.scaladsl.ZipWith"><code>`ZipWith`</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/stream/javadsl/ZipWith$.html" title="pekko.stream.javadsl.ZipWith"><code>`ZipWith`</code></a></span> to 1. We will still see a leading 1 though which is caused by an initial prefetch of the <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/stream/scaladsl/ZipWith$.html" title="pekko.stream.scaladsl.ZipWith"><code>`ZipWith`</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/stream/javadsl/ZipWith$.html" title="pekko.stream.javadsl.ZipWith"><code>`ZipWith`</code></a></span> element.</p><div class="callout note "><div class="callout-title">Note</div>
+<p>Running the above example one would expect the number <em>3</em> to be printed in every 3 seconds (the <code>conflateWithSeed</code> step here is configured so that it counts the number of elements received before the downstream <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/stream/scaladsl/ZipWith$.html" title="pekko.stream.scaladsl.ZipWith"><code>`ZipWith`</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/stream/javadsl/ZipWith$.html" title="pekko.stream.javadsl.ZipWith"><code>`ZipWith`</code></a></span> consumes them). What is being printed is different though, we will see the number <em>1</em>. The reason for this is the internal buffer which is by default 16 elements large, and prefetches elements before the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/stream/scaladsl/ZipWith$.html" title="pekko.stream.scaladsl.ZipWith"><code>`ZipWith`</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/stream/javadsl/ZipWith$.html" title="pekko.stream.javadsl.ZipWith"><code>`ZipWith`</code></a></span> starts consuming them. It is possible to fix this issue by changing the buffer size of <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/stream/scaladsl/ZipWith$.html" title="pekko.stream.scaladsl.ZipWith"><code>`ZipWith`</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/stream/javadsl/ZipWith$.html" title="pekko.stream.javadsl.ZipWith"><code>`ZipWith`</code></a></span> to 1. We will still see a leading 1 though which is caused by an initial prefetch of the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/stream/scaladsl/ZipWith$.html" title="pekko.stream.scaladsl.ZipWith"><code>`ZipWith`</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/stream/javadsl/ZipWith$.html" title="pekko.stream.javadsl.ZipWith"><code>`ZipWith`</code></a></span> element.</p><div class="callout note "><div class="callout-title">Note</div>
 <p>In general, when time or rate driven operators exhibit strange behavior, one of the first solutions to try should be to decrease the input buffer of the affected elements to 1.</p></div>
 <h2><a href="#buffers-in-pekko-streams" name="buffers-in-pekko-streams" class="anchor"><span class="anchor-link"></span></a>Buffers in Pekko Streams</h2>
 <p>In this section we will discuss <em>explicit</em> user defined buffers that are part of the domain logic of the stream processing pipeline of an application.</p>
@@ -845,7 +845,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

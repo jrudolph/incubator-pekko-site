@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentsplit-brain-resolver.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentsplit-brain-resolver.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -420,7 +420,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>When operating a Pekko cluster you must consider how to handle <a href="https://en.wikipedia.org/wiki/Network_partition">network partitions</a> (a.k.a. split brain scenarios) and machine crashes (including JVM and hardware failures). This is crucial for correct behavior if you use <a href="typed/cluster-singleton.html">Cluster Singleton</a> or <a href="typed/cluster-sharding.html">Cluster Sharding</a>, especially together with Pekko Persistence.</p>
 <p>The <a href="https://akka.io/blog/news/2020/06/08/akka-split-brain-resolver-video">Split Brain Resolver video</a> is a good starting point for learning why it is important to use a correct downing provider and how the Split Brain Resolver works.</p>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Pekko Split Brain Resolver is part of <code>pekko-cluster</code> and you probably already have that dependency included. Otherwise, add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>To use Pekko Split Brain Resolver is part of <code>pekko-cluster</code> and you probably already have that dependency included. Otherwise, add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-cluster" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -429,7 +429,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster" % PekkoVersion</cod
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -444,7 +444,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster" % PekkoVersion</cod
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-cluster_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -452,7 +452,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Cluster (classic)</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-cluster</div>
-  <div>0.0.0+26537-d5470465-SNAPSHOT</div>
+  <div>0.0.0+26547-ad0f3b42-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -461,10 +461,10 @@ dependencies {
   <tr><th>License</th><td><div><a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener noreferrer">Apache-2.0</a></div>
   </td></tr>
   
-  <tr><th>Home page</th><td><a href="https://akka.io/">https://akka.io/</a></td></tr>
+  <tr><th>Home page</th><td><a href="https://pekko.apache.org/">https://pekko.apache.org/</a></td></tr>
   <tr><th>API documentation</th><td>
-  <div><a href="https://doc.akka.io/api/akka/snapshot/akka/cluster/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
-  <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/cluster/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
+  <div><a href="https://pekko.apache.org/api/pekko/snapshot/pekko/cluster/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
+  <div><a href="https://pekko.apache.org/japi/pekko/snapshot/pekko/cluster/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
   <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
@@ -639,7 +639,7 @@ pekko.cluster.split-brain-resolver {
 <h3><a href="#lease" name="lease" class="anchor"><span class="anchor-link"></span></a>Lease</h3>
 <p>The strategy named <code>lease-majority</code> is using a distributed lease (lock) to decide what nodes that are allowed to survive. Only one SBR instance can acquire the lease make the decision to remain up. The other side will not be able to aquire the lease and will therefore down itself.</p>
 <p>Best effort is to keep the side that has most nodes, i.e. the majority side. This is achieved by adding a delay before trying to acquire the lease on the minority side.</p>
-<p>There is currently one supported implementation of the lease which is backed by a <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">Custom Resource Definition (CRD)</a> in Kubernetes. It is described in the <a href="https://doc.akka.io/docs/akka-management/current/kubernetes-lease.html">Kubernetes Lease</a> documentation.</p>
+<p>There is currently one supported implementation of the lease which is backed by a <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">Custom Resource Definition (CRD)</a> in Kubernetes. It is described in the <a href="https://pekko.apache.org/docs/pekko-management/current/kubernetes-lease.html">Kubernetes Lease</a> documentation.</p>
 <p>This strategy is very safe since coordination is added by an external arbiter. The trade-off compared to other strategies is that it requires additional infrastructure for implementing the lease and it reduces the availability of a decision to that of the system backing the lease store.</p>
 <p>Similar to other strategies it is important that decisions are not deferred for too long because the nodes that couldn&rsquo;t acquire the lease must decide to down themselves, see <a href="split-brain-resolver.html#down-all-when-unstable">Down all when unstable</a>.</p>
 <p>In some cases the lease will be unavailable when needed for a decision from all SBR instances, e.g. because it is on another side of a network partition, and then all nodes will be downed.</p>
@@ -673,7 +673,7 @@ pekko.cluster.split-brain-resolver {
   # If the &#39;role&#39; is defined the majority/minority is based only on members with that &#39;role&#39;.
   role = &quot;&quot;
 }</code></pre>
-<p>See also configuration and additional dependency in <a href="https://doc.akka.io/docs/akka-management/current/kubernetes-lease.html">Kubernetes Lease</a></p>
+<p>See also configuration and additional dependency in <a href="https://pekko.apache.org/docs/pekko-management/current/kubernetes-lease.html">Kubernetes Lease</a></p>
 <h2><a href="#indirectly-connected-nodes" name="indirectly-connected-nodes" class="anchor"><span class="anchor-link"></span></a>Indirectly connected nodes</h2>
 <p>In a malfunctional network there can be situations where nodes are observed as unreachable via some network links but they are still indirectly connected via other nodes, i.e. it&rsquo;s not a clean network partition (or node crash).</p>
 <p>When this situation is detected the Split Brain Resolvers will keep fully connected nodes and down all the indirectly connected nodes.</p>
@@ -831,7 +831,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

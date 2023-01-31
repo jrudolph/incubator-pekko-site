@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='The Pekko Cluster node membership service, manages dynamic member states and lifecycle with no external infrastructure needed.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currenttyped/cluster-membership.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currenttyped/cluster-membership.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -477,7 +477,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 </ul>
 <p>Won&rsquo;t happen. That way the shutdown will be as quick as possible and a new version can be started up without delay.</p>
 <p>If a cluster isn&rsquo;t to be restarted right away then there is no need to prepare it for shutdown.</p>
-<p>To use this feature use <code>Cluster(system).prepareForFullClusterShutdown()</code> in classic or <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/typed/PrepareForFullClusterShutdown.html" title="org.apache.pekko.cluster.typed.PrepareForFullClusterShutdown"><code>PrepareForFullClusterShutdown</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/typed/PrepareForFullClusterShutdown.html" title="org.apache.pekko.cluster.typed.PrepareForFullClusterShutdown"><code>PrepareForFullClusterShutdown</code></a></span> in typed.</p>
+<p>To use this feature use <code>Cluster(system).prepareForFullClusterShutdown()</code> in classic or <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/typed/PrepareForFullClusterShutdown.html" title="org.apache.pekko.cluster.typed.PrepareForFullClusterShutdown"><code>PrepareForFullClusterShutdown</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/typed/PrepareForFullClusterShutdown.html" title="org.apache.pekko.cluster.typed.PrepareForFullClusterShutdown"><code>PrepareForFullClusterShutdown</code></a></span> in typed.</p>
 <p>Wait for all <code>Up</code> members to become <code>ReadyForShutdown</code> and then all nodes can be shutdown and restarted. Members that aren&rsquo;t <code>Up</code> yet will remain in the <code>Joining</code> or <code>WeaklyUp</code> states. Any node that is already leaving the cluster i.e. in the <code>Leaving</code> or <code>Exiting</code> states will continue to leave the cluster via the normal path.</p>
 <h2><a href="#state-diagrams" name="state-diagrams" class="anchor"><span class="anchor-link"></span></a>State Diagrams</h2>
 <h3><a href="#state-diagram-for-the-member-states" name="state-diagram-for-the-member-states" class="anchor"><span class="anchor-link"></span></a>State Diagram for the Member States</h3>
@@ -489,7 +489,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   <li>
   <p><strong>leave</strong> - tell a node to leave the cluster gracefully, normally triggered by ActorSystem or JVM shutdown through <a href="../coordinated-shutdown.html">coordinated shutdown</a></p></li>
   <li>
-  <p><strong>down</strong> - mark a node as down. This action is required to remove crashed nodes (that did not &lsquo;leave&rsquo;) from the cluster. It can be triggered manually, through <a href="https://doc.akka.io/docs/akka-management/current/cluster-http-management.html#put-cluster-members-address-responses">Cluster HTTP Management</a>, or automatically by a <a href="cluster.html#downing">downing provider</a> like <a href="../split-brain-resolver.html">Split Brain Resolver</a></p></li>
+  <p><strong>down</strong> - mark a node as down. This action is required to remove crashed nodes (that did not &lsquo;leave&rsquo;) from the cluster. It can be triggered manually, through <a href="https://pekko.apache.org/docs/pekko-management/current/cluster-http-management.html#put-cluster-members-address-responses">Cluster HTTP Management</a>, or automatically by a <a href="cluster.html#downing">downing provider</a> like <a href="../split-brain-resolver.html">Split Brain Resolver</a></p></li>
 </ul>
 <h4><a href="#leader-actions" name="leader-actions" class="anchor"><span class="anchor-link"></span></a>Leader Actions</h4>
 <p>The <code>leader</code> has the duty of confirming user actions to shift members in and out of the cluster:</p>
@@ -594,7 +594,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

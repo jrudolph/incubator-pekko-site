@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currenttyped/coexisting.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currenttyped/coexisting.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#coexistence" name="coexistence" class="anchor"><span class="anchor-link"></span></a>Coexistence</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Actor Typed, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>To use Pekko Actor Typed, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion<
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,13 +442,13 @@ libraryDependencies += "org.apache.pekko" %% "pekko-actor-typed" % PekkoVersion<
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-actor-typed_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
 <h2><a href="#introduction" name="introduction" class="anchor"><span class="anchor-link"></span></a>Introduction</h2>
 <p>We believe Pekko Typed will be adopted in existing systems gradually and therefore it&rsquo;s important to be able to use typed and classic actors together, within the same <code>ActorSystem</code>. Also, we will not be able to integrate with all existing modules in one big bang release and that is another reason for why these two ways of writing actors must be able to coexist.</p>
-<p>There are two different <code>ActorSystem</code>s: <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>actor.ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>actor.ActorSystem</code></a></span> and <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>actor.typed.ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>actor.typed.ActorSystem</code></a></span>. </p>
+<p>There are two different <code>ActorSystem</code>s: <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>actor.ActorSystem</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>actor.ActorSystem</code></a></span> and <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>actor.typed.ActorSystem</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>actor.typed.ActorSystem</code></a></span>. </p>
 <p>Currently the typed actor system is implemented using the classic actor system under the hood. This may change in the future.</p>
 <p>Typed and classic can interact the following ways:</p>
 <ul>
@@ -612,8 +612,8 @@ import org.apache.pekko.actor.typed.scaladsl.adapter._</code></pre></dd>
   <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/actor-typed-tests/src/test/java/jdocs/org/apache/pekko/typed/coexistence/ClassicWatchingTypedTest.java#L22-L23" target="_blank" title="Go to snippet source">source</a><code class="language-java">// In java use the static methods on Adapter to convert from typed to classic
 import org.apache.pekko.actor.typed.javadsl.Adapter;</code></pre></dd>
 </dl>
-<p><span class="group-scala">That adds some implicit extension methods that are added to classic and typed <code>ActorSystem</code>, <code>ActorContext</code> and <code>ActorRef</code> in both directions.</span> <span class="group-java">To convert between typed and classic <code>ActorSystem</code>, <code>ActorContext</code> and <code>ActorRef</code> in both directions there are adapter methods in <a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/actor/typed/javadsl/Adapter.html" title="pekko.actor.typed.javadsl.Adapter"><code>pekko.actor.typed.javadsl.Adapter</code></a>.</span> Note the inline comments in the example above. </p>
-<p>This method of using a top level classic actor is the suggested path for this type of co-existence. However, if you prefer to start with a typed top level actor then you can use the <span class="group-scala">implicit <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/actor/typed/scaladsl/adapter/package$$ClassicActorSystemOps.html#spawn[T](behavior:org.apache.pekko.actor.typed.Behavior[T],name:String,props:org.apache.pekko.actor.typed.Props):org.apache.pekko.actor.typed.ActorRef[T]" title="pekko.actor.typed.scaladsl.adapter.package.ClassicActorSystemOps"><code>spawn</code></a> -method</span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/actor/typed/javadsl/Adapter.html#spawn(org.apache.pekko.actor.ActorSystem,org.apache.pekko.actor.typed.Behavior,java.lang.String,org.apache.pekko.actor.typed.Props)" title="pekko.actor.typed.javadsl.Adapter"><code>Adapter.spawn</code></a></span> directly from the typed system:</p>
+<p><span class="group-scala">That adds some implicit extension methods that are added to classic and typed <code>ActorSystem</code>, <code>ActorContext</code> and <code>ActorRef</code> in both directions.</span> <span class="group-java">To convert between typed and classic <code>ActorSystem</code>, <code>ActorContext</code> and <code>ActorRef</code> in both directions there are adapter methods in <a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/actor/typed/javadsl/Adapter.html" title="pekko.actor.typed.javadsl.Adapter"><code>pekko.actor.typed.javadsl.Adapter</code></a>.</span> Note the inline comments in the example above. </p>
+<p>This method of using a top level classic actor is the suggested path for this type of co-existence. However, if you prefer to start with a typed top level actor then you can use the <span class="group-scala">implicit <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/actor/typed/scaladsl/adapter/package$$ClassicActorSystemOps.html#spawn[T](behavior:org.apache.pekko.actor.typed.Behavior[T],name:String,props:org.apache.pekko.actor.typed.Props):org.apache.pekko.actor.typed.ActorRef[T]" title="pekko.actor.typed.scaladsl.adapter.package.ClassicActorSystemOps"><code>spawn</code></a> -method</span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/actor/typed/javadsl/Adapter.html#spawn(org.apache.pekko.actor.ActorSystem,org.apache.pekko.actor.typed.Behavior,java.lang.String,org.apache.pekko.actor.typed.Props)" title="pekko.actor.typed.javadsl.Adapter"><code>Adapter.spawn</code></a></span> directly from the typed system:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -757,7 +757,7 @@ ActorRef&lt;Typed.Command&gt; typed = Adapter.spawn(as, Typed.create(), &quot;Ty
   }
 }</code></pre></dd>
 </dl><div class="group-scala">
-<p>Note that when sending from a typed actor to a classic <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span> there is no sender in scope as in classic. The typed sender should use its own <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/actor/typed/scaladsl/ActorContext.html#self:org.apache.pekko.actor.typed.ActorRef[T]" title="pekko.actor.typed.scaladsl.ActorContext"><code>ActorContext[T].self</code></a> explicitly, as shown in the snippet.</p></div>
+<p>Note that when sending from a typed actor to a classic <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span> there is no sender in scope as in classic. The typed sender should use its own <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/actor/typed/scaladsl/ActorContext.html#self:org.apache.pekko.actor.typed.ActorRef[T]" title="pekko.actor.typed.scaladsl.ActorContext"><code>ActorContext[T].self</code></a> explicitly, as shown in the snippet.</p></div>
 <h2><a href="#supervision" name="supervision" class="anchor"><span class="anchor-link"></span></a>Supervision</h2>
 <p>The default supervision for classic actors is to restart whereas for typed it is to stop. When combining classic and typed actors the default supervision is based on the default behavior of the child, for example if a classic actor creates a typed child, its default supervision will be to stop. If a typed actor creates a classic child, its default supervision will be to restart.</p>
 <div class="source-github">
@@ -848,7 +848,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Upgrade strategy for downstream libraries'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentproject/downstream-upgrade-strategy.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentproject/downstream-upgrade-strategy.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -417,7 +417,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="page-content row">
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#downstream-upgrade-strategy" name="downstream-upgrade-strategy" class="anchor"><span class="anchor-link"></span></a>Downstream upgrade strategy</h1>
-<p>When a new Pekko version is released, downstream projects (such as <a href="https://doc.akka.io/docs/akka-management/current/">Pekko Management</a>, <a href="https://doc.akka.io/docs/akka-http/current/">Pekko HTTP</a> and <a href="https://doc.akka.io/docs/akka-grpc/current/">Pekko gRPC</a>) do not need to update immediately: because of our <a href="../common/binary-compatibility-rules.html">binary compatibility</a> approach, applications can take advantage of the latest version of Pekko without having to wait for intermediate libraries to update.</p>
+<p>When a new Pekko version is released, downstream projects (such as <a href="https://pekko.apache.org/docs/pekko-management/current/">Pekko Management</a>, <a href="https://pekko.apache.org/docs/pekko-http/current/">Pekko HTTP</a> and <a href="https://pekko.apache.org/docs/pekko-grpc/current/">Pekko gRPC</a>) do not need to update immediately: because of our <a href="../common/binary-compatibility-rules.html">binary compatibility</a> approach, applications can take advantage of the latest version of Pekko without having to wait for intermediate libraries to update.</p>
 <h2><a href="#patch-versions" name="patch-versions" class="anchor"><span class="anchor-link"></span></a>Patch versions</h2>
 <p>When releasing a new patch version of Pekko (e.g. 2.5.22), we typically don&rsquo;t immediately bump the Pekko version in satellite projects.</p>
 <p>The reason for this is this will make it more low-friction for users to update those satellite projects: say their project is on Pekko 2.5.22 and Pekko Management 1.0.0, and we release Pekko Management 1.0.1 (still built with Pekko 2.5.22) and Pekko 2.5.23. They can safely update to Pekko Management 1.0.1 without also updating to Pekko 2.5.23, or update to Pekko 2.5.23 without updating to Pekko Management 1.0.1.</p>
@@ -510,7 +510,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

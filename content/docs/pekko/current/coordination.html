@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='A distributed lock with Pekko Coordination using a pluggable lease API.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentcoordination.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentcoordination.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,12 +418,12 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#coordination" name="coordination" class="anchor"><span class="anchor-link"></span></a>Coordination</h1>
 <p>Pekko Coordination is a set of tools for distributed coordination.</p>
-<h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-coordination" % PekkoVersion</code></pre></dd><dt>Gradle</dt><dd><pre class="prettyprint"><code class="language-gradle">def versions = [
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-coordination_${versions.ScalaBinary}"
 }</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
@@ -434,7 +434,7 @@ dependencies {
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -450,7 +450,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Coordination</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-coordination</div>
-  <div>0.0.0+26537-d5470465-SNAPSHOT</div>
+  <div>0.0.0+26547-ad0f3b42-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -459,10 +459,10 @@ dependencies {
   <tr><th>License</th><td><div><a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener noreferrer">Apache-2.0</a></div>
   </td></tr>
   
-  <tr><th>Home page</th><td><a href="https://akka.io/">https://akka.io/</a></td></tr>
+  <tr><th>Home page</th><td><a href="https://pekko.apache.org/">https://pekko.apache.org/</a></td></tr>
   <tr><th>API documentation</th><td>
-  <div><a href="https://doc.akka.io/api/akka/snapshot/akka/coordination/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
-  <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/coordination/lease/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
+  <div><a href="https://pekko.apache.org/api/pekko/snapshot/pekko/coordination/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
+  <div><a href="https://pekko.apache.org/japi/pekko/snapshot/pekko/coordination/lease/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
   <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
@@ -527,7 +527,7 @@ CompletionStage&lt;Boolean&gt; released = lease.release();</code></pre></dd>
 <p>Leases can be used for <a href="split-brain-resolver.html#lease">Split Brain Resolver</a>, <a href="cluster-singleton.html#lease">Cluster Singleton</a>, and <a href="cluster-sharding.html#lease">Cluster Sharding</a>. </p>
 <h2><a href="#lease-implementations" name="lease-implementations" class="anchor"><span class="anchor-link"></span></a>Lease implementations</h2>
 <ul>
-  <li><a href="https://doc.akka.io/docs/akka-management/current/kubernetes-lease.html">Kubernetes API</a></li>
+  <li><a href="https://pekko.apache.org/docs/pekko-management/current/kubernetes-lease.html">Kubernetes API</a></li>
 </ul>
 <h2><a href="#implementing-a-lease" name="implementing-a-lease" class="anchor"><span class="anchor-link"></span></a>Implementing a lease</h2>
 <p>Implementations should extend the <span class="group-scala"><code>org.apache.pekko.coordination.lease.scaladsl.Lease</code></span><span class="group-java"><code>org.apache.pekko.coordination.lease.javadsl.Lease</code></span> </p>
@@ -720,7 +720,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

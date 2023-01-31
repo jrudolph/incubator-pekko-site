@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currenttyped/testing-async.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currenttyped/testing-async.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,7 +419,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h2><a href="#asynchronous-testing" name="asynchronous-testing" class="anchor"><span class="anchor-link"></span></a>Asynchronous testing</h2>
 <p>You are viewing the documentation for the new actor APIs, to view the Pekko Classic documentation, see <a href="../testing.html">Classic Testing</a>.</p>
-<p>Asynchronous testing uses a real <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> that allows you to test your Actors in a more realistic environment.</p>
+<p>Asynchronous testing uses a real <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> that allows you to test your Actors in a more realistic environment.</p>
 <p>The minimal setup consists of the test procedure, which provides the desired stimuli, the actor under test, and an actor receiving replies. Bigger systems replace the actor under test with a network of actors, apply stimuli at varying injection points and arrange results to be sent from different emission points, but the basic principle stays the same in that a single procedure drives the test.</p>
 <h3><a href="#basic-example" name="basic-example" class="anchor"><span class="anchor-link"></span></a>Basic example</h3>
 <p>Actor under test:</p>
@@ -482,7 +482,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   }
 }</code></pre></dd>
 </dl>
-<p>Tests create an instance of <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit"><code>ActorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit"><code>ActorTestKit</code></a></span>. This provides access to:</p>
+<p>Tests create an instance of <span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit"><code>ActorTestKit</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit"><code>ActorTestKit</code></a></span>. This provides access to:</p>
 <ul>
   <li>An ActorSystem</li>
   <li>Methods for spawning Actors. These are created under the special testkit user guardian</li>
@@ -513,7 +513,7 @@ public class AsyncTestingExampleTest
   static final ActorTestKit testKit = ActorTestKit.create();
 }</code></pre></dd>
 </dl>
-<p>Your test is responsible for shutting down the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> e.g. using <span class="group-scala"><code>BeforeAndAfterAll</code> when using ScalaTest</span><span class="group-java"><code>@AfterClass</code> when using JUnit</span>.</p>
+<p>Your test is responsible for shutting down the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/ActorSystem.html" title="org.apache.pekko.actor.typed.ActorSystem"><code>ActorSystem</code></a></span> e.g. using <span class="group-scala"><code>BeforeAndAfterAll</code> when using ScalaTest</span><span class="group-java"><code>@AfterClass</code> when using JUnit</span>.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -531,7 +531,7 @@ public static void cleanup() {
   <li>Creating a <code>TestProbe</code></li>
   <li>Verifying that the actor under test responds via the <code>TestProbe</code></li>
 </ul>
-<p>Note that it is possible to use a <code>TestProbe</code> directly as a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/RecipientRef.html" title="org.apache.pekko.actor.typed.RecipientRef"><code>RecipientRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/RecipientRef.html" title="org.apache.pekko.actor.typed.RecipientRef"><code>RecipientRef</code></a></span> (a common supertype of <code>ActorRef</code> and <a href="cluster-sharding.html">Cluster Sharding</a> <code>EntityRef</code>), in cases where a message protocol uses <code>RecipientRef</code> instead of specifying <code>ActorRef</code> or <code>EntityRef</code>.</p>
+<p>Note that it is possible to use a <code>TestProbe</code> directly as a <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/RecipientRef.html" title="org.apache.pekko.actor.typed.RecipientRef"><code>RecipientRef</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/RecipientRef.html" title="org.apache.pekko.actor.typed.RecipientRef"><code>RecipientRef</code></a></span> (a common supertype of <code>ActorRef</code> and <a href="cluster-sharding.html">Cluster Sharding</a> <code>EntityRef</code>), in cases where a message protocol uses <code>RecipientRef</code> instead of specifying <code>ActorRef</code> or <code>EntityRef</code>.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -584,7 +584,7 @@ pinger2.tell(new Echo.Ping(&quot;hello&quot;, probe.ref()));
 probe.expectMessage(new Echo.Pong(&quot;hello&quot;));
 testKit.stop(pinger2, Duration.ofSeconds(10));</code></pre></dd>
 </dl>
-<p>The <code>stop</code> method can only be used for actors that were spawned by the same <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit"><code>ActorTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit"><code>ActorTestKit</code></a></span>. Other actors will not be stopped by that method.</p>
+<p>The <code>stop</code> method can only be used for actors that were spawned by the same <span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.ActorTestKit"><code>ActorTestKit</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/ActorTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.ActorTestKit"><code>ActorTestKit</code></a></span>. Other actors will not be stopped by that method.</p>
 <h3><a href="#observing-mocked-behavior" name="observing-mocked-behavior" class="anchor"><span class="anchor-link"></span></a>Observing mocked behavior</h3>
 <p>When testing a component (which may be an actor or not) that interacts with other actors it can be useful to not have to run the other actors it depends on. Instead, you might want to create mock behaviors that accept and possibly respond to messages in the same way the other actor would do but without executing any actual logic. In addition to this it can also be useful to observe those interactions to assert that the component under test did send the expected messages. This allows the same kinds of tests as classic <code>TestActor</code>/<code>Autopilot</code>.</p>
 <p>As an example, let&rsquo;s assume we&rsquo;d like to test the following component:</p>
@@ -690,9 +690,9 @@ IntStream.range(0, messages)
         });</code></pre></dd>
 </dl>
 <h3><a href="#test-framework-integration" name="test-framework-integration" class="anchor"><span class="anchor-link"></span></a>Test framework integration</h3><div class="group-java">
-<p>If you are using JUnit you can use <a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/actor/testkit/typed/javadsl/TestKitJunitResource.html" title="pekko.actor.testkit.typed.javadsl.TestKitJunitResource"><code>TestKitJunitResource</code></a> to have the async test kit automatically shutdown when the test is complete.</p>
+<p>If you are using JUnit you can use <a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/actor/testkit/typed/javadsl/TestKitJunitResource.html" title="pekko.actor.testkit.typed.javadsl.TestKitJunitResource"><code>TestKitJunitResource</code></a> to have the async test kit automatically shutdown when the test is complete.</p>
 <p>Note that the dependency on JUnit is marked as optional from the test kit module, so your project must explicitly include a dependency on JUnit to use this.</p></div><div class="group-scala">
-<p>If you are using ScalaTest you can extend <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/actor/testkit/typed/scaladsl/ScalaTestWithActorTestKit.html" title="pekko.actor.testkit.typed.scaladsl.ScalaTestWithActorTestKit"><code>ScalaTestWithActorTestKit</code></a> to have the async test kit automatically shutdown when the test is complete. This is done in <code>afterAll</code> from the <code>BeforeAndAfterAll</code> trait. If you override that method you should call <code>super.afterAll</code> to shutdown the test kit.</p>
+<p>If you are using ScalaTest you can extend <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/actor/testkit/typed/scaladsl/ScalaTestWithActorTestKit.html" title="pekko.actor.testkit.typed.scaladsl.ScalaTestWithActorTestKit"><code>ScalaTestWithActorTestKit</code></a> to have the async test kit automatically shutdown when the test is complete. This is done in <code>afterAll</code> from the <code>BeforeAndAfterAll</code> trait. If you override that method you should call <code>super.afterAll</code> to shutdown the test kit.</p>
 <p>Note that the dependency on ScalaTest is marked as optional from the test kit module, so your project must explicitly include a dependency on ScalaTest to use this.</p></div>
 <dl>
   <dt>Scala</dt>
@@ -882,8 +882,8 @@ public class ManualTimerExampleTest extends JUnitSuite {
 }</code></pre></dd>
 </dl>
 <h3><a href="#test-of-logging" name="test-of-logging" class="anchor"><span class="anchor-link"></span></a>Test of logging</h3>
-<p>To verify that certain <a href="logging.html">logging</a> events are emitted there is a utility called <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> . You define a criteria of the expected logging events and it will assert that the given number of occurrences of matching logging events are emitted within a block of code.</p><div class="callout note "><div class="callout-title">Note</div>
-<p>The <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> implementation <a href="logging.html#logback">requires Logback dependency</a>.</p></div>
+<p>To verify that certain <a href="logging.html">logging</a> events are emitted there is a utility called <span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> . You define a criteria of the expected logging events and it will assert that the given number of occurrences of matching logging events are emitted within a block of code.</p><div class="callout note "><div class="callout-title">Note</div>
+<p>The <span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> implementation <a href="logging.html#logback">requires Logback dependency</a>.</p></div>
 <p>For example, a criteria that verifies that an <code>INFO</code> level event with a message containing &ldquo;Received message&rdquo; is logged:</p>
 <dl>
   <dt>Scala</dt>
@@ -943,7 +943,7 @@ LoggingTestKit.info(&quot;Received message&quot;)
           return null;
         });</code></pre></dd>
 </dl>
-<p>See <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> for more details.</p>
+<p>See <span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/javadsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.javadsl.LoggingTestKit"><code>LoggingTestKit</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/testkit/typed/scaladsl/LoggingTestKit.html" title="org.apache.pekko.actor.testkit.typed.scaladsl.LoggingTestKit"><code>LoggingTestKit</code></a></span> for more details.</p>
 <h3><a href="#silence-logging-output-from-tests" name="silence-logging-output-from-tests" class="anchor"><span class="anchor-link"></span></a>Silence logging output from tests</h3>
 <p>When running tests, it&rsquo;s typically preferred to have the output to standard out, together with the output from the testing framework (<span class="group-scala">ScalaTest</span><span class="group-java">JUnit</span>). On one hand you want the output to be clean without logging noise, but on the other hand you want as much information as possible if there is a test failure (for example in CI builds).</p>
 <p>The Pekko TestKit provides a <code>LogCapturing</code> utility to support this with ScalaTest or JUnit. It will buffer log events instead of emitting them to the <code>ConsoleAppender</code> immediately (or whatever Logback appender that is configured). When there is a test failure the buffered events are flushed to the target appenders, typically a <code>ConsoleAppender</code>.</p><div class="callout note "><div class="callout-title">Note</div>
@@ -1116,7 +1116,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

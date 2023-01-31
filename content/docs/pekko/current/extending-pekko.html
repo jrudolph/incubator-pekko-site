@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='How to extend Pekko with Pekko Extensions.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentextending-pekko.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentextending-pekko.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,12 +418,12 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="page-content row">
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#classic-pekko-extensions" name="classic-pekko-extensions" class="anchor"><span class="anchor-link"></span></a>Classic Pekko Extensions</h1>
-<p>If you want to add features to Pekko, there is a very elegant, but powerful mechanism for doing so. It&rsquo;s called Pekko Extensions and comprises 2 basic components: an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span> and an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span>.</p>
-<p>Extensions will only be loaded once per <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span>, which will be managed by Pekko. You can choose to have your Extension loaded on-demand or at <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span> creation time through the Pekko configuration. Details on how to make that happens are below, in the <a href="extending-pekko.html#loading">Loading from Configuration</a> section.</p><div class="callout warning "><div class="callout-title">Warning</div>
+<p>If you want to add features to Pekko, there is a very elegant, but powerful mechanism for doing so. It&rsquo;s called Pekko Extensions and comprises 2 basic components: an <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span> and an <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span>.</p>
+<p>Extensions will only be loaded once per <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span>, which will be managed by Pekko. You can choose to have your Extension loaded on-demand or at <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span> creation time through the Pekko configuration. Details on how to make that happens are below, in the <a href="extending-pekko.html#loading">Loading from Configuration</a> section.</p><div class="callout warning "><div class="callout-title">Warning</div>
 <p>Since an extension is a way to hook into Pekko itself, the implementor of the extension needs to ensure the thread safety of his/her extension.</p></div>
 <h2><a href="#building-an-extension" name="building-an-extension" class="anchor"><span class="anchor-link"></span></a>Building an Extension</h2>
 <p>So let&rsquo;s create a sample extension that lets us count the number of times something has happened.</p>
-<p>First, we define what our <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span> should do:</p>
+<p>First, we define what our <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span> should do:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -454,7 +454,7 @@ static class CountExtensionImpl implements Extension {
 }
 </code></pre></dd>
 </dl>
-<p>Then we need to create an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span> for our extension so we can grab a hold of it.</p>
+<p>Then we need to create an <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span> for our extension so we can grab a hold of it.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -559,7 +559,7 @@ class MyCounterActor extends Actor with Counting {
 <p>That&rsquo;s all there is to it!</p>
 <a id="loading"></a>
 <h2><a href="#loading-from-configuration" name="loading-from-configuration" class="anchor"><span class="anchor-link"></span></a>Loading from Configuration</h2>
-<p>To be able to load extensions from your Pekko configuration you must add FQCNs of implementations of either <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span> or <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ExtensionIdProvider.html" title="org.apache.pekko.actor.ExtensionIdProvider"><code>ExtensionIdProvider</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ExtensionIdProvider.html" title="org.apache.pekko.actor.ExtensionIdProvider"><code>ExtensionIdProvider</code></a></span> in the <code>pekko.extensions</code> section of the config you provide to your <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span>.</p>
+<p>To be able to load extensions from your Pekko configuration you must add FQCNs of implementations of either <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ExtensionId.html" title="org.apache.pekko.actor.ExtensionId"><code>ExtensionId</code></a></span> or <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ExtensionIdProvider.html" title="org.apache.pekko.actor.ExtensionIdProvider"><code>ExtensionIdProvider</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ExtensionIdProvider.html" title="org.apache.pekko.actor.ExtensionIdProvider"><code>ExtensionIdProvider</code></a></span> in the <code>pekko.extensions</code> section of the config you provide to your <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorSystem.html" title="org.apache.pekko.actor.ActorSystem"><code>ActorSystem</code></a></span>.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -587,7 +587,7 @@ class MyCounterActor extends Actor with Counting {
     timeout = 30 seconds
   }
 }</code></pre>
-<p>The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span>:</p>
+<p>The <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/Extension.html" title="org.apache.pekko.actor.Extension"><code>Extension</code></a></span>:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -768,7 +768,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

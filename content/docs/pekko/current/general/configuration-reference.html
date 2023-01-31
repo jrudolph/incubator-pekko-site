@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentgeneral/configuration-reference.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentgeneral/configuration-reference.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#default-configuration" name="default-configuration" class="anchor"><span class="anchor-link"></span></a>Default configuration</h1>
 <p>Each Pekko module has a <code>reference.conf</code> file with the default values.</p>
-<p>Make your edits/overrides in your <code>application.conf</code>. Don&rsquo;t override default values if you are not sure of the implications. <a href="https://doc.akka.io/docs/akka-enhancements/current/config-checker.html">Pekko Config Checker</a> is a useful tool for finding potential configuration issues.</p>
+<p>Make your edits/overrides in your <code>application.conf</code>. Don&rsquo;t override default values if you are not sure of the implications.</p>
 <p>The purpose of <code>reference.conf</code> files is for libraries, like Pekko, to define default values that are used if an application doesn&rsquo;t define a more specific value. It&rsquo;s also a good place to document the existence and meaning of the configuration properties. One library must not try to override properties in its own <code>reference.conf</code> for properties originally defined by another library&rsquo;s <code>reference.conf</code>, because the effective value would be nondeterministic when loading the configuration.`</p>
 <a id="config-pekko-actor"></a>
 <h3><a href="#pekko-actor" name="pekko-actor" class="anchor"><span class="anchor-link"></span></a>pekko-actor</h3>
@@ -1110,7 +1110,7 @@ pekko {
     debug {
       # enable function of Actor.loggable(), which is to log any received message
       # at DEBUG level, see the “Testing Actor Systems” section of the Pekko
-      # Documentation at https://akka.io/docs
+      # Documentation at https://pekko.apache.org/docs/pekko/current/
       receive = off
 
       # enable DEBUG logging of all AutoReceiveMessages (Kill, PoisonPill etc.)
@@ -2734,7 +2734,7 @@ pekko.reliable-delivery {
 # This is the reference config file that contains all the default settings.
 # Make your edits in your application.conf in order to override these settings.
 
-# Directory of persistence journal and snapshot store plugins is available at the 
+# Directory of persistence journal and snapshot store plugins is available at the
 # Pekko Community Projects page https://akka.io/community/
 
 # Default persistence extension settings.
@@ -3443,7 +3443,7 @@ pekko {
       # Select the underlying transport implementation.
       #
       # Possible values: aeron-udp, tcp, tls-tcp
-      # See https://doc.akka.io/docs/pekko/current/remoting-artery.html#selecting-a-transport for the tradeoffs
+      # See https://pekko.apache.org/docs/pekko/current/remoting-artery.html#selecting-a-transport for the tradeoffs
       # for each transport
       transport = tcp
 
@@ -5589,7 +5589,7 @@ pekko.cluster.sharding {
   # crashing the shard.
   fail-on-invalid-entity-state-transition = off
 
-  # Healthcheck that can be used with Pekko management health checks: https://doc.akka.io/docs/pekko-management/current/healthchecks.html
+  # Healthcheck that can be used with Pekko management health checks: https://pekko.apache.org/docs/pekko-management/current/healthchecks.html
   healthcheck {
     # sharding names to check have registered with the coordinator for the health check to pass
     # once initial registration has taken place the health check always returns true to prevent the coordinator
@@ -6101,7 +6101,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

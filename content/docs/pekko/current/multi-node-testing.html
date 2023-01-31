@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Multi node testing of distributed systems built with Pekko.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentmulti-node-testing.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentmulti-node-testing.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#multi-node-testing" name="multi-node-testing" class="anchor"><span class="anchor-link"></span></a>Multi Node Testing</h1>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Multi Node Testing, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>To use Multi Node Testing, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-multi-node-testkit" % PekkoVersion % Test</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-multi-node-testkit" % PekkoV
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -443,7 +443,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-multi-node-testkit" % PekkoV
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   testImplementation "org.apache.pekko:pekko-multi-node-testkit_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -451,7 +451,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Multi-node Testkit</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-multi-node-testkit</div>
-  <div>0.0.0+26537-d5470465-SNAPSHOT</div>
+  <div>0.0.0+26547-ad0f3b42-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -460,10 +460,10 @@ dependencies {
   <tr><th>License</th><td><div><a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener noreferrer">Apache-2.0</a></div>
   </td></tr>
   
-  <tr><th>Home page</th><td><a href="https://akka.io/">https://akka.io/</a></td></tr>
+  <tr><th>Home page</th><td><a href="https://pekko.apache.org/">https://pekko.apache.org/</a></td></tr>
   <tr><th>API documentation</th><td>
-  <div><a href="https://doc.akka.io/api/akka/snapshot/akka/remote/testkit/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
-  <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/remote/testkit/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
+  <div><a href="https://pekko.apache.org/api/pekko/snapshot/pekko/remote/testkit/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
+  <div><a href="https://pekko.apache.org/japi/pekko/snapshot/pekko/remote/testkit/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
   <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
@@ -480,11 +480,11 @@ dependencies {
 
 <ul>
   <li><a href="multi-node-testing.html#the-test-conductor">The Test Conductor</a>. that coordinates and controls the nodes under test.</li>
-  <li><a href="multi-node-testing.html#the-multi-node-spec">The Multi Node Spec</a>. that is a convenience wrapper for starting the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testconductor/TestConductor$.html" title="org.apache.pekko.remote.testconductor.TestConductor"><code>TestConductor</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testconductor/TestConductor$.html" title="org.apache.pekko.remote.testconductor.TestConductor"><code>TestConductor</code></a></span> and letting all nodes connect to it.</li>
+  <li><a href="multi-node-testing.html#the-multi-node-spec">The Multi Node Spec</a>. that is a convenience wrapper for starting the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testconductor/TestConductor$.html" title="org.apache.pekko.remote.testconductor.TestConductor"><code>TestConductor</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testconductor/TestConductor$.html" title="org.apache.pekko.remote.testconductor.TestConductor"><code>TestConductor</code></a></span> and letting all nodes connect to it.</li>
   <li><a href="multi-node-testing.html#the-sbtmultijvm-plugin">The SbtMultiJvm Plugin</a>. that starts tests in multiple JVMs possibly on multiple machines.</li>
 </ul>
 <h2><a href="#the-test-conductor" name="the-test-conductor" class="anchor"><span class="anchor-link"></span></a>The Test Conductor</h2>
-<p>The basis for the multi node testing is the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testconductor/TestConductor$.html" title="org.apache.pekko.remote.testconductor.TestConductor"><code>TestConductor</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testconductor/TestConductor$.html" title="org.apache.pekko.remote.testconductor.TestConductor"><code>TestConductor</code></a></span>. It is a Pekko Extension that plugs in to the network stack and it is used to coordinate the nodes participating in the test and provides several features including:</p>
+<p>The basis for the multi node testing is the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testconductor/TestConductor$.html" title="org.apache.pekko.remote.testconductor.TestConductor"><code>TestConductor</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testconductor/TestConductor$.html" title="org.apache.pekko.remote.testconductor.TestConductor"><code>TestConductor</code></a></span>. It is a Pekko Extension that plugs in to the network stack and it is used to coordinate the nodes participating in the test and provides several features including:</p>
 <ul>
   <li>Node Address Lookup: Finding out the full path to another test node (No need to share configuration between test nodes)</li>
   <li>Node Barrier Coordination: Waiting for other nodes at named barriers.</li>
@@ -492,9 +492,9 @@ dependencies {
 </ul>
 <p>This is a schematic overview of the test conductor.</p>
 <p><img src="./images/pekko-remote-testconductor.png" alt="pekko-remote-testconductor.png" /></p>
-<p>The test conductor server is responsible for coordinating barriers and sending commands to the test conductor clients that act upon them, e.g. throttling network traffic to/from another client. More information on the possible operations is available in the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testconductor/Conductor.html" title="org.apache.pekko.remote.testconductor.Conductor"><code>remote.testconductor.Conductor</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testconductor/Conductor.html" title="org.apache.pekko.remote.testconductor.Conductor"><code>remote.testconductor.Conductor</code></a></span> API documentation.</p>
+<p>The test conductor server is responsible for coordinating barriers and sending commands to the test conductor clients that act upon them, e.g. throttling network traffic to/from another client. More information on the possible operations is available in the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testconductor/Conductor.html" title="org.apache.pekko.remote.testconductor.Conductor"><code>remote.testconductor.Conductor</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testconductor/Conductor.html" title="org.apache.pekko.remote.testconductor.Conductor"><code>remote.testconductor.Conductor</code></a></span> API documentation.</p>
 <h2><a href="#the-multi-node-spec" name="the-multi-node-spec" class="anchor"><span class="anchor-link"></span></a>The Multi Node Spec</h2>
-<p>The Multi Node Spec consists of two parts. The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeConfig.html" title="org.apache.pekko.remote.testkit.MultiNodeConfig"><code>MultiNodeConfig</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeConfig.html" title="org.apache.pekko.remote.testkit.MultiNodeConfig"><code>MultiNodeConfig</code></a></span> that is responsible for common configuration and enumerating and naming the nodes under test. The <code>MultiNodeSpec</code> that contains a number of convenience functions for making the test nodes interact with each other. More information on the possible operations is available in the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="org.apache.pekko.remote.testkit.MultiNodeSpec"><code>remote.testkit.MultiNodeSpec</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="org.apache.pekko.remote.testkit.MultiNodeSpec"><code>remote.testkit.MultiNodeSpec</code></a></span> API documentation.</p>
+<p>The Multi Node Spec consists of two parts. The <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeConfig.html" title="org.apache.pekko.remote.testkit.MultiNodeConfig"><code>MultiNodeConfig</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeConfig.html" title="org.apache.pekko.remote.testkit.MultiNodeConfig"><code>MultiNodeConfig</code></a></span> that is responsible for common configuration and enumerating and naming the nodes under test. The <code>MultiNodeSpec</code> that contains a number of convenience functions for making the test nodes interact with each other. More information on the possible operations is available in the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="org.apache.pekko.remote.testkit.MultiNodeSpec"><code>remote.testkit.MultiNodeSpec</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="org.apache.pekko.remote.testkit.MultiNodeSpec"><code>remote.testkit.MultiNodeSpec</code></a></span> API documentation.</p>
 <p>The setup of the <code>MultiNodeSpec</code> is configured through java system properties that you set on all JVMs that&rsquo;s going to run a node under test. These can be set on the JVM command line with <code>-Dproperty=value</code>.</p>
 <dl>
   <dt>These are the available properties</dt>
@@ -549,7 +549,7 @@ dependencies {
 </code></pre>
 <p>More than one test name can be listed to run multiple specific tests. Tab completion in sbt makes it easy to complete the test names.</p>
 <h2><a href="#a-multi-node-testing-example" name="a-multi-node-testing-example" class="anchor"><span class="anchor-link"></span></a>A Multi Node Testing Example</h2>
-<p>First we need some scaffolding to hook up the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="org.apache.pekko.remote.testkit.MultiNodeSpec"><code>MultiNodeSpec</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="org.apache.pekko.remote.testkit.MultiNodeSpec"><code>MultiNodeSpec</code></a></span> with your favorite test framework. Lets define a trait <code>STMultiNodeSpec</code> that uses ScalaTest to start and stop <code>MultiNodeSpec</code>.</p>
+<p>First we need some scaffolding to hook up the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="org.apache.pekko.remote.testkit.MultiNodeSpec"><code>MultiNodeSpec</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="org.apache.pekko.remote.testkit.MultiNodeSpec"><code>MultiNodeSpec</code></a></span> with your favorite test framework. Lets define a trait <code>STMultiNodeSpec</code> that uses ScalaTest to start and stop <code>MultiNodeSpec</code>.</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/remote-tests/src/test/scala/org/apache/pekko/remote/testkit/STMultiNodeSpec.scala#L15-L36" target="_blank" title="Go to snippet source">source</a><code class="language-scala">package org.apache.pekko.remote.testkit
 
 import scala.language.implicitConversions
@@ -635,7 +635,7 @@ class MultiNodeSample extends MultiNodeSpec(MultiNodeSampleConfig) with STMultiN
 <p>There are a couple of things to keep in mind when writing multi node tests or else your tests might behave in surprising ways.</p>
 <ul>
   <li>Don&rsquo;t issue a shutdown of the first node. The first node is the controller and if it shuts down your test will break.</li>
-  <li>To be able to use <code>blackhole</code>, <code>passThrough</code>, and <code>throttle</code> you must activate the failure injector and throttler transport adapters by specifying <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/remote/testkit/MultiNodeConfig.html#testTransport(on:Boolean):Unit" title="pekko.remote.testkit.MultiNodeConfig"><code>testTransport(on = true)</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/remote/testkit/MultiNodeConfig.html#testTransport(boolean)" title="pekko.remote.testkit.MultiNodeConfig"><code>testTransport(true)</code></a></span> in your <code>MultiNodeConfig</code>.</li>
+  <li>To be able to use <code>blackhole</code>, <code>passThrough</code>, and <code>throttle</code> you must activate the failure injector and throttler transport adapters by specifying <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/remote/testkit/MultiNodeConfig.html#testTransport(on:Boolean):Unit" title="pekko.remote.testkit.MultiNodeConfig"><code>testTransport(on = true)</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/remote/testkit/MultiNodeConfig.html#testTransport(boolean)" title="pekko.remote.testkit.MultiNodeConfig"><code>testTransport(true)</code></a></span> in your <code>MultiNodeConfig</code>.</li>
   <li>Throttling, shutdown and other failure injections can only be done from the first node, which again is the controller.</li>
   <li>Don&rsquo;t ask for the address of a node using <code>node(address)</code> after the node has been shut down. Grab the address before shutting down the node.</li>
   <li>Don&rsquo;t use MultiNodeSpec methods like address lookup, barrier entry et.c. from other threads than the main test thread. This also means that you shouldn&rsquo;t use them from inside an actor, a future, or a scheduled task.</li>
@@ -733,7 +733,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

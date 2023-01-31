@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentcommon/io-layer.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentcommon/io-layer.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -431,7 +431,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   <li>extensibility for integrating new transports by way of a very lean SPI; the goal is to not force I/O mechanisms into a lowest common denominator but instead allow completely protocol-specific user-level APIs.</li>
 </ul>
 <h2><a href="#basic-architecture" name="basic-architecture" class="anchor"><span class="anchor-link"></span></a>Basic Architecture</h2>
-<p>Each transport implementation will be made available as a separate Pekko extension, offering an <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span> representing the initial point of contact for client code. This &ldquo;manager&rdquo; accepts requests for establishing a communications channel (e.g. connect or listen on a TCP socket). Each communications channel is represented by one dedicated actor, which is exposed to client code for all interaction with this channel over its entire lifetime.</p>
+<p>Each transport implementation will be made available as a separate Pekko extension, offering an <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span> representing the initial point of contact for client code. This &ldquo;manager&rdquo; accepts requests for establishing a communications channel (e.g. connect or listen on a TCP socket). Each communications channel is represented by one dedicated actor, which is exposed to client code for all interaction with this channel over its entire lifetime.</p>
 <p>The central element of the implementation is the transport-specific “selector” actor; in the case of TCP this would wrap a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/channels/Selector.html" title="java.nio.channels.Selector"><code>java.nio.channels.Selector</code></a>. The channel actors register their interest in readability or writability of their channel by sending corresponding messages to their assigned selector actor. However, the actual channel reading and writing is performed by the channel actors themselves, which frees the selector actors from time-consuming tasks and thereby ensures low latency. The selector actor&rsquo;s only responsibility is the management of the underlying selector&rsquo;s key set and the actual select operation, which is the only operation to typically block.</p>
 <p>The assignment of channels to selectors is performed by the manager actor and remains unchanged for the entire lifetime of a channel. Thereby the management actor &ldquo;stripes&rdquo; new channels across one or more selector actors based on some implementation-specific distribution logic. This logic may be delegated (in part) to the selectors actors, which could, for example, choose to reject the assignment of a new channel when they consider themselves to be at capacity.</p>
 <p>The manager actor creates (and therefore supervises) the selector actors, which in turn create and supervise their channel actors. The actor hierarchy of one single transport implementation therefore consists of three distinct actor levels, with the management actor at the top-, the channel actors at the leaf- and the selector actors at the mid-level.</p>
@@ -439,7 +439,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h2><a href="#design-benefits" name="design-benefits" class="anchor"><span class="anchor-link"></span></a>Design Benefits</h2>
 <p>Staying within the actor model for the whole implementation allows us to remove the need for explicit thread handling logic, and it also means that there are no locks involved (besides those which are part of the underlying transport library). Writing only actor code results in a cleaner implementation, while Pekko’s efficient actor messaging does not impose a high tax for this benefit. In fact the event-based nature of I/O maps so well to the actor model that we expect clear performance and especially scalability benefits over traditional solutions with explicit thread management and synchronization.</p>
 <p>Another benefit of supervision hierarchies is that clean-up of resources comes naturally: shutting down a selector actor will automatically clean up all channel actors, allowing proper closing of the channels and sending the appropriate messages to user-level client actors. DeathWatch allows the channel actors to notice the demise of their user-level handler actors and terminate in an orderly fashion in that case as well; this naturally reduces the chances of leaking open channels.</p>
-<p>The choice of using <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span> for exposing all functionality entails that these references can be distributed or delegated freely and in general handled as the user sees fit, including the use of remoting and life-cycle monitoring (just to name two).</p>
+<p>The choice of using <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/ActorRef.html" title="org.apache.pekko.actor.ActorRef"><code>ActorRef</code></a></span> for exposing all functionality entails that these references can be distributed or delegated freely and in general handled as the user sees fit, including the use of remoting and life-cycle monitoring (just to name two).</p>
 <h2><a href="#how-to-go-about-adding-a-new-transport" name="how-to-go-about-adding-a-new-transport" class="anchor"><span class="anchor-link"></span></a>How to go about Adding a New Transport</h2>
 <p>The best start is to study the TCP reference implementation to get a good grip on the basic working principle and then design an implementation, which is similar in spirit, but adapted to the new protocol in question. There are vast differences between I/O mechanisms (e.g. compare file I/O to a message broker) and the goal of this I/O layer is explicitly <strong>not</strong> to shoehorn all of them into a uniform API, which is why only the basic architecture ideas are documented here.</p>
 <div class="source-github">
@@ -529,7 +529,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentcoordinated-shutdown.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentcoordinated-shutdown.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#coordinated-shutdown" name="coordinated-shutdown" class="anchor"><span class="anchor-link"></span></a>Coordinated Shutdown</h1>
 <p>Under normal conditions, when an <code>ActorSystem</code> is terminated or the JVM process is shut down, certain actors and services will be stopped in a specific order. </p>
-<p>The <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$.html" title="org.apache.pekko.actor.CoordinatedShutdown"><code>CoordinatedShutdown</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$.html" title="org.apache.pekko.actor.CoordinatedShutdown"><code>CoordinatedShutdown</code></a></span> extension registers internal and user-defined tasks to be executed during the shutdown process. The tasks are grouped in configuration-defined &ldquo;phases&rdquo; which define the shutdown order.</p>
+<p>The <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$.html" title="org.apache.pekko.actor.CoordinatedShutdown"><code>CoordinatedShutdown</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$.html" title="org.apache.pekko.actor.CoordinatedShutdown"><code>CoordinatedShutdown</code></a></span> extension registers internal and user-defined tasks to be executed during the shutdown process. The tasks are grouped in configuration-defined &ldquo;phases&rdquo; which define the shutdown order.</p>
 <p>Especially the phases <code>before-service-unbind</code>, <code>before-cluster-shutdown</code> and <code>before-actor-system-terminate</code> are intended for application specific phases or tasks.</p>
 <p>The order of the shutdown phases is defined in configuration <code>pekko.coordinated-shutdown.phases</code>. See the default phases in the <code>reference.conf</code> tab:</p>
 <dl>
@@ -661,7 +661,7 @@ cancellable.cancel();</code></pre></dd>
         Optional.of(&quot;stop&quot;));</code></pre></dd>
 </dl>
 <p>Tasks should typically be registered as early as possible after system startup. When running the coordinated shutdown tasks that have been registered will be performed but tasks that are added too late will not be run.</p>
-<p>To start the coordinated shutdown process you can either invoke <code>terminate()</code> on the <code>ActorSystem</code>, or <span class="group-scala"><code>run</code></span> <span class="group-java"><code>runAll</code></span> on the <code>CoordinatedShutdown</code> extension and pass it a class implementing <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$$Reason.html" title="org.apache.pekko.actor.CoordinatedShutdown.Reason"><code>CoordinatedShutdown.Reason</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$$Reason.html" title="org.apache.pekko.actor.CoordinatedShutdown.Reason"><code>CoordinatedShutdown.Reason</code></a></span> for informational purposes:</p>
+<p>To start the coordinated shutdown process you can either invoke <code>terminate()</code> on the <code>ActorSystem</code>, or <span class="group-scala"><code>run</code></span> <span class="group-java"><code>runAll</code></span> on the <code>CoordinatedShutdown</code> extension and pass it a class implementing <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$$Reason.html" title="org.apache.pekko.actor.CoordinatedShutdown.Reason"><code>CoordinatedShutdown.Reason</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/CoordinatedShutdown$$Reason.html" title="org.apache.pekko.actor.CoordinatedShutdown.Reason"><code>CoordinatedShutdown.Reason</code></a></span> for informational purposes:</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -787,7 +787,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

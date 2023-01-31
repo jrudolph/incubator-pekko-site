@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentcluster-usage.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentcluster-usage.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -430,7 +430,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 </ul><div class="callout note "><div class="callout-title">Note</div>
 <p>You have to enable <a href="serialization.html">serialization</a> to send messages between ActorSystems in the Cluster. <a href="serialization-jackson.html">Serialization with Jackson</a> is a good choice in many cases, and our recommendation if you don&rsquo;t have other preferences or constraints.</p></div>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Pekko Cluster add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>To use Pekko Cluster add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-cluster" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -439,7 +439,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster" % PekkoVersion</cod
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -454,7 +454,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-cluster" % PekkoVersion</cod
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-cluster_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -462,7 +462,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Cluster (classic)</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-cluster</div>
-  <div>0.0.0+26537-d5470465-SNAPSHOT</div>
+  <div>0.0.0+26547-ad0f3b42-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -471,10 +471,10 @@ dependencies {
   <tr><th>License</th><td><div><a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener noreferrer">Apache-2.0</a></div>
   </td></tr>
   
-  <tr><th>Home page</th><td><a href="https://akka.io/">https://akka.io/</a></td></tr>
+  <tr><th>Home page</th><td><a href="https://pekko.apache.org/">https://pekko.apache.org/</a></td></tr>
   <tr><th>API documentation</th><td>
-  <div><a href="https://doc.akka.io/api/akka/snapshot/akka/cluster/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
-  <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/cluster/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
+  <div><a href="https://pekko.apache.org/api/pekko/snapshot/pekko/cluster/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
+  <div><a href="https://pekko.apache.org/japi/pekko/snapshot/pekko/cluster/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
   <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
@@ -491,7 +491,7 @@ dependencies {
 
 <h2><a href="#cluster-api-extension" name="cluster-api-extension" class="anchor"><span class="anchor-link"></span></a>Cluster API Extension</h2>
 
-<p>The following configuration enables the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html" title="org.apache.pekko.cluster.Cluster"><code>Cluster</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html" title="org.apache.pekko.cluster.Cluster"><code>Cluster</code></a></span> extension to be used. It joins the cluster and an actor subscribes to cluster membership events and logs them.</p>
+<p>The following configuration enables the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html" title="org.apache.pekko.cluster.Cluster"><code>Cluster</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html" title="org.apache.pekko.cluster.Cluster"><code>Cluster</code></a></span> extension to be used. It joins the cluster and an actor subscribes to cluster membership events and logs them.</p>
 
 <p>An actor that uses the cluster extension may look like this:</p>
 
@@ -668,7 +668,7 @@ List&lt;Address&gt; list =
 cluster.joinSeedNodes(list);</code></pre></dd>
 </dl>
 <p>For more information see <a href="typed/cluster.html#tuning-joins">tuning joins</a></p>
-<p>It&rsquo;s also possible to specifically join a single node as illustrated in below example, but <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#joinSeedNodes(seedNodes:Seq[org.apache.pekko.actor.Address]):Unit" title="org.apache.pekko.cluster.Cluster"><code>joinSeedNodes</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#joinSeedNodes(java.util.List)" title="org.apache.pekko.cluster.Cluster"><code>joinSeedNodes</code></a></span> should be preferred since it has redundancy and retry mechanisms built-in.</p>
+<p>It&rsquo;s also possible to specifically join a single node as illustrated in below example, but <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#joinSeedNodes(seedNodes:Seq[org.apache.pekko.actor.Address]):Unit" title="org.apache.pekko.cluster.Cluster"><code>joinSeedNodes</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#joinSeedNodes(java.util.List)" title="org.apache.pekko.cluster.Cluster"><code>joinSeedNodes</code></a></span> should be preferred since it has redundancy and retry mechanisms built-in.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -685,7 +685,7 @@ cluster.joinSeedNodes(list);</code></pre></dd>
 <p>See <a href="typed/cluster.html#downing">Downing</a> in the documentation of the new APIs.</p>
 <a id="cluster-subscriber"></a>
 <h2><a href="#subscribe-to-cluster-events" name="subscribe-to-cluster-events" class="anchor"><span class="anchor-link"></span></a>Subscribe to Cluster Events</h2>
-<p>You can subscribe to change notifications of the cluster membership by using <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/cluster/Cluster.html#subscribe(subscriber:org.apache.pekko.actor.ActorRef,to:Class[_]*):Unit" title="pekko.cluster.Cluster"><code>Cluster(system).subscribe</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/cluster/Cluster.html#subscribe(org.apache.pekko.actor.ActorRef,org.apache.pekko.cluster.ClusterEvent.SubscriptionInitialStateMode,java.lang.Class...)" title="pekko.cluster.Cluster"><code>Cluster.get(system).subscribe</code></a></span>.</p>
+<p>You can subscribe to change notifications of the cluster membership by using <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/cluster/Cluster.html#subscribe(subscriber:org.apache.pekko.actor.ActorRef,to:Class[_]*):Unit" title="pekko.cluster.Cluster"><code>Cluster(system).subscribe</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/cluster/Cluster.html#subscribe(org.apache.pekko.actor.ActorRef,org.apache.pekko.cluster.ClusterEvent.SubscriptionInitialStateMode,java.lang.Class...)" title="pekko.cluster.Cluster"><code>Cluster.get(system).subscribe</code></a></span>.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -694,8 +694,8 @@ cluster.joinSeedNodes(list);</code></pre></dd>
   <dd>
   <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/docs/src/test/java/jdocs/cluster/SimpleClusterListener2.java#L40" target="_blank" title="Go to snippet source">source</a><code class="language-java">cluster.subscribe(getSelf(), MemberEvent.class, UnreachableMember.class);</code></pre></dd>
 </dl>
-<p>A snapshot of the full state, <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/ClusterEvent$$CurrentClusterState.html" title="org.apache.pekko.cluster.ClusterEvent.CurrentClusterState"><code>CurrentClusterState</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/ClusterEvent$$CurrentClusterState.html" title="org.apache.pekko.cluster.ClusterEvent.CurrentClusterState"><code>CurrentClusterState</code></a></span>, is sent to the subscriber as the first message, followed by events for incremental updates.</p>
-<p>Note that you may receive an empty <code>CurrentClusterState</code>, containing no members, followed by <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/ClusterEvent$$MemberUp.html" title="org.apache.pekko.cluster.ClusterEvent.MemberUp"><code>MemberUp</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/ClusterEvent$$MemberUp.html" title="org.apache.pekko.cluster.ClusterEvent.MemberUp"><code>MemberUp</code></a></span> events from other nodes which already joined, if you start the subscription before the initial join procedure has completed. This may for example happen when you start the subscription immediately after <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#join(address:org.apache.pekko.actor.Address):Unit" title="org.apache.pekko.cluster.Cluster"><code>cluster.join()</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#join(org.apache.pekko.actor.Address)" title="org.apache.pekko.cluster.Cluster"><code>cluster.join()</code></a></span> like below. This is expected behavior. When the node has been accepted in the cluster you will receive <code>MemberUp</code> for that node, and other nodes.</p>
+<p>A snapshot of the full state, <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/ClusterEvent$$CurrentClusterState.html" title="org.apache.pekko.cluster.ClusterEvent.CurrentClusterState"><code>CurrentClusterState</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/ClusterEvent$$CurrentClusterState.html" title="org.apache.pekko.cluster.ClusterEvent.CurrentClusterState"><code>CurrentClusterState</code></a></span>, is sent to the subscriber as the first message, followed by events for incremental updates.</p>
+<p>Note that you may receive an empty <code>CurrentClusterState</code>, containing no members, followed by <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/ClusterEvent$$MemberUp.html" title="org.apache.pekko.cluster.ClusterEvent.MemberUp"><code>MemberUp</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/ClusterEvent$$MemberUp.html" title="org.apache.pekko.cluster.ClusterEvent.MemberUp"><code>MemberUp</code></a></span> events from other nodes which already joined, if you start the subscription before the initial join procedure has completed. This may for example happen when you start the subscription immediately after <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#join(address:org.apache.pekko.actor.Address):Unit" title="org.apache.pekko.cluster.Cluster"><code>cluster.join()</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#join(org.apache.pekko.actor.Address)" title="org.apache.pekko.cluster.Cluster"><code>cluster.join()</code></a></span> like below. This is expected behavior. When the node has been accepted in the cluster you will receive <code>MemberUp</code> for that node, and other nodes.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -724,7 +724,7 @@ cluster.registerOnMemberUp {
 cluster.registerOnMemberUp(
     () -&gt; cluster.subscribe(getSelf(), MemberEvent.class, UnreachableMember.class));</code></pre></dd>
 </dl>
-<p>If you find it inconvenient to handle the <code>CurrentClusterState</code> you can use <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/cluster/ClusterEvent$$InitialStateAsEvents$.html" title="cluster.ClusterEvent$$InitialStateAsEvents"><code>ClusterEvent.InitialStateAsEvents</code></a></span> <span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/cluster/ClusterEvent.html#initialStateAsEvents()" title="pekko.cluster.ClusterEvent"><code>ClusterEvent.initialStateAsEvents()</code></a></span> as parameter to <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#subscribe(subscriber:org.apache.pekko.actor.ActorRef,to:Class[_]*):Unit" title="org.apache.pekko.cluster.Cluster"><code>subscribe</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#subscribe(org.apache.pekko.actor.ActorRef,org.apache.pekko.cluster.ClusterEvent.SubscriptionInitialStateMode,java.lang.Class...)" title="org.apache.pekko.cluster.Cluster"><code>subscribe</code></a></span>. That means that instead of receiving <code>CurrentClusterState</code> as the first message you will receive the events corresponding to the current state to mimic what you would have seen if you were listening to the events when they occurred in the past. Note that those initial events only correspond to the current state and it is not the full history of all changes that actually has occurred in the cluster.</p>
+<p>If you find it inconvenient to handle the <code>CurrentClusterState</code> you can use <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/cluster/ClusterEvent$$InitialStateAsEvents$.html" title="cluster.ClusterEvent$$InitialStateAsEvents"><code>ClusterEvent.InitialStateAsEvents</code></a></span> <span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/cluster/ClusterEvent.html#initialStateAsEvents()" title="pekko.cluster.ClusterEvent"><code>ClusterEvent.initialStateAsEvents()</code></a></span> as parameter to <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#subscribe(subscriber:org.apache.pekko.actor.ActorRef,to:Class[_]*):Unit" title="org.apache.pekko.cluster.Cluster"><code>subscribe</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#subscribe(org.apache.pekko.actor.ActorRef,org.apache.pekko.cluster.ClusterEvent.SubscriptionInitialStateMode,java.lang.Class...)" title="org.apache.pekko.cluster.Cluster"><code>subscribe</code></a></span>. That means that instead of receiving <code>CurrentClusterState</code> as the first message you will receive the events corresponding to the current state to mimic what you would have seen if you were listening to the events when they occurred in the past. Note that those initial events only correspond to the current state and it is not the full history of all changes that actually has occurred in the cluster.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -944,7 +944,7 @@ case object BackendRegistration</code></pre></dd>
   }
 }</code></pre></dd>
 </dl>
-<p>Note that the <code>TransformationFrontend</code> actor watch the registered backend to be able to remove it from its list of available backend workers. Death watch uses the cluster failure detector for nodes in the cluster, i.e. it detects network failures and JVM crashes, in addition to graceful termination of watched actor. Death watch generates the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/Terminated.html" title="org.apache.pekko.actor.Terminated"><code>Terminated</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/Terminated.html" title="org.apache.pekko.actor.Terminated"><code>Terminated</code></a></span> message to the watching actor when the unreachable cluster node has been downed and removed.</p>
+<p>Note that the <code>TransformationFrontend</code> actor watch the registered backend to be able to remove it from its list of available backend workers. Death watch uses the cluster failure detector for nodes in the cluster, i.e. it detects network failures and JVM crashes, in addition to graceful termination of watched actor. Death watch generates the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/Terminated.html" title="org.apache.pekko.actor.Terminated"><code>Terminated</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/Terminated.html" title="org.apache.pekko.actor.Terminated"><code>Terminated</code></a></span> message to the watching actor when the unreachable cluster node has been downed and removed.</p>
 <h2><a href="#node-roles" name="node-roles" class="anchor"><span class="anchor-link"></span></a>Node Roles</h2>
 <p>See <a href="typed/cluster.html#node-roles">Cluster Node Roles</a> in the documentation of the new APIs.</p>
 <a id="min-members"></a>
@@ -961,7 +961,7 @@ case object BackendRegistration</code></pre></dd>
   backend.min-nr-of-members = 2
 }
 </code></pre>
-<p>You can start actors or trigger any functions using the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#registerOnMemberUp[T](code:=%3ET):Unit" title="org.apache.pekko.cluster.Cluster"><code>registerOnMemberUp</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#registerOnMemberUp(java.lang.Runnable)" title="org.apache.pekko.cluster.Cluster"><code>registerOnMemberUp</code></a></span> callback, which will be invoked when the current member status is changed to &lsquo;Up&rsquo;. This can additionally be used with <code>pekko.cluster.min-nr-of-members</code> optional configuration to defer an action until the cluster has reached a certain size.</p>
+<p>You can start actors or trigger any functions using the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#registerOnMemberUp[T](code:=%3ET):Unit" title="org.apache.pekko.cluster.Cluster"><code>registerOnMemberUp</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#registerOnMemberUp(java.lang.Runnable)" title="org.apache.pekko.cluster.Cluster"><code>registerOnMemberUp</code></a></span> callback, which will be invoked when the current member status is changed to &lsquo;Up&rsquo;. This can additionally be used with <code>pekko.cluster.min-nr-of-members</code> optional configuration to defer an action until the cluster has reached a certain size.</p>
 <dl>
   <dt>Scala</dt>
   <dd>
@@ -981,9 +981,9 @@ case object BackendRegistration</code></pre></dd>
         });</code></pre></dd>
 </dl>
 <h2><a href="#how-to-cleanup-when-member-is-removed" name="how-to-cleanup-when-member-is-removed" class="anchor"><span class="anchor-link"></span></a>How To Cleanup when Member is Removed</h2>
-<p>You can do some clean up in a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#registerOnMemberRemoved[T](code:=%3ET):Unit" title="org.apache.pekko.cluster.Cluster"><code>registerOnMemberRemoved</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#registerOnMemberRemoved(java.lang.Runnable)" title="org.apache.pekko.cluster.Cluster"><code>registerOnMemberRemoved</code></a></span> callback, which will be invoked when the current member status is changed to &lsquo;Removed&rsquo; or the cluster have been shutdown.</p>
+<p>You can do some clean up in a <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#registerOnMemberRemoved[T](code:=%3ET):Unit" title="org.apache.pekko.cluster.Cluster"><code>registerOnMemberRemoved</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/cluster/Cluster.html#registerOnMemberRemoved(java.lang.Runnable)" title="org.apache.pekko.cluster.Cluster"><code>registerOnMemberRemoved</code></a></span> callback, which will be invoked when the current member status is changed to &lsquo;Removed&rsquo; or the cluster have been shutdown.</p>
 <p>An alternative is to register tasks to the <a href="coordinated-shutdown.html">Coordinated Shutdown</a>.</p><div class="callout note "><div class="callout-title">Note</div>
-<p>Register a OnMemberRemoved callback on a cluster that have been shutdown, the callback will be invoked immediately on the caller thread, otherwise it will be invoked later when the current member status changed to <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/cluster/MemberStatus$$Removed$.html" title="pekko.cluster.MemberStatus$$Removed"><code>Removed</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/cluster/MemberStatus.html#removed()" title="pekko.cluster.MemberStatus"><code>Removed</code></a></span>. You may want to install some cleanup handling after the cluster was started up, but the cluster might already be shutting down when you installing, and depending on the race is not healthy.</p></div>
+<p>Register a OnMemberRemoved callback on a cluster that have been shutdown, the callback will be invoked immediately on the caller thread, otherwise it will be invoked later when the current member status changed to <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/cluster/MemberStatus$$Removed$.html" title="pekko.cluster.MemberStatus$$Removed"><code>Removed</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/cluster/MemberStatus.html#removed()" title="pekko.cluster.MemberStatus"><code>Removed</code></a></span>. You may want to install some cleanup handling after the cluster was started up, but the cluster might already be shutting down when you installing, and depending on the race is not healthy.</p></div>
 <h2><a href="#higher-level-cluster-tools" name="higher-level-cluster-tools" class="anchor"><span class="anchor-link"></span></a>Higher level Cluster tools</h2><h3><a href="#cluster-singleton" name="cluster-singleton" class="anchor"><span class="anchor-link"></span></a>Cluster Singleton</h3>
 <p>For some use cases it is convenient or necessary to ensure only one actor of a certain type is running somewhere in the cluster. This can be implemented by subscribing to member events, but there are several corner cases to consider. Therefore, this specific use case is covered by the Cluster Singleton.</p>
 <p>See <a href="cluster-singleton.html">Cluster Singleton</a>.</p><h3><a href="#cluster-sharding" name="cluster-sharding" class="anchor"><span class="anchor-link"></span></a>Cluster Sharding</h3>
@@ -1014,7 +1014,7 @@ case object BackendRegistration</code></pre></dd>
 <h2><a href="#how-to-test" name="how-to-test" class="anchor"><span class="anchor-link"></span></a>How to Test</h2><div class="group-scala">
 <p><a href="multi-node-testing.html">Multi Node Testing</a> is useful for testing cluster applications.</p>
 <p>Set up your project according to the instructions in <a href="multi-node-testing.html">Multi Node Testing</a> and <a href="multi-jvm-testing.html">Multi JVM Testing</a>, i.e. add the <code>sbt-multi-jvm</code> plugin and the dependency to <code>pekko-multi-node-testkit</code>.</p>
-<p>First, as described in <a href="multi-node-testing.html">Multi Node Testing</a>, we need some scaffolding to configure the <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="pekko.remote.testkit.MultiNodeSpec"><code>MultiNodeSpec</code></a>. Define the participating <a href="typed/cluster.html#node-roles">roles</a> and their <a href="cluster-usage.html#configuration">configuration</a> in an object extending <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/remote/testkit/MultiNodeConfig.html" title="pekko.remote.testkit.MultiNodeConfig"><code>MultiNodeConfig</code></a>:</p>
+<p>First, as described in <a href="multi-node-testing.html">Multi Node Testing</a>, we need some scaffolding to configure the <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/remote/testkit/MultiNodeSpec.html" title="pekko.remote.testkit.MultiNodeSpec"><code>MultiNodeSpec</code></a>. Define the participating <a href="typed/cluster.html#node-roles">roles</a> and their <a href="cluster-usage.html#configuration">configuration</a> in an object extending <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/remote/testkit/MultiNodeConfig.html" title="pekko.remote.testkit.MultiNodeConfig"><code>MultiNodeConfig</code></a>:</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-metrics/src/multi-jvm/scala/org/apache/pekko/cluster/metrics/sample/StatsSampleSpec.scala#L25-L69" target="_blank" title="Go to snippet source">source</a><code class="language-scala">import org.apache.pekko.remote.testkit.MultiNodeConfig
 import com.typesafe.config.ConfigFactory
 
@@ -1109,10 +1109,10 @@ abstract class StatsSampleSpec
 
   testConductor.enter(&quot;all-up&quot;)
 }</code></pre>
-<p>From the test you interact with the cluster using the <code>Cluster</code> extension, e.g. <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/cluster/Cluster.html#join(address:org.apache.pekko.actor.Address):Unit" title="pekko.cluster.Cluster"><code>join</code></a>.</p>
+<p>From the test you interact with the cluster using the <code>Cluster</code> extension, e.g. <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/cluster/Cluster.html#join(address:org.apache.pekko.actor.Address):Unit" title="pekko.cluster.Cluster"><code>join</code></a>.</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-metrics/src/multi-jvm/scala/org/apache/pekko/cluster/metrics/sample/StatsSampleSpec.scala#L118" target="_blank" title="Go to snippet source">source</a><code class="language-scala">Cluster(system).join(firstAddress)</code></pre>
 <p>Notice how the <em>testActor</em> from <a href="testing.html">testkit</a> is added as <a href="cluster-usage.html#cluster-subscriber">subscriber</a> to cluster changes and then waiting for certain events, such as in this case all members becoming &lsquo;Up&rsquo;.</p>
-<p>The above code was running for all roles (JVMs). <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/remote/testkit/MultiNodeSpec.html#runOn(nodes:org.apache.pekko.remote.testconductor.RoleName*)(thunk:=%3EUnit):Unit" title="pekko.remote.testkit.MultiNodeSpec"><code>runOn</code></a> is a convenient utility to declare that a certain block of code should only run for a specific role.</p>
+<p>The above code was running for all roles (JVMs). <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/remote/testkit/MultiNodeSpec.html#runOn(nodes:org.apache.pekko.remote.testconductor.RoleName*)(thunk:=%3EUnit):Unit" title="pekko.remote.testkit.MultiNodeSpec"><code>runOn</code></a> is a convenient utility to declare that a certain block of code should only run for a specific role.</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-metrics/src/multi-jvm/scala/org/apache/pekko/cluster/metrics/sample/StatsSampleSpec.scala#L134-L151" target="_blank" title="Go to snippet source">source</a><code class="language-scala">&quot;show usage of the statsService from one node&quot; in within(15 seconds) {
   runOn(second) {
     assertServiceOk()
@@ -1131,8 +1131,8 @@ def assertServiceOk(): Unit = {
   }
 
 }</code></pre>
-<p>Once again we take advantage of the facilities in <a href="testing.html">testkit</a> to verify expected behavior. Here using <code>testActor</code> as sender (via <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/testkit/ImplicitSender.html" title="pekko.testkit.ImplicitSender"><code>ImplicitSender</code></a>) and verifying the reply with <a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/testkit/TestKit.html#expectMsgType[T](max:scala.concurrent.duration.FiniteDuration)(implicitt:scala.reflect.ClassTag[T]):T" title="org.apache.pekko.testkit.TestKit"><code>expectMsgType</code></a>.</p>
-<p>In the above code you can see <code>node(third)</code>, which is useful facility to get the root actor reference of the actor system for a specific role. This can also be used to grab the <a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/actor/Address.html" title="pekko.actor.Address"><code>actor.Address</code></a> of that node.</p>
+<p>Once again we take advantage of the facilities in <a href="testing.html">testkit</a> to verify expected behavior. Here using <code>testActor</code> as sender (via <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/testkit/ImplicitSender.html" title="pekko.testkit.ImplicitSender"><code>ImplicitSender</code></a>) and verifying the reply with <a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/testkit/TestKit.html#expectMsgType[T](max:scala.concurrent.duration.FiniteDuration)(implicitt:scala.reflect.ClassTag[T]):T" title="org.apache.pekko.testkit.TestKit"><code>expectMsgType</code></a>.</p>
+<p>In the above code you can see <code>node(third)</code>, which is useful facility to get the root actor reference of the actor system for a specific role. This can also be used to grab the <a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/actor/Address.html" title="pekko.actor.Address"><code>actor.Address</code></a> of that node.</p>
 <pre class="prettyprint"><button class="snippet-button copy-snippet" title="Copy snippet to clipboard">copy</button><a class="snippet-button go-to-source" href="https://github.com/apache/incubator-pekko/tree/main/cluster-metrics/src/multi-jvm/scala/org/apache/pekko/cluster/metrics/sample/StatsSampleSpec.scala#L112-L114" target="_blank" title="Go to snippet source">source</a><code class="language-scala">val firstAddress = node(first).address
 val secondAddress = node(second).address
 val thirdAddress = node(third).address</code></pre></div><div class="group-java">
@@ -1269,7 +1269,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

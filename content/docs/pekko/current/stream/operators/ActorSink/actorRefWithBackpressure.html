@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentstream/operators/ActorSink/actorRefWithBackpressure.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentstream/operators/ActorSink/actorRefWithBackpressure.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../../../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Sends the elements of the stream to the given <span class="group-java"><code>ActorRef&lt;T&gt;</code></span><span class="group-scala"><code>ActorRef[T]</code></span> of the new actors API with backpressure, to be able to signal demand when the actor is ready to receive more elements.</p>
 <p><a href="../index.html#actor-interop-operators">Actor interop operators</a></p>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>This operator is included in:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>This operator is included in:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream-typed" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -430,7 +430,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream-typed" % PekkoVersion
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -445,12 +445,12 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream-typed" % PekkoVersion
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream-typed_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/typed/javadsl/ActorSink$.html#actorRefWithBackpressure(org.apache.pekko.actor.typed.ActorRef,org.apache.pekko.japi.function.Function2,org.apache.pekko.japi.function.Function,java.lang.Object,java.lang.Object,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.typed.javadsl.ActorSink"><code>ActorSink.actorRefWithBackpressure</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/typed/scaladsl/ActorSink$.html#actorRefWithBackpressure[T,M,A](ref:org.apache.pekko.actor.typed.ActorRef[M],messageAdapter:(org.apache.pekko.actor.typed.ActorRef[A],T)=&gt;M,onInitMessage:org.apache.pekko.actor.typed.ActorRef[A]=&gt;M,ackMessage:A,onCompleteMessage:M,onFailureMessage:Throwable=&gt;M):org.apache.pekko.stream.scaladsl.Sink[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.typed.scaladsl.ActorSink"><code>ActorSink.actorRefWithBackpressure</code></a></span></p>
+<p><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/typed/javadsl/ActorSink$.html#actorRefWithBackpressure(org.apache.pekko.actor.typed.ActorRef,org.apache.pekko.japi.function.Function2,org.apache.pekko.japi.function.Function,java.lang.Object,java.lang.Object,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.typed.javadsl.ActorSink"><code>ActorSink.actorRefWithBackpressure</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/typed/scaladsl/ActorSink$.html#actorRefWithBackpressure[T,M,A](ref:org.apache.pekko.actor.typed.ActorRef[M],messageAdapter:(org.apache.pekko.actor.typed.ActorRef[A],T)=&gt;M,onInitMessage:org.apache.pekko.actor.typed.ActorRef[A]=&gt;M,ackMessage:A,onCompleteMessage:M,onFailureMessage:Throwable=&gt;M):org.apache.pekko.stream.scaladsl.Sink[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.typed.scaladsl.ActorSink"><code>ActorSink.actorRefWithBackpressure</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Sends the elements of the stream to the given <span class="group-java"><code>ActorRef&lt;T&gt;</code></span><span class="group-scala"><code>ActorRef[T]</code></span> with backpressure, to be able to signal demand when the actor is ready to receive more elements. There is also a variant without a concrete acknowledge message accepting any message as such.</p>
 <p>See also:</p>
@@ -637,7 +637,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

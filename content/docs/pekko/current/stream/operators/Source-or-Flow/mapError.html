@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentstream/operators/Source-or-Flow/mapError.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentstream/operators/Source-or-Flow/mapError.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../../../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>While similar to <code>recover</code> this operators can be used to transform an error signal to a different one <em>without</em> logging it as an error in the process.</p>
 <p><a href="../index.html#error-handling">Error handling</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#mapError(java.lang.Class,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.mapError</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#mapError(pf:PartialFunction[Throwable,Throwable]):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.mapError</code></a></span> <span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#mapError(java.lang.Class,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.mapError</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#mapError(pf:PartialFunction[Throwable,Throwable]):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.mapError</code></a></span></p>
+<p><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/javadsl/Source.html#mapError(java.lang.Class,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.mapError</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source.html#mapError(pf:PartialFunction[Throwable,Throwable]):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.mapError</code></a></span> <span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/javadsl/Flow.html#mapError(java.lang.Class,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Flow"><code>Flow.mapError</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/scaladsl/Flow.html#mapError(pf:PartialFunction[Throwable,Throwable]):FlowOps.this.Repr[Out]" title="org.apache.pekko.stream.scaladsl.Flow"><code>Flow.mapError</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>While similar to <code>recover</code> this operators can be used to transform an error signal to a different one <em>without</em> logging it as an error in the process. So in that sense it is NOT exactly equivalent to <code>recover(t =&gt; throw t2)</code> since recover would log the <code>t2</code> error.</p>
 <p>Since the underlying failure signal onError arrives out-of-band, it might jump over existing elements. This operators can recover the failure signal, but not the skipped elements, which will be dropped.</p>
@@ -551,7 +551,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

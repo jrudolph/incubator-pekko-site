@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentstream/actor-interop.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentstream/actor-interop.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#actors-interop" name="actors-interop" class="anchor"><span class="anchor-link"></span></a>Actors interop</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -795,10 +795,10 @@ actorRef.tell(
 <p>Sends the elements of the stream to the given <span class="group-java"><code>ActorRef&lt;T&gt;</code></span><span class="group-scala"><code>ActorRef[T]</code></span> with backpressure, to be able to signal demand when the actor is ready to receive more elements.</p><div class="callout note "><div class="callout-title">Note</div>
 <p>See also: <a href="operators/ActorSink/actorRefWithBackpressure.html">ActorSink.actorRefWithBackpressure operator reference docs</a></p></div>
 <h3><a href="#topic-source" name="topic-source" class="anchor"><span class="anchor-link"></span></a>Topic.source</h3>
-<p>A source that will subscribe to a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span> and stream messages published to the topic.</p><div class="callout note "><div class="callout-title">Note</div>
+<p>A source that will subscribe to a <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span> and stream messages published to the topic.</p><div class="callout note "><div class="callout-title">Note</div>
 <p>See also: <a href="operators/PubSub/source.html">ActorSink.actorRefWithBackpressure operator reference docs</a></p></div>
 <h3><a href="#topic-sink" name="topic-sink" class="anchor"><span class="anchor-link"></span></a>Topic.sink</h3>
-<p>A sink that will publish emitted messages to a <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span>.</p><div class="callout note "><div class="callout-title">Note</div>
+<p>A sink that will publish emitted messages to a <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/actor/typed/pubsub/Topic$.html" title="org.apache.pekko.actor.typed.pubsub.Topic"><code>Topic</code></a></span>.</p><div class="callout note "><div class="callout-title">Note</div>
 <p>See also: <a href="operators/PubSub/sink.html">ActorSink.actorRefWithBackpressure operator reference docs</a></p></div>
 <div class="source-github">
 The source code for this page can be found <a href="https://github.com/apache/incubator-pekko/tree/main/docs/src/main/paradox/stream/actor-interop.md">here</a>.
@@ -885,7 +885,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

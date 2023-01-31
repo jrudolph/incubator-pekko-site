@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentremoting.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentremoting.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -419,9 +419,9 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <h1><a href="#classic-remoting-deprecated-" name="classic-remoting-deprecated-" class="anchor"><span class="anchor-link"></span></a>Classic Remoting (Deprecated)</h1><div class="callout warning "><div class="callout-title">Warning</div>
 <p>Classic remoting has been deprecated. Please use <a href="remoting-artery.html">Artery</a> instead.</p></div><div class="callout note "><div class="callout-title">Note</div>
 <p>Remoting is the mechanism by which Actors on different nodes talk to each other internally.</p>
-<p>When building a Pekko application, you would usually not use the Remoting concepts directly, but instead use the more high-level <a href="index-cluster.html">Pekko Cluster</a> utilities or technology-agnostic protocols such as <a href="https://doc.akka.io/docs/akka-http/current/">HTTP</a>, <a href="https://doc.akka.io/docs/akka-grpc/current/">gRPC</a> etc.</p></div>
+<p>When building a Pekko application, you would usually not use the Remoting concepts directly, but instead use the more high-level <a href="index-cluster.html">Pekko Cluster</a> utilities or technology-agnostic protocols such as <a href="https://pekko.apache.org/docs/pekko-http/current/">HTTP</a>, <a href="https://pekko.apache.org/docs/pekko-grpc/current/">gRPC</a> etc.</p></div>
 <h2><a href="#module-info" name="module-info" class="anchor"><span class="anchor-link"></span></a>Module info</h2>
-<p>To use Pekko Remoting, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>To use Pekko Remoting, you must add the following dependency in your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-remote" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -430,7 +430,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-remote" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -445,7 +445,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-remote" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-remote_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -453,7 +453,7 @@ dependencies {
 <tr><th colspan="2">Project Info: Pekko Remoting</th></tr>
   <tr><th>Artifact</th><td><div>org.apache.pekko</div>
   <div>pekko-remote</div>
-  <div>0.0.0+26537-d5470465-SNAPSHOT</div>
+  <div>0.0.0+26547-ad0f3b42-SNAPSHOT</div>
   <div><a href="project/links.html#snapshots-repository">Snapshots are available</a></div>
   </td></tr>
   <tr><th>JDK versions</th><td><div>Adopt OpenJDK 8</div><div>Adopt OpenJDK 11</div></td></tr>
@@ -462,10 +462,10 @@ dependencies {
   <tr><th>License</th><td><div><a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener noreferrer">Apache-2.0</a></div>
   </td></tr>
   
-  <tr><th>Home page</th><td><a href="https://akka.io/">https://akka.io/</a></td></tr>
+  <tr><th>Home page</th><td><a href="https://pekko.apache.org/">https://pekko.apache.org/</a></td></tr>
   <tr><th>API documentation</th><td>
-  <div><a href="https://doc.akka.io/api/akka/snapshot/akka/remote/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
-  <div><a href="https://doc.akka.io/japi/akka/snapshot/akka/remote/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
+  <div><a href="https://pekko.apache.org/api/pekko/snapshot/pekko/remote/index.html" target="_blank" rel="noopener noreferrer">API (Scaladoc)</a></div>
+  <div><a href="https://pekko.apache.org/japi/pekko/snapshot/pekko/remote/package-summary.html" target="_blank" rel="noopener noreferrer">API (Javadoc)</a></div>
   </td></tr>
   <tr><th>Forums</th><td>
   <div><a href="https://lists.apache.org/list.html?dev@pekko.apache.org" target="_blank" rel="noopener noreferrer">Apache Pekko Dev mailing list</a></div>
@@ -886,7 +886,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

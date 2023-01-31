@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currenttyped/choosing-cluster.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currenttyped/choosing-cluster.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -424,7 +424,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>In a microservices architecture, you should consider communication within a service and between services.</p>
 <p>In general we recommend against using Pekko Cluster and actor messaging between <em>different</em> services because that would result in a too tight code coupling between the services and difficulties deploying these independent of each other, which is one of the main reasons for using a microservices architecture. See the discussion on <a href="https://developer.lightbend.com/docs/akka-platform-guide/concepts/internal-and-external-communication.html">Internal and External Communication</a> for some background on this.</p>
 <p>Nodes of a single service (collectively called a cluster) require less decoupling. They share the same code and are deployed together, as a set, by a single team or individual. There might be two versions running concurrently during a rolling deployment, but deployment of the entire set has a single point of control. For this reason, intra-service communication can take advantage of Pekko Cluster, failure management and actor messaging, which is convenient to use and has great performance.</p>
-<p>Between different services <a href="https://doc.akka.io/docs/akka-http/current/">Pekko HTTP</a> or <a href="https://doc.akka.io/docs/akka-grpc/current/">Pekko gRPC</a> can be used for synchronous (yet non-blocking) communication and <a href="https://doc.akka.io/docs/alpakka-kafka/current/">Pekko Streams Kafka</a> or other <a href="https://doc.akka.io/docs/alpakka/current/">Pekko Connectors</a> for integration asynchronous communication. All those communication mechanisms work well with streaming of messages with end-to-end back-pressure, and the synchronous communication tools can also be used for single request response interactions. It is also important to note that when using these tools both sides of the communication do not have to be implemented with Pekko, nor does the programming language matter.</p>
+<p>Between different services <a href="https://pekko.apache.org/docs/pekko-http/current/">Pekko HTTP</a> or <a href="https://pekko.apache.org/docs/pekko-grpc/current/">Pekko gRPC</a> can be used for synchronous (yet non-blocking) communication and <a href="https://pekko.apache.org/docs/pekko-connectors-kafka/current/">Pekko Streams Kafka</a> or other <a href="https://pekko.apache.org/docs/pekko-connectors/current/">Pekko Connectors</a> for integration asynchronous communication. All those communication mechanisms work well with streaming of messages with end-to-end back-pressure, and the synchronous communication tools can also be used for single request response interactions. It is also important to note that when using these tools both sides of the communication do not have to be implemented with Pekko, nor does the programming language matter.</p>
 <h2><a href="#traditional-distributed-application" name="traditional-distributed-application" class="anchor"><span class="anchor-link"></span></a>Traditional distributed application</h2>
 <p>We acknowledge that microservices also introduce many new challenges and it&rsquo;s not the only way to build applications. A traditional distributed application may have less complexity and work well in many cases. For example for a small startup, with a single team, building an application where time to market is everything. Pekko Cluster can efficiently be used for building such distributed application.</p>
 <p>In this case, you have a single deployment unit, built from a single code base (or using traditional binary dependency management to modularize) but deployed across many nodes using a single cluster. Tighter coupling is OK, because there is a central point of deployment and control. In some cases, nodes may have specialized runtime roles which means that the cluster is not totally homogenous (e.g., &ldquo;front-end&rdquo; and &ldquo;back-end&rdquo; nodes, or dedicated master/worker nodes) but if these are run from the same built artifacts this is just a runtime behavior and doesn&rsquo;t cause the same kind of problems you might get from tight coupling of totally separate artifacts.</p>
@@ -518,7 +518,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

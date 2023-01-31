@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentstream/stream-refs.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentstream/stream-refs.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -418,7 +418,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <div class="small-12 large-9 column" id="docs">
 <h1><a href="#streamrefs-reactive-streams-over-the-network" name="streamrefs-reactive-streams-over-the-network" class="anchor"><span class="anchor-link"></span></a>StreamRefs - Reactive Streams over the network</h1>
 <h2><a href="#dependency" name="dependency" class="anchor"><span class="anchor-link"></span></a>Dependency</h2>
-<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26537-d5470465-SNAPSHOT"
+<p>To use Pekko Streams, add the module to your project:</p><dl class="dependency"><dt>sbt</dt><dd><pre class="prettyprint"><code class="language-scala">val PekkoVersion = "0.0.0+26547-ad0f3b42-SNAPSHOT"
 libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code></pre></dd><dt>Maven</dt><dd><pre class="prettyprint"><code class="language-xml">&lt;properties&gt;
   &lt;scala.binary.version&gt;2.13&lt;/scala.binary.version&gt;
 &lt;/properties&gt;
@@ -427,7 +427,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
     &lt;dependency&gt;
       &lt;groupId&gt;org.apache.pekko&lt;/groupId&gt;
       &lt;artifactId&gt;pekko-bom_${scala.binary.version}&lt;/artifactId&gt;
-      &lt;version&gt;0.0.0+26537-d5470465-SNAPSHOT&lt;/version&gt;
+      &lt;version&gt;0.0.0+26547-ad0f3b42-SNAPSHOT&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt
@@ -442,7 +442,7 @@ libraryDependencies += "org.apache.pekko" %% "pekko-stream" % PekkoVersion</code
   ScalaBinary: "2.13"
 ]
 dependencies {
-  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26537-d5470465-SNAPSHOT")
+  implementation platform("org.apache.pekko:pekko-bom_${versions.ScalaBinary}:0.0.0+26547-ad0f3b42-SNAPSHOT")
 
   implementation "org.apache.pekko:pekko-stream_${versions.ScalaBinary}"
 }</code></pre></dd></dl>
@@ -460,7 +460,7 @@ dependencies {
 <p>Stream refs are not persistent. However, it is simple to build a resumable stream by introducing such a protocol in the actor messaging layer. Stream refs are absolutely expected to be sent over Pekko remoting to other nodes within a cluster using Pekko Cluster, and therefore complement, instead of compete, with plain Actor messaging. Actors would usually be used to establish the stream via some initial message saying, &ldquo;I want to offer you many log elements (the stream ref),&rdquo; or conversely, &ldquo;if you need to send me much data, here is the stream ref you can use to do so&rdquo;.</p>
 <p>Since the two sides (&ldquo;local&rdquo; and &ldquo;remote&rdquo;) of each reference may be confusing to refer to as &ldquo;remote&rdquo; and &ldquo;local&rdquo; &ndash; since either side can be seen as &ldquo;local&rdquo; or &ldquo;remote&rdquo; depending how we look at it &ndash; we propose using the terminology &ldquo;origin&rdquo; and &ldquo;target&rdquo;, which is defined by where the stream ref was created. For <code>SourceRef</code>s, the &ldquo;origin&rdquo; is the side which has the data that it is going to stream out. For <code>SinkRef</code>s, the &ldquo;origin&rdquo; side is the actor system that is ready to receive the data and has allocated the ref. Those two may be seen as duals of each other. However, to explain patterns about sharing references, we found this wording to be rather useful.</p>
 <h3><a href="#source-refs-offering-streaming-data-to-a-remote-system" name="source-refs-offering-streaming-data-to-a-remote-system" class="anchor"><span class="anchor-link"></span></a>Source Refs - offering streaming data to a remote system</h3>
-<p>A <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/stream/SourceRef.html" title="pekko.stream.SourceRef"><code>`SourceRef`</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/stream/SourceRef.html" title="pekko.stream.SourceRef"><code>`SourceRef`</code></a></span> can be offered to a remote actor system in order for it to consume some source of data that we have prepared locally. </p>
+<p>A <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/stream/SourceRef.html" title="pekko.stream.SourceRef"><code>`SourceRef`</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/stream/SourceRef.html" title="pekko.stream.SourceRef"><code>`SourceRef`</code></a></span> can be offered to a remote actor system in order for it to consume some source of data that we have prepared locally. </p>
 <p>In order to share a <code>Source</code> with a remote endpoint you need to materialize it by running it into the <code>Sink.sourceRef</code>. That <code>Sink</code> materializes the <code>SourceRef</code> that you can then send to other nodes.</p>
 <dl>
   <dt>Scala</dt>
@@ -556,7 +556,7 @@ offer.sourceRef.getSource().runWith(Sink.foreach(log -&gt; System.out.println(lo
 <p>A <code>SourceRef</code> is <em>by design</em> &ldquo;single-shot&rdquo;; i.e., it may only be materialized once.  This is in order to not complicate the mental model of what materialization means.</p>
 <p>Multicast can be mimicked by starting a <code>BroadcastHub</code> operator once, then attaching multiple new streams to it, each  emitting a new stream ref. This way, materialization of the <code>BroadcastHub</code>s Source creates a unique single-shot  stream ref, however they can all be powered using a single <code>Source</code> &ndash; located before the <code>BroadcastHub</code> operator.</p></div>
 <h3><a href="#sink-refs-offering-to-receive-streaming-data-from-a-remote-system" name="sink-refs-offering-to-receive-streaming-data-from-a-remote-system" class="anchor"><span class="anchor-link"></span></a>Sink Refs - offering to receive streaming data from a remote system</h3>
-<p>The dual of <span class="group-scala"><a href="https://doc.akka.io/api/akka/2.6/org/apache/pekko/stream/SinkRef.html" title="pekko.stream.SinkRef"><code>`SourceRef`</code></a></span><span class="group-java"><a href="https://doc.akka.io/japi/akka/2.6/org/apache/pekko/stream/SinkRef.html" title="pekko.stream.SinkRef"><code>`SourceRef`</code></a></span>s.</p>
+<p>The dual of <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/current/org/apache/pekko/stream/SinkRef.html" title="pekko.stream.SinkRef"><code>`SourceRef`</code></a></span><span class="group-java"><a href="https://pekko.apache.org/japi/pekko/current/org/apache/pekko/stream/SinkRef.html" title="pekko.stream.SinkRef"><code>`SourceRef`</code></a></span>s.</p>
 <p>They can be used to offer the other side the capability to send to the <em>origin</em> side data in a streaming, flow-controlled fashion. The origin here allocates a <code>Sink</code>, which could be as simple as a <code>Sink.foreach</code> or as advanced as a complex <code>Sink</code> which streams the incoming data into various other systems (e.g., any of the Pekko connectors-provided <code>Sink</code>s).</p><div class="callout note "><div class="callout-title">Note</div>
 <p>To form a good mental model of <code>SinkRef</code>s, you can think of them as being similar to &ldquo;passive mode&rdquo; in FTP.</p></div>
 <dl>
@@ -673,7 +673,7 @@ Source.repeat(&quot;hello&quot;).runWith(ready.sinkRef.getSink(), mat);</code></
 <h2><a href="#serialization-of-sourceref-and-sinkref" name="serialization-of-sourceref-and-sinkref" class="anchor"><span class="anchor-link"></span></a>Serialization of SourceRef and SinkRef</h2>
 <p>StreamRefs require serialization, since the whole point is to send them between nodes of a cluster. A built in serializer is provided when <code>SourceRef</code> and <code>SinkRef</code> are sent directly as messages however the recommended use is to wrap them into your own actor message classes. </p>
 <p>When <a href="../serialization-jackson.html">Pekko Jackson</a> is used, serialization of wrapped <code>SourceRef</code> and <code>SinkRef</code> will work out of the box.</p>
-<p>If you are using some other form of serialization you will need to use the <span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/StreamRefResolver.html" title="org.apache.pekko.stream.StreamRefResolver"><code>StreamRefResolver</code></a></span><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/StreamRefResolver.html" title="org.apache.pekko.stream.StreamRefResolver"><code>StreamRefResolver</code></a></span> extension from your serializer to get the <code>SourceRef</code> and <code>SinkRef</code>. The extension provides the methods <code>toSerializationFormat(sink or source)</code> to transform from refs to string and <code>resolve{Sink,Source}Ref(String)</code> to resolve refs from strings.</p>
+<p>If you are using some other form of serialization you will need to use the <span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/StreamRefResolver.html" title="org.apache.pekko.stream.StreamRefResolver"><code>StreamRefResolver</code></a></span><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/StreamRefResolver.html" title="org.apache.pekko.stream.StreamRefResolver"><code>StreamRefResolver</code></a></span> extension from your serializer to get the <code>SourceRef</code> and <code>SinkRef</code>. The extension provides the methods <code>toSerializationFormat(sink or source)</code> to transform from refs to string and <code>resolve{Sink,Source}Ref(String)</code> to resolve refs from strings.</p>
 <h2><a href="#configuration" name="configuration" class="anchor"><span class="anchor-link"></span></a>Configuration</h2>
 <h3><a href="#stream-reference-subscription-timeouts" name="stream-reference-subscription-timeouts" class="anchor"><span class="anchor-link"></span></a>Stream reference subscription timeouts</h3>
 <p>All stream references have a subscription timeout, which is intended to prevent resource leaks in case a remote node requests the allocation of many streams but never actually runs them. In order to prevent this, each stream reference has a default timeout (of 30 seconds), after which the origin will abort the stream offer if the target has not materialized the stream ref. After the timeout has triggered, materialization of the target side will fail, pointing out that the origin is missing.</p>
@@ -834,7 +834,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>

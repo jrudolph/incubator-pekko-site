@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content='Apache Pekko is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.'/>
-<link rel="canonical" href="https://doc.akka.io/docs/akka/currentstream/operators/Source/unfoldResourceAsync.html"/>
+<link rel="canonical" href="https://pekko.apache.org/docs/pekko/currentstream/operators/Source/unfoldResourceAsync.html"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italicc" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../../lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../../../js/page.js"></script>
@@ -32,7 +32,7 @@
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -227,7 +227,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <span class="home-icon">⌂</span>Pekko Documentation
 </a>
 <div class="version-number">
-0.0.0+26537-d5470465*
+0.0.0+26547-ad0f3b42*
 </div>
 </div>
 <select class="supergroup" name="Language"><option class="group" value="group-scala">Scala</option><option class="group" value="group-java">Java</option></select>
@@ -421,7 +421,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
 <p>Wrap any resource that can be opened, queried for next element and closed in an asynchronous way.</p>
 <p><a href="../index.html#source-operators">Source operators</a></p>
 <h2><a href="#signature" name="signature" class="anchor"><span class="anchor-link"></span></a>Signature</h2>
-<p><span class="group-java"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#unfoldResourceAsync(org.apache.pekko.japi.function.Creator,org.apache.pekko.japi.function.Function,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.unfoldResourceAsync</code></a></span><span class="group-scala"><a href="https://doc.akka.io/api/akka/0.0.0+26537-d5470465-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#unfoldResourceAsync[T,S](create:()=&gt;scala.concurrent.Future[S],read:S=&gt;scala.concurrent.Future[Option[T]],close:S=&gt;scala.concurrent.Future[org.apache.pekko.Done]):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.unfoldResourceAsync</code></a></span></p>
+<p><span class="group-java"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/javadsl/Source$.html#unfoldResourceAsync(org.apache.pekko.japi.function.Creator,org.apache.pekko.japi.function.Function,org.apache.pekko.japi.function.Function)" title="org.apache.pekko.stream.javadsl.Source"><code>Source.unfoldResourceAsync</code></a></span><span class="group-scala"><a href="https://pekko.apache.org/api/pekko/0.0.0+26547-ad0f3b42-SNAPSHOT/org/apache/pekko/stream/scaladsl/Source$.html#unfoldResourceAsync[T,S](create:()=&gt;scala.concurrent.Future[S],read:S=&gt;scala.concurrent.Future[Option[T]],close:S=&gt;scala.concurrent.Future[org.apache.pekko.Done]):org.apache.pekko.stream.scaladsl.Source[T,org.apache.pekko.NotUsed]" title="org.apache.pekko.stream.scaladsl.Source"><code>Source.unfoldResourceAsync</code></a></span></p>
 <h2><a href="#description" name="description" class="anchor"><span class="anchor-link"></span></a>Description</h2>
 <p>Wrap any resource that can be opened, queried for next element and closed in an asynchronous way with three distinct functions into a source. This operator is the equivalent of <a href="unfoldResource.html">unfoldResource</a> but for resources with asynchronous APIs.</p>
 <p><code>Source.unfoldResourceAsync</code> allows us to safely extract stream elements from a resource with an async API by providing it with three functions that all return a <span class="group-scala"><code>Future</code></span><span class="group-java"><code>CompletionStage</code></span>: </p>
@@ -431,7 +431,7 @@ C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.
   <li><code>close</code>: Close the resource, invoked on end of stream or if the stream fails</li>
 </ol>
 <p>All exceptions thrown by <code>create</code> and <code>close</code> as well as the <span class="group-scala"><code>Future</code></span><span class="group-java"><code>CompletionStage</code></span>s completing with failure will fail the stream. The supervision strategy is used to handle exceptions from <code>read</code>, <code>create</code> and from the <span class="group-scala"><code>Future</code></span><span class="group-java"><code>CompletionStage</code></span>s.</p>
-<p>Note that there are pre-built <code>unfoldResourceAsync</code>-like operators to wrap <code>java.io.InputStream</code>s in <a href="../index.html#additional-sink-and-source-converters">Additional Sink and Source converters</a>, <code>Iterator</code> in <a href="fromIterator.html">fromIterator</a> and File IO in <a href="../index.html#file-io-sinks-and-sources">File IO Sinks and Sources</a>. Additional prebuilt technology specific connectors can also be found in <a href="https://doc.akka.io/docs/alpakka/current/">Pekko Connectors</a>.</p>
+<p>Note that there are pre-built <code>unfoldResourceAsync</code>-like operators to wrap <code>java.io.InputStream</code>s in <a href="../index.html#additional-sink-and-source-converters">Additional Sink and Source converters</a>, <code>Iterator</code> in <a href="fromIterator.html">fromIterator</a> and File IO in <a href="../index.html#file-io-sinks-and-sources">File IO Sinks and Sources</a>. Additional prebuilt technology specific connectors can also be found in <a href="https://pekko.apache.org/docs/pekko-connectors/current/">Pekko Connectors</a>.</p>
 <h2><a href="#examples" name="examples" class="anchor"><span class="anchor-link"></span></a>Examples</h2>
 <p>Imagine we have an async database API which we initially perform an async query and then can check if there are more results in an asynchronous way.</p>
 <dl>
@@ -608,7 +608,7 @@ The source code for this page can be found <a href="https://github.com/apache/in
 <script type="text/javascript" src="../../../lib/prettify/prettify.js"></script>
 <script type="text/javascript" src="../../../lib/prettify/lang-scala.js"></script>
 <script type="text/javascript">jQuery(function(){window.prettyPrint && prettyPrint()});</script>
-<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26537-d5470465-SNAPSHOT', 'https://akka.io/')});</script>
+<script type="text/javascript">jQuery(function(jq){initOldVersionWarnings(jq, '0.0.0+26547-ad0f3b42-SNAPSHOT', 'https://pekko.apache.org/')});</script>
 
 
 </html>
